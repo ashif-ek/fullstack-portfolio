@@ -10,7 +10,9 @@ from .views import (
     MessageViewSet,
     UploadView,
     LoginView,
+    health_check,
 )
+
 
 router = DefaultRouter()
 router.register(r"settings", SiteSettingsViewSet)
@@ -25,4 +27,5 @@ urlpatterns = [
     path("", include(router.urls)),
     path("upload", UploadView.as_view(), name="upload"),
     path("login", LoginView.as_view(), name="login"),
+    path("health", health_check, name="health_check"),
 ]
