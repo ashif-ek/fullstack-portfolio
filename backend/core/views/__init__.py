@@ -1,4 +1,4 @@
-from .settings_views import SiteSettingsViewSet, health_check
+from .settings_views import SiteSettingsViewSet
 
 from .profile_views import ProfileViewSet, MessageViewSet
 from .portfolio_views import SkillViewSet, ProjectViewSet, CertificateViewSet
