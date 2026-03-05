@@ -6,13 +6,22 @@ from datetime import date
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "portfolio_backend.settings")
 django.setup()
 
-from core.models import Profile, Service, Skill, Tool, Project, Certificate, BlogPost
+from core.models import (
+    Profile,
+    Service,
+    Skill,
+    Tool,
+    Project,
+    Certificate,
+    BlogPost,
+    SocialLink,
+)
 
 
 def sync_data():
-    print("Starting full data synchronization...")
+    print("Starting comprehensive data synchronization...")
 
-    # 1. Profile
+    # 1. Profile & Social Links
     Profile.objects.all().delete()
     p = Profile.objects.create(
         name="Ashif E.K",
@@ -23,7 +32,21 @@ def sync_data():
         experience="With a strong foundation in Computer Science, I have successfully delivered projects ranging from e-commerce platforms to complex governance systems. I have hands-on experience with the modern web stack including Next.js, Django, and Cloud Infrastructure. My work emphasizes performance optimization, security best practices, and intuitive user experience design.",
         philosophy="I believe that technology should be invisible—it should work so smoothly that users focus on their goals, not the tools. My approach combines rigorous engineering principles with creative problem-solving to deliver software that is not just functional, but exceptional.",
     )
-    print(f"Created Profile: {p.name}")
+
+    links_data = [
+        {"name": "GitHub", "url": "https://github.com/ashif-ek"},
+        {"name": "LinkedIn", "url": "https://linkedin.com/in/ashifek"},
+        {"name": "Instagram", "url": "https://instagram.com/ashif.io"},
+        {"name": "Fiverr", "url": "http://www.fiverr.com/s/gDLy45X"},
+        {
+            "name": "Docs Material",
+            "url": "https://ashif-ek.github.io/docs-stack-material/",
+        },
+    ]
+    for link in links_data:
+        SocialLink.objects.create(profile=p, **link)
+
+    print(f"Created Profile and {len(links_data)} Social Links")
 
     # 2. Services
     Service.objects.all().delete()
@@ -132,6 +155,7 @@ def sync_data():
             "tags": "Next.js, TypeScript, Tailwind CSS, Redux",
             "link": "https://noirel-store.vercel.app/",
             "github": "https://github.com/ashif-ek/noirel-ecommerce",
+            "image": "project1.jpg",
         },
         {
             "title": "CivicConnect Governance",
@@ -139,6 +163,7 @@ def sync_data():
             "tags": "Django, Flutter, PostgreSQL, REST API",
             "link": "https://github.com/ashif-ek/civic-connect",
             "github": "https://github.com/ashif-ek/civic-connect",
+            "image": "project2.jpg",
         },
         {
             "title": "Minimalist CMS Blog",
@@ -146,6 +171,7 @@ def sync_data():
             "tags": "Django, HTMX, PostgreSQL, Bootstrap",
             "link": "https://github.com/ashif-ek/django-blog",
             "github": "https://github.com/ashif-ek/django-blog",
+            "image": "project3.jpg",
         },
     ]
     for pj in projects_data:
@@ -162,6 +188,7 @@ def sync_data():
             "category": "Degree",
             "description": "Focused on Software Engineering, Data Structures, and Algorithms. Graduated with honors.",
             "credential_link": "#",
+            "image": "bca.jpg",
         },
         {
             "title": "Full Stack Development Certification",
@@ -170,6 +197,7 @@ def sync_data():
             "category": "Professional",
             "description": "Intensive bootcamp covering advanced Python, Django, React, and deployment strategies.",
             "credential_link": "#",
+            "image": "ccsa.jpg",
         },
     ]
     for c in certs_data:
