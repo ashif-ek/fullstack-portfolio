@@ -1,6 +1,12 @@
 from rest_framework import viewsets
-from core.models import Skill, Project, Certificate
-from core.serializers import SkillSerializer, ProjectSerializer, CertificateSerializer
+from core.models import Skill, Project, Certificate, Service, Tool
+from core.serializers import (
+    SkillSerializer,
+    ProjectSerializer,
+    CertificateSerializer,
+    ServiceSerializer,
+    ToolSerializer,
+)
 
 
 class SkillViewSet(viewsets.ModelViewSet):
@@ -16,3 +22,13 @@ class ProjectViewSet(viewsets.ModelViewSet):
 class CertificateViewSet(viewsets.ModelViewSet):
     queryset = Certificate.objects.all()
     serializer_class = CertificateSerializer
+
+
+class ServiceViewSet(viewsets.ModelViewSet):
+    queryset = Service.objects.all()
+    serializer_class = ServiceSerializer
+
+
+class ToolViewSet(viewsets.ModelViewSet):
+    queryset = Tool.objects.all()
+    serializer_class = ToolSerializer

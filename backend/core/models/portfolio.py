@@ -43,3 +43,20 @@ class Certificate(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Service(models.Model):
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+    icon = models.CharField(max_length=50)  # e.g. CodeIcon, RocketIcon
+
+    def __str__(self):
+        return self.title
+
+
+class Tool(models.Model):
+    name = models.CharField(max_length=100)
+    icon = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name

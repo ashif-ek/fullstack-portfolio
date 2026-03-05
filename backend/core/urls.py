@@ -8,9 +8,10 @@ from .views import (
     CertificateViewSet,
     BlogPostViewSet,
     MessageViewSet,
+    ServiceViewSet,
+    ToolViewSet,
     UploadView,
     LoginView,
-    
 )
 from .health_view import health_check
 
@@ -23,6 +24,8 @@ router.register(r"projects", ProjectViewSet)
 router.register(r"certificates", CertificateViewSet)
 router.register(r"blogs", BlogPostViewSet)
 router.register(r"messages", MessageViewSet)
+router.register(r"services", ServiceViewSet)
+router.register(r"tools", ToolViewSet)
 
 urlpatterns = [
     path("", include(router.urls)),

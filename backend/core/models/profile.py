@@ -5,6 +5,9 @@ class Profile(models.Model):
     name = models.CharField(max_length=100)
     title = models.CharField(max_length=200)
     description = models.TextField()
+    introduction = models.TextField(blank=True)
+    experience = models.TextField(blank=True)
+    philosophy = models.TextField(blank=True)
     email = models.EmailField()
     avatar = models.ImageField(upload_to="profile/", blank=True, null=True)
 
