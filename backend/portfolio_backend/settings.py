@@ -135,9 +135,12 @@ MEDIA_URL = "/uploads/"
 MEDIA_ROOT = BASE_DIR.parent / "media" / "uploads"
 
 # CORS Configuration
-CORS_ALLOWED_ORIGINS = config(
-    "CORS_ALLOWED_ORIGINS", default="http://localhost:3000"
-).split(",")
+if DEBUG:
+    CORS_ALLOW_ALL_ORIGINS = True
+else:
+    CORS_ALLOWED_ORIGINS = config(
+        "CORS_ALLOWED_ORIGINS", default="http://localhost:3000"
+    ).split(",")
 
 
 # REST Framework Configuration (Optional but good practice)

@@ -4,7 +4,7 @@ from core.serializers import ProfileSerializer, MessageSerializer
 
 
 class ProfileViewSet(viewsets.ModelViewSet):
-    queryset = Profile.objects.all()
+    queryset = Profile.objects.all().order_by("-id")
     serializer_class = ProfileSerializer
 
 
