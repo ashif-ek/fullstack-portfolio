@@ -15,7 +15,10 @@ class Skill(models.Model):
 
 class Project(models.Model):
     title = models.CharField(max_length=200)
-    description = models.TextField()
+    description = models.TextField(help_text="Short abstract for the project card")
+    content = models.TextField(
+        blank=True, help_text="Detailed markdown content for the Case Study page"
+    )
     tags = models.CharField(
         max_length=500, help_text="Comma-separated tags"
     )  # Simple implementation

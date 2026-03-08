@@ -10,3 +10,13 @@ class VisitorCount(models.Model):
 
     class Meta:
         verbose_name_plural = "Visitor Counts"
+
+
+class PortfolioAnalytics(models.Model):
+    total_views = models.IntegerField(default=0)
+
+    def __str__(self):
+        return f"Portfolio Views: {self.total_views}"
+
+    class Meta:
+        verbose_name_plural = "Portfolio Analytics"

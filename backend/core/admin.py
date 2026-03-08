@@ -11,6 +11,7 @@ from .models import (
     Tool,
     BlogPost,
     VisitorCount,
+    PortfolioAnalytics,
 )
 
 
@@ -81,3 +82,8 @@ class BlogPostAdmin(admin.ModelAdmin):
 class VisitorCountAdmin(admin.ModelAdmin):
     list_display = ("total_visitors", "last_updated")
     readonly_fields = ("last_updated",)
+
+
+@admin.register(PortfolioAnalytics)
+class PortfolioAnalyticsAdmin(admin.ModelAdmin):
+    list_display = ("total_views",)

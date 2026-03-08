@@ -26,3 +26,18 @@ class VisitorIncrementView(APIView):
         return Response(
             {"total_visitors": visitor_obj.total_visitors}, status=status.HTTP_200_OK
         )
+
+
+class PortfolioAnalyticsView(APIView):
+    def post(self, request, *args, **kwargs):
+        from core.models.analytics import PortfolioAnalytics
+        from django.db.models import F
+
+        analytics_obj, created = PortfolioAnalytics.objects.get_or_create(id=1)
+        PortfolioAnalytics.objects.filter(id=analytics_obj.id).update(
+            total_views=F("total_views") + 1
+        )
+        analytics_obj.refresh_from_db()
+        return Response(
+            {"total_views": analytics_obj.total_views}, status=status.HTTP_200_OK
+        )

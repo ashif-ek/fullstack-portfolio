@@ -13,7 +13,11 @@ from .views import (
     UploadView,
     LoginView,
 )
-from .views.analytics_views import VisitorCountView, VisitorIncrementView
+from .views.analytics_views import (
+    VisitorCountView,
+    VisitorIncrementView,
+    PortfolioAnalyticsView,
+)
 from .health_view import health_check
 
 
@@ -38,5 +42,10 @@ urlpatterns = [
         "analytics/visitors/increment/",
         VisitorIncrementView.as_view(),
         name="visitor_increment",
+    ),
+    path(
+        "api/portfolio-view/",
+        PortfolioAnalyticsView.as_view(),
+        name="portfolio_view",
     ),
 ]
