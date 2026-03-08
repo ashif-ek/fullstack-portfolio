@@ -10,6 +10,7 @@ from .models import (
     Service,
     Tool,
     BlogPost,
+    VisitorCount,
 )
 
 
@@ -38,7 +39,7 @@ class MessageAdmin(admin.ModelAdmin):
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ("title", "tags")
+    list_display = ("title", "tags", "clicks")
     search_fields = ("title", "description", "tags")
 
 
@@ -74,3 +75,9 @@ class BlogPostAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("title",)}
     list_filter = ("date",)
     search_fields = ("title", "summary")
+
+
+@admin.register(VisitorCount)
+class VisitorCountAdmin(admin.ModelAdmin):
+    list_display = ("total_visitors", "last_updated")
+    readonly_fields = ("last_updated",)

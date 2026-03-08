@@ -13,6 +13,7 @@ from .views import (
     UploadView,
     LoginView,
 )
+from .views.analytics_views import VisitorCountView, VisitorIncrementView
 from .health_view import health_check
 
 
@@ -32,4 +33,10 @@ urlpatterns = [
     path("upload", UploadView.as_view(), name="upload"),
     path("login", LoginView.as_view(), name="login"),
     path("health/", health_check, name="health_check"),
+    path("analytics/visitors/", VisitorCountView.as_view(), name="visitor_count"),
+    path(
+        "analytics/visitors/increment/",
+        VisitorIncrementView.as_view(),
+        name="visitor_increment",
+    ),
 ]

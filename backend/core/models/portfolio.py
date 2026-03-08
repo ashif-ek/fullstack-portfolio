@@ -22,6 +22,9 @@ class Project(models.Model):
     link = models.URLField(blank=True)
     github = models.URLField(blank=True)
     image = models.ImageField(upload_to="projects/", blank=True, null=True)
+    clicks = models.PositiveIntegerField(
+        default=0, help_text="Number of times this project was clicked"
+    )
 
     def __str__(self):
         return self.title

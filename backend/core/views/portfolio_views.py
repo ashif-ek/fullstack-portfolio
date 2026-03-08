@@ -1,4 +1,6 @@
 from rest_framework import viewsets
+from rest_framework.decorators import action
+from rest_framework.response import Response
 from core.models import Skill, Project, Certificate, Service, Tool
 from core.serializers import (
     SkillSerializer,
@@ -17,6 +19,15 @@ class SkillViewSet(viewsets.ModelViewSet):
 class ProjectViewSet(viewsets.ModelViewSet):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
+
+    @action(detail=True, methods=["post"])
+    def click(self, request, pk=None):
+        project = self.get_object()
+        from django.db.models import F
+
+        Project.objects.filter(pk=project.pk).update(clicks=F("clicks") + 1)
+        project.refresh_from_db()
+        return Response({"status": "clicked", "clicks": project.clicks})
 
 
 class CertificateViewSet(viewsets.ModelViewSet):
