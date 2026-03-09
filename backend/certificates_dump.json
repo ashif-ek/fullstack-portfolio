@@ -1,0 +1,42 @@
+[
+  {
+    "id": 10,
+    "title": "Workshop Participation Certificate",
+    "issuer": "Prosevo Technologies",
+    "date": "14 October 2024",
+    "category": "Workshop / Professional Development",
+    "image": "/uploads/certificates/prosevo.webp",
+    "credentialLink": "",
+    "description": "Certificate awarded to Ashif E.K for successfully participating in a workshop conducted by Prosevo,\r\nRecognized for commendable enthusiasm and active engagement during the session."
+  },
+  {
+    "id": 9,
+    "title": "Certified Cyber Security Analyst (CCSA)",
+    "issuer": "Red Team Hacker Academy",
+    "date": "2022",
+    "category": "cybersecurity",
+    "image": "/uploads/certificates/ccsa.webp",
+    "credentialLink": "",
+    "description": "Covered OSINT, web application security testing, vulnerability assessment, and SOC/SIEM fundamentals."
+  },
+  {
+    "id": 8,
+    "title": "Python Django & Flutter Certification",
+    "issuer": "Regional Technologies",
+    "date": "2025",
+    "category": "web development",
+    "image": "/uploads/certificates/django.webp",
+    "credentialLink": "",
+    "description": "Hands-on training in Django backend development and Flutter mobile application development."
+  },
+  {
+    "id": 7,
+    "title": "Bachelor of Computer Applications (BCA)",
+    "issuer": "SAFA Arts & Science College",
+    "date": "Aug 2022 \u2013 Apr 2025",
+    "category": "degree / education",
+    "image": null,
+    "credentialLink": "",
+    "description": "Completed undergraduate studies in computer applications focusing on software development and computing fundamentals."
+  }
+]

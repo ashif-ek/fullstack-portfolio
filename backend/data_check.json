@@ -1,0 +1,42 @@
+{
+  "projects": [
+    {
+      "id": 13,
+      "title": "Salary Checker"
+    },
+    {
+      "id": 11,
+      "title": "Civic (CiviTech) - Cross-Platform Digital Governance Platform"
+    },
+    {
+      "id": 12,
+      "title": "Blog System Design Sandbox"
+    },
+    {
+      "id": 14,
+      "title": "TimeLens"
+    },
+    {
+      "id": 10,
+      "title": "NOIR'EL - Luxury E-Commerce Platform"
+    }
+  ],
+  "certs": [
+    {
+      "id": 10,
+      "title": "Workshop Participation Certificate"
+    },
+    {
+      "id": 9,
+      "title": "Certified Cyber Security Analyst (CCSA)"
+    },
+    {
+      "id": 8,
+      "title": "Python Django & Flutter Certification"
+    },
+    {
+      "id": 7,
+      "title": "Bachelor of Computer Applications (BCA)"
+    }
+  ]
+}

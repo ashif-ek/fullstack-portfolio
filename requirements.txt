@@ -3,3 +3,8 @@ djangorestframework
 django-cors-headers
 pillow
 python-decouple
+psycopg2-binary
+dj-database-url
+python-dotenv
+cloudinary
+django-cloudinary-storage

@@ -26,7 +26,9 @@ class MessageViewSet(viewsets.ModelViewSet):
                 body,
                 settings.EMAIL_HOST_USER,
                 [settings.EMAIL_HOST_USER],  # Send to self
-                fail_silently=True,
+                fail_silently=False,
             )
         except Exception as e:
-            print(f"Error sending email: {e}")
+            # Re-raise or log properly so we can see it in terminal
+            print(f"SMTP Error encountered: {e}")
+            # Consider not raising if we want the message to still save in DB

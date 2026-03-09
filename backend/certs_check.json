@@ -1,0 +1,22 @@
+[
+  {
+    "id": 10,
+    "title": "Workshop Participation Certificate",
+    "issuer": "Prosevo Technologies"
+  },
+  {
+    "id": 9,
+    "title": "Certified Cyber Security Analyst (CCSA)",
+    "issuer": "Red Team Hacker Academy"
+  },
+  {
+    "id": 8,
+    "title": "Python Django & Flutter Certification",
+    "issuer": "Regional Technologies"
+  },
+  {
+    "id": 7,
+    "title": "Bachelor of Computer Applications (BCA)",
+    "issuer": "SAFA Arts & Science College"
+  }
+]
