@@ -1,0 +1,85 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-serif: "Georgia", "Times New Roman", serif;
+    --font-sans: "Segoe UI", "Arial", "Helvetica Neue", -apple-system, sans-serif;
+
+    --color-academic-bg: #FDFCFB;
+    --color-academic-paper: #FFFFFF;
+    --color-academic-text: #1C1C1C;
+    --color-academic-muted: #474747;
+    --color-academic-border: #E5E5E5;
+    --color-academic-primary: #2C3E50;
+    --color-academic-accent: #8E2424;
+    /* Korean Deep Crimson */
+    --color-academic-secondary: #2E4D2E;
+    /* Pine Green */
+
+    --shadow-academic: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --shadow-paper: 0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+}
+
+@layer base {
+    body {
+        @apply bg-academic-bg text-academic-text font-sans antialiased;
+        background-image:
+            radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+        background-size: 24px 24px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-serif tracking-tight text-academic-primary;
+    }
+
+    p {
+        @apply leading-relaxed;
+    }
+}
+
+@layer components {
+    .academic-card {
+        @apply bg-academic-paper border border-academic-border p-6 shadow-academic transition-all duration-300;
+    }
+
+    .academic-button {
+        @apply px-6 py-2 border border-academic-primary text-academic-primary font-medium transition-all duration-300 hover:bg-academic-primary hover:text-white;
+    }
+
+    .section-title {
+        @apply text-4xl font-bold mb-8 relative inline-block;
+    }
+
+    .section-title::after {
+        content: '';
+        @apply absolute -bottom-2 left-0 w-12 h-1 bg-academic-accent;
+    }
+}
+
+@layer utilities {
+    @keyframes shimmer {
+        100% {
+            transform: translateX(100%);
+        }
+    }
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}

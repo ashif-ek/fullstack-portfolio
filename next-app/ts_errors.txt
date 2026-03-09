@@ -1,0 +1,216 @@
+.next/dev/types/validator.ts(42,39): error TS2307: Cannot find module '../../../app/page.js' or its corresponding type declarations.
+.next/dev/types/validator.ts(57,39): error TS2307: Cannot find module '../../../app/layout.js' or its corresponding type declarations.
+.next/types/validator.ts(42,39): error TS2307: Cannot find module '../../app/page.js' or its corresponding type declarations.
+.next/types/validator.ts(57,39): error TS2307: Cannot find module '../../app/layout.js' or its corresponding type declarations.
+src/app/page.tsx(26,13): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/app/page.tsx(29,14): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/components/About.tsx(81,45): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/components/About.tsx(83,18): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/components/admin/ImageUploader.tsx(2,54): error TS2307: Cannot find module 'lucide-react' or its corresponding type declarations.
+src/components/admin/ImageUploader.tsx(5,26): error TS7031: Binding element 'onUploadSuccess' implicitly has an 'any' type.
+src/components/admin/ImageUploader.tsx(5,43): error TS7031: Binding element 'initialImage' implicitly has an 'any' type.
+src/components/admin/ImageUploader.tsx(10,37): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/components/admin/ImageUploader.tsx(16,22): error TS2345: Argument of type '"Please upload an image file."' is not assignable to parameter of type 'SetStateAction<null>'.
+src/components/admin/ImageUploader.tsx(20,22): error TS2345: Argument of type '"File size must be less than 5MB."' is not assignable to parameter of type 'SetStateAction<null>'.
+src/components/admin/ImageUploader.tsx(41,22): error TS2345: Argument of type '"Upload failed. Please try again."' is not assignable to parameter of type 'SetStateAction<null>'.
+src/components/admin/ImageUploader.tsx(59,56): error TS2339: Property 'onerror' does not exist on type 'EventTarget'.
+src/components/admin/ImageUploader.tsx(59,81): error TS2339: Property 'src' does not exist on type 'EventTarget'.
+src/components/admin/Sidebar.tsx(1,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+src/components/admin/Sidebar.tsx(11,8): error TS2307: Cannot find module 'lucide-react' or its corresponding type declarations.
+src/components/admin/Sidebar.tsx(13,20): error TS7031: Binding element 'activeTab' implicitly has an 'any' type.
+src/components/admin/Sidebar.tsx(13,31): error TS7031: Binding element 'setActiveTab' implicitly has an 'any' type.
+src/components/admin/Sidebar.tsx(13,45): error TS7031: Binding element 'onLogout' implicitly has an 'any' type.
+src/components/admin/Sidebar.tsx(13,55): error TS7031: Binding element 'isOpen' implicitly has an 'any' type.
+src/components/admin/Sidebar.tsx(13,63): error TS7031: Binding element 'onClose' implicitly has an 'any' type.
+src/components/admin/StatsCard.tsx(1,30): error TS2307: Cannot find module 'lucide-react' or its corresponding type declarations.
+src/components/admin/StatsCard.tsx(3,22): error TS7031: Binding element 'title' implicitly has an 'any' type.
+src/components/admin/StatsCard.tsx(3,29): error TS7031: Binding element 'value' implicitly has an 'any' type.
+src/components/admin/StatsCard.tsx(3,42): error TS7031: Binding element 'Icon' implicitly has an 'any' type.
+src/components/Api.ts(1,19): error TS2307: Cannot find module 'axios' or its corresponding type declarations.
+src/components/BlogPost.tsx(13,20): error TS2304: Cannot find name 'useParams'.
+src/components/BlogPost.tsx(22,15): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/components/BlogPost.tsx(30,16): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/components/BlogSection.tsx(17,13): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/components/BlogSection.tsx(18,14): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/components/certificate.tsx(32,15): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/components/certificate.tsx(33,16): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/components/certificate.tsx(80,38): error TS2339: Property 'querySelectorAll' does not exist on type 'never'.
+src/components/certificate.tsx(81,20): error TS7006: Parameter 'card' implicitly has an 'any' type.
+src/components/certificate.tsx(93,22): error TS7006: Parameter 'card' implicitly has an 'any' type.
+src/components/certificate.tsx(131,49): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ 1: StaticImageData; 2: StaticImageData; 3: StaticImageData; 4: StaticImageData; 5: StaticImageData; }'.
+  No index signature with a parameter of type 'string' was found on type '{ 1: StaticImageData; 2: StaticImageData; 3: StaticImageData; 4: StaticImageData; 5: StaticImageData; }'.
+src/components/certificate.tsx(134,24): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ 1: StaticImageData; 2: StaticImageData; 3: StaticImageData; 4: StaticImageData; 5: StaticImageData; }'.
+  No index signature with a parameter of type 'string' was found on type '{ 1: StaticImageData; 2: StaticImageData; 3: StaticImageData; 4: StaticImageData; 5: StaticImageData; }'.
+src/components/certificate.tsx(267,13): error TS2322: Type '{ src: never; alt: string; className: string; onClick: (e: any) => any; }' is not assignable to type 'IntrinsicAttributes & { src: any; alt: any; className?: string | undefined; }'.
+  Property 'onClick' does not exist on type 'IntrinsicAttributes & { src: any; alt: any; className?: string | undefined; }'.
+src/components/certificate.tsx(267,23): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/components/Contacts.tsx(38,22): error TS7031: Binding element 'id' implicitly has an 'any' type.
+src/components/Contacts.tsx(38,26): error TS7031: Binding element 'name' implicitly has an 'any' type.
+src/components/Contacts.tsx(38,47): error TS7031: Binding element 'placeholder' implicitly has an 'any' type.
+src/components/Contacts.tsx(38,60): error TS7031: Binding element 'required' implicitly has an 'any' type.
+src/components/Contacts.tsx(38,70): error TS7031: Binding element 'value' implicitly has an 'any' type.
+src/components/Contacts.tsx(38,77): error TS7031: Binding element 'onChange' implicitly has an 'any' type.
+src/components/Contacts.tsx(61,28): error TS7031: Binding element 'icon' implicitly has an 'any' type.
+src/components/Contacts.tsx(61,34): error TS7031: Binding element 'title' implicitly has an 'any' type.
+src/components/Contacts.tsx(61,41): error TS7031: Binding element 'value' implicitly has an 'any' type.
+src/components/Contacts.tsx(124,21): error TS2304: Cannot find name 'Api'.
+src/components/Contacts.tsx(139,30): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/components/Contacts.tsx(144,54): error TS2339: Property 'length' does not exist on type 'SubmissionError<FieldValues>'.
+src/components/Contacts.tsx(212,25): error TS2322: Type 'string' is not assignable to type 'number'.
+src/components/ErrorBoundary.tsx(5,15): error TS7006: Parameter 'props' implicitly has an 'any' type.
+src/components/ErrorBoundary.tsx(12,35): error TS7006: Parameter '_error' implicitly has an 'any' type.
+src/components/ErrorBoundary.tsx(16,21): error TS7006: Parameter 'error' implicitly has an 'any' type.
+src/components/ErrorBoundary.tsx(16,28): error TS7006: Parameter 'errorInfo' implicitly has an 'any' type.
+src/components/ErrorBoundary.tsx(25,20): error TS2339: Property 'hasError' does not exist on type 'Readonly<{}>'.
+src/components/ErrorBoundary.tsx(29,23): error TS2339: Property 'children' does not exist on type 'Readonly<{}>'.
+src/components/ErrorFallback.tsx(5,26): error TS7031: Binding element 'resetErrorBoundary' implicitly has an 'any' type.
+src/components/Header.tsx(8,19): error TS7006: Parameter 'props' implicitly has an 'any' type.
+src/components/Header.tsx(54,16): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: LinkProps): Link', gave the following error.
+    Property 'to' is missing in type '{ children: (string | Element)[]; key: string; href: string; smooth: true; duration: number; spy: true; offset: number; className: string; activeClass: string; }' but required in type 'Readonly<LinkProps>'.
+  Overload 2 of 2, '(props: LinkProps, context: any): Link', gave the following error.
+    Property 'to' is missing in type '{ children: (string | Element)[]; key: string; href: string; smooth: true; duration: number; spy: true; offset: number; className: string; activeClass: string; }' but required in type 'Readonly<LinkProps>'.
+src/components/Header.tsx(112,16): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: LinkProps): Link', gave the following error.
+    Property 'to' is missing in type '{ children: string; key: string; href: string; smooth: true; duration: number; className: string; onClick: () => void; activeClass: string; }' but required in type 'Readonly<LinkProps>'.
+  Overload 2 of 2, '(props: LinkProps, context: any): Link', gave the following error.
+    Property 'to' is missing in type '{ children: string; key: string; href: string; smooth: true; duration: number; className: string; onClick: () => void; activeClass: string; }' but required in type 'Readonly<LinkProps>'.
+src/components/Hero.tsx(32,25): error TS2604: JSX element type 'Icon' does not have any construct or call signatures.
+src/components/Hero.tsx(42,22): error TS7031: Binding element 'email' implicitly has an 'any' type.
+src/components/Hero.tsx(64,13): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/components/Hero.tsx(65,14): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/components/Hero.tsx(73,20): error TS2322: Type 'SocialLink[]' is not assignable to type 'never[]'.
+  Type 'SocialLink' is not assignable to type 'never'.
+src/components/Hero.tsx(84,22): error TS2339: Property 'avatar' does not exist on type 'Profile'.
+src/components/Hero.tsx(87,71): error TS2339: Property 'avatar' does not exist on type 'Profile'.
+src/components/InstallPrompt.tsx(9,34): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/components/InstallPrompt.tsx(23,17): error TS2339: Property 'prompt' does not exist on type 'never'.
+src/components/InstallPrompt.tsx(24,43): error TS2339: Property 'userChoice' does not exist on type 'never'.
+src/components/LazyImage.tsx(6,22): error TS7031: Binding element 'src' implicitly has an 'any' type.
+src/components/LazyImage.tsx(6,27): error TS7031: Binding element 'alt' implicitly has an 'any' type.
+src/components/LoadingSpinner.tsx(2,20): error TS2307: Cannot find module '../animations/loading.lottie' or its corresponding type declarations.
+src/components/pages/AdminDashboard.tsx(3,84): error TS2307: Cannot find module 'lucide-react' or its corresponding type declarations.
+src/components/pages/AdminDashboard.tsx(4,25): error TS2307: Cannot find module '../context/AuthContext' or its corresponding type declarations.
+src/components/pages/AdminDashboard.tsx(5,17): error TS2307: Cannot find module '../components/Api' or its corresponding type declarations.
+src/components/pages/AdminDashboard.tsx(6,21): error TS2307: Cannot find module '../components/admin/Sidebar' or its corresponding type declarations.
+src/components/pages/AdminDashboard.tsx(7,23): error TS2307: Cannot find module '../components/admin/StatsCard' or its corresponding type declarations.
+src/components/pages/AdminDashboard.tsx(8,27): error TS2307: Cannot find module '../components/admin/ImageUploader' or its corresponding type declarations.
+src/components/pages/AdminDashboard.tsx(79,22): error TS7031: Binding element 'field' implicitly has an 'any' type.
+src/components/pages/AdminDashboard.tsx(79,29): error TS7031: Binding element 'value' implicitly has an 'any' type.
+src/components/pages/AdminDashboard.tsx(79,36): error TS7031: Binding element 'onChange' implicitly has an 'any' type.
+src/components/pages/AdminDashboard.tsx(79,46): error TS7031: Binding element 'onImageUpload' implicitly has an 'any' type.
+src/components/pages/AdminDashboard.tsx(88,67): error TS7006: Parameter 'filename' implicitly has an 'any' type.
+src/components/pages/AdminDashboard.tsx(99,22): error TS7031: Binding element 'item' implicitly has an 'any' type.
+src/components/pages/AdminDashboard.tsx(99,28): error TS7031: Binding element 'config' implicitly has an 'any' type.
+src/components/pages/AdminDashboard.tsx(99,36): error TS7031: Binding element 'onSave' implicitly has an 'any' type.
+src/components/pages/AdminDashboard.tsx(99,44): error TS7031: Binding element 'onClose' implicitly has an 'any' type.
+src/components/pages/AdminDashboard.tsx(99,53): error TS7031: Binding element 'error' implicitly has an 'any' type.
+src/components/pages/AdminDashboard.tsx(102,27): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/components/pages/AdminDashboard.tsx(104,24): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/pages/AdminDashboard.tsx(107,32): error TS7006: Parameter 'fieldName' implicitly has an 'any' type.
+src/components/pages/AdminDashboard.tsx(107,43): error TS7006: Parameter 'filename' implicitly has an 'any' type.
+src/components/pages/AdminDashboard.tsx(108,24): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/pages/AdminDashboard.tsx(121,40): error TS7006: Parameter 'field' implicitly has an 'any' type.
+src/components/pages/AdminDashboard.tsx(161,88): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/components/pages/AdminDashboard.tsx(162,44): error TS7006: Parameter 'acc' implicitly has an 'any' type.
+src/components/pages/AdminDashboard.tsx(162,49): error TS7006: Parameter 'curr' implicitly has an 'any' type.
+src/components/pages/AdminDashboard.tsx(167,22): error TS2345: Argument of type '"Could not load backend data."' is not assignable to parameter of type 'SetStateAction<null>'.
+src/components/pages/AdminDashboard.tsx(176,31): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/components/pages/AdminDashboard.tsx(176,34): error TS7006: Parameter 'itemToSave' implicitly has an 'any' type.
+src/components/pages/AdminDashboard.tsx(178,24): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ profile: { title: string; endpoint: string; singularName: string; isArray: boolean; fields: { name: string; label: string; type: string; }[]; }; skills: { title: string; endpoint: string; singularName: string; isArray: boolean; fields: { ...; }[]; }; projects: { ...; }; certificates: { ...; }; blogs: { ...; }; }'.
+  No index signature with a parameter of type 'string' was found on type '{ profile: { title: string; endpoint: string; singularName: string; isArray: boolean; fields: { name: string; label: string; type: string; }[]; }; skills: { title: string; endpoint: string; singularName: string; isArray: boolean; fields: { ...; }[]; }; projects: { ...; }; certificates: { ...; }; blogs: { ...; }; }'.
+src/components/pages/AdminDashboard.tsx(182,106): error TS7006: Parameter 't' implicitly has an 'any' type.
+src/components/pages/AdminDashboard.tsx(194,22): error TS2345: Argument of type '"Save failed."' is not assignable to parameter of type 'SetStateAction<null>'.
+src/components/pages/AdminDashboard.tsx(198,33): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/components/pages/AdminDashboard.tsx(200,24): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ profile: { title: string; endpoint: string; singularName: string; isArray: boolean; fields: { name: string; label: string; type: string; }[]; }; skills: { title: string; endpoint: string; singularName: string; isArray: boolean; fields: { ...; }[]; }; projects: { ...; }; certificates: { ...; }; blogs: { ...; }; }'.
+  No index signature with a parameter of type 'string' was found on type '{ profile: { title: string; endpoint: string; singularName: string; isArray: boolean; fields: { name: string; label: string; type: string; }[]; }; skills: { title: string; endpoint: string; singularName: string; isArray: boolean; fields: { ...; }[]; }; projects: { ...; }; certificates: { ...; }; blogs: { ...; }; }'.
+src/components/pages/AdminDashboard.tsx(236,38): error TS2339: Property 'id' does not exist on type 'never'.
+src/components/pages/AdminDashboard.tsx(238,82): error TS2339: Property 'name' does not exist on type 'never'.
+src/components/pages/AdminDashboard.tsx(238,146): error TS2339: Property 'email' does not exist on type 'never'.
+src/components/pages/AdminDashboard.tsx(239,98): error TS2339: Property 'id' does not exist on type 'never'.
+src/components/pages/AdminDashboard.tsx(241,68): error TS2339: Property 'message' does not exist on type 'never'.
+src/components/pages/AdminDashboard.tsx(242,94): error TS2339: Property 'date' does not exist on type 'never'.
+src/components/pages/AdminDashboard.tsx(258,46): error TS2339: Property 'siteTitle' does not exist on type '{}'.
+src/components/pages/AdminDashboard.tsx(270,92): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{}'.
+  No index signature with a parameter of type 'string' was found on type '{}'.
+src/components/pages/AdminDashboard.tsx(271,121): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{}'.
+  No index signature with a parameter of type 'string' was found on type '{}'.
+src/components/pages/AdminDashboard.tsx(273,127): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{}'.
+  No index signature with a parameter of type 'string' was found on type '{}'.
+src/components/pages/AdminDashboard.tsx(294,24): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ profile: { title: string; endpoint: string; singularName: string; isArray: boolean; fields: { name: string; label: string; type: string; }[]; }; skills: { title: string; endpoint: string; singularName: string; isArray: boolean; fields: { ...; }[]; }; projects: { ...; }; certificates: { ...; }; blogs: { ...; }; }'.
+  No index signature with a parameter of type 'string' was found on type '{ profile: { title: string; endpoint: string; singularName: string; isArray: boolean; fields: { name: string; label: string; type: string; }[]; }; skills: { title: string; endpoint: string; singularName: string; isArray: boolean; fields: { ...; }[]; }; projects: { ...; }; certificates: { ...; }; blogs: { ...; }; }'.
+src/components/pages/AdminDashboard.tsx(295,25): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ profile: {}; projects: never[]; certificates: never[]; skills: never[]; blogs: never[]; settings: {}; messages: never[]; }'.
+  No index signature with a parameter of type 'string' was found on type '{ profile: {}; projects: never[]; certificates: never[]; skills: never[]; blogs: never[]; settings: {}; messages: never[]; }'.
+src/components/pages/AdminDashboard.tsx(306,69): error TS7006: Parameter 'acc' implicitly has an 'any' type.
+src/components/pages/AdminDashboard.tsx(306,74): error TS7006: Parameter 'f' implicitly has an 'any' type.
+src/components/pages/AdminDashboard.tsx(307,45): error TS2322: Type 'string' is not assignable to type 'null'.
+src/components/pages/AdminDashboard.tsx(325,34): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ profile: {}; projects: never[]; certificates: never[]; skills: never[]; blogs: never[]; settings: {}; messages: never[]; }'.
+  No index signature with a parameter of type 'string' was found on type '{ profile: {}; projects: never[]; certificates: never[]; skills: never[]; blogs: never[]; settings: {}; messages: never[]; }'.
+src/components/pages/AdminDashboard.tsx(325,54): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/components/pages/AdminDashboard.tsx(342,84): error TS2322: Type 'string' is not assignable to type 'null'.
+src/components/pages/AdminDashboard.tsx(353,31): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ profile: {}; projects: never[]; certificates: never[]; skills: never[]; blogs: never[]; settings: {}; messages: never[]; }'.
+  No index signature with a parameter of type 'string' was found on type '{ profile: {}; projects: never[]; certificates: never[]; skills: never[]; blogs: never[]; settings: {}; messages: never[]; }'.
+src/components/pages/AdminDashboard.tsx(354,76): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ profile: {}; projects: never[]; certificates: never[]; skills: never[]; blogs: never[]; settings: {}; messages: never[]; }'.
+  No index signature with a parameter of type 'string' was found on type '{ profile: {}; projects: never[]; certificates: never[]; skills: never[]; blogs: never[]; settings: {}; messages: never[]; }'.
+src/components/pages/AdminDashboard.tsx(359,79): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ profile: {}; projects: never[]; certificates: never[]; skills: never[]; blogs: never[]; settings: {}; messages: never[]; }'.
+  No index signature with a parameter of type 'string' was found on type '{ profile: {}; projects: never[]; certificates: never[]; skills: never[]; blogs: never[]; settings: {}; messages: never[]; }'.
+src/components/pages/AdminDashboard.tsx(360,77): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ profile: {}; projects: never[]; certificates: never[]; skills: never[]; blogs: never[]; settings: {}; messages: never[]; }'.
+  No index signature with a parameter of type 'string' was found on type '{ profile: {}; projects: never[]; certificates: never[]; skills: never[]; blogs: never[]; settings: {}; messages: never[]; }'.
+src/components/pages/AdminDashboard.tsx(361,64): error TS2322: Type 'string' is not assignable to type 'null'.
+src/components/pages/AdminDashboard.tsx(361,84): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ profile: {}; projects: never[]; certificates: never[]; skills: never[]; blogs: never[]; settings: {}; messages: never[]; }'.
+  No index signature with a parameter of type 'string' was found on type '{ profile: {}; projects: never[]; certificates: never[]; skills: never[]; blogs: never[]; settings: {}; messages: never[]; }'.
+src/components/pages/AdminDashboard.tsx(400,29): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ profile: { title: string; endpoint: string; singularName: string; isArray: boolean; fields: { name: string; label: string; type: string; }[]; }; skills: { title: string; endpoint: string; singularName: string; isArray: boolean; fields: { ...; }[]; }; projects: { ...; }; certificates: { ...; }; blogs: { ...; }; }'.
+  No index signature with a parameter of type 'string' was found on type '{ profile: { title: string; endpoint: string; singularName: string; isArray: boolean; fields: { name: string; label: string; type: string; }[]; }; skills: { title: string; endpoint: string; singularName: string; isArray: boolean; fields: { ...; }[]; }; projects: { ...; }; certificates: { ...; }; blogs: { ...; }; }'.
+src/components/pages/AdminLogin.tsx(3,49): error TS2307: Cannot find module 'lucide-react' or its corresponding type declarations.
+src/components/pages/AdminLogin.tsx(4,25): error TS2307: Cannot find module '../context/AuthContext' or its corresponding type declarations.
+src/components/pages/AdminLogin.tsx(11,18): error TS2552: Cannot find name 'useRouter'. Did you mean 'router'?
+src/components/pages/AdminLogin.tsx(15,31): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/components/pages/Home.tsx(4,25): error TS2307: Cannot find module '../context/AuthContext' or its corresponding type declarations.
+src/components/pages/Home.tsx(5,18): error TS2307: Cannot find module '../components/Hero' or its corresponding type declarations.
+src/components/pages/Home.tsx(6,19): error TS2307: Cannot find module '../components/About' or its corresponding type declarations.
+src/components/pages/Home.tsx(7,20): error TS2307: Cannot find module '../components/Skills' or its corresponding type declarations.
+src/components/pages/Home.tsx(8,22): error TS2307: Cannot find module '../components/Projects' or its corresponding type declarations.
+src/components/pages/Home.tsx(9,26): error TS2307: Cannot find module '../components/certificate' or its corresponding type declarations.
+src/components/pages/Home.tsx(10,21): error TS2307: Cannot find module '../components/Contacts' or its corresponding type declarations.
+src/components/pages/Home.tsx(11,25): error TS2307: Cannot find module '../components/BlogSection' or its corresponding type declarations.
+src/components/pages/Home.tsx(12,17): error TS2307: Cannot find module '../components/Api' or its corresponding type declarations.
+src/components/pages/Home.tsx(25,13): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/components/pages/Home.tsx(28,14): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/components/Projects.tsx(32,13): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/components/Projects.tsx(33,14): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/components/Projects.tsx(74,24): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ 1: StaticImageData; 2: StaticImageData; 3: StaticImageData; 4: StaticImageData; }'.
+  No index signature with a parameter of type 'string' was found on type '{ 1: StaticImageData; 2: StaticImageData; 3: StaticImageData; 4: StaticImageData; }'.
+src/components/Skills.tsx(34,23): error TS2322: Type '{ className: string; }' is not assignable to type 'IntrinsicAttributes'.
+  Property 'className' does not exist on type 'IntrinsicAttributes'.
+src/components/Skills.tsx(35,37): error TS2322: Type '{ className: string; }' is not assignable to type 'IntrinsicAttributes'.
+  Property 'className' does not exist on type 'IntrinsicAttributes'.
+src/components/Skills.tsx(36,27): error TS2322: Type '{ className: string; }' is not assignable to type 'IntrinsicAttributes'.
+  Property 'className' does not exist on type 'IntrinsicAttributes'.
+src/components/Skills.tsx(37,25): error TS2322: Type '{ className: string; }' is not assignable to type 'IntrinsicAttributes'.
+  Property 'className' does not exist on type 'IntrinsicAttributes'.
+src/components/Skills.tsx(38,27): error TS2322: Type '{ className: string; }' is not assignable to type 'IntrinsicAttributes'.
+  Property 'className' does not exist on type 'IntrinsicAttributes'.
+src/components/Skills.tsx(39,33): error TS2322: Type '{ className: string; }' is not assignable to type 'IntrinsicAttributes'.
+  Property 'className' does not exist on type 'IntrinsicAttributes'.
+src/components/Skills.tsx(47,24): error TS7006: Parameter 'query' implicitly has an 'any' type.
+src/components/Skills.tsx(71,33): error TS2339: Property 'skill' does not exist on type '{}'.
+src/components/Skills.tsx(71,40): error TS2339: Property 'isVisible' does not exist on type '{}'.
+src/components/Skills.tsx(71,51): error TS2339: Property 'index' does not exist on type '{}'.
+src/components/Skills.tsx(80,28): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/components/Skills.tsx(82,34): error TS2339: Property 'getBoundingClientRect' does not exist on type 'never'.
+src/components/Skills.tsx(144,72): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ PythonIcon: Element; JSIcon: Element; ReactIcon: Element; TailwindIcon: Element; GitIcon: Element; BootstrapIcon: Element; DockerIcon: Element; ... 6 more ...; BriefcaseIcon: Element; }'.
+src/components/Skills.tsx(167,14): error TS2322: Type '{ className: string; style: { backgroundColor: any; width: string; boxShadow: string; }; role: "progressbar"; "aria-valuenow": any; "aria-valuemin": string; "aria-valuemax": string; "aria-label": string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Type '{ className: string; style: { backgroundColor: any; width: string; boxShadow: string; }; role: "progressbar"; "aria-valuenow": any; "aria-valuemin": string; "aria-valuemax": string; "aria-label": string; }' is not assignable to type 'HTMLAttributes<HTMLDivElement>'.
+    Types of property '"aria-valuemax"' are incompatible.
+      Type 'string' is not assignable to type 'number'.
+src/components/Skills.tsx(184,32): error TS2339: Property 'tool' does not exist on type '{}'.
+src/components/Skills.tsx(191,28): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/components/Skills.tsx(193,34): error TS2339: Property 'getBoundingClientRect' does not exist on type 'never'.
+src/components/Skills.tsx(231,12): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ PythonIcon: Element; JSIcon: Element; ReactIcon: Element; TailwindIcon: Element; GitIcon: Element; BootstrapIcon: Element; DockerIcon: Element; ... 6 more ...; BriefcaseIcon: Element; }'.
+src/components/Skills.tsx(332,107): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'SetStateAction<string>'.
+  Type 'undefined' is not assignable to type 'SetStateAction<string>'.
+src/components/Skills.tsx(344,27): error TS2322: Type '{ key: string | number; skill: Skill; isVisible: boolean; index: number; }' is not assignable to type 'IntrinsicAttributes & object'.
+  Property 'skill' does not exist on type 'IntrinsicAttributes & object'.
+src/components/Skills.tsx(369,55): error TS2322: Type '{ key: string; tool: Tool; }' is not assignable to type 'IntrinsicAttributes & object'.
+  Property 'tool' does not exist on type 'IntrinsicAttributes & object'.
+src/components/UserLayout.tsx(1,24): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.

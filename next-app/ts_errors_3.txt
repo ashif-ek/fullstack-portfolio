@@ -1,0 +1,26 @@
+src/components/sections/Certificates.tsx(256,23): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/components/sections/Contacts.tsx(145,54): error TS2339: Property 'length' does not exist on type 'SubmissionError<FieldValues>'.
+src/components/sections/Skills.tsx(34,23): error TS2322: Type '{ className: string; }' is not assignable to type 'IntrinsicAttributes'.
+  Property 'className' does not exist on type 'IntrinsicAttributes'.
+src/components/sections/Skills.tsx(35,37): error TS2322: Type '{ className: string; }' is not assignable to type 'IntrinsicAttributes'.
+  Property 'className' does not exist on type 'IntrinsicAttributes'.
+src/components/sections/Skills.tsx(36,27): error TS2322: Type '{ className: string; }' is not assignable to type 'IntrinsicAttributes'.
+  Property 'className' does not exist on type 'IntrinsicAttributes'.
+src/components/sections/Skills.tsx(37,25): error TS2322: Type '{ className: string; }' is not assignable to type 'IntrinsicAttributes'.
+  Property 'className' does not exist on type 'IntrinsicAttributes'.
+src/components/sections/Skills.tsx(38,27): error TS2322: Type '{ className: string; }' is not assignable to type 'IntrinsicAttributes'.
+  Property 'className' does not exist on type 'IntrinsicAttributes'.
+src/components/sections/Skills.tsx(39,33): error TS2322: Type '{ className: string; }' is not assignable to type 'IntrinsicAttributes'.
+  Property 'className' does not exist on type 'IntrinsicAttributes'.
+src/components/sections/Skills.tsx(168,14): error TS2322: Type '{ className: string; style: { backgroundColor: any; width: string; boxShadow: string; }; role: "progressbar"; "aria-valuenow": any; "aria-valuemin": string; "aria-valuemax": string; "aria-label": string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Type '{ className: string; style: { backgroundColor: any; width: string; boxShadow: string; }; role: "progressbar"; "aria-valuenow": any; "aria-valuemin": string; "aria-valuemax": string; "aria-label": string; }' is not assignable to type 'HTMLAttributes<HTMLDivElement>'.
+    Types of property '"aria-valuemax"' are incompatible.
+      Type 'string' is not assignable to type 'number'.
+src/components/ui/ErrorBoundary.tsx(5,15): error TS7006: Parameter 'props' implicitly has an 'any' type.
+src/components/ui/ErrorBoundary.tsx(12,35): error TS7006: Parameter '_error' implicitly has an 'any' type.
+src/components/ui/ErrorBoundary.tsx(16,21): error TS7006: Parameter 'error' implicitly has an 'any' type.
+src/components/ui/ErrorBoundary.tsx(16,28): error TS7006: Parameter 'errorInfo' implicitly has an 'any' type.
+src/components/ui/ErrorBoundary.tsx(25,20): error TS2339: Property 'hasError' does not exist on type 'Readonly<{}>'.
+src/components/ui/ErrorBoundary.tsx(29,23): error TS2339: Property 'children' does not exist on type 'Readonly<{}>'.
+src/components/ui/ErrorFallback.tsx(5,26): error TS7031: Binding element 'resetErrorBoundary' implicitly has an 'any' type.
+src/components/ui/LoadingSpinner.tsx(2,20): error TS2307: Cannot find module '../animations/loading.lottie' or its corresponding type declarations.
