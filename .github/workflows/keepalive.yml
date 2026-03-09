@@ -1,0 +1,12 @@
+name: Keep Backend Alive
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Curl backend health
+        run: curl https://portfolio-server-.onrender.com/health/

@@ -8,3 +8,4 @@ dj-database-url
 python-dotenv
 cloudinary
 django-cloudinary-storage
+gunicorn
