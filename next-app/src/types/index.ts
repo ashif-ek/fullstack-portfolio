@@ -51,6 +51,7 @@ export interface Tool {
 
 export interface Project {
     id: string;
+    slug: string;
     title: string;
     description: string;
     tags: string[];

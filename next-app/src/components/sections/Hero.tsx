@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useMemo, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { BookOpen, BriefcaseBusiness, Github, Instagram, Linkedin } from 'lucide-react';
 import { profile as profileData } from '../../data/mockData';
 import profileFallbackImage from '../../assets/profile.jpg';
@@ -122,9 +123,15 @@ const Hero = () => {
           >
             Review Works
           </a>
+          <Link
+            href="/about"
+            className="px-8 py-3 text-sm font-medium uppercase tracking-widest text-academic-primary hover:bg-academic-primary/5 border border-academic-primary/30 transition-all duration-300 cursor-pointer text-center rounded-lg"
+          >
+            Expertise Profile
+          </Link>
           <a
             href="#contact"
-            className="px-8 py-3 text-sm font-medium uppercase tracking-widest text-academic-primary hover:text-academic-accent transition-colors duration-300 cursor-pointer"
+            className="px-8 py-3 text-sm font-medium uppercase tracking-widest text-academic-primary hover:text-academic-accent transition-colors duration-300 cursor-pointer text-center"
           >
             Correspondence
           </a>

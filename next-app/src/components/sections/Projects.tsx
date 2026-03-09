@@ -29,14 +29,14 @@ const Projects = () => {
     return getIndex(a.title) - getIndex(b.title);
   });
 
-  const handleProjectClick = async (projectId: number | string, e: React.MouseEvent) => {
+  const handleProjectClick = async (projectId: string, projectSlug: string, e: React.MouseEvent) => {
     e.preventDefault();
     try {
       await Api.post(`/projects/${projectId}/click/`);
     } catch (error) {
       console.error("Failed to track click:", error);
     }
-    router.push(`/projects/${projectId}`);
+    router.push(`/projects/${projectSlug}`);
   };
 
   return (
@@ -52,7 +52,7 @@ const Projects = () => {
             <div
               key={project.id}
               className="group flex flex-col bg-academic-bg border border-academic-border overflow-hidden shadow-academic hover:shadow-paper transition-all duration-500 cursor-pointer"
-              onClick={(e) => handleProjectClick(project.id, e)}
+              onClick={(e) => handleProjectClick(project.id, project.slug, e)}
             >
               <div className="relative overflow-hidden h-64 border-b border-academic-border">
                 {/** Prefer curated placeholders, fallback to backend image when available. */}
@@ -88,7 +88,7 @@ const Projects = () => {
 
                 <div className="mt-auto flex flex-wrap gap-2">
                   <button
-                    onClick={(e) => handleProjectClick(project.id, e)}
+                    onClick={(e) => handleProjectClick(project.id, project.slug, e)}
                     aria-label={`Read case study for ${project.title}`}
                     className="flex-grow basis-full md:basis-0 inline-block academic-button text-[10px] uppercase tracking-[0.2em] font-bold w-full text-center py-4 px-2"
                   >

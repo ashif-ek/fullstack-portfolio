@@ -34,11 +34,11 @@ const Header = () => {
   }, [isOpen]);
 
   const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'About', href: '/about' },
+    { name: 'Services', href: '/#services' },
+    { name: 'Skills', href: '/#skills' },
+    { name: 'Projects', href: '/#projects' },
+    { name: 'Contact', href: '/#contact' },
   ];
 
   const closeMenu = () => setIsOpen(false);
@@ -58,13 +58,13 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navLinks.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
                 className="relative cursor-pointer py-1 text-sm font-medium text-academic-muted hover:text-academic-primary transition-colors uppercase tracking-widest"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -109,14 +109,14 @@ const Header = () => {
         >
           <div className="py-8 space-y-6 text-center">
             {navLinks.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
                 className="block text-lg font-serif text-academic-primary transition-colors cursor-pointer"
                 onClick={closeMenu}
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
             <a
               href="#contact"

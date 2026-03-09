@@ -5,35 +5,59 @@ import QueryProvider from '../providers/QueryProvider';
 import StatusBadge from '../components/ui/StatusBadge';
 import VisitorTracker from '../components/ui/VisitorTracker';
 
+const baseUrl = 'https://www.ashifek.in';
+
 export const metadata: Metadata = {
-  title: 'Ashif E.K | Full-Stack Engineer | React & Django Portfolio',
-  description: 'Ashif E.K – Full-Stack Engineer specializing in React, Django, and modern web solutions. Explore projects, skills, and achievements.',
-  keywords: ['Ashif E.K', 'Portfolio', 'React', 'Django', 'Web Development', 'Software Engineer', 'Full-Stack Engineer'],
+  metadataBase: new URL(baseUrl),
+  title: {
+    default: 'Ashif E.K | Full-Stack Engineer | React & Django Expert',
+    template: '%s | Ashif E.K'
+  },
+  description: 'Ashif E.K – Full-Stack Engineer specializing in React, Django, and scalable web solutions. Explore high-performance projects, technical case studies, and modern architecture.',
+  keywords: ['Ashif E.K', 'Full-Stack Engineer', 'Software Engineer', 'React Developer', 'Django Expert', 'Web Architecture', 'Portfolio', 'India'],
   authors: [{ name: 'Ashif E.K' }],
+  creator: 'Ashif E.K',
+  alternates: {
+    canonical: '/',
+  },
   icons: {
     icon: '/favicon.png',
     apple: '/apple-touch-icon.png',
   },
   manifest: '/manifest.json',
   openGraph: {
-
     type: 'website',
+    locale: 'en_US',
+    url: baseUrl,
     title: 'Ashif E.K | Full-Stack Engineer',
-    description: "Explore Ashif E.K's portfolio – React & Django expert creating modern web solutions.",
-    url: 'https://ashif-ek.vercel.app/',
+    description: 'Expert React & Django developer building secure, scalable, and high-performance web applications.',
     siteName: 'Ashif E.K Portfolio',
-    images: [{ url: 'https://ashif-ek.vercel.app/social-preview.png' }],
+    images: [{ url: '/social-preview.png', width: 1200, height: 630, alt: 'Ashif E.K Portfolio' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Ashif E.K | Full-Stack Engineer',
     description: 'Portfolio of Ashif E.K – React & Django expert creating modern web solutions.',
-    images: ['https://ashif-ek.vercel.app/social-preview.png'],
+    images: ['/social-preview.png'],
+    creator: '@ashif_io',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
 export const viewport: Viewport = {
   themeColor: '#1a1a1a',
+  width: 'device-width',
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -42,8 +66,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <head>
+        {/* Preload critical fonts for LCP improvement */}
+        <link
+          rel="preload"
+          href="/fonts/inter-var.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -52,12 +84,12 @@ export default function RootLayout({
               "@graph": [
                 {
                   "@type": "Person",
-                  "@id": "https://ashif-ek.vercel.app/#person",
+                  "@id": `${baseUrl}/#person`,
                   "name": "Ashif E.K",
                   "jobTitle": "Full-Stack Engineer",
-                  "description": "I specialize in React, Django, Redux, javascript, html css tailwind to building secure, scalable, and high-performance applications that solve complex problems and deliver exceptional user experiences.",
-                  "url": "https://ashif-ek.vercel.app/",
-                  "image": "https://ashif-ek.vercel.app/profile.jpg",
+                  "description": "Specializing in React, Django, and high-performance web applications. Expert in building secure, scalable, and optimized digital experiences.",
+                  "url": baseUrl,
+                  "image": `${baseUrl}/profile.jpg`,
                   "sameAs": [
                     "https://github.com/ashif-ek",
                     "https://linkedin.com/in/ashifek",
@@ -65,7 +97,7 @@ export default function RootLayout({
                     "http://www.fiverr.com/s/gDLy45X",
                     "https://ashif-ek.github.io/docs-stack-material/"
                   ],
-                  "knowsAbout": ["React", "Django", "JavaScript", "Web Development", "UI/UX", "Redux", "Tailwind CSS", "HTML5", "CSS3", "Flutter", "Cybersecurity"],
+                  "knowsAbout": ["React", "Django", "JavaScript", "Web Development", "UI/UX", "Redux", "Tailwind CSS", "HTML5", "CSS3", "Flutter", "Cybersecurity", "Cloud Architecture"],
                   "alumniOf": {
                     "@type": "CollegeOrUniversity",
                     "name": "University of Calicut"
@@ -73,37 +105,21 @@ export default function RootLayout({
                 },
                 {
                   "@type": "WebSite",
-                  "@id": "https://ashif-ek.vercel.app/#website",
-                  "url": "https://ashif-ek.vercel.app/",
+                  "@id": `${baseUrl}/#website`,
+                  "url": baseUrl,
                   "name": "Ashif E.K Portfolio",
                   "description": "Full-Stack Engineer specializing in React, Django, and modern web solutions.",
                   "publisher": {
-                    "@id": "https://ashif-ek.vercel.app/#person"
+                    "@id": `${baseUrl}/#person`
                   },
                   "inLanguage": "en-US"
-                },
-                {
-                  "@type": "ProfessionalService",
-                  "@id": "https://ashif-ek.vercel.app/#service",
-                  "url": "https://ashif-ek.vercel.app/",
-                  "name": "Ashif E.K - Full-Stack Engineer",
-                  "description": "Professional web development and software engineering services.",
-                  "priceRange": "$$",
-                  "image": "https://ashif-ek.vercel.app/profile.jpg",
-                  "address": {
-                    "@type": "PostalAddress",
-                    "addressCountry": "IN"
-                  },
-                  "founder": {
-                    "@id": "https://ashif-ek.vercel.app/#person"
-                  }
                 }
               ]
             }),
           }}
         />
       </head>
-      <body className="font-sans">
+      <body className="font-sans antialiased text-academic-text bg-academic-bg selection:bg-academic-primary/20 selection:text-academic-primary">
         <QueryProvider>
           <AuthProvider>
             <VisitorTracker />

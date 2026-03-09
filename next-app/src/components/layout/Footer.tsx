@@ -1,5 +1,5 @@
-'use client';
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { useVisitors } from '../../hooks/useVisitors';
 
 const Footer = () => {
@@ -30,10 +30,10 @@ const Footer = () => {
   ];
 
   const quickLinks = [
-    { name: 'Tenure', url: '#about' },
-    { name: 'Case Studies', url: '#projects' },
-    { name: 'Indices', url: '#skills' },
-    { name: 'Correspondence', url: '#contact' },
+    { name: 'Expert Profile', url: '/about' },
+    { name: 'Technical Works', url: '/#projects' },
+    { name: 'Core Competencies', url: '/#skills' },
+    { name: 'Correspondence', url: '/#contact' },
   ];
 
   return (
@@ -57,12 +57,12 @@ const Footer = () => {
             <ul className="space-y-4">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a
+                  <Link
                     href={link.url}
                     className="text-xs text-academic-primary hover:text-academic-accent transition-colors duration-300 font-medium"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

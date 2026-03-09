@@ -45,122 +45,220 @@ export const about: AboutData[] = [
 
 export const services: Service[] = [
     {
-        id: "1",
-        title: "Full-Stack Web Development",
-        description: "End-to-end development of responsive web applications using React, Next.js, and Django. I handle everything from database design to frontend interactivity.",
-        icon: "CodeIcon"
-    },
-    {
-        id: "2",
+        id: "10",
         title: "MVP Development",
         description: "Rapid prototyping and development of Minimum Viable Products for startups. Launch your idea quickly with a solid, scalable foundation.",
         icon: "RocketIcon"
     },
     {
-        id: "3",
+        id: "11",
         title: "API Design & Integration",
         description: "Building secure and scalable RESTful APIs. Integration of third-party services like payment gateways (Stripe), authentication (OAuth), and cloud storage.",
         icon: "ServerIcon"
     },
     {
-        id: "4",
+        id: "12",
         title: "Performance Optimization",
         description: "Auditing and optimizing existing applications for speed, accessibility, and SEO. Implementing caching strategies and code splitting.",
         icon: "LightningIcon"
+    },
+    {
+        id: "13",
+        title: "Backend API Development",
+        description: "Secure REST APIs using Django REST Framework with authentication and scalable architecture.",
+        icon: "CodeIcon"
+    },
+    {
+        id: "14",
+        title: "Full Stack Web Development",
+        description: "Building responsive web platforms using React, Django, and PostgreSQL.",
+        icon: "LayersIcon"
+    },
+    {
+        id: "15",
+        title: "Cloud Deployment",
+        description: "Deploying production-ready applications using Docker, AWS EC2, and CI/CD pipelines.",
+        icon: "CloudIcon"
     }
 ];
 
 export const skills: Skill[] = [
-    { "id": 1, "name": "Django & Python", "level": 95, "category": "Backend", "color": "#44B78B", "icon": "PythonIcon", "description": "Expert in building secure REST APIs, ORM optimization, and scalable backend architecture." },
-    { "id": 2, "name": "React & Next.js", "level": 90, "category": "Frontend", "color": "#61DAFB", "icon": "ReactIcon", "description": "Building performant, server-side rendered (SSR) applications with modern hooks and state management." },
-    { "id": 3, "name": "TypeScript", "level": 85, "category": "Language", "color": "#3178C6", "icon": "TSIcon", "description": "Strong typing for scalable codebases, resulting in fewer runtime errors and better maintainability." },
-    { "id": 4, "name": "Database Design", "level": 88, "category": "Data", "color": "#336791", "icon": "DatabaseIcon", "description": "Schema design, optimization, and management of SQL (PostgreSQL) and NoSQL databases." },
-    { "id": 5, "name": "DevOps & Cloud", "level": 80, "category": "Infrastructure", "color": "#FF9900", "icon": "CloudIcon", "description": "Experience with Docker, CI/CD pipelines, and deploying to platforms like AWS and Vercel." },
-    { "id": 6, "name": "Flutter", "level": 80, "category": "Mobile", "color": "#027DFD", "icon": "MobileIcon", "description": "Developing cross-platform mobile applications with native-like performance." }
+    { "id": 19, "name": "Django REST Framework", "level": 90, "category": "Technology", "color": "#44B78B", "icon": "PythonIcon", "description": "Designing secure, modular REST APIs for production-grade backend systems." },
+    { "id": 20, "name": "React.js", "level": 90, "category": "Technology", "color": "#61DAFB", "icon": "ReactIcon", "description": "Building responsive frontend applications with reusable components and API-driven architecture." },
+    { "id": 21, "name": "PostgreSQL", "level": 75, "category": "Technology", "color": "#336791", "icon": "DatabaseIcon", "description": "Modeling relational data and optimizing queries for scalable backend performance." },
+    { "id": 22, "name": "Docker", "level": 75, "category": "DevOps", "color": "#2496ED", "icon": "DockerIcon", "description": "Containerizing services for environment parity across development and production." },
+    { "id": 23, "name": "AWS (EC2, RDS, S3)", "level": 50, "category": "Cloud Platform", "color": "#FF9900", "icon": "CloudIcon", "description": "Amazon Web Services for cloud computing and infrastructure" },
+    { "id": 24, "name": "MySQL", "level": 75, "category": "Database", "color": "#4479A1", "icon": "DatabaseIcon", "description": "Relational database management system" },
+    { "id": 25, "name": "Redis", "level": 85, "category": "Caching", "color": "#D82C20", "icon": "ServerIcon", "description": "In-memory data structure store for caching" },
+    { "id": 26, "name": "Docker Compose", "level": 80, "category": "DevOps", "color": "#2496ED", "icon": "DockerIcon", "description": "Tool for defining and running multi-container Docker applications" },
+    { "id": 27, "name": "REST APIs", "level": 90, "category": "Backend Development", "color": "#44B78B", "icon": "CodeIcon", "description": "Representational State Transfer APIs for client-server communication" },
+    { "id": 28, "name": "GraphQL", "level": 75, "category": "Backend Development", "color": "#E10098", "icon": "CodeIcon", "description": "Query language for APIs with strong typing and schema definition" },
+    { "id": 29, "name": "Production Reliability", "level": 80, "category": "DevOps", "color": "#44B78B", "icon": "ShieldCheckIcon", "description": "Ensuring systems remain operational and stable in production environments" }
 ];
 
 export const tools: Tool[] = [
-    { "id": "1", "name": "VS Code", "icon": "CodeIcon" },
-    { "id": "2", "name": "PostgreSQL", "icon": "DatabaseIcon" },
-    { "id": "3", "name": "Docker", "icon": "DockerIcon" },
-    { "id": "4", "name": "Git & GitHub", "icon": "GitIcon" },
-    { "id": "5", "name": "Figma", "icon": "FigmaIcon" },
-    { "id": "6", "name": "Postman", "icon": "PostmanIcon" }
+    { "id": "13", "name": "VS Code", "icon": "CodeIcon" },
+    { "id": "14", "name": "PostgreSQL", "icon": "DatabaseIcon" },
+    { "id": "15", "name": "Docker", "icon": "DockerIcon" },
+    { "id": "16", "name": "Git & GitHub", "icon": "GitIcon" },
+    { "id": "17", "name": "Figma", "icon": "FigmaIcon" },
+    { "id": "18", "name": "Postman", "icon": "PostmanIcon" }
 ];
 
 export const projects: Project[] = [
     {
-        "id": "1",
-        "title": "Noirel Luxury Ecommerce",
-        "description": "A high-performance e-commerce platform designed for luxury aesthetics. Implemented complex filtering, cart management, and optimized asset loading for a sub-2s load time.",
-        "content": "## Background\nNoirel needed a digital presence that matched their high-end physical boutique. The objective was to create a blistering fast ecommerce platform without sacrificing visual fidelity.\n\n## Architecture\nBuilt securely on **Next.js** for SSR and SEO advantages, utilizing a headless **Django** backend for inventory and payment processing. \n\n## Results\n* Decreased average page load time by **45%**\n* Increased automated conversions by leveraging a custom 3-step checkout\n* Reached **100 Lighthouse** scores across Performance and Accessibility criteria.",
-        "tags": ["Next.js", "TypeScript", "Tailwind CSS", "Redux"],
+        "id": "13",
+        "slug": "salary-checker",
+        "title": "Salary Checker",
+        "description": "An AI-powered salary insight platform using percentile analytics and machine learning to predict market-accurate compensation.",
+        "content": "## Problem Statement\nJob seekers and employees often lack transparent, data-driven insights into their market value. Static salary surveys are frequently outdated or lack the granularity needed for specific niches.\n\n## Architecture\nBuilt with **FastAPI** and **PostgreSQL** for a high-performance backend, utilizing **scikit-learn** for predictive modeling. The frontend features interactive data visualizations to present complex analytics simply.\n\n## Solution & Results\nSalary Reality Checker delivers real-time salary insights using fuzzy-matched job titles and machine-learning predictions. It auto-corrects user input and predicts salaries even when exact data is missing, helping users negotiate with confidence.\n\n### Key Metrics\n- Processed over 10k data points for training\n- Achieved 85% accuracy in salary predictions\n- Sub-100ms API response times",
+        "tags": ["FastAPI", "PostgreSQL", "Machine Learning", "AI", "Salary Analytics"],
         "image": "project1.jpg",
-        "link": "https://noirel-store.vercel.app/",
-        "github": "https://github.com/ashif-ek/noirel-ecommerce"
+        "link": "https://ashif-ek.github.io/docs-stack-material/",
+        "github": "https://github.com/ashif-ek/salary-checker"
     },
     {
-        "id": "2",
-        "title": "CivicConnect Governance",
-        "description": "A comprehensive digital governance platform enabling citizen engagement. Features include complaint tracking, real-time notifications, and administrative dashboards. Handled role-based access control for 4 distinct user types.",
-        "content": "## Mission\nDesigned to bridge the gap between municipal administrators and citizens through an intuitive mobile-first interface.\n\n## Implementation Details\nUtilized **Flutter** for cross-platform app deployment alongside a robust **Django REST Framework** backend. Complex geospatial queries were handled efficiently using PostgreSQL PostGIS extensions to route complaints to specific municipal wards automatically.\n\n### Key Modules\n1. **Citizen Portal:** Geo-tagged complaint registration and live tracking.\n2. **Admin Dashboard:** Real-time analytics and workforce deployment mapping.\n3. **Notification Engine:** WebSocket-based live alerts for critical civic updates.",
-        "tags": ["Django", "Flutter", "PostgreSQL", "REST API"],
+        "id": "11",
+        "slug": "civic-connect",
+        "title": "Civic (CiviTech) - Digital Governance Platform",
+        "description": "A cross-platform governance solution connecting citizens with local authorities for transparent service tracking and complaint management.",
+        "content": "## Problem Statement\nCitizens often face bureaucratic hurdles and a lack of transparency when communicating with local government bodies (Panchayaths), leading to slow resolution times for civic issues.\n\n## Architecture\nA decoupled system with a **Django** REST API and a **Flutter** mobile application. Implemented **RBAC** (Role-Based Access Control) to handle complex administrative hierarchies and moderator workflows.\n\n## Solution & Results\nDeveloped a multi-role platform that enables complaint escalation, real-time service tracking, and automated announcements. This has significantly reduced the distance between citizens and administrators.\n\n### Key Features\n- Real-time complaint escalation workflow\n- Administrative analytics dashboard\n- Cross-platform availability (iOS/Android/Web)",
+        "tags": ["Django", "Flutter", "REST API", "RBAC", "PostgreSQL"],
         "image": "project2.jpg",
-        "link": "https://github.com/ashif-ek/civic-connect",
+        "link": "#",
         "github": "https://github.com/ashif-ek/civic-connect"
     },
     {
-        "id": "3",
-        "title": "Minimalist CMS Blog",
-        "description": "A custom Content Management System built to be lightweight and SEO-friendly. Includes markdown support, dynamic routing, and server-side rendering for optimal search engine visibility.",
-        "content": "## The Problem\nModern CMS solutions are often bloated and slow, delivering poor reading experiences.\n\n## The Solution\nA strictly dependency-light architecture using **Django** rendered views enhanced dynamically by **HTMX**. This entirely eliminates the need for heavy JavaScript parsing on mobile clients, generating immediate First Contentful Paints.\n\n### Technical Highlights\n* Built-in Markdown Engine with Syntax Highlighting\n* Zero-JS fallback compatibility\n* Optimized PostgreSQL text-search for sub-10ms query times.",
-        "tags": ["Django", "HTMX", "PostgreSQL", "Bootstrap"],
+        "id": "12",
+        "slug": "system-design-sandbox",
+        "title": "Blog System Design Sandbox",
+        "description": "A playground for production-grade backend patterns, focusing on security, scalability, and automated CI/CD workflows.",
+        "content": "## Problem Statement\nExperimenting with high-load architectural patterns in a production environment is risky. This sandbox was created to test and validate various backend strategies safely.\n\n## Architecture\nA micro-monolith approach using **Django REST Framework** within **Docker** containers. The infrastructure is managed via **GitHub Actions** for CI/CD, deploying to **AWS**.\n\n## Solution & Results\nSuccessfully implemented and stress-tested production patterns including JWT rotation, structured logging, and health monitoring. This serves as a template for my professional client projects.\n\n### Technical Highlights\n- JWT Access/Refresh token rotation\n- Comprehensive health checks and metrics\n- Automated deployment via Docker and AWS",
+        "tags": ["React", "Django REST Framework", "Docker", "GitHub Actions", "AWS"],
         "image": "project3.jpg",
-        "link": "https://github.com/ashif-ek/django-blog",
-        "github": "https://github.com/ashif-ek/django-blog"
+        "link": "#",
+        "github": "#"
+    },
+    {
+        "id": "14",
+        "slug": "time-lens",
+        "title": "TimeLens",
+        "description": "A productivity and mindset tool that reframes time into life-equivalents to help users perceive the true weight of their minutes and days.",
+        "content": "## Problem Statement\nPeople often view time as an infinite resource in the abstract, leading to procrastination. Standard countdown timers fail to convey the emotional weight of lost time.\n\n## Architecture\nA lightweight **Python** utility that focuses on mathematical accuracy and minimal overhead. Designed with simplicity as a core tenet to ensure distraction-free usage.\n\n## Solution & Results\nTime Lens reframes real minutes into life-equivalents, turning seconds into life-hours and minutes into life-days. This psychological shift helps users prioritize deep work over trivial tasks.\n\n### Impact\n- Used by developers to track 'Life ROI' on coding tasks\n- Simplistic CLI and potential for GUI expansion\n- Zero-dependency core logic",
+        "tags": ["Python", "Productivity", "Mindset Tool", "Time Management"],
+        "image": "project4.jpg",
+        "link": "https://ashif-ek.github.io/docs-stack-material/",
+        "github": "https://github.com/ashif-ek/time-lens-python"
+    },
+    {
+        "id": "10",
+        "slug": "noirel-ecommerce",
+        "title": "NOIR'EL - Luxury E-Commerce Platform",
+        "description": "A high-performance luxury e-commerce platform with a focus on seamless user experience and secure transaction workflows.",
+        "content": "## Problem Statement\nLuxury brands require a digital aesthetic that matches their product quality. Most out-of-the-box ecommerce solutions fail to provide the necessary customization and performance.\n\n## Architecture\nA modern tech stack using **React** for the library and **Django REST Framework** for the engine. Utilized **PostgreSQL** for relational data integrity and **Razorpay** for secure payments.\n\n## Solution & Results\nBuilt a bespoke platform covering the entire order lifecycle. Implemented JWT authentication and advanced admin controls, resulting in a premium shopping experience with high conversion potential.\n\n### Business Value\n- End-to-end checkout automation\n- Secure payment integration with Razorpay\n- Optimized asset delivery for luxury imagery",
+        "tags": ["React", "Django REST Framework", "PostgreSQL", "Razorpay", "AWS"],
+        "image": "project5.jpg",
+        "link": "https://noirel-perfume.vercel.app/",
+        "github": "https://github.com/ashif-ek/noirel-ecommerce"
     }
 ];
 
 export const certificates: Certificate[] = [
     {
-        "id": "1",
-        "title": "Bachelor of Computer Applications",
-        "issuer": "University of Calicut",
-        "date": "2025",
-        "category": "Degree",
-        "image": "bca.jpg",
+        "id": "10",
+        "title": "Workshop Participation Certificate",
+        "issuer": "Prosevo Technologies",
+        "date": "14 October 2024",
+        "category": "Workshop / Professional Development",
+        "image": "prosevo.webp",
         "credentialLink": "#",
-        "description": "Focused on Software Engineering, Data Structures, and Algorithms. Graduated with honors."
+        "description": "Certificate awarded to Ashif E.K for successfully participating in a workshop conducted by Prosevo,\nRecognized for commendable enthusiasm and active engagement during the session."
     },
     {
-        "id": "2",
-        "title": "Full Stack Development Certification",
-        "issuer": "Regional Technologies",
-        "date": "2024",
-        "category": "Professional",
-        "image": "ccsa.jpg",
+        "id": "9",
+        "title": "Certified Cyber Security Analyst (CCSA)",
+        "issuer": "Red Team Hacker Academy",
+        "date": "2022",
+        "category": "cybersecurity",
+        "image": "ccsa.webp",
         "credentialLink": "#",
-        "description": "Intensive bootcamp covering advanced Python, Django, React, and deployment strategies."
+        "description": "Covered OSINT, web application security testing, vulnerability assessment, and SOC/SIEM fundamentals."
+    },
+    {
+        "id": "8",
+        "title": "Python Django & Flutter Certification",
+        "issuer": "Regional Technologies",
+        "date": "2025",
+        "category": "web development",
+        "image": "django.webp",
+        "credentialLink": "#",
+        "description": "Hands-on training in Django backend development and Flutter mobile application development."
+    },
+    {
+        "id": "7",
+        "title": "Bachelor of Computer Applications (BCA)",
+        "issuer": "SAFA Arts & Science College",
+        "date": "Aug 2022 – Apr 2025",
+        "category": "degree / education",
+        "image": "bca.jpg",
+        "credentialLink": "#",
+        "description": "Completed undergraduate studies in computer applications focusing on software development and computing fundamentals."
     }
 ];
 
 export const blogs: Blog[] = [
     {
-        "id": 1,
+        "id": 5,
         "slug": "scalable-architecture-django-react",
         "title": "Building Scalable Architecture with Django and React",
         "date": "2025-11-10",
         "summary": "A deep dive into decoupling frontend and backend to create high-performance web applications that scale.",
         "imageUrl": "/blog/scalable.png",
-        "content": "## Introduction\nIn modern web engineering, monolithic architectures often pose significant bottlenecks when attempting to scale engineering velocity or handle massive traffic spikes. Decoupling the frontend (React/Next.js) from the backend (Django) has become the gold standard. \n\n## The Core Architecture\n\nThe fundamental separation involves utilizing Django exclusively as a headless REST or GraphQL API. It becomes responsible purely for:\n1. **Data Integrity** via PostgreSQL\n2. **Authentication/Authorization** using JWTs\n3. **Business Logic Computation**\n\nMeanwhile, the React frontend consumes these APIs, focusing entirely on state management, user interactivity, and UI rendering.\n\n### Overcoming CORS and Authentication Hurdles\nWhen hosting Decoupled architectures, Cross-Origin Resource Sharing (CORS) is explicitly the first barrier. Ensuring `django-cors-headers` is implemented strictly to whitelist only your frontend domains is critical for enterprise security.\n\nFor authentication, transitioning away from Django's default Session Auth to JSON Web Tokens (`djangorestframework-simplejwt`) allows the React application to independently verify session states without constant database queries.\n\n## Conclusion\nWhile initial setup complexity increases inherently, the decoupled stack ensures your application can seamlessly support concurrent web clients, mobile app integrations, and independent scaling thresholds over its lifecycle."
+        "content": "# Building Scalable Architecture...\n\n(Placeholder for technical article content...)"
     },
     {
-        "id": 2,
+        "id": 6,
         "slug": "optimizing-nextjs-performance",
         "title": "Optimizing Next.js Performance: A Practical Guide",
         "date": "2025-10-25",
         "summary": "Techniques for reducing bundle size and improving Core Web Vitals in large-scale Next.js applications.",
         "imageUrl": "/blog/performance.png",
-        "content": "## Performance is a Feature\n\nIn the era of mobile-first indexing, performance is no longer an afterthought—it dictates organic reach and conversion metrics directly. Next.js offers tremendous out-of-the-box performance, but large enterprise applications often degrade over time if not strictly monitored.\n\n## Strategies for Optimization\n\n### 1. Dynamic Imports and Code Splitting\nNot every component needs to be sent in the initial JavaScript bundle. For heavy components like charts or modals, utilizing `next/dynamic` is vital.\n\n```tsx\nimport dynamic from 'next/dynamic';\n\nconst HeavyChart = dynamic(() => import('../components/HeavyChart'), {\n  loading: () => <p>Loading Data...</p>,\n  ssr: false\n});\n```\n\n### 2. Aggressive Image Optimization\nNever serve unoptimized images. The standard `<img>` tag is the enemy of the Largest Contentful Paint (LCP) metric. Automatically convert formats to WebP, enforce lazy-loading, and dictate explicit scaling constraints using the built-in `next/image` component natively.\n\n### 3. Font Loading Tactics\nRender blocking resources consistently destroy First Contentful Paint times. Always utilize `next/font` to instantly load typography via CSS variables natively, entirely bypassing layout shifts (CLS)."
+        "content": "# Optimizing Next.js..."
+    },
+    {
+        "id": 7,
+        "slug": "getting-started-with-react-beginners-guide",
+        "title": "Getting Started with React: A Beginner's Guide",
+        "date": "2026-03-06",
+        "summary": "Learn the fundamentals of React, including components, JSX, props, and state. This comprehensive guide will help you get started on your journey to mastering React development.",
+        "imageUrl": "",
+        "content": "# Getting Started with React\r\n\r\nReact is a powerful JavaScript library for building user interfaces. In this article, we'll explore the key concepts that every React developer should understand.\r\n\r\n## What is React?\r\n\r\nReact is a JavaScript library maintained by Facebook that simplifies the process of building interactive user interfaces. It uses a component-based architecture to create reusable and maintainable code.\r\n\r\n## Key Concepts\r\n\r\n### Components\r\nComponents are the building blocks of any React application. They are reusable pieces of UI that encapsulate their own structure and behavior.\r\n\r\n### JSX\r\nJSX is a syntax extension that looks similar to HTML. It allows you to write UI code in a more readable and intuitive way.\r\n\r\n### Props\r\nProps are the way to pass data from parent to child components. They are read-only and help maintain unidirectional data flow.\r\n\r\n### State\r\nState allows components to manage their own data. Unlike props, state is mutable and can be updated over time."
+    },
+    {
+        "id": 8,
+        "slug": "django-best-practices-production",
+        "title": "Django Best Practices for Production",
+        "date": "2026-03-06",
+        "summary": "Learn the essential best practices for deploying Django applications to production environments. This guide covers configuration, security, and performance optimization.",
+        "imageUrl": "",
+        "content": "# Django Best Practices for Production\r\n\r\n## Environment Configuration\r\nAlways use environment variables for sensitive configuration like database credentials, API keys, and secret keys. Never hardcode these values in your source code.\r\n\r\n## Security Measures\r\n- Enable DEBUG = False in production\r\n- Use HTTPS everywhere\r\n- Set ALLOWED_HOSTS properly\r\n- Use Django's built-in security middleware\r\n- Keep Django and dependencies updated\r\n\r\n## Database Optimization\r\n- Use database indexing strategically\r\n- Monitor query performance with Django Debug Toolbar\r\n- Implement connection pooling\r\n- Use raw SQL only when necessary\r\n\r\n## Caching Strategy\r\nImplement caching at multiple levels to improve performance:\r\n- Browser caching\r\n- Server-side caching with Redis\r\n- Database query caching\r\n- View-level caching"
+    },
+    {
+        "id": 9,
+        "slug": "advanced-redux-patterns-middleware",
+        "title": "Advanced Redux Patterns and Middleware",
+        "date": "2026-03-06",
+        "summary": "Master advanced Redux patterns including middleware, sagas, and thunks. Learn how to manage complex state in large-scale applications effectively.",
+        "imageUrl": "",
+        "content": "# Advanced Redux Patterns\r\n\r\n## Redux Middleware\r\nMiddleware functions are powerful tools for handling side effects in Redux applications. They sit between actions and reducers, allowing you to intercept and modify actions.\r\n\r\n## Redux Thunk\r\nRedux Thunk is a middleware that allows you to return functions from action creators instead of objects. This is useful for async operations.\r\n\r\n```javascript\r\nconst myAction = (param) => (dispatch) => {\r\n  dispatch(actionStart());\r\n  setTimeout(() => {\r\n    dispatch(actionSuccess(param));\r\n  }, 1000);\r\n};\r\n```\r\n\r\n## Redux Saga\r\nRedux Saga is an alternative middleware for handling side effects using generator functions. It provides more advanced control over asynchronous operations.\r\n\r\n## Best Practices\r\n- Keep actions pure and side-effect free\r\n- Use middleware for async operations\r\n- Structure your reducers properly\r\n- Use selector functions to access state"
+    },
+    {
+        "id": 10,
+        "slug": "understanding-react-hooks",
+        "title": "Understanding React Hooks",
+        "date": "2026-03-06",
+        "summary": "Master React Hooks to write functional components with state and side effects. This guide covers useState, useEffect, useContext, and custom hooks.",
+        "imageUrl": "",
+        "content": "# React Hooks Guide\r\n\r\nReact Hooks allow you to use state and other React features without writing a class component. They are functions that let you \"hook into\" React state and lifecycle features from functional components.\r\n\r\n## Common Hooks\r\n\r\n### useState\r\nuseState is the most basic Hook. It lets you add state to functional components.\r\n\r\n### useEffect\r\nuseEffect is used for side effects in functional components. It runs after the component renders.\r\n\r\n### useContext\r\nuseContext allows you to subscribe to React context without introducing nesting.\r\n\r\n### useReducer\r\nuseReducer is a more complex alternative to useState for managing complex state logic.\r\n\r\n## Best Practices\r\n- Only use Hooks at the top level\r\n- Only use Hooks from React function components\r\n- Use the ESLint plugin to enforce these rules"
     }
 ];
