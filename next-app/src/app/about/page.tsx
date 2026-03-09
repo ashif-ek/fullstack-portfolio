@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { profile, about, skills, tools, certificates } from '../../data/mockData';
 import { Skill, Tool, Certificate } from '../../types';
 import { Award, Code, GraduationCap, Laptop, Sparkles, User } from 'lucide-react';
+import Api from '../../lib/api';
 
 export const metadata: Metadata = {
     title: 'About Ashif EK | Full-Stack Engineer & Software Architect',
@@ -13,8 +14,30 @@ export const metadata: Metadata = {
     },
 };
 
-export default function AboutPage() {
-    const mainAbout = about[0];
+export default async function AboutPage() {
+    // Fetch data with revalidation (e.g., every 1 hour)
+    let liveAbout = about;
+    let liveSkills = skills;
+    let liveTools = tools;
+    let liveCertificates = certificates;
+
+    try {
+        const [aboutRes, skillsRes, toolsRes, certsRes] = await Promise.all([
+            Api.get('/about/'),
+            Api.get('/skills/'),
+            Api.get('/tools/'),
+            Api.get('/certificates/'),
+        ]);
+
+        if (aboutRes.data?.length > 0) liveAbout = aboutRes.data;
+        if (skillsRes.data?.length > 0) liveSkills = skillsRes.data;
+        if (toolsRes.data?.length > 0) liveTools = toolsRes.data;
+        if (certsRes.data?.length > 0) liveCertificates = certsRes.data;
+    } catch (error) {
+        console.error("Failed to fetch live about data, using mock fallback:", error);
+    }
+
+    const mainAbout = liveAbout[0] || about[0];
 
     const breadcrumbJsonLd = {
         "@context": "https://schema.org",
@@ -77,7 +100,7 @@ export default function AboutPage() {
                             <h2 className="text-xl font-bold uppercase tracking-widest text-academic-text/80">Core Expertise</h2>
                         </div>
                         <div className="flex flex-wrap gap-3">
-                            {skills.map((skill: Skill) => (
+                            {liveSkills.map((skill: Skill) => (
                                 <span
                                     key={skill.id}
                                     className="px-4 py-2 rounded-lg bg-academic-primary/5 border border-academic-primary/10 text-academic-text/70 text-sm hover:border-academic-primary/30 transition-colors"
@@ -94,7 +117,7 @@ export default function AboutPage() {
                             <h2 className="text-xl font-bold uppercase tracking-widest text-academic-text/80">Modern Stack</h2>
                         </div>
                         <div className="flex flex-wrap gap-3">
-                            {tools.map((tool: Tool) => (
+                            {liveTools.map((tool: Tool) => (
                                 <span
                                     key={tool.id}
                                     className="px-4 py-2 rounded-lg bg-academic-primary/5 border border-academic-primary/10 text-academic-text/70 text-sm hover:border-academic-primary/30 transition-colors"
@@ -112,7 +135,7 @@ export default function AboutPage() {
                         <h2 className="text-2xl font-bold uppercase tracking-widest">Recognitions</h2>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {certificates.map((cert: Certificate) => (
+                        {liveCertificates.map((cert: Certificate) => (
                             <div
                                 key={cert.id}
                                 className="p-6 rounded-2xl bg-academic-paper border border-academic-border shadow-academic hover:shadow-paper transition-all flex gap-4"

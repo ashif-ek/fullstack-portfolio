@@ -12,16 +12,14 @@ export const useProjects = () => {
     const query = useQuery({
         queryKey: ['projects'],
         queryFn: fetchProjects,
-        staleTime: 0,
+        staleTime: 1000 * 60 * 5, // 5 minutes
     });
 
-    // Robust Fallback:
-    // If API completely fails (e.g. connection refused), useQuery might return undefined data 
-    // if we don't handle it. But placeholderData keeps the data visible while loading.
-    // If isError is true (after retries), we explicitly return MOCK_PROJECTS to ensure "Demo Mode" persistence.
-    if (query.isError) {
-        return { ...query, data: MOCK_PROJECTS };
-    }
+    // If there's an error and no data, only then fallback to MOCK_PROJECTS for resilience
+    const displayData = query.data || (query.isError ? MOCK_PROJECTS : []);
 
-    return query;
+    return {
+        ...query,
+        data: displayData
+    };
 };

@@ -6,20 +6,35 @@ import ReactMarkdown from 'react-markdown';
 import { ArrowLeft, Github, Globe, Tag } from 'lucide-react';
 import Link from 'next/link';
 
+import Api from '../../../lib/api';
+
 interface ProjectPageProps {
     params: {
         slug: string;
     };
 }
 
+// Helper to fetch live projects or fallback to mock
+async function getLiveProjects(): Promise<Project[]> {
+    try {
+        const { data } = await Api.get('/projects/');
+        if (data && data.length > 0) return data;
+    } catch (error) {
+        console.error("Failed to fetch live projects:", error);
+    }
+    return projects;
+}
+
 export async function generateStaticParams() {
-    return projects.map((project: Project) => ({
+    const allProjects = await getLiveProjects();
+    return allProjects.map((project: Project) => ({
         slug: project.slug,
     }));
 }
 
 export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
-    const project = projects.find((p: Project) => p.slug === params.slug);
+    const allProjects = await getLiveProjects();
+    const project = allProjects.find((p: Project) => p.slug === params.slug);
     if (!project) return {};
 
     return {
@@ -29,7 +44,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
             title: `${project.title} | Ashif E.K Project`,
             description: project.description,
             type: 'article',
-            images: [{ url: `/projects/${project.image}` }],
+            images: [{ url: project.image.startsWith('http') ? project.image : `/projects/${project.image}` }],
         },
         twitter: {
             card: 'summary_large_image',
@@ -39,8 +54,9 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
     };
 }
 
-export default function ProjectPage({ params }: ProjectPageProps) {
-    const project = projects.find((p: Project) => p.slug === params.slug);
+export default async function ProjectPage({ params }: ProjectPageProps) {
+    const allProjects = await getLiveProjects();
+    const project = allProjects.find((p: Project) => p.slug === params.slug);
 
     if (!project) {
         notFound();
@@ -152,7 +168,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                 <div className="prose prose-invert prose-academic max-w-none">
                     <div className="rounded-2xl overflow-hidden border border-academic-primary/20 aspect-video mb-12 shadow-2xl">
                         <img
-                            src={`/projects/${project.image}`}
+                            src={project.image.startsWith('http') ? project.image : `/projects/${project.image}`}
                             alt={project.title}
                             className="w-full h-full object-cover"
                             loading="eager"

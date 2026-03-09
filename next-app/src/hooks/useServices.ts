@@ -12,9 +12,9 @@ export const useServices = () => {
     const query = useQuery({
         queryKey: ['services'],
         queryFn: fetchServices,
-        staleTime: 0,
+        staleTime: 1000 * 60 * 5,
     });
 
-    if (query.isError) return { ...query, data: MOCK_SERVICES };
-    return query;
+    const displayData = query.data || (query.isError ? MOCK_SERVICES : []);
+    return { ...query, data: displayData };
 };

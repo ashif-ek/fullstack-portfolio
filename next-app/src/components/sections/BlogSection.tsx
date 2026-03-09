@@ -1,18 +1,12 @@
 'use client';
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
-import { blogs as mockBlogs } from '../../data/mockData';
-import Api from '../../lib/api';
+
+import { useBlogs } from "../../hooks/useBlogs";
 
 const BlogSection = () => {
-  const [allPosts, setAllPosts] = useState(mockBlogs);
+  const { data: allPosts, isLoading } = useBlogs();
   const [showAll, setShowAll] = useState(false);
-
-  useEffect(() => {
-    Api.get('/blogs/?_sort=date&_order=desc')
-      .then(res => setAllPosts(res.data))
-      .catch(err => console.error("Failed to fetch fresh blogs", err));
-  }, []);
 
   const postsToShow = showAll ? allPosts : allPosts.slice(0, 3);
 
@@ -72,18 +66,20 @@ const BlogSection = () => {
           ))}
         </div>
 
-        {allPosts.length > 3 && (
-          <div className="text-center mt-20">
-            <button
-              onClick={() => setShowAll(!showAll)}
-              className="text-xs uppercase tracking-[0.3em] font-bold text-academic-muted hover:text-academic-accent transition-colors border border-academic-border px-8 py-3 hover:bg-academic-paper"
-            >
-              {showAll ? "Collapse Register" : `Expand Archives (${allPosts.length})`}
-            </button>
-          </div>
-        )}
-      </div>
-    </section>
+        {
+          allPosts.length > 3 && (
+            <div className="text-center mt-20">
+              <button
+                onClick={() => setShowAll(!showAll)}
+                className="text-xs uppercase tracking-[0.3em] font-bold text-academic-muted hover:text-academic-accent transition-colors border border-academic-border px-8 py-3 hover:bg-academic-paper"
+              >
+                {showAll ? "Collapse Register" : `Expand Archives (${allPosts.length})`}
+              </button>
+            </div>
+          )
+        }
+      </div >
+    </section >
   );
 };
 

@@ -17,20 +17,20 @@ export const useSkills = () => {
     const query = useQuery({
         queryKey: ['skills'],
         queryFn: fetchSkills,
-        staleTime: 0,
+        staleTime: 1000 * 60 * 5,
     });
 
-    if (query.isError) return { ...query, data: MOCK_SKILLS };
-    return query;
+    const displayData = query.data || (query.isError ? MOCK_SKILLS : []);
+    return { ...query, data: displayData };
 };
 
 export const useTools = () => {
     const query = useQuery({
         queryKey: ['tools'],
         queryFn: fetchTools,
-        staleTime: 0,
+        staleTime: 1000 * 60 * 5,
     });
 
-    if (query.isError) return { ...query, data: MOCK_TOOLS };
-    return query;
+    const displayData = query.data || (query.isError ? MOCK_TOOLS : []);
+    return { ...query, data: displayData };
 };

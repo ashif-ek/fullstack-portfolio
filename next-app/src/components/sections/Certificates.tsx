@@ -14,19 +14,13 @@ const certificateImages: Record<string, string> = {
   "5": "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&q=80&w=800",
 };
 
+import { useCertificates } from "../../hooks/useCertificates";
+
 const Certificates = () => {
-  const [certificates, setCertificates] = useState<Certificate[]>(mockCertificates);
+  const { data: certificates, isLoading } = useCertificates();
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const sectionRef = useRef<HTMLElement | null>(null);
-
-  useEffect(() => {
-    Api.get('/certificates/')
-      .then(res => {
-        setCertificates(res.data);
-      })
-      .catch(err => console.error("Failed to fetch fresh certificates", err));
-  }, []);
 
   const certificateOrder = ["bca", "bridgeon", "regional", "ccsa"];
 

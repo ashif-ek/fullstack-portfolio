@@ -31,19 +31,11 @@ const AcademicStat = React.memo(
 /* ===========================
    About Component
    =========================== */
+import { useProfile } from "../../hooks/useProfile";
 
 const About = () => {
   const [activeTab, setActiveTab] = useState<string>("biography");
-  const [aboutData, setAboutData] = useState<AboutData>(mockAbout[0]);
-
-  /* Fetch Live Data */
-  useEffect(() => {
-    Api.get<AboutData[]>("/profile/")
-      .then((res) => {
-        if (res.data && res.data.length > 0) setAboutData(res.data[0]);
-      })
-      .catch((err) => console.error("Failed to fetch fresh about data", err));
-  }, []);
+  const { about: aboutData, isLoading } = useProfile();
 
   /* Tabs Content */
   const tabs = useMemo(
@@ -210,11 +202,10 @@ const About = () => {
                 <button
                   key={tabKey}
                   onClick={() => setActiveTab(tabKey)}
-                  className={`px-6 md:px-8 py-3 md:py-4 text-[10px] uppercase tracking-[0.2em] font-bold transition-all relative ${
-                    activeTab === tabKey
-                      ? "text-academic-primary"
-                      : "text-academic-muted hover:text-academic-primary"
-                  }`}
+                  className={`px-6 md:px-8 py-3 md:py-4 text-[10px] uppercase tracking-[0.2em] font-bold transition-all relative ${activeTab === tabKey
+                    ? "text-academic-primary"
+                    : "text-academic-muted hover:text-academic-primary"
+                    }`}
                 >
                   {tabs[tabKey as keyof typeof tabs].title}
 

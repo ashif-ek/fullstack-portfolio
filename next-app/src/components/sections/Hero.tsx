@@ -8,6 +8,8 @@ import profileFallbackImage from '../../assets/profile.jpg';
 import Api, { resolveAssetUrl } from '../../lib/api';
 import { Profile, SocialLink } from '../../types';
 
+import { useProfile } from '../../hooks/useProfile';
+
 const iconMap: Record<string, React.ElementType> = {
   Github,
   LinkedIn: Linkedin,
@@ -48,25 +50,7 @@ const EmailLink = ({ email }: { email: string }) => (
 );
 
 const Hero = () => {
-  const [profile, setProfile] = useState<Profile>(profileData);
-
-  useEffect(() => {
-    let isMounted = true;
-
-    Api.get<Profile[]>('/profile/')
-      .then(res => {
-        if (!isMounted || !res.data || res.data.length === 0) {
-          return;
-        }
-
-        setProfile(res.data[0]);
-      })
-      .catch(err => console.error("Failed to fetch fresh profile data:", err));
-
-    return () => {
-      isMounted = false;
-    };
-  }, []);
+  const { profile, isLoading } = useProfile();
 
   const { name, title, description, email, socialLinks, avatar } = profile;
   const avatarSrc = useMemo(
