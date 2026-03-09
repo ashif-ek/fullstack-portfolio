@@ -1,21 +1,20 @@
 import axios from "axios";
 
 const DEFAULT_API_BASE_URL = "http://localhost:8000";
-const REQUEST_TIMEOUT_MS = 10000;
+const REQUEST_TIMEOUT_MS = 60000; // Increased to handle Render cold starts
 const ABSOLUTE_URL_PATTERN = /^[a-z][a-z\d+\-.]*:/i;
 
 const stripTrailingSlashes = (value: string): string => value.replace(/\/+$/, "");
 
-let defaultApiUrl = "http://localhost:8000";
-if (typeof window !== "undefined") {
-  defaultApiUrl = `${window.location.protocol}//${window.location.hostname}:8000`;
+const configuredBaseUrl = process.env.NEXT_PUBLIC_API_URL;
+
+if (!configuredBaseUrl) {
+  throw new Error(
+    "NEXT_PUBLIC_API_URL is not defined. Configure it in environment variables."
+  );
 }
 
-const configuredBaseUrl = process.env.NEXT_PUBLIC_API_URL?.trim();
-
-export const API_BASE_URL = stripTrailingSlashes(
-  configuredBaseUrl || defaultApiUrl
-);
+export const API_BASE_URL = configuredBaseUrl.replace(/\/+$/, "");
 
 // Resolve backend-served assets from either absolute URLs, absolute paths, or plain filenames.
 export const resolveAssetUrl = (assetPath?: string | null): string => {
