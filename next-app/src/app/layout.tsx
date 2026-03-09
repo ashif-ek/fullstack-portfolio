@@ -6,9 +6,9 @@ import StatusBadge from '../components/ui/StatusBadge';
 import VisitorTracker from '../components/ui/VisitorTracker';
 
 export const metadata: Metadata = {
-  title: 'Ashif E.K | Digital Architect & Software Engineer | React & Django Portfolio',
-  description: 'Ashif E.K – Digital Architect & Software Engineer specializing in React, Django, and modern web solutions. Explore projects, skills, and achievements.',
-  keywords: ['Ashif E.K', 'Portfolio', 'React', 'Django', 'Web Development', 'Software Engineer', 'Digital Architect'],
+  title: 'Ashif E.K | Full-Stack Engineer | React & Django Portfolio',
+  description: 'Ashif E.K – Full-Stack Engineer specializing in React, Django, and modern web solutions. Explore projects, skills, and achievements.',
+  keywords: ['Ashif E.K', 'Portfolio', 'React', 'Django', 'Web Development', 'Software Engineer', 'Full-Stack Engineer'],
   authors: [{ name: 'Ashif E.K' }],
   icons: {
     icon: '/favicon.png',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
 
     type: 'website',
-    title: 'Ashif E.K | Digital Architect & Software Engineer',
+    title: 'Ashif E.K | Full-Stack Engineer',
     description: "Explore Ashif E.K's portfolio – React & Django expert creating modern web solutions.",
     url: 'https://ashif-ek.vercel.app/',
     siteName: 'Ashif E.K Portfolio',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ashif E.K | Digital Architect & Software Engineer',
+    title: 'Ashif E.K | Full-Stack Engineer',
     description: 'Portfolio of Ashif E.K – React & Django expert creating modern web solutions.',
     images: ['https://ashif-ek.vercel.app/social-preview.png'],
   },
@@ -54,7 +54,7 @@ export default function RootLayout({
                   "@type": "Person",
                   "@id": "https://ashif-ek.vercel.app/#person",
                   "name": "Ashif E.K",
-                  "jobTitle": "Digital Architect & Software Engineer",
+                  "jobTitle": "Full-Stack Engineer",
                   "description": "I specialize in React, Django, Redux, javascript, html css tailwind to building secure, scalable, and high-performance applications that solve complex problems and deliver exceptional user experiences.",
                   "url": "https://ashif-ek.vercel.app/",
                   "image": "https://ashif-ek.vercel.app/profile.jpg",
@@ -76,7 +76,7 @@ export default function RootLayout({
                   "@id": "https://ashif-ek.vercel.app/#website",
                   "url": "https://ashif-ek.vercel.app/",
                   "name": "Ashif E.K Portfolio",
-                  "description": "Digital Architect & Software Engineer specializing in React, Django, and modern web solutions.",
+                  "description": "Full-Stack Engineer specializing in React, Django, and modern web solutions.",
                   "publisher": {
                     "@id": "https://ashif-ek.vercel.app/#person"
                   },
@@ -86,8 +86,8 @@ export default function RootLayout({
                   "@type": "ProfessionalService",
                   "@id": "https://ashif-ek.vercel.app/#service",
                   "url": "https://ashif-ek.vercel.app/",
-                  "name": "Ashif E.K - Digital Architect",
-                  "description": "Professional web development, architectural design, and software engineering services.",
+                  "name": "Ashif E.K - Full-Stack Engineer",
+                  "description": "Professional web development and software engineering services.",
                   "priceRange": "$$",
                   "image": "https://ashif-ek.vercel.app/profile.jpg",
                   "address": {
