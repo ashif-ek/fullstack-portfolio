@@ -21,8 +21,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   icons: {
-    icon: '/favicon.png',
-    apple: '/apple-touch-icon.png',
+    icon: '/globe.svg',
+    apple: '/globe.svg',
   },
   manifest: '/manifest.json',
   openGraph: {
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: 'Ashif E.K | Full-Stack Engineer',
     description: 'Expert React & Django developer building secure, scalable, and high-performance web applications.',
     siteName: 'Ashif E.K Portfolio',
-    images: [{ url: '/social-preview.png', width: 1200, height: 630, alt: 'Ashif E.K Portfolio' }],
+    images: [{ url: '/globe.svg', width: 1200, height: 630, alt: 'Ashif E.K Portfolio' }],
   },
   twitter: {
     card: 'summary_large_image',

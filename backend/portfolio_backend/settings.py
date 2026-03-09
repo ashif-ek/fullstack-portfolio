@@ -16,8 +16,10 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG", default=False, cast=bool)
 
-ALLOWED_HOSTS = ["*"]
-ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="").split(",")
+# ALLOWED_HOSTS logic: specific hosts from env, or wildcard for flexibility
+ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="*").split(",")
+if not ALLOWED_HOSTS or ALLOWED_HOSTS == [""]:
+    ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
