@@ -1,9 +1,0 @@
-[flake8]
-max-line-length = 120
-exclude = .git,__pycache__,docs/source/conf.py,old,build,dist,venv,*/migrations/*,staticfiles,media,sync_full_data.py,check_certs.py,check_data.py,debug_*.py,dump_certs.py,core/mock_seed_data.py
-ignore = E203, W503, E402, W391, F401
-max-complexity = 20
-per-file-ignores =
-    **/__init__.py: F401
-    manage.py: E402
-    portfolio_backend/settings.py: E402

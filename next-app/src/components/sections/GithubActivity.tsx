@@ -1,6 +1,6 @@
 'use client';
 
-import { GitHubCalendar } from 'react-github-calendar';
+import GitHubCalendar from 'react-github-calendar';
 import { motion } from 'framer-motion';
 
 export default function GithubActivity() {
