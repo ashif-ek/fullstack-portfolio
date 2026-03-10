@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "corsheaders",
     # Local
     "core",
+    "drf_spectacular",
 ]
 
 MIDDLEWARE = [
@@ -131,11 +132,19 @@ else:
     ).split(",")
 
 
-# REST Framework Configuration (Optional but good practice)
+# REST Framework Configuration
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.AllowAny",  # Open for now as per dev needs, secure for prod
-    ]
+        "rest_framework.permissions.AllowAny",
+    ],
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Portfolio API",
+    "DESCRIPTION": "API documentation for the Portfolio backend.",
+    "VERSION": "1.0.0",
+    "SERVE_INCLUDE_SCHEMA": False,
 }
 
 
