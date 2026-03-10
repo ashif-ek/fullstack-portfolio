@@ -14,6 +14,7 @@ from .views import (
     LoginView,
 )
 from .views.github_views import GitHubRepoViewSet
+from .views.case_study_views import ProjectCaseStudyViewSet
 from .views.analytics_views import (
     VisitorCountView,
     VisitorIncrementView,
@@ -33,6 +34,7 @@ router.register(r"messages", MessageViewSet)
 router.register(r"services", ServiceViewSet)
 router.register(r"tools", ToolViewSet)
 router.register(r"github-repos", GitHubRepoViewSet, basename="github-repo")
+router.register(r"case-studies", ProjectCaseStudyViewSet, basename="case-study")
 
 urlpatterns = [
     path("", include(router.urls)),
