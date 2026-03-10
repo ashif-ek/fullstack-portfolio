@@ -3,6 +3,7 @@ from .profile import Profile, SocialLink, Message
 from .portfolio import Skill, Project, Certificate, Service, Tool
 from .notes import BlogPost
 from .analytics import VisitorCount, PortfolioAnalytics
+from .github import GitHubRepo
 
 __all__ = [
     "SiteSettings",
@@ -17,4 +18,5 @@ __all__ = [
     "Tool",
     "VisitorCount",
     "PortfolioAnalytics",
+    "GitHubRepo",
 ]

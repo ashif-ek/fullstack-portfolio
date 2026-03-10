@@ -1,10 +1,21 @@
 import os
 import dj_database_url
-from dotenv import load_dotenv
 from pathlib import Path
-from decouple import config
+from dotenv import load_dotenv
 
 load_dotenv()
+
+
+def config(key, default=None, cast=None):
+    value = os.getenv(key, default)
+    if cast and value is not None:
+        if cast == bool:
+            return value.lower() in ("true", "1", "yes")
+        try:
+            return cast(value)
+        except (ValueError, TypeError):
+            return default
+    return value if value is not None else default
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -167,3 +178,7 @@ CLOUDINARY_STORAGE = {
 DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
+# GitHub Integration
+GITHUB_USERNAME = config("GITHUB_USERNAME", default="")
+GITHUB_TOKEN = config("GITHUB_TOKEN", default="")
