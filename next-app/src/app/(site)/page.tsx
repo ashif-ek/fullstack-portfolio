@@ -13,6 +13,8 @@ const Certificates = dynamic(() => import("../../components/sections/Certificate
 const Contacts = dynamic(() => import("../../components/sections/Contacts"), { ssr: false });
 const BlogSection = dynamic(() => import("../../components/sections/BlogSection"), { ssr: false });
 const Services = dynamic(() => import("../../components/sections/Services"), { ssr: false });
+const GithubActivity = dynamic(() => import("../../components/sections/GithubActivity"), { ssr: false });
+const BuildJourney = dynamic(() => import("../../components/sections/BuildJourney"), { ssr: false });
 
 interface Settings {
   showBlog: boolean;
@@ -103,6 +105,8 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <GithubActivity />
+      <BuildJourney />
       {sectionsReady ? (
         <>
           <About />
