@@ -1,0 +1,56 @@
+ΓÜá Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of D:\typescript-portfolio\package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * D:\typescript-portfolio\next-app\package-lock.json
+
+Γû▓ Next.js 16.1.6 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+
+> Build error occurred
+Error: Turbopack build failed with 2 errors:
+./next-app/src/components/layout/Footer.tsx:1:27
+Ecmascript file had an error
+> 1 | import React, { useState, useEffect } from 'react';
+    |                           ^^^^^^^^^
+  2 | import Link from 'next/link';
+  3 | import { useVisitors } from '../../hooks/useVisitors';
+  4 |
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+
+
+Import trace:
+  Server Component:
+    ./next-app/src/components/layout/Footer.tsx
+    ./next-app/src/app/(site)/layout.tsx
+
+
+./next-app/src/components/layout/Footer.tsx:1:17
+Ecmascript file had an error
+> 1 | import React, { useState, useEffect } from 'react';
+    |                 ^^^^^^^^
+  2 | import Link from 'next/link';
+  3 | import { useVisitors } from '../../hooks/useVisitors';
+  4 |
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+
+
+Import trace:
+  Server Component:
+    ./next-app/src/components/layout/Footer.tsx
+    ./next-app/src/app/(site)/layout.tsx
+
+
+    at <unknown> (./next-app/src/components/layout/Footer.tsx:1:27)
+    at <unknown> (./next-app/src/components/layout/Footer.tsx:1:17)

@@ -1,5 +1,5 @@
 
 > next-app@0.1.0 lint
-> next lint src
+> next lint ./src
 
 Invalid project directory provided, no such directory: D:\typescript-portfolio\next-app\lint

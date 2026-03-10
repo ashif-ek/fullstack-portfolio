@@ -8,7 +8,8 @@ export const MOCK_PROJECTS: Project[] = [
         "tags": ["Next.js", "TypeScript", "Tailwind CSS", "Redux"],
         "image": "project1.jpg",
         "link": "https://noirel-store.vercel.app/",
-        "github": "https://github.com/ashif-ek/noirel-ecommerce"
+        "github": "https://github.com/ashif-ek/noirel-ecommerce",
+        "slug": "noirel-luxury-ecommerce"
     },
     {
         "id": "2",
@@ -17,7 +18,8 @@ export const MOCK_PROJECTS: Project[] = [
         "tags": ["Django", "Flutter", "PostgreSQL", "REST API"],
         "image": "project2.jpg",
         "link": "https://github.com/ashif-ek/civic-connect",
-        "github": "https://github.com/ashif-ek/civic-connect"
+        "github": "https://github.com/ashif-ek/civic-connect",
+        "slug": "civic-connect-governance"
     },
     {
         "id": "3",
@@ -26,7 +28,8 @@ export const MOCK_PROJECTS: Project[] = [
         "tags": ["Django", "HTMX", "PostgreSQL", "Bootstrap"],
         "image": "project3.jpg",
         "link": "https://github.com/ashif-ek/django-blog",
-        "github": "https://github.com/ashif-ek/django-blog"
+        "github": "https://github.com/ashif-ek/django-blog",
+        "slug": "minimalist-cms-blog"
     }
 ];
 

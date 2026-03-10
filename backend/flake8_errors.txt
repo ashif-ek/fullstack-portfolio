@@ -1,0 +1,59 @@
+.\check_certs.py:8:1: E402 module level import not at top of file
+.\check_data.py:8:1: E402 module level import not at top of file
+.\core\management\__init__.py:1:1: W391 blank line at end of file
+.\core\management\commands\__init__.py:1:1: W391 blank line at end of file
+.\core\mock_seed_data.py:58:121: E501 line too long (126 > 120 characters)
+.\core\mock_seed_data.py:66:121: E501 line too long (125 > 120 characters)
+.\core\mock_seed_data.py:177:121: E501 line too long (124 > 120 characters)
+.\core\models\__init__.py:4:1: F401 '.notes.BlogPost' imported but unused
+.\core\serializers\__init__.py:1:1: F401 '.settings.SiteSettingsSerializer' imported but unused
+.\core\serializers\__init__.py:2:1: F401 '.profile.ProfileSerializer' imported but unused
+.\core\serializers\__init__.py:2:1: F401 '.profile.MessageSerializer' imported but unused
+.\core\serializers\__init__.py:3:1: F401 '.portfolio.ProjectSerializer' imported but unused
+.\core\serializers\__init__.py:3:1: F401 '.portfolio.SkillSerializer' imported but unused
+.\core\serializers\__init__.py:3:1: F401 '.portfolio.CertificateSerializer' imported but unused
+.\core\serializers\__init__.py:3:1: F401 '.portfolio.ServiceSerializer' imported but unused
+.\core\serializers\__init__.py:3:1: F401 '.portfolio.ToolSerializer' imported but unused
+.\core\serializers\__init__.py:10:1: F401 '.notes.BlogPostSerializer' imported but unused
+.\core\tests.py:1:1: F401 'django.test.TestCase' imported but unused
+.\core\views\__init__.py:1:1: F401 '.settings_views.SiteSettingsViewSet' imported but unused
+.\core\views\__init__.py:3:1: F401 '.profile_views.ProfileViewSet' imported but unused
+.\core\views\__init__.py:3:1: F401 '.profile_views.MessageViewSet' imported but unused
+.\core\views\__init__.py:4:1: F401 '.portfolio_views.SkillViewSet' imported but unused
+.\core\views\__init__.py:4:1: F401 '.portfolio_views.ProjectViewSet' imported but unused
+.\core\views\__init__.py:4:1: F401 '.portfolio_views.CertificateViewSet' imported but unused
+.\core\views\__init__.py:4:1: F401 '.portfolio_views.ServiceViewSet' imported but unused
+.\core\views\__init__.py:4:1: F401 '.portfolio_views.ToolViewSet' imported but unused
+.\core\views\__init__.py:11:1: F401 '.notes_views.BlogPostViewSet' imported but unused
+.\core\views\__init__.py:12:1: F401 '.auth_views.LoginView' imported but unused
+.\core\views\__init__.py:13:1: F401 '.upload_views.UploadView' imported but unused
+.\debug_endpoints.py:7:1: E402 module level import not at top of file
+.\debug_endpoints.py:18:5: F841 local variable 'e' is assigned to but never used
+.\debug_options.py:7:1: E402 module level import not at top of file
+.\debug_options.py:19:1: F841 local variable 'e' is assigned to but never used
+.\debug_proper_host.py:7:1: E402 module level import not at top of file
+.\debug_proper_host.py:16:1: F841 local variable 'e' is assigned to but never used
+.\debug_request.py:7:1: E402 module level import not at top of file
+.\debug_request.py:16:1: F841 local variable 'e' is assigned to but never used
+.\debug_traceback.py:8:1: E402 module level import not at top of file
+.\debug_view_direct.py:7:1: E402 module level import not at top of file
+.\debug_view_direct.py:8:1: E402 module level import not at top of file
+.\debug_view_direct.py:16:1: F841 local variable 'e' is assigned to but never used
+.\dump_certs.py:8:1: E402 module level import not at top of file
+.\dump_certs.py:9:1: E402 module level import not at top of file
+.\sync_full_data.py:9:1: E402 module level import not at top of file
+.\sync_full_data.py:29:121: E501 line too long (224 > 120 characters)
+.\sync_full_data.py:31:121: E501 line too long (327 > 120 characters)
+.\sync_full_data.py:32:121: E501 line too long (385 > 120 characters)
+.\sync_full_data.py:33:121: E501 line too long (291 > 120 characters)
+.\sync_full_data.py:56:121: E501 line too long (185 > 120 characters)
+.\sync_full_data.py:61:121: E501 line too long (164 > 120 characters)
+.\sync_full_data.py:66:121: E501 line too long (183 > 120 characters)
+.\sync_full_data.py:71:121: E501 line too long (162 > 120 characters)
+.\sync_full_data.py:96:121: E501 line too long (130 > 120 characters)
+.\sync_full_data.py:104:121: E501 line too long (129 > 120 characters)
+.\sync_full_data.py:154:121: E501 line too long (200 > 120 characters)
+.\sync_full_data.py:162:121: E501 line too long (256 > 120 characters)
+.\sync_full_data.py:170:121: E501 line too long (214 > 120 characters)
+.\sync_full_data.py:214:121: E501 line too long (130 > 120 characters)
+.\sync_full_data.py:221:121: E501 line too long (128 > 120 characters)

@@ -1,0 +1,6 @@
+portfolio_backend\settings.py:95: error: Argument 1 to "parse" has incompatible type "str | None"; expected "str"  [arg-type]
+core\management\commands\sync_github.py:1: error: Library stubs not installed for "requests"  [import-untyped]
+core\management\commands\sync_github.py:1: note: Hint: "python3 -m pip install types-requests"
+core\management\commands\sync_github.py:1: note: (or run "mypy --install-types" to install all missing stub packages)
+core\management\commands\sync_github.py:1: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+Found 2 errors in 2 files (checked 62 source files)

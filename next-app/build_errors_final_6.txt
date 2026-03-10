@@ -1,0 +1,48 @@
+ΓÜá Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of D:\typescript-portfolio\package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * D:\typescript-portfolio\next-app\package-lock.json
+
+Γû▓ Next.js 16.1.6 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+Γ£ô Compiled successfully in 10.0s
+  Running TypeScript ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/8) ...
+  Generating static pages using 7 workers (2/8) 
+  Generating static pages using 7 workers (4/8) 
+  Generating static pages using 7 workers (6/8) 
+Failed to fetch live about data, using mock fallback: Error [AxiosError]: Request failed with status code 404
+    at aJ (D:\typescript-portfolio\next-app\.next\server\chunks\ssr\next-app_f152da26._.js:1:72171)
+    at BrotliDecompress.<anonymous> (D:\typescript-portfolio\next-app\.next\server\chunks\ssr\next-app_f152da26._.js:3:12084)
+    at bQ.request (D:\typescript-portfolio\next-app\.next\server\chunks\ssr\next-app_f152da26._.js:3:24620)
+    at async l (D:\typescript-portfolio\next-app\.next\server\chunks\ssr\[root-of-the-server]__9fff43a1._.js:1:1918) {
+  isAxiosError: true,
+  code: 'ERR_BAD_REQUEST',
+  config: [Object],
+  request: [ClientRequest],
+  response: [Object],
+  status: 404
+}
+Γ£ô Generating static pages using 7 workers (8/8) in 6.0s
+  Finalizing page optimization ...
+
+Route (app)
+Γöî Γùï /
+Γö£ Γùï /_not-found
+Γö£ Γùï /about
+Γö£ Γùï /admin
+Γö£ ╞Æ /blog/[slug]
+Γö£ ΓùÅ /projects/[slug]
+Γö£ Γùï /robots.txt
+Γöö Γùï /sitemap.xml
+
+
+Γùï  (Static)   prerendered as static content
+ΓùÅ  (SSG)      prerendered as static HTML (uses generateStaticParams)
+╞Æ  (Dynamic)  server-rendered on demand
+

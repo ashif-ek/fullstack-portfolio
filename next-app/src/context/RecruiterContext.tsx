@@ -41,7 +41,11 @@ export function RecruiterProvider({ children }: { children: React.ReactNode }) {
 export function useRecruiterMode() {
     const context = useContext(RecruiterContext);
     if (context === undefined) {
-        throw new Error('useRecruiterMode must be used within a RecruiterProvider');
+        // Return a default state instead of throwing to prevent build failures in isolated Page renders (like not-found)
+        return {
+            isRecruiterMode: false,
+            toggleRecruiterMode: () => { }
+        };
     }
     return context;
 }

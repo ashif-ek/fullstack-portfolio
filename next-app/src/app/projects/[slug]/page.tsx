@@ -27,9 +27,11 @@ async function getLiveProjects(): Promise<Project[]> {
 
 export async function generateStaticParams() {
     const allProjects = await getLiveProjects();
-    return allProjects.map((project: Project) => ({
-        slug: project.slug,
-    }));
+    return allProjects
+        .filter(p => p && p.slug)
+        .map((project: Project) => ({
+            slug: project.slug,
+        }));
 }
 
 export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
