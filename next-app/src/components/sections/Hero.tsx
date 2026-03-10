@@ -49,7 +49,7 @@ const EmailLink = ({ email }: { email: string }) => (
   </div>
 );
 
-const Hero = () => {
+const Hero = ({ condensed = false }: { condensed?: boolean }) => {
   const { profile, isLoading } = useProfile();
 
   const { name, title, description, email, socialLinks, avatar } = profile;
@@ -59,7 +59,7 @@ const Hero = () => {
   );
 
   return (
-    <section id="hero" className="relative min-h-[100svh] flex items-center justify-center bg-academic-bg text-academic-text font-sans">
+    <section id="hero" className={`relative flex items-center justify-center bg-academic-bg text-academic-text font-sans transition-all duration-500 ${condensed ? 'min-h-[60svh] py-12' : 'min-h-[100svh]'}`}>
 
       <SocialLinks links={socialLinks} />
       <EmailLink email={email} />
@@ -95,7 +95,7 @@ const Hero = () => {
         </div>
 
         <div>
-          <p className="max-w-xl mt-6 text-base text-academic-muted leading-relaxed">
+          <p className={`max-w-xl mt-6 text-base text-academic-muted leading-relaxed transition-all duration-500 ${condensed ? 'line-clamp-2 text-sm' : ''}`}>
             {description}
           </p>
         </div>

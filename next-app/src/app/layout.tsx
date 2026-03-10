@@ -1,9 +1,12 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { AuthProvider } from '../context/AuthContext';
+import { RecruiterProvider } from '../context/RecruiterContext';
 import QueryProvider from '../providers/QueryProvider';
+import { ThemeProvider } from '../providers/ThemeProvider';
 import StatusBadge from '../components/ui/StatusBadge';
 import VisitorTracker from '../components/ui/VisitorTracker';
+import RecruiterBanner from '../components/ui/RecruiterBanner';
 
 const baseUrl = 'https://www.ashifek.in';
 
@@ -119,13 +122,18 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-sans antialiased text-academic-text bg-academic-bg selection:bg-academic-primary/20 selection:text-academic-primary">
+      <body className="font-sans antialiased text-academic-text bg-academic-bg selection:bg-academic-primary/20 selection:text-academic-primary transition-colors duration-300">
         <QueryProvider>
-          <AuthProvider>
-            <VisitorTracker />
-            {children}
-            <StatusBadge />
-          </AuthProvider>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <RecruiterProvider>
+              <RecruiterBanner />
+              <AuthProvider>
+                <VisitorTracker />
+                {children}
+                <StatusBadge />
+              </AuthProvider>
+            </RecruiterProvider>
+          </ThemeProvider>
         </QueryProvider>
       </body>
     </html>

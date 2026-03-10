@@ -4,6 +4,9 @@ import { useState, useEffect } from 'react';
 import { API_BASE_URL } from '../../lib/api';
 import Link from 'next/link';
 import { useAuth } from '../../context/AuthContext';
+import { useRecruiterMode } from '../../context/RecruiterContext';
+import { ThemeToggle } from '../ui/ThemeToggle';
+import { Briefcase } from 'lucide-react';
 
 const UserIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg {...props} xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -16,6 +19,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { isAdmin } = useAuth();
+  const { isRecruiterMode, toggleRecruiterMode } = useRecruiterMode();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -84,6 +88,20 @@ const Header = () => {
             >
               <UserIcon />
             </a>
+            <button
+              onClick={toggleRecruiterMode}
+              className={`flex items-center gap-2 px-3 py-1.5 rounded-full border transition-all duration-300 ${isRecruiterMode
+                  ? 'bg-academic-accent/10 border-academic-accent text-academic-accent shadow-sm'
+                  : 'bg-academic-paper border-academic-border text-academic-muted hover:border-academic-primary hover:text-academic-primary'
+                }`}
+              aria-label="Toggle Recruiter Mode"
+            >
+              <Briefcase size={14} className={isRecruiterMode ? 'animate-pulse' : ''} />
+              <span className="text-[10px] font-black uppercase tracking-widest hidden lg:inline">
+                {isRecruiterMode ? 'Recruiter Mode' : 'Standard View'}
+              </span>
+            </button>
+            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
@@ -134,6 +152,9 @@ const Header = () => {
               >
                 <UserIcon /> {isAdmin ? 'Dashboard' : 'Admin Login'}
               </a>
+              <div className="mt-4">
+                <ThemeToggle />
+              </div>
             </div>
           </div>
         </div>

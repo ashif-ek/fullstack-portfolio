@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { useAuth } from "../../context/AuthContext";
+import { useRecruiterMode } from "../../context/RecruiterContext";
 import Hero from "../../components/sections/Hero";
 import Api, { API_BASE_URL } from "../../lib/api";
 
@@ -15,6 +16,7 @@ const BlogSection = dynamic(() => import("../../components/sections/BlogSection"
 const Services = dynamic(() => import("../../components/sections/Services"), { ssr: false });
 const GithubActivity = dynamic(() => import("../../components/sections/GithubActivity"), { ssr: false });
 const BuildJourney = dynamic(() => import("../../components/sections/BuildJourney"), { ssr: false });
+const RecruiterCTA = dynamic(() => import("../../components/sections/RecruiterCTA"), { ssr: false });
 
 interface Settings {
   showBlog: boolean;
@@ -80,6 +82,7 @@ export default function Home() {
   }, [sectionsReady]);
 
   const { isAdmin } = useAuth();
+  const { isRecruiterMode } = useRecruiterMode();
 
   if (settings.maintenanceMode && !isAdmin) {
     return (
@@ -104,17 +107,18 @@ export default function Home() {
 
   return (
     <>
-      <Hero />
+      <Hero condensed={isRecruiterMode} />
       <GithubActivity />
-      <BuildJourney />
+      {!isRecruiterMode && <BuildJourney />}
+      <RecruiterCTA />
       {sectionsReady ? (
         <>
-          <About />
-          <Services />
-          {settings.showProjects && <Projects />}
-          {settings.showSkills && <Skills />}
-          {settings.showBlog && <BlogSection />}
-          {settings.showCertificates && <Certificates />}
+          {!isRecruiterMode && <About />}
+          {!isRecruiterMode && <Services />}
+          {settings.showProjects && <Projects condensed={isRecruiterMode} />}
+          {settings.showSkills && <Skills condensed={isRecruiterMode} />}
+          {!isRecruiterMode && settings.showBlog && <BlogSection />}
+          {!isRecruiterMode && settings.showCertificates && <Certificates />}
           <Contacts />
         </>
       ) : (

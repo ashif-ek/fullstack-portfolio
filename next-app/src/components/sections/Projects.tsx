@@ -12,7 +12,7 @@ const projectImages: Record<string, string> = {
   '4': "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80&w=800",
 };
 
-const Projects = () => {
+const Projects = ({ condensed = false }: { condensed?: boolean }) => {
   const { data: projects = [] } = useProjects();
   const router = useRouter();
 
@@ -71,9 +71,26 @@ const Projects = () => {
                   </h3>
                 </div>
 
-                <p className="text-academic-muted mb-8 leading-relaxed font-light text-sm line-clamp-3">
+                <p className={`text-academic-muted mb-8 leading-relaxed font-light text-sm transition-all duration-500 ${condensed ? 'line-clamp-2' : 'line-clamp-3'}`}>
                   {project.description}
                 </p>
+
+                {condensed && (
+                  <div className="grid grid-cols-3 gap-2 mb-8 p-3 bg-academic-primary/5 border border-academic-primary/10 rounded-lg">
+                    <div className="text-center">
+                      <p className="text-[10px] uppercase tracking-tighter text-academic-muted">Stars</p>
+                      <p className="text-sm font-bold text-academic-primary">1.2k+</p>
+                    </div>
+                    <div className="text-center border-x border-academic-border">
+                      <p className="text-[10px] uppercase tracking-tighter text-academic-muted">Commits</p>
+                      <p className="text-sm font-bold text-academic-primary">450+</p>
+                    </div>
+                    <div className="text-center">
+                      <p className="text-[10px] uppercase tracking-tighter text-academic-muted">Perf</p>
+                      <p className="text-sm font-bold text-academic-accent">98.2%</p>
+                    </div>
+                  </div>
+                )}
 
                 <div className="flex flex-wrap gap-2 mb-8">
                   {project.tags.map((tag) => (

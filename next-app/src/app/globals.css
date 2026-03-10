@@ -5,19 +5,41 @@
     --font-serif: "Georgia", "Times New Roman", serif;
     --font-sans: "Segoe UI", "Arial", "Helvetica Neue", -apple-system, sans-serif;
 
-    --color-academic-bg: #FDFCFB;
-    --color-academic-paper: #FFFFFF;
-    --color-academic-text: #1C1C1C;
-    --color-academic-muted: #474747;
-    --color-academic-border: #E5E5E5;
-    --color-academic-primary: #2C3E50;
-    --color-academic-accent: #8E2424;
+    --color-academic-bg: var(--academic-bg);
+    --color-academic-paper: var(--academic-paper);
+    --color-academic-text: var(--academic-text);
+    --color-academic-muted: var(--academic-muted);
+    --color-academic-border: var(--academic-border);
+    --color-academic-primary: var(--academic-primary);
+    --color-academic-accent: var(--academic-accent);
     /* Korean Deep Crimson */
-    --color-academic-secondary: #2E4D2E;
+    --color-academic-secondary: var(--academic-secondary);
     /* Pine Green */
 
     --shadow-academic: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
     --shadow-paper: 0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+}
+
+:root {
+    --academic-bg: #FDFCFB;
+    --academic-paper: #FFFFFF;
+    --academic-text: #1C1C1C;
+    --academic-muted: #474747;
+    --academic-border: #E5E5E5;
+    --academic-primary: #2C3E50;
+    --academic-accent: #8E2424;
+    --academic-secondary: #2E4D2E;
+}
+
+.dark {
+    --academic-bg: #121212;
+    --academic-paper: #1E1E1E;
+    --academic-text: #E0E0E0;
+    --academic-muted: #999999;
+    --academic-border: #2D2D2D;
+    --academic-primary: #BDC3C7;
+    --academic-accent: #C0392B;
+    --academic-secondary: #27AE60;
 }
 
 @layer base {
@@ -28,17 +50,22 @@
         background-size: 24px 24px;
     }
 
+    .dark body {
+        background-image:
+            radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    }
+
     h1,
     h2,
     h3,
     h4,
     h5,
     h6 {
-        @apply font-serif tracking-tight text-academic-primary;
+        @apply font-serif tracking-tight text-academic-primary transition-colors duration-300;
     }
 
     p {
-        @apply leading-relaxed;
+        @apply leading-relaxed transition-colors duration-300;
     }
 }
 
@@ -48,11 +75,11 @@
     }
 
     .academic-button {
-        @apply px-6 py-2 border border-academic-primary text-academic-primary font-medium transition-all duration-300 hover:bg-academic-primary hover:text-white;
+        @apply px-6 py-2 border border-academic-primary text-academic-primary font-medium transition-all duration-300 hover:bg-academic-primary hover:text-white dark:hover:text-black;
     }
 
     .section-title {
-        @apply text-4xl font-bold mb-8 relative inline-block;
+        @apply text-4xl font-bold mb-8 relative inline-block text-academic-primary;
     }
 
     .section-title::after {

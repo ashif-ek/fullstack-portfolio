@@ -103,7 +103,7 @@ const ToolCard = React.memo(({ tool }: { tool: Tool }) => (
   </div>
 ));
 
-const Skills = () => {
+const Skills = ({ condensed = false }: { condensed?: boolean }) => {
   const { data: skills = [] } = useSkills();
   const { data: tools = [] } = useTools();
   const [activeCategory, setActiveCategory] = useState('All');
@@ -113,10 +113,13 @@ const Skills = () => {
     return ['All', ...uniqueCategories];
   }, [skills]);
 
-  const filteredSkills = useMemo(() =>
-    activeCategory === 'All' ? skills : skills.filter(skill => skill.category === activeCategory),
-    [activeCategory, skills]
-  );
+  const filteredSkills = useMemo(() => {
+    let base = activeCategory === 'All' ? skills : skills.filter(skill => skill.category === activeCategory);
+    if (condensed) {
+      return base.filter(s => s.level >= 80).slice(0, 6);
+    }
+    return base;
+  }, [activeCategory, skills, condensed]);
 
   return (
     <section id="skills" className="py-16 md:py-32 bg-academic-bg text-academic-text relative">
@@ -127,17 +130,19 @@ const Skills = () => {
             <p className="text-academic-muted font-serif italic mt-2">A comprehensive classification of core competencies and specialized methodologies.</p>
           </div>
 
-          <div className="flex flex-wrap gap-2">
-            {skillCategories.map(category => (
-              <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                className={`px-4 py-1 text-xs uppercase tracking-widest transition-all duration-300 border ${activeCategory === category ? 'bg-academic-primary text-white border-academic-primary' : 'bg-transparent border-academic-border text-academic-muted hover:border-academic-primary hover:text-academic-primary'}`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
+          {!condensed && (
+            <div className="flex flex-wrap gap-2">
+              {skillCategories.map(category => (
+                <button
+                  key={category}
+                  onClick={() => setActiveCategory(category)}
+                  className={`px-4 py-1 text-xs uppercase tracking-widest transition-all duration-300 border ${activeCategory === category ? 'bg-academic-primary text-white border-academic-primary' : 'bg-transparent border-academic-border text-academic-muted hover:border-academic-primary hover:text-academic-primary'}`}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
 
         <div className="grid grid-cols-1 gap-px bg-academic-border border-t border-academic-border">
@@ -146,17 +151,19 @@ const Skills = () => {
           ))}
         </div>
 
-        <div className="mt-32">
-          <div className="flex items-center gap-4 mb-12">
-            <h3 className="text-2xl font-serif font-bold text-academic-primary italic">Modern Toolkit</h3>
-            <div className="flex-grow h-px bg-academic-border" />
+        {!condensed && (
+          <div className="mt-32">
+            <div className="flex items-center gap-4 mb-12">
+              <h3 className="text-2xl font-serif font-bold text-academic-primary italic">Modern Toolkit</h3>
+              <div className="flex-grow h-px bg-academic-border" />
+            </div>
+            <div className="flex flex-wrap gap-4 justify-center">
+              {tools.map(tool => (
+                <ToolCard key={tool.name} tool={tool} />
+              ))}
+            </div>
           </div>
-          <div className="flex flex-wrap gap-4 justify-center">
-            {tools.map(tool => (
-              <ToolCard key={tool.name} tool={tool} />
-            ))}
-          </div>
-        </div>
+        )}
       </div>
     </section>
   );
