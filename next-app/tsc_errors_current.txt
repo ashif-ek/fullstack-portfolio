@@ -1,0 +1,6 @@
+src/components/sections/GithubActivity.tsx(3,8): error TS2613: Module '"D:/typescript-portfolio/next-app/node_modules/react-github-calendar/build/index"' has no default export. Did you mean to use 'import { GitHubCalendar } from "D:/typescript-portfolio/next-app/node_modules/react-github-calendar/build/index"' instead?
+src/data/mock.ts(4,5): error TS2741: Property 'slug' is missing in type '{ id: string; title: string; description: string; tags: string[]; image: string; link: string; github: string; }' but required in type 'Project'.
+src/data/mock.ts(13,5): error TS2741: Property 'slug' is missing in type '{ id: string; title: string; description: string; tags: string[]; image: string; link: string; github: string; }' but required in type 'Project'.
+src/data/mock.ts(22,5): error TS2741: Property 'slug' is missing in type '{ id: string; title: string; description: string; tags: string[]; image: string; link: string; github: string; }' but required in type 'Project'.
+vitest.config.ts(1,30): error TS2307: Cannot find module 'vitest/config' or its corresponding type declarations.
+vitest.config.ts(2,19): error TS2307: Cannot find module '@vitejs/plugin-react' or its corresponding type declarations.
