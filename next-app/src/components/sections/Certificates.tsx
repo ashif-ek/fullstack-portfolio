@@ -17,47 +17,38 @@ const certificateImages: Record<string, string> = {
 import { useCertificates } from "../../hooks/useCertificates";
 
 const Certificates = () => {
-  const { data: certificates, isLoading } = useCertificates();
+  const { data: certificates = [], isLoading } = useCertificates();
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [showAll, setShowAll] = useState(false);
   const sectionRef = useRef<HTMLElement | null>(null);
 
-  const certificateOrder = ["bca", "bridgeon", "regional", "ccsa"];
-
-  const sortedCertificates = useMemo(() => {
-    return [...certificates].sort((a, b) => {
-      const getIndex = (item: Certificate) => {
-        const textToSearch = (item.title + " " + item.issuer).toLowerCase();
-        for (let i = 0; i < certificateOrder.length; i++) {
-          if (textToSearch.includes(certificateOrder[i])) return i;
-        }
-        return certificateOrder.length;
-      };
-      return getIndex(a) - getIndex(b);
-    });
-  }, [certificates]);
-
   const categories = useMemo(() => {
-    const uniqueCategories = Array.from(new Set(sortedCertificates.map(c => c.category))).filter(Boolean);
+    const uniqueCategories = Array.from(new Set(certificates.map(c => c.category))).filter(Boolean);
     return [
       { id: "all", name: "All" },
       ...uniqueCategories.map(c => ({ id: c, name: c }))
     ];
-  }, [sortedCertificates]);
+  }, [certificates]);
 
-  const filteredCertificates =
-    selectedCategory === "all"
-      ? sortedCertificates
-      : sortedCertificates.filter((cert) => cert.category === selectedCategory);
+  const filteredCertificates = useMemo(() => {
+    const base = selectedCategory === "all"
+      ? certificates
+      : certificates.filter((cert) => cert.category === selectedCategory);
+
+    return showAll ? base : base.slice(0, 3);
+  }, [selectedCategory, certificates, showAll]);
 
   return (
     <section ref={sectionRef} className="py-16 md:py-32 bg-academic-bg text-academic-text relative border-t border-academic-border">
       <div className="container mx-auto px-6 max-w-6xl">
-        <div className="text-center mb-20">
-          <h2 className="section-title">Certifications & Accreditations</h2>
-          <p className="text-academic-muted font-serif italic mt-2">Formal recognition of technical proficiency and academic excellence.</p>
+        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+          <div className="text-left">
+            <h2 className="section-title">Certifications & Accreditations</h2>
+            <p className="text-academic-muted font-serif italic mt-2">Formal recognition of technical proficiency and academic excellence.</p>
+          </div>
 
-          <div className="flex flex-wrap justify-center gap-2 mt-12">
+          <div className="flex flex-wrap justify-end gap-2">
             {categories.map((category) => (
               <button
                 key={category.id}
@@ -140,6 +131,18 @@ const Certificates = () => {
                 </div>
               );
             })}
+          </div>
+        )}
+
+        {!showAll && certificates.length > 3 && (
+          <div className="mt-20 flex justify-center">
+            <button
+              onClick={() => setShowAll(true)}
+              className="academic-button px-12 py-4 text-[10px] uppercase tracking-[0.3em] font-bold flex items-center gap-4 group"
+            >
+              Reveal Additional Records
+              <span className="w-8 h-px bg-academic-paper group-hover:bg-academic-paper transition-all" />
+            </button>
           </div>
         )}
       </div>

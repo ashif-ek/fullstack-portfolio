@@ -1,0 +1,10 @@
+SystemCheckError: System check identified some issues:
+
+ERRORS:
+<class 'core.admin.CertificateAdmin'>: (admin.E124) The value of 'list_editable[0]' refers to the first field in 'list_display' ('order'), which cannot be used unless 'list_display_links' is set.
+<class 'core.admin.ProjectAdmin'>: (admin.E124) The value of 'list_editable[0]' refers to the first field in 'list_display' ('order'), which cannot be used unless 'list_display_links' is set.
+<class 'core.admin.ServiceAdmin'>: (admin.E124) The value of 'list_editable[0]' refers to the first field in 'list_display' ('order'), which cannot be used unless 'list_display_links' is set.
+<class 'core.admin.SkillAdmin'>: (admin.E124) The value of 'list_editable[0]' refers to the first field in 'list_display' ('order'), which cannot be used unless 'list_display_links' is set.
+<class 'core.admin.ToolAdmin'>: (admin.E124) The value of 'list_editable[0]' refers to the first field in 'list_display' ('order'), which cannot be used unless 'list_display_links' is set.
+
+System check identified 5 issues (0 silenced).

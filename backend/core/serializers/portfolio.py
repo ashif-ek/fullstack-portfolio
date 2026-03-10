@@ -35,6 +35,7 @@ class CertificateSerializer(serializers.ModelSerializer):
             "image",
             "credentialLink",
             "description",
+            "order",
         ]
 
 

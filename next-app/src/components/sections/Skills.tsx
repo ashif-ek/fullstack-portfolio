@@ -107,6 +107,7 @@ const Skills = ({ condensed = false }: { condensed?: boolean }) => {
   const { data: skills = [] } = useSkills();
   const { data: tools = [] } = useTools();
   const [activeCategory, setActiveCategory] = useState('All');
+  const [showAll, setShowAll] = useState(false);
 
   const skillCategories = useMemo(() => {
     const uniqueCategories = Array.from(new Set(skills.map(s => s.category))).filter(Boolean);
@@ -115,11 +116,15 @@ const Skills = ({ condensed = false }: { condensed?: boolean }) => {
 
   const filteredSkills = useMemo(() => {
     let base = activeCategory === 'All' ? skills : skills.filter(skill => skill.category === activeCategory);
+
+    // For Recruiter Mode (condensed), we show a specific subset
     if (condensed) {
       return base.filter(s => s.level >= 80).slice(0, 6);
     }
-    return base;
-  }, [activeCategory, skills, condensed]);
+
+    // For regular view, we respect the showAll toggle
+    return showAll ? base : base.slice(0, 3);
+  }, [activeCategory, skills, condensed, showAll]);
 
   return (
     <section id="skills" className="py-16 md:py-32 bg-academic-bg text-academic-text relative">
@@ -150,6 +155,18 @@ const Skills = ({ condensed = false }: { condensed?: boolean }) => {
             <SkillCard key={skill.id || skill.name} skill={skill} />
           ))}
         </div>
+
+        {!showAll && !condensed && skills.length > 3 && (
+          <div className="mt-12 flex justify-center">
+            <button
+              onClick={() => setShowAll(true)}
+              className="academic-button px-12 py-4 text-[10px] uppercase tracking-[0.3em] font-bold flex items-center gap-4 group"
+            >
+              View Full Index
+              <span className="w-8 h-px bg-academic-paper group-hover:bg-academic-paper transition-all" />
+            </button>
+          </div>
+        )}
 
         {!condensed && (
           <div className="mt-32">

@@ -30,6 +30,7 @@ export interface AboutData {
     introduction: string;
     experience: string;
     philosophy: string;
+    avatar?: string;
     stats: AboutStats;
 }
 

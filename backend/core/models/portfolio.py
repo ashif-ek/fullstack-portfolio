@@ -7,7 +7,11 @@ class Skill(models.Model):
     category = models.CharField(max_length=100)  # e.g. Technology, Methodology
     icon = models.CharField(max_length=50, blank=True)  # Icon name string
     description = models.TextField(blank=True)
+    order = models.PositiveIntegerField(default=0)
     color = models.CharField(max_length=20, blank=True)  # Hex code
+
+    class Meta:
+        ordering = ["order", "name"]
 
     def __str__(self):
         return self.name
@@ -28,6 +32,10 @@ class Project(models.Model):
     clicks = models.PositiveIntegerField(
         default=0, help_text="Number of times this project was clicked"
     )
+    order = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        ordering = ["order", "title"]
 
     def __str__(self):
         return self.title
@@ -46,6 +54,10 @@ class Certificate(models.Model):
     image = models.ImageField(upload_to="certificates/", blank=True, null=True)
     credential_link = models.URLField(blank=True)
     description = models.TextField(blank=True)
+    order = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        ordering = ["order", "-date"]
 
     def __str__(self):
         return self.title
@@ -55,6 +67,10 @@ class Service(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
     icon = models.CharField(max_length=50)  # e.g. CodeIcon, RocketIcon
+    order = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        ordering = ["order", "title"]
 
     def __str__(self):
         return self.title
@@ -63,6 +79,10 @@ class Service(models.Model):
 class Tool(models.Model):
     name = models.CharField(max_length=100)
     icon = models.CharField(max_length=50)
+    order = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        ordering = ["order", "name"]
 
     def __str__(self):
         return self.name

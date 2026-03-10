@@ -9,6 +9,10 @@ import Projects from '../sections/Projects';
 import Certificates from '../sections/Certificates';
 import BlogSection from '../sections/BlogSection';
 import Contacts from '../sections/Contacts';
+import GithubActivity from '../sections/GithubActivity';
+import BuildJourney from '../sections/BuildJourney';
+import RecruiterCTA from '../sections/RecruiterCTA';
+import Services from '../sections/Services';
 import Footer from '../layout/Footer';
 import UserLayout from '../layout/UserLayout';
 import LoadingSpinner from '../ui/LoadingSpinner';
@@ -16,17 +20,28 @@ import Api, { API_BASE_URL } from '../../lib/api';
 
 export default function Home() {
   const [settings, setSettings] = useState({
-    showBlog: true,
-    showSkills: true,
-    showProjects: true,
-    showCertificates: true,
-    maintenanceMode: false
+    show_hero: true,
+    show_about: true,
+    show_services: true,
+    show_blog: true,
+    show_skills: true,
+    show_projects: true,
+    show_certificates: true,
+    show_github_activity: true,
+    show_build_journey: true,
+    show_recruiter_cta: true,
+    show_contacts: true,
+    maintenance_mode: false
   });
 
   useEffect(() => {
     Api.get('/settings')
       .then(res => {
-        if (res.data) setSettings(res.data);
+        if (res.data && res.data.length > 0) {
+          // SiteSettings is often a single record or list depending on implementation
+          const siteSettings = Array.isArray(res.data) ? res.data[0] : res.data;
+          setSettings(siteSettings);
+        }
       })
       .catch(err => console.error("Failed to load settings", err));
   }, []);
@@ -39,7 +54,7 @@ export default function Home() {
 
   const { isAdmin } = useAuth();
 
-  if (settings.maintenanceMode && !isAdmin) {
+  if (settings.maintenance_mode && !isAdmin) {
     return (
       <div className="h-screen flex flex-col items-center justify-center bg-gray-900 text-white relative">
         <h1 className="text-4xl font-bold mb-4">Under Maintenance</h1>
@@ -57,13 +72,17 @@ export default function Home() {
 
   return (
     <>
-      <Hero />
-      <About />
-      {settings.showBlog && <BlogSection />}
-      {settings.showSkills && <Skills />}
-      {settings.showProjects && <Projects />}
-      {settings.showCertificates && <Certificates />}
-      <Contacts />
+      {settings.show_hero && <Hero />}
+      {settings.show_about && <About />}
+      {settings.show_github_activity && <GithubActivity />}
+      {settings.show_services && <Services />}
+      {settings.show_blog && <BlogSection />}
+      {settings.show_skills && <Skills />}
+      {settings.show_projects && <Projects />}
+      {settings.show_certificates && <Certificates />}
+      {settings.show_build_journey && <BuildJourney />}
+      {settings.show_recruiter_cta && <RecruiterCTA />}
+      {settings.show_contacts && <Contacts />}
     </>
   );
 }

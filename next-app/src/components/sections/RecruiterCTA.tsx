@@ -41,7 +41,7 @@ export default function RecruiterCTA() {
                     className="text-center mb-16"
                 >
                     <h2 className="text-3xl md:text-5xl font-serif font-bold text-academic-primary mb-4 tracking-tight">
-                        Let's Build Something <span className="italic text-academic-accent">Great</span> Together
+                        Let's Build Something Great Together
                     </h2>
                     <p className="text-academic-muted max-w-2xl mx-auto text-lg">
                         For recruiters and teams looking for a full-stack engineer who values technical excellence and architectural clarity.

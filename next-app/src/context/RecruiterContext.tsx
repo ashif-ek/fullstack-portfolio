@@ -27,10 +27,6 @@ export function RecruiterProvider({ children }: { children: React.ReactNode }) {
         localStorage.setItem('recruiterMode', String(newMode));
     };
 
-    if (!mounted) {
-        return <>{children}</>;
-    }
-
     return (
         <RecruiterContext.Provider value={{ isRecruiterMode, toggleRecruiterMode }}>
             {children}

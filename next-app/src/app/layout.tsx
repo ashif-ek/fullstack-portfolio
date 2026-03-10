@@ -124,7 +124,7 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased text-academic-text bg-academic-bg selection:bg-academic-primary/20 selection:text-academic-primary transition-colors duration-300">
         <QueryProvider>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
             <RecruiterProvider>
               <RecruiterBanner />
               <AuthProvider>

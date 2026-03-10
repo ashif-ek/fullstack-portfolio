@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { about as mockAbout } from "../../data/mockData";
 import { AboutData } from "../../types";
-import Api from "../../lib/api";
+import Api, { resolveAssetUrl } from "../../lib/api";
 import LazyImage from "../ui/LazyImage";
 import profileImg from "../../assets/profile.jpg";
 
@@ -134,7 +134,7 @@ const About = () => {
                   <div className="relative overflow-hidden aspect-[4/5]">
 
                     <LazyImage
-                      src={profile}
+                      src={resolveAssetUrl(aboutData.avatar) || profile}
                       alt="Formal Portrait"
                       className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                     />

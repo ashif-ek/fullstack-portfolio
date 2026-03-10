@@ -14,20 +14,10 @@ const projectImages: Record<string, string> = {
 
 const Projects = ({ condensed = false }: { condensed?: boolean }) => {
   const { data: projects = [] } = useProjects();
+  const [showAll, setShowAll] = useState(false);
   const router = useRouter();
 
-  const projectOrder = ["noirel", "civic", "blog", "salary", "timelens"];
-
-  const sortedProjects = [...projects].sort((a, b) => {
-    const getIndex = (title: string) => {
-      const lowerTitle = title.toLowerCase();
-      for (let i = 0; i < projectOrder.length; i++) {
-        if (lowerTitle.includes(projectOrder[i])) return i;
-      }
-      return projectOrder.length;
-    };
-    return getIndex(a.title) - getIndex(b.title);
-  });
+  const displayedProjects = showAll ? projects : projects.slice(0, 2);
 
   const handleProjectClick = async (projectId: string, projectSlug: string, e: React.MouseEvent) => {
     e.preventDefault();
@@ -48,7 +38,7 @@ const Projects = ({ condensed = false }: { condensed?: boolean }) => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {sortedProjects.map((project) => (
+          {displayedProjects.map((project) => (
             <div
               key={project.id}
               className="group flex flex-col bg-academic-bg border border-academic-border overflow-hidden shadow-academic hover:shadow-paper transition-all duration-500 cursor-pointer"
@@ -138,6 +128,18 @@ const Projects = ({ condensed = false }: { condensed?: boolean }) => {
             </div>
           ))}
         </div>
+
+        {!showAll && projects.length > 2 && (
+          <div className="mt-20 flex justify-center">
+            <button
+              onClick={() => setShowAll(true)}
+              className="academic-button px-12 py-4 text-[10px] uppercase tracking-[0.3em] font-bold flex items-center gap-4 group"
+            >
+              Expand Full Archive
+              <span className="w-8 h-px bg-academic-paper group-hover:bg-academic-paper transition-all" />
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
