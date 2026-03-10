@@ -16,9 +16,14 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG", default=False, cast=bool)
 
-# ALLOWED_HOSTS logic: specific hosts from env, or wildcard for flexibility
-ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="*").split(",")
-if not ALLOWED_HOSTS or ALLOWED_HOSTS == [""]:
+# Robust ALLOWED_HOSTS: strip spaces and protocols (http/https) from env string
+raw_hosts = config("ALLOWED_HOSTS", default="*").split(",")
+ALLOWED_HOSTS = [
+    host.strip().replace("https://", "").replace("http://", "").split("/")[0]
+    for host in raw_hosts
+    if host.strip()
+]
+if not ALLOWED_HOSTS:
     ALLOWED_HOSTS = ["*"]
 
 
