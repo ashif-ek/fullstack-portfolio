@@ -3,6 +3,7 @@ import { Project, Skill, Tool } from "../types";
 export const MOCK_PROJECTS: Project[] = [
     {
         "id": "1",
+        "slug": "noirel-luxury-ecommerce",
         "title": "Noirel Luxury Ecommerce",
         "description": "A high-performance e-commerce platform designed for luxury aesthetics. Implemented complex filtering, cart management, and optimized asset loading for a sub-2s load time.",
         "tags": ["Next.js", "TypeScript", "Tailwind CSS", "Redux"],
@@ -12,6 +13,7 @@ export const MOCK_PROJECTS: Project[] = [
     },
     {
         "id": "2",
+        "slug": "civicconnect-governance",
         "title": "CivicConnect Governance",
         "description": "A comprehensive digital governance platform enabling citizen engagement. Features include complaint tracking, real-time notifications, and administrative dashboards. Handled role-based access control for 4 distinct user types.",
         "tags": ["Django", "Flutter", "PostgreSQL", "REST API"],
@@ -21,6 +23,7 @@ export const MOCK_PROJECTS: Project[] = [
     },
     {
         "id": "3",
+        "slug": "minimalist-cms-blog",
         "title": "Minimalist CMS Blog",
         "description": "A custom Content Management System built to be lightweight and SEO-friendly. Includes markdown support, dynamic routing, and server-side rendering for optimal search engine visibility.",
         "tags": ["Django", "HTMX", "PostgreSQL", "Bootstrap"],

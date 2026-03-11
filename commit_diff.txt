@@ -1,0 +1,106 @@
+commit 625df3db92b61d276c60fecbd68ba2be4b819a7e
+Author: Ashif EK <ashifek11@gmail.com>
+Date:   Wed Mar 11 14:45:00 2026 +0530
+
+    feat: introduce initial mock data, database synchronization, About and Blog sections, PWA manifest, and a database backup.
+
+diff --git a/backend/backup.sql b/backend/backup.sql
+index c39090a..f086bf4 100644
+--- a/backend/backup.sql
++++ b/backend/backup.sql
+@@ -894,7 +894,7 @@ COPY public.core_portfolioanalytics (id, total_views) FROM stdin;
+ --
+ 
+ COPY public.core_profile (id, name, title, description, email, avatar, experience, introduction, philosophy) FROM stdin;
+-3	Ashif E.K	Full Stack Developer & Digital Architect	I build high-performance web applications enabling businesses to scale. Specializing in React, Django, and Modern Cloud Architecture, I transform complex requirements into seamless digital experiences.	ashifek11@gmail.com		With a strong foundation in Computer Science, I have successfully delivered projects ranging from e-commerce platforms to complex governance systems. I have hands-on experience with the modern web stack including Next.js, Django, and Cloud Infrastructure. My work emphasizes performance optimization, security best practices, and intuitive user experience design.	I am a results-driven Software Engineer with a passion for building robust, scalable web solutions. My journey began with a curiosity for how things work, which quickly evolved into a career in full-stack development. I focus on writing clean, maintainable code and solving real-world business problems.	I believe that technology should be invisible—it should work so smoothly that users focus on their goals, not the tools. My approach combines rigorous engineering principles with creative problem-solving to deliver software that is not just functional, but exceptional.
++3	Ashif E.K	Full Stack Engineer	I build high-performance web applications enabling businesses to scale. Specializing in React, Django, and Modern Cloud Architecture, I transform complex requirements into seamless digital experiences.	ashifek11@gmail.com		With a strong foundation in Computer Science, I have successfully delivered projects ranging from e-commerce platforms to complex governance systems. I have hands-on experience with the modern web stack including Next.js, Django, and Cloud Infrastructure. My work emphasizes performance optimization, security best practices, and intuitive user experience design.	I am a results-driven Software Engineer with a passion for building robust, scalable web solutions. My journey began with a curiosity for how things work, which quickly evolved into a career in full-stack development. I focus on writing clean, maintainable code and solving real-world business problems.	I believe that technology should be invisible—it should work so smoothly that users focus on their goals, not the tools. My approach combines rigorous engineering principles with creative problem-solving to deliver software that is not just functional, but exceptional.
+ \.
+ 
+ 
+diff --git a/backend/core/mock_seed_data.py b/backend/core/mock_seed_data.py
+index 82d9a70..a3dc8dc 100644
+--- a/backend/core/mock_seed_data.py
++++ b/backend/core/mock_seed_data.py
+@@ -2,7 +2,7 @@
+ 
+ MOCK_PROFILE = {
+     "name": "Ashif E.K",
+-    "title": "Full Stack Developer & Digital Architect",
++    "title": "Full-stack Engineer",
+     "description": (
+         "I build high-performance web applications enabling businesses to scale. "
+         "Specializing in React, Django, and Modern Cloud Architecture, I transform "
+diff --git a/backend/sync_full_data.py b/backend/sync_full_data.py
+index 830bbf9..bed6462 100644
+--- a/backend/sync_full_data.py
++++ b/backend/sync_full_data.py
+@@ -25,7 +25,7 @@ def sync_data():
+     Profile.objects.all().delete()
+     p = Profile.objects.create(
+         name="Ashif E.K",
+-        title="Full Stack Developer & Digital Architect",
++        title="Full Stack Engineer",
+         description="I build high-performance web applications enabling businesses to scale. Specializing in React, Django, and Modern Cloud Architecture, I transform complex requirements into seamless digital experiences.",
+         email="ashifek11@gmail.com",
+         introduction="I am a results-driven Software Engineer with a passion for building robust, scalable web solutions. My journey began with a curiosity for how things work, which quickly evolved into a career in full-stack development. I focus on writing clean, maintainable code and solving real-world business problems.",
+diff --git a/next-app/public/manifest.json b/next-app/public/manifest.json
+index a4115f7..a177a50 100644
+--- a/next-app/public/manifest.json
++++ b/next-app/public/manifest.json
+@@ -1,7 +1,7 @@
+ {
+   "name": "Ashif E.K Portfolio",
+   "short_name": "Ashif EK",
+-  "description": "Digital Architect & Software Engineer portfolio.",
++  "description": "Full Stack Engineer portfolio.",
+   "start_url": "/",
+   "display": "standalone",
+   "background_color": "#121212",
+diff --git a/next-app/src/app/about/page.tsx b/next-app/src/app/about/page.tsx
+index d56cbb3..c2607f4 100644
+--- a/next-app/src/app/about/page.tsx
++++ b/next-app/src/app/about/page.tsx
+@@ -5,7 +5,7 @@ import { Award, Code, GraduationCap, Laptop, Sparkles, User } from 'lucide-react
+ import Api from '../../lib/api';
+ 
+ export const metadata: Metadata = {
+-    title: 'About Ashif EK | Full-Stack Engineer & Software Architect',
++    title: 'About Ashif EK | Full-Stack Engineer',
+     description: 'Learn more about Ashif EK, a Full-Stack Engineer specializing in React, Django, and modern web architecture. Discover his journey, expertise, and technical philosophy.',
+     openGraph: {
+         title: 'About Ashif EK | Professional Journey & Expertise',
+@@ -77,7 +77,7 @@ export default async function AboutPage() {
+                         Ashif EK
+                     </h1>
+                     <p className="text-xl text-academic-text/60 font-serif italic">
+-                        Full-Stack Engineer & Software Architect
++                        Full-Stack Enginee
+                     </p>
+                 </header>
+ 
+diff --git a/next-app/src/components/sections/About.tsx b/next-app/src/components/sections/About.tsx
+index 4f785bf..da0d5af 100644
+--- a/next-app/src/components/sections/About.tsx
++++ b/next-app/src/components/sections/About.tsx
+@@ -157,7 +157,7 @@ const About = () => {
+                 </h3>
+ 
+                 <p className="text-xs uppercase tracking-[0.35em] text-academic-muted font-bold">
+-                  Principal Software Architect
++                  Full-Stack Engineer
+                 </p>
+ 
+                 <div className="pt-4 flex justify-center md:justify-start">
+diff --git a/next-app/src/components/sections/BlogSection.tsx b/next-app/src/components/sections/BlogSection.tsx
+index c3b0b53..9ecaeab 100644
+--- a/next-app/src/components/sections/BlogSection.tsx
++++ b/next-app/src/components/sections/BlogSection.tsx
+@@ -50,7 +50,7 @@ const BlogSection = () => {
+                 <div className="flex items-center justify-between pt-4">
+                   <div className="flex gap-2">
+                     <span className="text-[10px] uppercase tracking-widest font-bold px-2 py-1 bg-academic-paper border border-academic-border text-academic-muted">
+-                      Software Architecture
++                      Full-Stack Engineering
+                     </span>
+                   </div>
+ 
