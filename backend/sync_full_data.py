@@ -25,7 +25,7 @@ def sync_data():
     Profile.objects.all().delete()
     p = Profile.objects.create(
         name="Ashif E.K",
-        title="Full Stack Developer & Digital Architect",
+        title="Full Stack Engineer",
         description="I build high-performance web applications enabling businesses to scale. Specializing in React, Django, and Modern Cloud Architecture, I transform complex requirements into seamless digital experiences.",
         email="ashifek11@gmail.com",
         introduction="I am a results-driven Software Engineer with a passion for building robust, scalable web solutions. My journey began with a curiosity for how things work, which quickly evolved into a career in full-stack development. I focus on writing clean, maintainable code and solving real-world business problems.",

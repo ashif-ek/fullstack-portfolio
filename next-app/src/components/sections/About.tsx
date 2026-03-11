@@ -157,7 +157,7 @@ const About = () => {
                 </h3>
 
                 <p className="text-xs uppercase tracking-[0.35em] text-academic-muted font-bold">
-                  Principal Software Architect
+                  Full-Stack Engineer
                 </p>
 
                 <div className="pt-4 flex justify-center md:justify-start">

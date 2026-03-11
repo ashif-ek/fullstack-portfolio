@@ -2,7 +2,7 @@
 
 MOCK_PROFILE = {
     "name": "Ashif E.K",
-    "title": "Full Stack Developer & Digital Architect",
+    "title": "Full-stack Engineer",
     "description": (
         "I build high-performance web applications enabling businesses to scale. "
         "Specializing in React, Django, and Modern Cloud Architecture, I transform "

@@ -50,7 +50,7 @@ const BlogSection = () => {
                 <div className="flex items-center justify-between pt-4">
                   <div className="flex gap-2">
                     <span className="text-[10px] uppercase tracking-widest font-bold px-2 py-1 bg-academic-paper border border-academic-border text-academic-muted">
-                      Software Architecture
+                      Full-Stack Engineering
                     </span>
                   </div>
 

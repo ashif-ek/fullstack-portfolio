@@ -5,7 +5,7 @@ import { Award, Code, GraduationCap, Laptop, Sparkles, User } from 'lucide-react
 import Api from '../../lib/api';
 
 export const metadata: Metadata = {
-    title: 'About Ashif EK | Full-Stack Engineer & Software Architect',
+    title: 'About Ashif EK | Full-Stack Engineer',
     description: 'Learn more about Ashif EK, a Full-Stack Engineer specializing in React, Django, and modern web architecture. Discover his journey, expertise, and technical philosophy.',
     openGraph: {
         title: 'About Ashif EK | Professional Journey & Expertise',
@@ -77,7 +77,7 @@ export default async function AboutPage() {
                         Ashif EK
                     </h1>
                     <p className="text-xl text-academic-text/60 font-serif italic">
-                        Full-Stack Engineer & Software Architect
+                        Full-Stack Enginee
                     </p>
                 </header>
 
