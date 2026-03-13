@@ -21,28 +21,38 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
 
     // Base routes
-    const routes = ['', '/about', '/projects', '/contact', '/blog'].map((route) => ({
-        url: `${baseUrl}${route}`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly' as const,
-        priority: route === '' ? 1.0 : 0.8,
+    const routes = [
+        { path: '', priority: 1.0, changeFreq: 'daily' as const },
+        { path: '/projects', priority: 0.9, changeFreq: 'weekly' as const },
+        { path: '/blog', priority: 0.9, changeFreq: 'weekly' as const },
+        { path: '/about', priority: 0.6, changeFreq: 'monthly' as const },
+        { path: '/contact', priority: 0.6, changeFreq: 'monthly' as const },
+    ].map((route) => ({
+        url: `${baseUrl}${route.path}`,
+        lastModified: new Date(), // Represents build/deployment time
+        changeFrequency: route.changeFreq,
+        priority: route.priority,
     }));
 
-    // Project routes
-    const projectRoutes = projects.map((project) => ({
-        url: `${baseUrl}/projects/${project.slug}`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly' as const,
-        priority: 0.7,
-    }));
+    // Project routes - With strict slug validation and dynamic lastmod
+    const projectRoutes = projects
+        .filter(project => project.slug && project.slug !== 'undefined')
+        .map((project) => ({
+            url: `${baseUrl}/projects/${project.slug}`,
+            lastModified: project.updated_at ? new Date(project.updated_at) : new Date(),
+            changeFrequency: 'monthly' as const,
+            priority: 0.8,
+        }));
 
-    // Blog routes
-    const blogRoutes = blogs.map((blog) => ({
-        url: `${baseUrl}/blog/${blog.slug}`,
-        lastModified: new Date(),
-        changeFrequency: 'weekly' as const,
-        priority: 0.6,
-    }));
+    // Blog routes - With strict slug validation and dynamic lastmod
+    const blogRoutes = blogs
+        .filter(blog => blog.slug && blog.slug !== 'undefined')
+        .map((blog) => ({
+            url: `${baseUrl}/blog/${blog.slug}`,
+            lastModified: blog.updated_at ? new Date(blog.updated_at) : new Date(),
+            changeFrequency: 'weekly' as const,
+            priority: 0.7,
+        }));
 
     return [...routes, ...projectRoutes, ...blogRoutes];
 }

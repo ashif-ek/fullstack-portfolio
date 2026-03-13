@@ -904,7 +904,6 @@ COPY public.core_profile (id, name, title, description, email, avatar, experienc
 -- Data for Name: core_project; Type: TABLE DATA; Schema: public; Owner: portfolio_user
 --
 
-COPY public.core_project (id, title, description, tags, link, github, image, clicks, content) FROM stdin;
 13	Salary Checker	Salary Reality Checker delivers AI-powered salary insights using percentile analytics, fuzzy-matched job titles, and machine-learning predictions. It auto-corrects user input, analyzes market trends, and predicts salaries when data is missing. Built with FastAPI, PostgreSQL, scikit-learn.	FastAPI, PostgreSQL, Machine Learning, AI, Salary Analytics	https://ashif-ek.github.io/docs-stack-material/	https://github.com/ashif-ek/salary-checker		2	
 11	Civic (CiviTech) - Cross-Platform Digital Governance Platform	Developed a multi-role civic platform connecting citizens with Panchayath and higher administrative authorities, enabling complaint escalation, service tracking, announcements, moderation, analytics, and citizen engagement.	Django, Flutter, REST API, RBAC, PostgreSQL				2	
 12	Blog System Design Sandbox	Built a full-stack blogging system to experiment with production backend patterns including JWT access/refresh tokens, request validation, structured logging, health checks, and Dockerized deployment.	React, Django REST Framework, Docker, GitHub Actions, AWS				1	

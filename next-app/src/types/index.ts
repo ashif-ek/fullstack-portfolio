@@ -60,6 +60,8 @@ export interface Project {
     link: string;
     github: string;
     content?: string;
+    created_at?: string;
+    updated_at?: string;
 }
 
 export interface Certificate {
@@ -81,4 +83,6 @@ export interface Blog {
     summary: string;
     imageUrl: string;
     content: string;
+    created_at?: string;
+    updated_at?: string;
 }

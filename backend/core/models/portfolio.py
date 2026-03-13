@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.text import slugify
 
 
 class Skill(models.Model):
@@ -23,6 +24,7 @@ class Project(models.Model):
     content = models.TextField(
         blank=True, help_text="Detailed markdown content for the Case Study page"
     )
+    slug = models.SlugField(unique=True, null=True, blank=True)
     tags = models.CharField(
         max_length=500, help_text="Comma-separated tags"
     )  # Simple implementation
@@ -33,12 +35,19 @@ class Project(models.Model):
         default=0, help_text="Number of times this project was clicked"
     )
     order = models.PositiveIntegerField(default=0)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         ordering = ["order", "title"]
 
     def __str__(self):
         return self.title
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        super().save(*args, **kwargs)
 
     def get_tags_list(self):
         return [tag.strip() for tag in self.tags.split(",")]
