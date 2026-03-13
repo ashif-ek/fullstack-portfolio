@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
-import Api from '../../lib/api';
-import { Project } from '../../types';
-import { projects as MOCK_PROJECTS } from '../../data/mockData';
+import Api from '../../../lib/api';
+import { Project } from '../../../types';
+import { projects as MOCK_PROJECTS } from '../../../data/mockData';
 import Link from 'next/link';
 
 export const metadata: Metadata = {

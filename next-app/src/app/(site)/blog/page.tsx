@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
-import Api from '../../lib/api';
-import { Blog } from '../../types';
-import { blogs as MOCK_BLOGS } from '../../data/mockData';
+import Api from '../../../lib/api';
+import { Blog } from '../../../types';
+import { blogs as MOCK_BLOGS } from '../../../data/mockData';
 import Link from 'next/link';
 import { Calendar } from 'lucide-react';
 

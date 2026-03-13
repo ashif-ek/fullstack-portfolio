@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { profile } from '../../data/mockData';
+import { profile } from '../../../data/mockData';
 import { Mail, Github, Linkedin, Instagram, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {

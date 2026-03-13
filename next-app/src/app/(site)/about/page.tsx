@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
-import { profile, about, skills, tools, certificates } from '../../data/mockData';
-import { Skill, Tool, Certificate } from '../../types';
+import { profile, about, skills, tools, certificates } from '../../../data/mockData';
+import { Skill, Tool, Certificate } from '../../../types';
 import { Award, Code, GraduationCap, Laptop, Sparkles, User } from 'lucide-react';
-import Api from '../../lib/api';
+import Api from '../../../lib/api';
 
 export const metadata: Metadata = {
     title: 'About Ashif EK | Full-Stack Engineer',
