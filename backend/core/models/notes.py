@@ -4,7 +4,7 @@ from django.utils.text import slugify
 
 class BlogPost(models.Model):
     title = models.CharField(max_length=200)
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(max_length=255, unique=True, blank=True)
     date = models.DateField()
     summary = models.TextField()
     content = models.TextField(help_text="Markdown content")

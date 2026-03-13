@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { blogs as MOCK_BLOGS } from '../../../data/mockData';
-import { Blog } from '../../../types';
-import Api from '../../../lib/api';
+import { blogs as MOCK_BLOGS } from '../../../../data/mockData';
+import { Blog } from '../../../../types';
+import Api from '../../../../lib/api';
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
 import { Calendar, ArrowLeft } from 'lucide-react';

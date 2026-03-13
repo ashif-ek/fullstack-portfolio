@@ -1,12 +1,12 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { projects } from '../../../data/mockData';
-import { Project } from '../../../types';
+import { projects } from '../../../../data/mockData';
+import { Project } from '../../../../types';
 import ReactMarkdown from 'react-markdown';
 import { ArrowLeft, Github, Globe, Tag } from 'lucide-react';
 import Link from 'next/link';
 
-import Api from '../../../lib/api';
+import Api from '../../../../lib/api';
 
 interface ProjectPageProps {
     params: {

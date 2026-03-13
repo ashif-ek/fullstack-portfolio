@@ -24,7 +24,7 @@ class Project(models.Model):
     content = models.TextField(
         blank=True, help_text="Detailed markdown content for the Case Study page"
     )
-    slug = models.SlugField(unique=True, null=True, blank=True)
+    slug = models.SlugField(max_length=255, unique=True, blank=True)
     tags = models.CharField(
         max_length=500, help_text="Comma-separated tags"
     )  # Simple implementation
