@@ -1,0 +1,58 @@
+
+> next-app@0.1.0 build
+> next build
+
+ΓÜá Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of D:\typescript-portfolio\package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * D:\typescript-portfolio\next-app\package-lock.json
+
+Γû▓ Next.js 16.1.6 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+Γ£ô Compiled successfully in 8.7s
+  Running TypeScript ...
+  Collecting page data using 7 workers ...
+Failed to fetch live blogs: Error [AxiosError]: Request failed with status code 500
+    at aD (D:\typescript-portfolio\next-app\.next\server\chunks\ssr\next-app_24bb9d6d._.js:1:60526)
+    at BrotliDecompress.<anonymous> (D:\typescript-portfolio\next-app\.next\server\chunks\ssr\next-app_24bb9d6d._.js:3:12060)
+    at bK.request (D:\typescript-portfolio\next-app\.next\server\chunks\ssr\next-app_24bb9d6d._.js:3:24563)
+    at async j (D:\typescript-portfolio\next-app\.next\server\chunks\ssr\[root-of-the-server]__a224fe6b._.js:1:20216)
+    at async Object.k [as generateStaticParams] (D:\typescript-portfolio\next-app\.next\server\chunks\ssr\[root-of-the-server]__a224fe6b._.js:1:20370) {
+  isAxiosError: true,
+  code: 'ERR_BAD_RESPONSE',
+  config: [Object],
+  request: [ClientRequest],
+  response: [Object],
+  status: 500
+}
+Failed to fetch live projects: Error [AxiosError]: Request failed with status code 500
+    at aD (D:\typescript-portfolio\next-app\.next\server\chunks\ssr\next-app_24bb9d6d._.js:1:60526)
+    at BrotliDecompress.<anonymous> (D:\typescript-portfolio\next-app\.next\server\chunks\ssr\next-app_24bb9d6d._.js:3:12060)
+    at bK.request (D:\typescript-portfolio\next-app\.next\server\chunks\ssr\next-app_24bb9d6d._.js:3:24563)
+    at async m (D:\typescript-portfolio\next-app\.next\server\chunks\ssr\[root-of-the-server]__bc9e182b._.js:1:20847)
+    at async Object.n [as generateStaticParams] (D:\typescript-portfolio\next-app\.next\server\chunks\ssr\[root-of-the-server]__bc9e182b._.js:1:21010) {
+  isAxiosError: true,
+  code: 'ERR_BAD_RESPONSE',
+  config: [Object],
+  request: [ClientRequest],
+  response: [Object],
+  status: 500
+}
+  Generating static pages using 7 workers (0/22) ...
+Failed to fetch live blogs: Error [AxiosError]: Request failed with status code 500
+    at aD (D:\typescript-portfolio\next-app\.next\server\chunks\ssr\next-app_24bb9d6d._.js:1:60526)
+    at BrotliDecompress.<anonymous> (D:\typescript-portfolio\next-app\.next\server\chunks\ssr\next-app_24bb9d6d._.js:3:12060)
+    at bK.request (D:\typescript-portfolio\next-app\.next\server\chunks\ssr\next-app_24bb9d6d._.js:3:24563)
+    at async j (D:\typescript-portfolio\next-app\.next\server\chunks\ssr\[root-of-the-server]__a224fe6b._.js:1:20216)
+    at async Module.l (D:\typescript-portfolio\next-app\.next\server\chunks\ssr\[root-of-the-server]__a224fe6b._.js:1:20441) {
+  isAxiosError: true,
+  code: 'ERR_BAD_RESPONSE',
+  config: [Object],
+  request: [ClientRequest],
+  response: [Object],
+  status: 500
+}

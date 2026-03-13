@@ -135,13 +135,13 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               onClick={closeMenu}
               className="inline-block academic-button uppercase tracking-widest mb-4"
             >
               Collaborate
-            </a>
+            </Link>
             <div className="flex justify-center">
               <a
                 href={`${API_BASE_URL}/admin`}

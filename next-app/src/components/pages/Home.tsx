@@ -10,7 +10,6 @@ import Certificates from '../sections/Certificates';
 import BlogSection from '../sections/BlogSection';
 import Contacts from '../sections/Contacts';
 import GithubActivity from '../sections/GithubActivity';
-import BuildJourney from '../sections/BuildJourney';
 import RecruiterCTA from '../sections/RecruiterCTA';
 import Services from '../sections/Services';
 import Footer from '../layout/Footer';
@@ -28,7 +27,6 @@ export default function Home() {
     show_projects: true,
     show_certificates: true,
     show_github_activity: true,
-    show_build_journey: true,
     show_recruiter_cta: true,
     show_contacts: true,
     maintenance_mode: false
@@ -80,7 +78,6 @@ export default function Home() {
       {settings.show_skills && <Skills />}
       {settings.show_projects && <Projects />}
       {settings.show_certificates && <Certificates />}
-      {settings.show_build_journey && <BuildJourney />}
       {settings.show_recruiter_cta && <RecruiterCTA />}
       {settings.show_contacts && <Contacts />}
     </>
