@@ -38,13 +38,13 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
     if (!project) return {};
 
     return {
-        title: project.title,
+        title: `${project.title} | Projects`,
         description: project.description,
         openGraph: {
-            title: `${project.title} | Ashif E.K Project`,
+            title: `${project.title} | Ashif E.K`,
             description: project.description,
             type: 'article',
-            images: [{ url: project.image.startsWith('http') ? project.image : `/projects/${project.image}` }],
+            images: [{ url: project.image?.startsWith('http') ? project.image : `/projects/${project.image}` }],
         },
         twitter: {
             card: 'summary_large_image',
@@ -73,7 +73,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             "@type": "Person",
             "name": "Ashif E.K"
         },
-        "featureList": project.tags.join(", "),
+        "featureList": project.tags?.join(", "),
         "url": `https://www.ashifek.in/projects/${project.slug}`
     };
 
@@ -91,7 +91,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Projects",
-                "item": "https://www.ashifek.in/#projects"
+                "item": "https://www.ashifek.in/projects"
             },
             {
                 "@type": "ListItem",
@@ -115,8 +115,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
             <div className="max-w-4xl mx-auto">
                 <Link
-                    href="/#projects"
-                    className="inline-flex items-center gap-2 text-academic-primary hover:underline mb-8 group transition-all"
+                    href="/projects"
+                    className="inline-flex items-center gap-2 text-academic-primary hover:underline mb-8 group transition-all uppercase text-xs font-bold tracking-widest"
                 >
                     <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
                     Back to Projects

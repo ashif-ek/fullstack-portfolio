@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { useProjects } from '../../hooks/useProjects';
 import LazyImage from '../ui/LazyImage';
 import Api, { resolveAssetUrl } from '../../lib/api';
@@ -129,17 +130,15 @@ const Projects = ({ condensed = false }: { condensed?: boolean }) => {
           ))}
         </div>
 
-        {!showAll && projects.length > 2 && (
-          <div className="mt-20 flex justify-center">
-            <button
-              onClick={() => setShowAll(true)}
-              className="academic-button px-12 py-4 text-[10px] uppercase tracking-[0.3em] font-bold flex items-center gap-4 group"
-            >
-              Expand Full Archive
-              <span className="w-8 h-px bg-academic-paper group-hover:bg-academic-paper transition-all" />
-            </button>
-          </div>
-        )}
+        <div className="mt-20 flex justify-center">
+          <Link
+            href="/projects"
+            className="academic-button px-12 py-4 text-[10px] uppercase tracking-[0.3em] font-bold flex items-center gap-4 group"
+          >
+            Review Full Archive
+            <span className="w-8 h-px bg-academic-paper group-hover:w-12 transition-all" />
+          </Link>
+        </div>
       </div>
     </section>
   );

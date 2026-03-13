@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { Calendar } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Journal | Ashif EK',
+    title: 'Journal | Ashif EK – Full Stack Engineer',
     description: 'Insights on full-stack development, software architecture, and engineering management by Ashif EK.',
 };
 

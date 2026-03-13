@@ -66,18 +66,14 @@ const BlogSection = () => {
           ))}
         </div>
 
-        {
-          allPosts.length > 3 && (
-            <div className="text-center mt-20">
-              <button
-                onClick={() => setShowAll(!showAll)}
-                className="text-xs uppercase tracking-[0.3em] font-bold text-academic-muted hover:text-academic-accent transition-colors border border-academic-border px-8 py-3 hover:bg-academic-paper"
-              >
-                {showAll ? "Collapse Register" : `Expand Archives (${allPosts.length})`}
-              </button>
-            </div>
-          )
-        }
+        <div className="text-center mt-20">
+          <Link
+            href="/blog"
+            className="text-xs uppercase tracking-[0.3em] font-bold text-academic-muted hover:text-academic-accent transition-colors border border-academic-border px-8 py-3 hover:bg-academic-paper"
+          >
+            Access Full Register ({allPosts.length})
+          </Link>
+        </div>
       </div >
     </section >
   );

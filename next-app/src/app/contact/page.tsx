@@ -3,7 +3,7 @@ import { profile } from '../../data/mockData';
 import { Mail, Github, Linkedin, Instagram, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Contact | Ashif EK',
+    title: 'Correspondence | Ashif EK – Full Stack Engineer',
     description: 'Get in touch with Ashif EK for full-stack development projects, architectural consulting, or technical collaborations.',
 };
 

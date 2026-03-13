@@ -101,24 +101,24 @@ const Hero = ({ condensed = false }: { condensed?: boolean }) => {
         </div>
 
         <div className="mt-12 flex flex-col md:flex-row gap-4">
-          <a
-            href="#projects"
+          <Link
+            href="/projects"
             className="academic-button text-sm uppercase tracking-widest px-8 py-3 cursor-pointer"
           >
             Review Works
-          </a>
+          </Link>
           <Link
             href="/about"
             className="px-8 py-3 text-sm font-medium uppercase tracking-widest text-academic-primary hover:bg-academic-primary/5 border border-academic-primary/30 transition-all duration-300 cursor-pointer text-center rounded-lg"
           >
             Expertise Profile
           </Link>
-          <a
-            href="#contact"
+          <Link
+            href="/contact"
             className="px-8 py-3 text-sm font-medium uppercase tracking-widest text-academic-primary hover:text-academic-accent transition-colors duration-300 cursor-pointer text-center"
           >
             Correspondence
-          </a>
+          </Link>
         </div>
       </div>
     </section>

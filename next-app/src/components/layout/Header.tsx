@@ -39,10 +39,9 @@ const Header = () => {
 
   const navLinks = [
     { name: 'About', href: '/about' },
-    { name: 'Services', href: '/#services' },
-    { name: 'Skills', href: '/#skills' },
-    { name: 'Projects', href: '/#projects' },
-    { name: 'Contact', href: '/#contact' },
+    { name: 'Projects', href: '/projects' },
+    { name: 'Journal', href: '/blog' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   const closeMenu = () => setIsOpen(false);
@@ -74,13 +73,13 @@ const Header = () => {
 
           {/* Action Button */}
           <div className="hidden md:flex items-center space-x-4">
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               className="academic-button text-sm uppercase tracking-widest"
               aria-label="Contact Ashif"
             >
               Collaborate
-            </a>
+            </Link>
             <a
               href={`${API_BASE_URL}/admin`}
               className="text-academic-muted hover:text-academic-primary transition-colors cursor-pointer p-2"
