@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
-import Api from '@/lib/api';
+import Api from '../../../lib/api';
 import { 
   Activity, 
   Database, 
