@@ -2,7 +2,8 @@ import { Metadata } from 'next';
 import { profile, about, skills, tools, certificates } from '../../../data/mockData';
 import { Skill, Tool, Certificate } from '../../../types';
 import { Award, Code, GraduationCap, Laptop, Sparkles, User } from 'lucide-react';
-import Api from '../../../lib/api';
+import Api, { resolveAssetUrl } from '../../../lib/api';
+import LazyImage from '../../../components/ui/LazyImage';
 
 export const metadata: Metadata = {
     title: 'About Ashif EK | Full-Stack Engineer',
@@ -67,8 +68,8 @@ export default async function AboutPage() {
             <div className="max-w-4xl mx-auto">
                 <header className="mb-16 text-center">
                     <div className="w-32 h-32 mx-auto mb-8 rounded-full overflow-hidden border-2 border-academic-primary/20 p-1 shadow-2xl">
-                        <img
-                            src="https://res.cloudinary.com/dvq8j8q9j/image/upload/v1758031879/ashif/profile_2_c4j18n.jpg"
+                        <LazyImage
+                            src={resolveAssetUrl(mainAbout.avatar) || "https://res.cloudinary.com/dvq8j8q9j/image/upload/v1758031879/ashif/profile_2_c4j18n.jpg"}
                             alt="Ashif EK"
                             className="w-full h-full object-cover rounded-full filter grayscale hover:grayscale-0 transition-all duration-700"
                         />
