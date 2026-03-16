@@ -2,6 +2,10 @@ from django.apps import AppConfig
 
 
 import logging
+import time
+
+# Global startup time for metrics
+STARTUP_TIME = time.time()
 
 logger = logging.getLogger(__name__)
 
@@ -16,6 +20,7 @@ class CoreConfig(AppConfig):
         try:
             import rest_framework
             import cloudinary
+            import psutil
             logger.info("Critical libraries pre-imported.")
         except ImportError as e:
             logger.warning(f"Warmup library import failed: {e}")

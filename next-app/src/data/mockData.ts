@@ -32,6 +32,7 @@ export const profile: Profile = {
 export const about: AboutData[] = [
     {
         "id": "1",
+        "avatar": "",
         "introduction": "I am a results-driven Software Engineer with a passion for building robust, scalable web solutions. My journey began with a curiosity for how things work, which quickly evolved into a career in full-stack development. I focus on writing clean, maintainable code and solving real-world business problems.",
         "experience": "With a strong foundation in Computer Science, I have successfully delivered projects ranging from e-commerce platforms to complex governance systems. I have hands-on experience with the modern web stack including Next.js, Django, and Cloud Infrastructure. My work emphasizes performance optimization, security best practices, and intuitive user experience design.",
         "philosophy": "I believe that technology should be invisible—it should work so smoothly that users focus on their goals, not the tools. My approach combines rigorous engineering principles with creative problem-solving to deliver software that is not just functional, but exceptional.",
