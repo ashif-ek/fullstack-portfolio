@@ -8,15 +8,15 @@
   "theme_color": "#1a1a1a",
   "icons": [
     {
-      "src": "/favicon.ico",
+      "src": "/profile-icon.jpg",
       "sizes": "192x192",
-      "type": "image/x-icon",
+      "type": "image/jpeg",
       "purpose": "any"
     },
     {
-      "src": "/favicon.ico",
+      "src": "/profile-icon.jpg",
       "sizes": "512x512",
-      "type": "image/x-icon",
+      "type": "image/jpeg",
       "purpose": "maskable"
     }
   ]

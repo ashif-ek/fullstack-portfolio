@@ -24,8 +24,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   icons: {
-    icon: '/globe.svg',
-    apple: '/globe.svg',
+    icon: '/profile-icon.jpg',
+    apple: '/profile-icon.jpg',
   },
   manifest: '/manifest.json',
   openGraph: {
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: 'Ashif E.K | Full-Stack Engineer',
     description: 'Expert React & Django developer building secure, scalable, and high-performance web applications.',
     siteName: 'Ashif E.K Portfolio',
-    images: [{ url: '/globe.svg', width: 1200, height: 630, alt: 'Ashif E.K Portfolio' }],
+    images: [{ url: '/profile-icon.jpg', width: 1200, height: 630, alt: 'Ashif E.K Portfolio' }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -92,7 +92,7 @@ export default function RootLayout({
                   "jobTitle": "Full-Stack Engineer",
                   "description": "Specializing in React, Django, and high-performance web applications. Expert in building secure, scalable, and optimized digital experiences.",
                   "url": baseUrl,
-                  "image": `${baseUrl}/profile.jpg`,
+                  "image": `${baseUrl}/profile-icon.jpg`,
                   "sameAs": [
                     "https://github.com/ashif-ek",
                     "https://linkedin.com/in/ashifek",
