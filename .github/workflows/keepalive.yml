@@ -2,7 +2,7 @@ name: Keep Backend Alive
 
 on:
   schedule:
-    - cron: "*/8 * * * *"
+    - cron: "*/5 * * * *"
 
 jobs:
   ping:
@@ -13,5 +13,5 @@ jobs:
 
       - name: Ping Backend
         run: |
-          curl -f -A "GitHub-Actions-KeepAlive" https://fullstack-portfolio-vdvq.onrender.com/health/
+          curl -f -A "render-keepalive-bot" https://fullstack-portfolio-vdvq.onrender.com/health/
           echo "Backend pinged successfully at $(date)"

@@ -1,35 +1,93 @@
 from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
+from django.views.decorators.cache import never_cache
 from django.utils import timezone
+from django.conf import settings
 from .models.settings import SiteSettings
 import logging
+import time
+import shutil
+import os
+import sys
+import platform
+
+# Track global startup time
+STARTUP_TIME = time.time()
 
 logger = logging.getLogger(__name__)
 
+@never_cache
 @require_http_methods(["GET"])
 def health_check(request):
     """
-    Enhanced health check that verifies database connectivity.
+    Enhanced health check that verifies database connectivity and performance.
     """
+    start_time = time.perf_counter()
     health_details = {
-        "status": "healthy",
+        "status": "ok",
         "timestamp": timezone.now().isoformat(),
-        "services": {
-            "database": "unknown"
-        }
+        "database": "unknown",
+        "environment": "production" if not settings.DEBUG else "development",
+        "response_time_ms": 0
     }
     
     try:
         # Perform a light database operation
         exists = SiteSettings.objects.exists()
-        health_details["services"]["database"] = "up"
-        health_details["database_verified"] = exists
+        health_details["database"] = "ok"
         status_code = 200
     except Exception as e:
         logger.error(f"Health check failed: {str(e)}")
-        health_details["status"] = "unhealthy"
-        health_details["services"]["database"] = "down"
+        health_details["status"] = "error"
+        health_details["database"] = "failure"
         health_details["error"] = str(e)
         status_code = 503
 
+    health_details["response_time_ms"] = round((time.perf_counter() - start_time) * 1000, 2)
     return JsonResponse(health_details, status=status_code)
+
+@never_cache
+@require_http_methods(["GET"])
+def system_status(request):
+    """
+    Exposes runtime and system observability information.
+    """
+    uptime_seconds = time.time() - STARTUP_TIME
+    
+    # Get disk usage
+    total, used, free = shutil.disk_usage("/")
+    
+    # Try to get memory usage (platform dependent fallback)
+    memory_info = {}
+    try:
+        import psutil
+        process = psutil.Process(os.getpid())
+        memory_info["usage_mb"] = round(process.memory_info().rss / (1024 * 1024), 2)
+    except (ImportError, Exception):
+        memory_info["usage_mb"] = "unknown"
+
+    status_data = {
+        "service_name": "Portfolio Backend",
+        "service_version": "1.0.0",
+        "uptime_formatted": f"{int(uptime_seconds // 3600)}h {int((uptime_seconds % 3600) // 60)}m {int(uptime_seconds % 60)}s",
+        "uptime_seconds": round(uptime_seconds, 2),
+        "database_connectivity": "connected",
+        "disk": {
+            "total_gb": round(total / (2**30), 2),
+            "used_gb": round(used / (2**30), 2),
+            "free_gb": round(free / (2**30), 2),
+            "percent_used": round((used / total) * 100, 2)
+        },
+        "memory": memory_info,
+        "python_version": sys.version,
+        "platform": platform.platform(),
+        "timestamp": timezone.now().isoformat()
+    }
+
+    try:
+        # Verify DB connection for status too
+        SiteSettings.objects.exists()
+    except Exception:
+        status_data["database_connectivity"] = "disconnected"
+
+    return JsonResponse(status_data)

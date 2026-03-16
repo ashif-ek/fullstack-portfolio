@@ -20,7 +20,7 @@ from .views.analytics_views import (
     VisitorIncrementView,
     PortfolioAnalyticsView,
 )
-from .health_view import health_check
+from .health_view import health_check, system_status
 
 
 router = DefaultRouter()
@@ -41,6 +41,7 @@ urlpatterns = [
     path("upload", UploadView.as_view(), name="upload"),
     path("login", LoginView.as_view(), name="login"),
     path("health/", health_check, name="health_check"),
+    path("api/system/status/", system_status, name="system_status"),
     path("analytics/visitors/", VisitorCountView.as_view(), name="visitor_count"),
     path(
         "analytics/visitors/increment/",
