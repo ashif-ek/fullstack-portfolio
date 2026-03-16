@@ -68,7 +68,7 @@ export default async function AboutPage() {
                 <header className="mb-16 text-center">
                     <div className="w-32 h-32 mx-auto mb-8 rounded-full overflow-hidden border-2 border-academic-primary/20 p-1 shadow-2xl">
                         <img
-                            src="/profile.jpg"
+                            src="https://res.cloudinary.com/dvq8j8q9j/image/upload/v1758031879/ashif/profile_2_c4j18n.jpg"
                             alt="Ashif EK"
                             className="w-full h-full object-cover rounded-full filter grayscale hover:grayscale-0 transition-all duration-700"
                         />
@@ -77,7 +77,7 @@ export default async function AboutPage() {
                         Ashif EK
                     </h1>
                     <p className="text-xl text-academic-text/60 font-serif italic">
-                        Full-Stack Enginee
+                        Full-Stack Engineer
                     </p>
                 </header>
 
