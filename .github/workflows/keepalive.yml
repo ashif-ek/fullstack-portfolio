@@ -15,3 +15,10 @@ jobs:
         run: |
           curl -f -A "render-keepalive-bot" https://fullstack-portfolio-vdvq.onrender.com/health/
           echo "Backend pinged successfully at $(date)"
+
+      - name: Trigger Data Sync
+        run: |
+          curl -f -X POST \
+               -H "X-Sync-Token: ${{ secrets.SYNC_SECRET_TOKEN }}" \
+               https://fullstack-portfolio-vdvq.onrender.com/github-repos/sync/
+          echo "Data sync triggered successfully at $(date)"
