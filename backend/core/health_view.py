@@ -18,6 +18,15 @@ logger = logging.getLogger(__name__)
 
 @never_cache
 @require_http_methods(["GET"])
+def ping(request):
+    """
+    Ultra-lightweight endpoint for keep-alive services.
+    Does not touch the database to ensure 200 OK even during startup/migrations.
+    """
+    return JsonResponse({"status": "pong", "timestamp": timezone.now().isoformat()})
+
+@never_cache
+@require_http_methods(["GET"])
 def health_check(request):
     """
     Enhanced health check that verifies database connectivity and performance.
@@ -35,16 +44,21 @@ def health_check(request):
         # Perform a light database operation
         exists = SiteSettings.objects.exists()
         health_details["database"] = "ok"
-        status_code = 200
     except Exception as e:
-        logger.error(f"Health check failed: {str(e)}")
-        health_details["status"] = "error"
-        health_details["database"] = "failure"
-        health_details["error"] = str(e)
-        status_code = 503
+        logger.warning(f"Health check database warning: {str(e)}")
+        health_details["database"] = "unavailable"
+        # We don't necessarily want to return 503 and trigger alerts if the 
+        # app is actually running but DB is momentarily slow/restarting
+        # especially on cheap/free tier hosting.
+        if settings.DEBUG:
+             health_details["error"] = str(e)
 
     health_details["response_time_ms"] = round((time.perf_counter() - start_time) * 1000, 2)
-    return JsonResponse(health_details, status=status_code)
+    
+    # Return 200 even if DB is down but app is alive (liveness vs readiness)
+    # This prevents keep-alive services from marking the site as "DOWN" 
+    # during transient DB issues.
+    return JsonResponse(health_details, status=200)
 
 @never_cache
 @require_http_methods(["GET"])
