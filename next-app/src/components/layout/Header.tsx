@@ -142,7 +142,27 @@ const Header = () => {
             >
               Collaborate
             </Link>
-            <div className="flex justify-center">
+            
+            <div className="px-6 pb-4">
+              <button
+                onClick={() => {
+                  toggleRecruiterMode();
+                  closeMenu();
+                }}
+                className={`w-full flex items-center justify-center gap-2 px-4 py-3 rounded-full border transition-all duration-300 ${isRecruiterMode
+                    ? 'bg-academic-accent/10 border-academic-accent text-academic-accent shadow-sm'
+                    : 'bg-academic-paper border-academic-border text-academic-muted hover:border-academic-primary hover:text-academic-primary'
+                  }`}
+                aria-label="Toggle Recruiter Mode"
+              >
+                <Briefcase size={16} className={isRecruiterMode ? 'animate-pulse' : ''} />
+                <span className="text-xs font-black uppercase tracking-widest">
+                  {isRecruiterMode ? 'Recruiter Mode Active' : 'Standard View'}
+                </span>
+              </button>
+            </div>
+
+            <div className="flex flex-col items-center gap-4">
               <a
                 href={`${API_BASE_URL}/admin`}
                 onClick={closeMenu}
@@ -151,7 +171,7 @@ const Header = () => {
               >
                 <UserIcon /> {isAdmin ? 'Dashboard' : 'Admin Login'}
               </a>
-              <div className="mt-4">
+              <div>
                 <ThemeToggle />
               </div>
             </div>

@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import Api from '../lib/api';
 import { Project } from '../types';
-import { MOCK_PROJECTS } from '../data/mock';
+import { projects as MOCK_PROJECTS } from '../data/mockData';
 
 const fetchProjects = async (): Promise<Project[]> => {
     const { data } = await Api.get('/projects/');
