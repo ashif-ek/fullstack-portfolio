@@ -1,0 +1,539 @@
+{
+  "core.blogpost": [
+    {
+      "pk": 5,
+      "fields": {
+        "title": "Building Scalable Architecture with Django and React",
+        "slug": "scalable-architecture-django-react",
+        "date": "2025-11-10",
+        "summary": "A deep dive into decoupling frontend and backend to create high-performance web applications that scale.",
+        "content": "# Building Scalable Architecture...\n\n(Placeholder for technical article content...)",
+        "image_url": "blog/scalable.png"
+      }
+    },
+    {
+      "pk": 6,
+      "fields": {
+        "title": "Optimizing Next.js Performance: A Practical Guide",
+        "slug": "optimizing-nextjs-performance",
+        "date": "2025-10-25",
+        "summary": "Techniques for reducing bundle size and improving Core Web Vitals in large-scale Next.js applications.",
+        "content": "# Optimizing Next.js...",
+        "image_url": "blog/performance.png"
+      }
+    },
+    {
+      "pk": 7,
+      "fields": {
+        "title": "Getting Started with React: A Beginner's Guide",
+        "slug": "getting-started-with-react-beginners-guide",
+        "date": "2026-03-06",
+        "summary": "Learn the fundamentals of React, including components, JSX, props, and state. This comprehensive guide will help you get started on your journey to mastering React development.",
+        "content": "# Getting Started with React\r\n\r\nReact is a powerful JavaScript library for building user interfaces. In this article, we'll explore the key concepts that every React developer should understand.\r\n\r\n## What is React?\r\n\r\nReact is a JavaScript library maintained by Facebook that simplifies the process of building interactive user interfaces. It uses a component-based architecture to create reusable and maintainable code.\r\n\r\n## Key Concepts\r\n\r\n### Components\r\nComponents are the building blocks of any React application. They are reusable pieces of UI that encapsulate their own structure and behavior.\r\n\r\n### JSX\r\nJSX is a syntax extension that looks similar to HTML. It allows you to write UI code in a more readable and intuitive way.\r\n\r\n### Props\r\nProps are the way to pass data from parent to child components. They are read-only and help maintain unidirectional data flow.\r\n\r\n### State\r\nState allows components to manage their own data. Unlike props, state is mutable and can be updated over time.",
+        "image_url": ""
+      }
+    },
+    {
+      "pk": 8,
+      "fields": {
+        "title": "Django Best Practices for Production",
+        "slug": "django-best-practices-production",
+        "date": "2026-03-06",
+        "summary": "Learn the essential best practices for deploying Django applications to production environments. This guide covers configuration, security, and performance optimization.",
+        "content": "# Django Best Practices for Production\r\n\r\n## Environment Configuration\r\nAlways use environment variables for sensitive configuration like database credentials, API keys, and secret keys. Never hardcode these values in your source code.\r\n\r\n## Security Measures\r\n- Enable DEBUG = False in production\r\n- Use HTTPS everywhere\r\n- Set ALLOWED_HOSTS properly\r\n- Use Django's built-in security middleware\r\n- Keep Django and dependencies updated\r\n\r\n## Database Optimization\r\n- Use database indexing strategically\r\n- Monitor query performance with Django Debug Toolbar\r\n- Implement connection pooling\r\n- Use raw SQL only when necessary\r\n\r\n## Caching Strategy\r\nImplement caching at multiple levels to improve performance:\r\n- Browser caching\r\n- Server-side caching with Redis\r\n- Database query caching\r\n- View-level caching",
+        "image_url": ""
+      }
+    },
+    {
+      "pk": 9,
+      "fields": {
+        "title": "Advanced Redux Patterns and Middleware",
+        "slug": "advanced-redux-patterns-middleware",
+        "date": "2026-03-06",
+        "summary": "Master advanced Redux patterns including middleware, sagas, and thunks. Learn how to manage complex state in large-scale applications effectively.",
+        "content": "# Advanced Redux Patterns\r\n\r\n## Redux Middleware\r\nMiddleware functions are powerful tools for handling side effects in Redux applications. They sit between actions and reducers, allowing you to intercept and modify actions.\r\n\r\n## Redux Thunk\r\nRedux Thunk is a middleware that allows you to return functions from action creators instead of objects. This is useful for async operations.\r\n\r\n```javascript\r\nconst myAction = (param) => (dispatch) => {\r\n  dispatch(actionStart());\r\n  setTimeout(() => {\r\n    dispatch(actionSuccess(param));\r\n  }, 1000);\r\n};\r\n```\r\n\r\n## Redux Saga\r\nRedux Saga is an alternative middleware for handling side effects using generator functions. It provides more advanced control over asynchronous operations.\r\n\r\n## Best Practices\r\n- Keep actions pure and side-effect free\r\n- Use middleware for async operations\r\n- Structure your reducers properly\r\n- Use selector functions to access state",
+        "image_url": ""
+      }
+    },
+    {
+      "pk": 10,
+      "fields": {
+        "title": "Understanding React Hooks",
+        "slug": "understanding-react-hooks",
+        "date": "2026-03-06",
+        "summary": "Master React Hooks to write functional components with state and side effects. This guide covers useState, useEffect, useContext, and custom hooks.",
+        "content": "# React Hooks Guide\r\n\r\nReact Hooks allow you to use state and other React features without writing a class component. They are functions that let you \"hook into\" React state and lifecycle features from functional components.\r\n\r\n## Common Hooks\r\n\r\n### useState\r\nuseState is the most basic Hook. It lets you add state to functional components.\r\n\r\n### useEffect\r\nuseEffect is used for side effects in functional components. It runs after the component renders.\r\n\r\n### useContext\r\nuseContext allows you to subscribe to React context without introducing nesting.\r\n\r\n### useReducer\r\nuseReducer is a more complex alternative to useState for managing complex state logic.\r\n\r\n## Best Practices\r\n- Only use Hooks at the top level\r\n- Only use Hooks from React function components\r\n- Use the ESLint plugin to enforce these rules",
+        "image_url": ""
+      }
+    }
+  ],
+  "core.certificate": [
+    {
+      "pk": 7,
+      "fields": {
+        "title": "Bachelor of Computer Applications (BCA)",
+        "issuer": "SAFA Arts & Science College",
+        "date": "Aug 2022 \u0096 Apr 2025",
+        "category": "degree / education",
+        "image": "",
+        "credential_link": "",
+        "description": "Completed undergraduate studies in computer applications focusing on software development and computing fundamentals."
+      }
+    },
+    {
+      "pk": 8,
+      "fields": {
+        "title": "Python Django & Flutter Certification",
+        "issuer": "Regional Technologies",
+        "date": "2025",
+        "category": "web development",
+        "image": "certificates/django.webp",
+        "credential_link": "",
+        "description": "Hands-on training in Django backend development and Flutter mobile application development."
+      }
+    },
+    {
+      "pk": 9,
+      "fields": {
+        "title": "Certified Cyber Security Analyst (CCSA)",
+        "issuer": "Red Team Hacker Academy",
+        "date": "2022",
+        "category": "cybersecurity",
+        "image": "certificates/ccsa.webp",
+        "credential_link": "",
+        "description": "Covered OSINT, web application security testing, vulnerability assessment, and SOC/SIEM fundamentals."
+      }
+    },
+    {
+      "pk": 10,
+      "fields": {
+        "title": "Workshop Participation Certificate",
+        "issuer": "Prosevo Technologies",
+        "date": "14 October 2024",
+        "category": "Workshop / Professional Development",
+        "image": "certificates/prosevo.webp",
+        "credential_link": "",
+        "description": "Certificate awarded to Ashif E.K for successfully participating in a workshop conducted by Prosevo,\r\nRecognized for commendable enthusiasm and active engagement during the session."
+      }
+    }
+  ],
+  "core.message": [
+    {
+      "pk": 1,
+      "fields": {
+        "name": "ashif",
+        "email": "ashifek11@gmail.com",
+        "message": "dasf jg bn yug yio yoto iyooi hgjgj jhgbjk",
+        "date": "2026-03-08T12:33:20.411Z"
+      }
+    },
+    {
+      "pk": 2,
+      "fields": {
+        "name": "Test User",
+        "email": "test@example.com",
+        "message": "Manual test for SMTP",
+        "date": "2026-03-08T12:36:50.458Z"
+      }
+    },
+    {
+      "pk": 3,
+      "fields": {
+        "name": "Ashif E.K",
+        "email": "ashifek11@gmail.com",
+        "message": "ashif ashif",
+        "date": "2026-03-08T12:37:34.164Z"
+      }
+    },
+    {
+      "pk": 4,
+      "fields": {
+        "name": "Verification User",
+        "email": "verify@example.com",
+        "message": "Final verification message",
+        "date": "2026-03-08T12:49:15.517Z"
+      }
+    },
+    {
+      "pk": 5,
+      "fields": {
+        "name": "hello",
+        "email": "thenameisashif291345@gmail.com",
+        "message": "hqijdhcq qiudhqiudh jhbdhqbdhqdhqbd",
+        "date": "2026-03-08T12:50:38.889Z"
+      }
+    }
+  ],
+  "core.portfolioanalytics": [
+    {
+      "pk": 1,
+      "fields": {
+        "total_views": 31
+      }
+    }
+  ],
+  "core.profile": [
+    {
+      "pk": 3,
+      "fields": {
+        "name": "Ashif E.K",
+        "title": "Full Stack Developer & Digital Architect",
+        "description": "I build high-performance web applications enabling businesses to scale. Specializing in React, Django, and Modern Cloud Architecture, I transform complex requirements into seamless digital experiences.",
+        "introduction": "I am a results-driven Software Engineer with a passion for building robust, scalable web solutions. My journey began with a curiosity for how things work, which quickly evolved into a career in full-stack development. I focus on writing clean, maintainable code and solving real-world business problems.",
+        "experience": "With a strong foundation in Computer Science, I have successfully delivered projects ranging from e-commerce platforms to complex governance systems. I have hands-on experience with the modern web stack including Next.js, Django, and Cloud Infrastructure. My work emphasizes performance optimization, security best practices, and intuitive user experience design.",
+        "philosophy": "I believe that technology should be invisible\u0097it should work so smoothly that users focus on their goals, not the tools. My approach combines rigorous engineering principles with creative problem-solving to deliver software that is not just functional, but exceptional.",
+        "email": "ashifek11@gmail.com",
+        "avatar": ""
+      }
+    }
+  ],
+  "core.project": [
+    {
+      "pk": 10,
+      "fields": {
+        "title": "NOIR'EL - Luxury E-Commerce Platform",
+        "description": "Built a full-stack e-commerce platform using React and Django REST Framework covering the complete order lifecycle from browsing to secure payment confirmation. Implemented JWT authentication, admin controls, and payment workflows using Razorpay.",
+        "content": "",
+        "tags": "React, Django REST Framework, PostgreSQL, Razorpay, AWS",
+        "link": "https://noirel-perfume.vercel.app/",
+        "github": "https://github.com/ashif-ek/noirel-ecommerce",
+        "image": "",
+        "clicks": 3
+      }
+    },
+    {
+      "pk": 11,
+      "fields": {
+        "title": "Civic (CiviTech) - Cross-Platform Digital Governance Platform",
+        "description": "Developed a multi-role civic platform connecting citizens with Panchayath and higher administrative authorities, enabling complaint escalation, service tracking, announcements, moderation, analytics, and citizen engagement.",
+        "content": "",
+        "tags": "Django, Flutter, REST API, RBAC, PostgreSQL",
+        "link": "",
+        "github": "",
+        "image": "",
+        "clicks": 2
+      }
+    },
+    {
+      "pk": 12,
+      "fields": {
+        "title": "Blog System Design Sandbox",
+        "description": "Built a full-stack blogging system to experiment with production backend patterns including JWT access/refresh tokens, request validation, structured logging, health checks, and Dockerized deployment.",
+        "content": "",
+        "tags": "React, Django REST Framework, Docker, GitHub Actions, AWS",
+        "link": "",
+        "github": "",
+        "image": "",
+        "clicks": 1
+      }
+    },
+    {
+      "pk": 13,
+      "fields": {
+        "title": "Salary Checker",
+        "description": "Salary Reality Checker delivers AI-powered salary insights using percentile analytics, fuzzy-matched job titles, and machine-learning predictions. It auto-corrects user input, analyzes market trends, and predicts salaries when data is missing. Built with FastAPI, PostgreSQL, scikit-learn.",
+        "content": "",
+        "tags": "FastAPI, PostgreSQL, Machine Learning, AI, Salary Analytics",
+        "link": "https://ashif-ek.github.io/docs-stack-material/",
+        "github": "https://github.com/ashif-ek/salary-checker",
+        "image": "",
+        "clicks": 2
+      }
+    },
+    {
+      "pk": 14,
+      "fields": {
+        "title": "TimeLens",
+        "description": "Time Lens reframes real minutes into life-equivalents, helping you feel the true weight of time. A mindset tool that turns seconds into life-hours, minutes into life-days, and days into life-years.",
+        "content": "",
+        "tags": "Python, Productivity, Mindset Tool, Time Management",
+        "link": "https://ashif-ek.github.io/docs-stack-material/",
+        "github": "https://github.com/ashif-ek/time-lens-python",
+        "image": "",
+        "clicks": 1
+      }
+    }
+  ],
+  "core.service": [
+    {
+      "pk": 10,
+      "fields": {
+        "title": "MVP Development",
+        "description": "Rapid prototyping and development of Minimum Viable Products for startups. Launch your idea quickly with a solid, scalable foundation.",
+        "icon": "RocketIcon"
+      }
+    },
+    {
+      "pk": 11,
+      "fields": {
+        "title": "API Design & Integration",
+        "description": "Building secure and scalable RESTful APIs. Integration of third-party services like payment gateways (Stripe), authentication (OAuth), and cloud storage.",
+        "icon": "ServerIcon"
+      }
+    },
+    {
+      "pk": 12,
+      "fields": {
+        "title": "Performance Optimization",
+        "description": "Auditing and optimizing existing applications for speed, accessibility, and SEO. Implementing caching strategies and code splitting.",
+        "icon": "LightningIcon"
+      }
+    },
+    {
+      "pk": 13,
+      "fields": {
+        "title": "Backend API Development",
+        "description": "Secure REST APIs using Django REST Framework with authentication and scalable architecture.",
+        "icon": "code"
+      }
+    },
+    {
+      "pk": 14,
+      "fields": {
+        "title": "Full Stack Web Development",
+        "description": "Building responsive web platforms using React, Django, and PostgreSQL.",
+        "icon": "layers"
+      }
+    },
+    {
+      "pk": 15,
+      "fields": {
+        "title": "Cloud Deployment",
+        "description": "Deploying production-ready applications using Docker, AWS EC2, and CI/CD pipelines.",
+        "icon": "cloud"
+      }
+    }
+  ],
+  "core.sitesettings": [
+    {
+      "pk": 1,
+      "fields": {
+        "site_title": "Ashif's Portfolio",
+        "show_blog": true,
+        "show_skills": true,
+        "show_projects": true,
+        "show_certificates": true,
+        "maintenance_mode": false,
+        "welcome_message": ""
+      }
+    }
+  ],
+  "core.skill": [
+    {
+      "pk": 19,
+      "fields": {
+        "name": "Django REST Framework",
+        "level": 90,
+        "category": "Technology",
+        "icon": "",
+        "description": "Designing secure, modular REST APIs for production-grade backend systems.",
+        "color": ""
+      }
+    },
+    {
+      "pk": 20,
+      "fields": {
+        "name": "React.js",
+        "level": 90,
+        "category": "Technology",
+        "icon": "",
+        "description": "Building responsive frontend applications with reusable components and API-driven architecture.",
+        "color": ""
+      }
+    },
+    {
+      "pk": 21,
+      "fields": {
+        "name": "PostgreSQL",
+        "level": 75,
+        "category": "Technology",
+        "icon": "",
+        "description": "Modeling relational data and optimizing queries for scalable backend performance.",
+        "color": ""
+      }
+    },
+    {
+      "pk": 22,
+      "fields": {
+        "name": "Docker",
+        "level": 75,
+        "category": "DevOps",
+        "icon": "",
+        "description": "Containerizing services for environment parity across development and production.",
+        "color": ""
+      }
+    },
+    {
+      "pk": 23,
+      "fields": {
+        "name": "AWS (EC2, RDS, S3)",
+        "level": 50,
+        "category": "Cloud Platform",
+        "icon": "",
+        "description": "Amazon Web Services for cloud computing and infrastructure",
+        "color": ""
+      }
+    },
+    {
+      "pk": 24,
+      "fields": {
+        "name": "MySQL",
+        "level": 75,
+        "category": "Database",
+        "icon": "",
+        "description": "Relational database management system",
+        "color": ""
+      }
+    },
+    {
+      "pk": 25,
+      "fields": {
+        "name": "Redis",
+        "level": 85,
+        "category": "Caching",
+        "icon": "",
+        "description": "In-memory data structure store for caching",
+        "color": ""
+      }
+    },
+    {
+      "pk": 26,
+      "fields": {
+        "name": "Docker Compose",
+        "level": 80,
+        "category": "DevOps",
+        "icon": "",
+        "description": "Tool for defining and running multi-container Docker applications",
+        "color": ""
+      }
+    },
+    {
+      "pk": 27,
+      "fields": {
+        "name": "REST APIs",
+        "level": 90,
+        "category": "Backend Development",
+        "icon": "",
+        "description": "Representational State Transfer APIs for client-server communication",
+        "color": ""
+      }
+    },
+    {
+      "pk": 28,
+      "fields": {
+        "name": "GraphQL",
+        "level": 75,
+        "category": "Backend Development",
+        "icon": "",
+        "description": "Query language for APIs with strong typing and schema definition",
+        "color": ""
+      }
+    },
+    {
+      "pk": 29,
+      "fields": {
+        "name": "Production Reliability",
+        "level": 80,
+        "category": "DevOps",
+        "icon": "",
+        "description": "Ensuring systems remain operational and stable in production environments",
+        "color": ""
+      }
+    }
+  ],
+  "core.sociallink": [
+    {
+      "pk": 6,
+      "fields": {
+        "profile": 3,
+        "name": "Github",
+        "url": "https://github.com/ashif-ek"
+      }
+    },
+    {
+      "pk": 7,
+      "fields": {
+        "profile": 3,
+        "name": "LinkedIn",
+        "url": "https://linkedin.com/in/ashifek"
+      }
+    },
+    {
+      "pk": 8,
+      "fields": {
+        "profile": 3,
+        "name": "Instagram",
+        "url": "https://instagram.com/ashif.io"
+      }
+    },
+    {
+      "pk": 9,
+      "fields": {
+        "profile": 3,
+        "name": "Fiverr",
+        "url": "http://www.fiverr.com/s/gDLy45X"
+      }
+    },
+    {
+      "pk": 10,
+      "fields": {
+        "profile": 3,
+        "name": "Docs Material",
+        "url": "https://ashif-ek.github.io/docs-stack-material/"
+      }
+    }
+  ],
+  "core.tool": [
+    {
+      "pk": 13,
+      "fields": {
+        "name": "VS Code",
+        "icon": "CodeIcon"
+      }
+    },
+    {
+      "pk": 14,
+      "fields": {
+        "name": "PostgreSQL",
+        "icon": "DatabaseIcon"
+      }
+    },
+    {
+      "pk": 15,
+      "fields": {
+        "name": "Docker",
+        "icon": "DockerIcon"
+      }
+    },
+    {
+      "pk": 16,
+      "fields": {
+        "name": "Git & GitHub",
+        "icon": "GitIcon"
+      }
+    },
+    {
+      "pk": 17,
+      "fields": {
+        "name": "Figma",
+        "icon": "FigmaIcon"
+      }
+    },
+    {
+      "pk": 18,
+      "fields": {
+        "name": "Postman",
+        "icon": "PostmanIcon"
+      }
+    }
+  ],
+  "core.visitorcount": [
+    {
+      "pk": 1,
+      "fields": {
+        "total_visitors": 2,
+        "last_updated": "2026-03-08T11:32:25.033Z"
+      }
+    }
+  ]
+}

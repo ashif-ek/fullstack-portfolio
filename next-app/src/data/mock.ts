@@ -2,51 +2,50 @@ import { Project, Skill, Tool } from "../types";
 
 export const MOCK_PROJECTS: Project[] = [
     {
-        "id": "1",
-        "slug": "noirel-luxury-ecommerce",
-        "title": "Noirel Luxury Ecommerce",
-        "description": "A high-performance e-commerce platform designed for luxury aesthetics. Implemented complex filtering, cart management, and optimized asset loading for a sub-2s load time.",
-        "tags": ["Next.js", "TypeScript", "Tailwind CSS", "Redux"],
-        "image": "project1.jpg",
-        "link": "https://noirel-store.vercel.app/",
+        "id": "10",
+        "slug": "noirel-ecommerce",
+        "title": "NOIR'EL - Luxury E-Commerce Platform",
+        "description": "Built a full-stack e-commerce platform using React and Django REST Framework covering the complete order lifecycle from browsing to secure payment confirmation. Implemented JWT authentication, admin controls, and payment workflows using Razorpay.",
+        "tags": ["React", "Django REST Framework", "PostgreSQL", "Razorpay", "AWS"],
+        "image": "project5.jpg",
+        "link": "https://noirel-perfume.vercel.app/",
         "github": "https://github.com/ashif-ek/noirel-ecommerce"
     },
     {
-        "id": "2",
-        "slug": "civicconnect-governance",
-        "title": "CivicConnect Governance",
-        "description": "A comprehensive digital governance platform enabling citizen engagement. Features include complaint tracking, real-time notifications, and administrative dashboards. Handled role-based access control for 4 distinct user types.",
-        "tags": ["Django", "Flutter", "PostgreSQL", "REST API"],
+        "id": "11",
+        "slug": "civic-connect",
+        "title": "Civic (CiviTech) - Digital Governance Platform",
+        "description": "Developed a multi-role civic platform connecting citizens with Panchayath and higher administrative authorities, enabling complaint escalation, service tracking, announcements, moderation, analytics, and citizen engagement.",
+        "tags": ["Django", "Flutter", "REST API", "RBAC", "PostgreSQL"],
         "image": "project2.jpg",
-        "link": "https://github.com/ashif-ek/civic-connect",
+        "link": "#",
         "github": "https://github.com/ashif-ek/civic-connect"
     },
     {
-        "id": "3",
-        "slug": "minimalist-cms-blog",
-        "title": "Minimalist CMS Blog",
-        "description": "A custom Content Management System built to be lightweight and SEO-friendly. Includes markdown support, dynamic routing, and server-side rendering for optimal search engine visibility.",
-        "tags": ["Django", "HTMX", "PostgreSQL", "Bootstrap"],
+        "id": "12",
+        "slug": "system-design-sandbox",
+        "title": "Blog System Design Sandbox",
+        "description": "Built a full-stack blogging system to experiment with production backend patterns including JWT access/refresh tokens, request validation, structured logging, health checks, and Dockerized deployment.",
+        "tags": ["React", "Django REST Framework", "Docker", "GitHub Actions", "AWS"],
         "image": "project3.jpg",
-        "link": "https://github.com/ashif-ek/django-blog",
-        "github": "https://github.com/ashif-ek/django-blog"
+        "link": "#",
+        "github": "#"
     }
 ];
 
 export const MOCK_SKILLS: Skill[] = [
-    { "id": 1, "name": "Django & Python", "level": 95, "category": "Backend", "color": "#44B78B", "icon": "PythonIcon", "description": "Expert in building secure REST APIs, ORM optimization, and scalable backend architecture." },
-    { "id": 2, "name": "React & Next.js", "level": 90, "category": "Frontend", "color": "#61DAFB", "icon": "ReactIcon", "description": "Building performant, server-side rendered (SSR) applications with modern hooks and state management." },
-    { "id": 3, "name": "TypeScript", "level": 85, "category": "Language", "color": "#3178C6", "icon": "TSIcon", "description": "Strong typing for scalable codebases, resulting in fewer runtime errors and better maintainability." },
-    { "id": 4, "name": "Database Design", "level": 88, "category": "Data", "color": "#336791", "icon": "DatabaseIcon", "description": "Schema design, optimization, and management of SQL (PostgreSQL) and NoSQL databases." },
-    { "id": 5, "name": "DevOps & Cloud", "level": 80, "category": "Infrastructure", "color": "#FF9900", "icon": "CloudIcon", "description": "Experience with Docker, CI/CD pipelines, and deploying to platforms like AWS and Vercel." },
-    { "id": 6, "name": "Flutter", "level": 80, "category": "Mobile", "color": "#027DFD", "icon": "MobileIcon", "description": "Developing cross-platform mobile applications with native-like performance." }
+    { "id": 19, "name": "Django REST Framework", "level": 90, "category": "Technology", "color": "#44B78B", "icon": "PythonIcon", "description": "Designing secure, modular REST APIs for production-grade backend systems." },
+    { "id": 20, "name": "React.js", "level": 90, "category": "Technology", "color": "#61DAFB", "icon": "ReactIcon", "description": "Building responsive frontend applications with reusable components and API-driven architecture." },
+    { "id": 21, "name": "PostgreSQL", "level": 75, "category": "Technology", "color": "#336791", "icon": "DatabaseIcon", "description": "Modeling relational data and optimizing queries for scalable backend performance." },
+    { "id": 22, "name": "Docker", "level": 75, "category": "DevOps", "color": "#2496ED", "icon": "DockerIcon", "description": "Containerizing services for environment parity across development and production." },
+    { "id": 23, "name": "AWS (EC2, RDS, S3)", "level": 50, "category": "Cloud Platform", "color": "#FF9900", "icon": "CloudIcon", "description": "Amazon Web Services for cloud computing and infrastructure" },
 ];
 
 export const MOCK_TOOLS: Tool[] = [
-    { "id": "1", "name": "VS Code", "icon": "CodeIcon" },
-    { "id": "2", "name": "PostgreSQL", "icon": "DatabaseIcon" },
-    { "id": "3", "name": "Docker", "icon": "DockerIcon" },
-    { "id": "4", "name": "Git & GitHub", "icon": "GitIcon" },
-    { "id": "5", "name": "Figma", "icon": "FigmaIcon" },
-    { "id": "6", "name": "Postman", "icon": "PostmanIcon" }
+    { "id": "13", "name": "VS Code", "icon": "CodeIcon" },
+    { "id": "14", "name": "PostgreSQL", "icon": "DatabaseIcon" },
+    { "id": "15", "name": "Docker", "icon": "DockerIcon" },
+    { "id": "16", "name": "Git & GitHub", "icon": "GitIcon" },
+    { "id": "17", "name": "Figma", "icon": "FigmaIcon" },
+    { "id": "18", "name": "Postman", "icon": "PostmanIcon" }
 ];
