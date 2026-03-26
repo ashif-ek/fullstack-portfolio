@@ -78,7 +78,7 @@ export default function RecruiterCTA() {
 
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
                                 <a
-                                    href="mailto:iwouldliketoknowthat@gmail.com?subject=Hiring Inquiry"
+                                    href="mailto:ashifek11@gmail.com?subject=Hiring Inquiry"
                                     className="academic-button group flex items-center justify-center gap-2 py-4"
                                     aria-label="Hire Me: Send an email"
                                 >
@@ -97,7 +97,9 @@ export default function RecruiterCTA() {
                                 </a>
 
                                 <a
-                                    href="https://calendly.com/ashif-ek/meeting"
+                                    // Change this to your Google Meet or Calendly link
+                                    // Example: href="https://meet.google.com/your-code"
+                                    href="mailto:ashifek11@gmail.com?subject=Schedule a Call"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="px-6 py-4 rounded-lg bg-academic-paper border border-academic-border text-academic-primary hover:bg-academic-primary/5 transition-all text-center flex items-center justify-center gap-2 group font-medium tracking-wide"
