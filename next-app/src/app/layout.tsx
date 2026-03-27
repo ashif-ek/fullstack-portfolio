@@ -72,13 +72,6 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head>
         {/* Preload critical fonts for LCP improvement */}
-        <link
-          rel="preload"
-          href="/fonts/inter-var.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

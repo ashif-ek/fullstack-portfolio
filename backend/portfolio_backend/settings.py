@@ -9,7 +9,7 @@ load_dotenv()
 def config(key, default=None, cast=None):
     value = os.getenv(key, default)
     if cast and value is not None:
-        if cast == bool:
+        if cast is bool:
             return value.lower() in ("true", "1", "yes")
         try:
             return cast(value)
@@ -139,7 +139,8 @@ if DEBUG:
     CORS_ALLOW_ALL_ORIGINS = True
 else:
     CORS_ALLOWED_ORIGINS = config(
-        "CORS_ALLOWED_ORIGINS", default="http://localhost:3000"
+        "CORS_ALLOWED_ORIGINS",
+        default="http://localhost:3000,https://www.ashifek.in,https://ashifek.in",
     ).split(",")
 
 

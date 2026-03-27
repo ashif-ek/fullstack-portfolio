@@ -100,8 +100,12 @@ export default function Home() {
   }
 
   useEffect(() => {
-    Api.post('/api/portfolio-view/')
-      .catch(err => console.error("Failed to increment portfolio views", err));
+    const tracked = sessionStorage.getItem('portfolio_viewed');
+    if (!tracked) {
+      Api.post('/api/portfolio-view/')
+        .then(() => sessionStorage.setItem('portfolio_viewed', 'true'))
+        .catch(err => console.error("Failed to increment portfolio views", err));
+    }
   }, []);
 
   return (
