@@ -1,39 +1,39 @@
-name: Keep Backend Alive
+# name: Keep Backend Alive
 
-on:
-  schedule:
-    - cron: "*/2 * * * *"  # Run every 2 minutes to combat GitHub Action delays
-  workflow_dispatch:      # Allow manual triggering
+# on:
+#   schedule:
+#     - cron: "*/2 * * * *"  # Run every 2 minutes to combat GitHub Action delays
+#   workflow_dispatch:      # Allow manual triggering
 
-jobs:
-  ping:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Print Time
-        run: date
+# jobs:
+#   ping:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Print Time
+#         run: date
 
-      - name: Ping Backend with Retries
-        run: |
-          URL="https://fullstack-portfolio-vdvq.onrender.com/ping/"
-          USER_AGENT="render-keepalive-bot"
+#       - name: Ping Backend with Retries
+#         run: |
+#           URL="https://fullstack-portfolio-vdvq.onrender.com/ping/"
+#           USER_AGENT="render-keepalive-bot"
           
-          for i in {1..3}; do
-            echo "Attempt $i: Pinging $URL..."
-            if curl -f -s -A "$USER_AGENT" "$URL" > /dev/null; then
-              echo "Backend pinged successfully at $(date)"
-              exit 0
-            fi
-            echo "Attempt $i failed. Retrying in 10 seconds..."
-            sleep 10
-          done
-          echo "All attempts failed."
-          exit 1
+#           for i in {1..3}; do
+#             echo "Attempt $i: Pinging $URL..."
+#             if curl -f -s -A "$USER_AGENT" "$URL" > /dev/null; then
+#               echo "Backend pinged successfully at $(date)"
+#               exit 0
+#             fi
+#             echo "Attempt $i failed. Retrying in 10 seconds..."
+#             sleep 10
+#           done
+#           echo "All attempts failed."
+#           exit 1
 
-      - name: Trigger Data Sync
-        # Only run sync specifically at certain times or on manual trigger
-        if: github.event.schedule == '*/2 * * * *' || github.event_name == 'workflow_dispatch'
-        run: |
-          curl -f -X POST \
-               -H "X-Sync-Token: ${{ secrets.SYNC_SECRET_TOKEN }}" \
-               https://fullstack-portfolio-vdvq.onrender.com/github-repos/sync/
-          echo "Data sync triggered successfully at $(date)"
+#       - name: Trigger Data Sync
+#         # Only run sync specifically at certain times or on manual trigger
+#         if: github.event.schedule == '*/2 * * * *' || github.event_name == 'workflow_dispatch'
+#         run: |
+#           curl -f -X POST \
+#                -H "X-Sync-Token: ${{ secrets.SYNC_SECRET_TOKEN }}" \
+#                https://fullstack-portfolio-vdvq.onrender.com/github-repos/sync/
+#           echo "Data sync triggered successfully at $(date)"
