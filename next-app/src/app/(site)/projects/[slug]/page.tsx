@@ -5,8 +5,11 @@ import { Project } from '../../../../types';
 import ReactMarkdown from 'react-markdown';
 import { ArrowLeft, Github, Globe, Tag } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 import Api from '../../../../lib/api';
+import Breadcrumbs from '../../../../components/ui/Breadcrumbs';
+import BlogCTA from '../../../../components/sections/BlogCTA';
 
 interface ProjectPageProps {
     params: {
@@ -38,18 +41,33 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
     if (!project) return {};
 
     return {
-        title: `${project.title} | Projects`,
+        title: `${project.title} | Case Study`,
         description: project.description,
+        alternates: {
+            canonical: `/projects/${project.slug}`,
+        },
         openGraph: {
             title: `${project.title} | Ashif E.K`,
             description: project.description,
             type: 'article',
-            images: [{ url: project.image?.startsWith('http') ? project.image : `/projects/${project.image}` }],
+            url: `/projects/${project.slug}`,
+            images: [
+                { 
+                    url: project.image?.startsWith('http') ? project.image : `/projects/${project.image}`,
+                    width: 1200,
+                    height: 630,
+                    alt: project.title 
+                }
+            ],
+            section: 'Project Case Study',
+            tags: project.tags || [],
         },
         twitter: {
             card: 'summary_large_image',
             title: project.title,
             description: project.description,
+            images: [project.image?.startsWith('http') ? project.image : `/projects/${project.image}`],
+            creator: '@ashif_io',
         },
     };
 }
@@ -114,6 +132,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             />
 
             <div className="max-w-4xl mx-auto">
+                <Breadcrumbs />
                 <Link
                     href="/projects"
                     className="inline-flex items-center gap-2 text-academic-primary hover:underline mb-8 group transition-all uppercase text-xs font-bold tracking-widest"
@@ -166,12 +185,13 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 </header>
 
                 <div className="prose prose-invert prose-academic max-w-none">
-                    <div className="rounded-2xl overflow-hidden border border-academic-primary/20 aspect-video mb-12 shadow-2xl">
-                        <img
+                    <div className="relative rounded-2xl overflow-hidden border border-academic-primary/20 aspect-video mb-12 shadow-2xl">
+                        <Image
                             src={project.image.startsWith('http') ? project.image : `/projects/${project.image}`}
                             alt={project.title}
-                            className="w-full h-full object-cover"
-                            loading="eager"
+                            fill
+                            className="object-cover"
+                            priority
                         />
                     </div>
 
@@ -190,6 +210,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                         </ReactMarkdown>
                     </section>
                 </div>
+
+                <BlogCTA />
             </div>
         </main>
     );

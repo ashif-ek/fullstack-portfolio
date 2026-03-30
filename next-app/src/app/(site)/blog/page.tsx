@@ -6,8 +6,8 @@ import Link from 'next/link';
 import { Calendar } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Journal | Ashif EK – Full Stack Engineer',
-    description: 'Insights on full-stack development, software architecture, and engineering management by Ashif EK.',
+    title: 'Full-Stack Engineering Journal | Ashif E.K – React & Django Authority',
+    description: 'Expert insights on React 19, Django 5.x, scalable web architecture, and MVP development strategies for modern startups.',
 };
 
 export default async function BlogPage() {
@@ -20,20 +20,29 @@ export default async function BlogPage() {
         console.error("Failed to fetch blogs, using mocks:", error);
     }
 
+    // Sort blogs: Pillar content first, then date
+    const sortedBlogs = [...blogs].sort((a, b) => {
+        const isAPillar = a.slug.includes('ultimate-guide') || a.slug.includes('blueprint');
+        const isBPillar = b.slug.includes('ultimate-guide') || b.slug.includes('blueprint');
+        if (isAPillar && !isBPillar) return -1;
+        if (!isAPillar && isBPillar) return 1;
+        return new Date(b.date).getTime() - new Date(a.date).getTime();
+    });
+
     return (
         <main className="min-h-screen bg-academic-bg text-academic-text pt-24 pb-16 px-4">
             <div className="max-w-4xl mx-auto">
-                <header className="mb-16">
-                    <h1 className="text-5xl md:text-6xl font-bold text-academic-primary mb-6 uppercase tracking-tighter">
-                        Journal
+                <header className="mb-16 border-b border-academic-border pb-12">
+                    <h1 className="text-5xl md:text-7xl font-bold text-academic-primary mb-6 uppercase tracking-tighter">
+                        Engineering Journal
                     </h1>
-                    <p className="text-academic-text/60 text-xl font-serif italic border-l-2 border-academic-primary/30 pl-6 py-2">
-                        Reflections on the craft of software engineering.
+                    <p className="text-academic-text/60 text-xl font-serif italic border-l-2 border-academic-primary/30 pl-6 py-2 max-w-2xl">
+                        Deep dives into React 19, Django 5.x, and the architectural patterns that power high-scale digital products.
                     </p>
                 </header>
 
                 <div className="space-y-12">
-                    {blogs.map((blog: Blog) => (
+                    {sortedBlogs.map((blog: Blog) => (
                         <article 
                             key={blog.id} 
                             className="group relative border-b border-academic-border pb-12 last:border-0"

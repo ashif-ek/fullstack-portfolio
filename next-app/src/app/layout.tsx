@@ -17,7 +17,17 @@ export const metadata: Metadata = {
     template: '%s | Ashif E.K'
   },
   description: 'Ashif E.K – Full-Stack Engineer specializing in React, Django, and scalable web solutions. Explore high-performance projects, technical case studies, and modern architecture.',
-  keywords: ['Ashif E.K', 'Full-Stack Engineer', 'Software Engineer', 'React Developer', 'Django Expert', 'Web Architecture', 'Portfolio', 'India'],
+  keywords: [
+    'Ashif E.K', 
+    'Elite Full-Stack Engineer', 
+    'React 19 Developer', 
+    'Django 5.x Expert', 
+    'SaaS MVP Development', 
+    'Startup Technical Strategy', 
+    'Web Architecture Specialist', 
+    'Custom Software Development India',
+    'Modern Cloud Solutions'
+  ],
   authors: [{ name: 'Ashif E.K' }],
   creator: 'Ashif E.K',
   alternates: {
@@ -93,18 +103,19 @@ export default function RootLayout({
                     "http://www.fiverr.com/s/gDLy45X",
                     "https://ashif-ek.github.io/docs-stack-material/"
                   ],
-                  "knowsAbout": ["React", "Django", "JavaScript", "Web Development", "UI/UX", "Redux", "Tailwind CSS", "HTML5", "CSS3", "Flutter", "Cybersecurity", "Cloud Architecture"],
+                  "knowsAbout": ["React 19", "Django 5.x", "Micro-services", "Full-stack Engineering", "SaaS Architecture", "Performance Optimization", "Cloud-Native", "DevOps", "AI Integration", "Security Infrastructure", "MVP Strategy"],
                   "alumniOf": {
                     "@type": "CollegeOrUniversity",
                     "name": "University of Calicut"
-                  }
+                  },
+                  "award": "Elite SEO & Performance Specialist"
                 },
                 {
                   "@type": "WebSite",
                   "@id": `${baseUrl}/#website`,
                   "url": baseUrl,
-                  "name": "Ashif E.K Portfolio",
-                  "description": "Full-Stack Engineer specializing in React, Django, and modern web solutions.",
+                  "name": "Ashif E.K | Full-Stack Engineering Authority",
+                  "description": "Premium full-stack solutions with React and Django. Building the next generation of scalable SaaS.",
                   "publisher": {
                     "@id": `${baseUrl}/#person`
                   },

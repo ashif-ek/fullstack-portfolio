@@ -47,12 +47,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Blog routes - With strict slug validation and dynamic lastmod
     const blogRoutes = blogs
         .filter(blog => blog.slug && blog.slug !== 'undefined')
-        .map((blog) => ({
-            url: `${baseUrl}/blog/${blog.slug}`,
-            lastModified: blog.updated_at ? new Date(blog.updated_at) : new Date(),
-            changeFrequency: 'weekly' as const,
-            priority: 0.7,
-        }));
+        .map((blog) => {
+            const isPillar = blog.slug.includes('ultimate-guide') || blog.slug.includes('blueprint');
+            return {
+                url: `${baseUrl}/blog/${blog.slug}`,
+                lastModified: blog.updated_at ? new Date(blog.updated_at) : new Date(),
+                changeFrequency: isPillar ? 'daily' as const : 'weekly' as const,
+                priority: isPillar ? 0.9 : 0.7,
+            };
+        });
 
     return [...routes, ...projectRoutes, ...blogRoutes];
 }

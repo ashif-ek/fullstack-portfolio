@@ -5,7 +5,10 @@ import { Blog } from '../../../../types';
 import Api from '../../../../lib/api';
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Calendar, ArrowLeft } from 'lucide-react';
+import Breadcrumbs from '../../../../components/ui/Breadcrumbs';
+import BlogCTA from '../../../../components/sections/BlogCTA';
 
 interface BlogPageProps {
     params: {
@@ -36,20 +39,35 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
     if (!blog) return {};
 
     return {
-        title: `${blog.title} | Blog`,
+        title: `${blog.title} | Journal`,
         description: blog.summary,
+        alternates: {
+            canonical: `/blog/${blog.slug}`,
+        },
         openGraph: {
             title: blog.title,
             description: blog.summary,
             type: 'article',
+            url: `/blog/${blog.slug}`,
             publishedTime: blog.date,
             authors: ['Ashif E.K'],
-            images: [{ url: blog.imageUrl || '/blog-placeholder.png' }],
+            images: [
+                { 
+                    url: blog.imageUrl || '/blog-placeholder.png',
+                    width: 1200,
+                    height: 630,
+                    alt: blog.title 
+                }
+            ],
+            section: 'Software Engineering',
+            tags: ['React 19', 'Django 5.x', 'Full Stack', 'Architecture'],
         },
         twitter: {
             card: 'summary_large_image',
             title: blog.title,
             description: blog.summary,
+            images: [blog.imageUrl || '/blog-placeholder.png'],
+            creator: '@ashif_io',
         },
     };
 }
@@ -83,6 +101,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
             />
             
             <div className="max-w-3xl mx-auto">
+                <Breadcrumbs />
                 <Link
                     href="/blog"
                     className="inline-flex items-center gap-2 text-academic-primary hover:underline mb-12 group transition-all uppercase text-xs font-bold tracking-widest"
@@ -103,11 +122,13 @@ export default async function BlogPage({ params }: BlogPageProps) {
 
                 <article className="prose prose-invert prose-academic max-w-none">
                     {blog.imageUrl && (
-                        <div className="rounded-2xl overflow-hidden border border-academic-border mb-12 shadow-2xl p-2 bg-academic-bg">
-                            <img
+                        <div className="relative rounded-2xl overflow-hidden border border-academic-border mb-12 shadow-2xl p-2 bg-academic-bg min-h-[400px]">
+                            <Image
                                 src={blog.imageUrl}
                                 alt={blog.title}
-                                className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700"
+                                fill
+                                className="object-cover grayscale hover:grayscale-0 transition-all duration-700 p-2 rounded-2xl"
+                                priority
                             />
                         </div>
                     )}
@@ -118,6 +139,8 @@ export default async function BlogPage({ params }: BlogPageProps) {
                         </ReactMarkdown>
                     </div>
                 </article>
+
+                <BlogCTA />
 
                 <footer className="mt-20 pt-10 border-t border-academic-border flex justify-center">
                     <Link

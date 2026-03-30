@@ -5,6 +5,7 @@ export default function robots(): MetadataRoute.Robots {
         rules: {
             userAgent: '*',
             allow: '/',
+            disallow: ['/admin', '/system'],
         },
         sitemap: 'https://www.ashifek.in/sitemap.xml',
     };
