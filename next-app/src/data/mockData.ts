@@ -1,4 +1,4 @@
-import { Profile, AboutData, Skill, Tool, Project, Certificate, Blog, Service } from "../types";
+import { Profile, AboutData, Skill, Tool, Project, Certificate, Blog, Service, LocationData } from "../types";
 
 export const profile: Profile = {
     "name": "Ashif E.K",
@@ -47,39 +47,51 @@ export const about: AboutData[] = [
 export const services: Service[] = [
     {
         id: "10",
+        slug: "mvp-development",
         title: "MVP Development",
         description: "Rapid prototyping and development of Minimum Viable Products for startups. Launch your idea quickly with a solid, scalable foundation.",
-        icon: "RocketIcon"
+        icon: "RocketIcon",
+        content: "# MVP Development for Startups\n\nLaunch your vision in weeks, not months. We specialize in building robust MVPs that validate your idea and scale as you grow."
     },
     {
         id: "11",
+        slug: "api-design-integration",
         title: "API Design & Integration",
         description: "Building secure and scalable RESTful APIs. Integration of third-party services like payment gateways (Stripe), authentication (OAuth), and cloud storage.",
-        icon: "ServerIcon"
+        icon: "ServerIcon",
+        content: "# API Design & Scalability\n\nSecure, modular, and high-performance API architectures built using Django REST Framework and industry best practices."
     },
     {
         id: "12",
+        slug: "performance-optimization",
         title: "Performance Optimization",
         description: "Auditing and optimizing existing applications for speed, accessibility, and SEO. Implementing caching strategies and code splitting.",
-        icon: "LightningIcon"
+        icon: "LightningIcon",
+        content: "# Core Web Vitals & Performance\n\nIs your site slow? We optimize bundle sizes, implement advanced caching (Redis/CDN), and ensure 90+ Lighthouse scores."
     },
     {
         id: "13",
+        slug: "backend-api-development",
         title: "Backend API Development",
         description: "Secure REST APIs using Django REST Framework with authentication and scalable architecture.",
-        icon: "CodeIcon"
+        icon: "CodeIcon",
+        content: "# Enterprise-Grade Backends\n\nCustom backend systems designed for reliability, security, and high-load environments. Decoupled and production-ready."
     },
     {
         id: "14",
+        slug: "full-stack-web-development",
         title: "Full Stack Web Development",
         description: "Building responsive web platforms using React, Django, and PostgreSQL.",
-        icon: "LayersIcon"
+        icon: "LayersIcon",
+        content: "# End-to-End Product Excellence\n\nFrom the first pixel in React to the final query in PostgreSQL, we deliver seamless full-stack web experiences."
     },
     {
         id: "15",
+        slug: "cloud-deployment",
         title: "Cloud Deployment",
         description: "Deploying production-ready applications using Docker, AWS EC2, and CI/CD pipelines.",
-        icon: "CloudIcon"
+        icon: "CloudIcon",
+        content: "# Modern Cloud Infrastructure\n\nScalability by design. We use Docker, AWS, and CI/CD to ensure your application is always live and always ready for more users."
     }
 ];
 
@@ -281,5 +293,212 @@ export const blogs: Blog[] = [
         "summary": "Most MVPs fail not because the idea is bad, but because the tech is fragile. Learn the strategy for building a 'Minimum Awesome Product' that scales.",
         "imageUrl": "",
         "content": "# The Scalable MVP Blueprint\n\nFor startup founders, time-to-market is everything. But speed should never come at the cost of stability. As an elite SEO strategist and full-stack architect, I've seen too many brilliant ideas die due to technical debt. Here is the blueprint for a 'Minimum Awesome Product'.\n\n## Phase 1: The Foundation (React + Django)\n\nChoosing a tech stack isn't just a technical decision; it's a business decision. React and Django allow you to:\n- **Iterate Faster**: Modular components and built-in admin panels.\n- **Hire Easier**: Access to a global pool of elite talent.\n- **Scale Simpler**: Robust migration systems and cloud-ready architectures.\n\n## Phase 2: Feature Prioritization\n\nDon't build everything. Build the *right* thing. Use the **MoSCoW** method (Must have, Should have, Could have, Won't have) to identify the core value proposition of your MVP.\n\n### Core Metrics to Track\n1. **LCP (Largest Contentful Paint)**: Keep it under 2.5s for SEO and UX.\n2. **Retention Rate**: Are users coming back?\n3. **Conversion Velocity**: How fast do users reach the 'Aha!' moment?\n\n## Conclusion: Start Fast, Stay Solid\n\nA scalable MVP is one that validates your business model while providing a robust path to version 2.0. By focusing on elite engineering from day one, you ensure that success won't be your greatest bottleneck."
+    },
+    {
+        "id": 13,
+        "slug": "hire-full-stack-developer-kerala",
+        "title": "How to Hire an Elite Full-Stack Developer in Kerala",
+        "date": "2026-03-30",
+        "updated_at": "2026-03-30",
+        "summary": "Finding the right technical partner in Kerala can be difficult. Learn the key traits of an elite full-stack engineer and how to evaluate their expertise.",
+        "imageUrl": "",
+        "content": "# How to Hire an Elite Full-Stack Developer in Kerala\n\nKerala's startup ecosystem is booming, but the talent gap remains a challenge for many non-technical founders. In this guide, we explore how to find and hire developers who aren't just coders, but strategic partners."
+    },
+    {
+        "id": 14,
+        "slug": "building-scalable-saas-mvp",
+        "title": "Building Scalable SaaS MVPs with React and Django",
+        "date": "2026-03-30",
+        "updated_at": "2026-03-30",
+        "summary": "Learn the architectural patterns required to build a SaaS MVP that won't break when you hit your first 10,000 users.",
+        "imageUrl": "",
+        "content": "# Building Scalable SaaS MVPs\n\nScalability starts at day one. Using React for the frontend and Django for the backend provides a robust foundation for any SaaS product."
+    },
+    {
+        "id": 15,
+        "slug": "nextjs-performance-seo",
+        "title": "Next.js Performance: Boosting Core Web Vitals for SEO",
+        "date": "2026-03-30",
+        "updated_at": "2026-03-30",
+        "summary": "A deep dive into optimizing Next.js applications for Google's Core Web Vitals. Speed is a ranking factor you cannot ignore.",
+        "imageUrl": "",
+        "content": "# Next.js Performance & SEO\n\nCore Web Vitals are now a critical part of Google's ranking algorithm. Learn how to achieve 100/100 Lighthouse scores."
+    },
+    {
+        "id": 16,
+        "slug": "ai-integration-python-django",
+        "title": "The Future of AI Integration in Python Backends",
+        "date": "2026-03-30",
+        "updated_at": "2026-03-30",
+        "summary": "How to leverage Python's AI ecosystem within a Django application to build intelligent features.",
+        "imageUrl": "",
+        "content": "# AI Integration in Django\n\nPython is the language of AI. Integrating LLMs and machine learning models into your Django backend is easier than you think."
+    },
+    {
+        "id": 17,
+        "slug": "ecommerce-development-kerala",
+        "title": "Custom E-commerce Development in Kerala: A Growth Guide",
+        "date": "2026-03-30",
+        "updated_at": "2026-03-30",
+        "summary": "Why off-the-shelf solutions often fail growing Kerala brands, and how custom development drives higher ROI.",
+        "imageUrl": "",
+        "content": "# Custom E-commerce Development\n\nFor businesses in Kerala, a generic Shopify store might not be enough. We build bespoke e-commerce experiences that convert."
+    },
+    {
+        "id": 18,
+        "slug": "postgresql-vs-mongodb-scaling",
+        "title": "PostgreSQL vs MongoDB: Scaling Data in Production",
+        "date": "2026-03-30",
+        "updated_at": "2026-03-30",
+        "summary": "Choosing the right database is crucial for long-term scalability. We compare the two giants for full-stack applications.",
+        "imageUrl": "",
+        "content": "# Database Scalability: Postgres vs MongoDB\n\nWhen should you choose relational over NoSQL? We break down the trade-offs for production-scale apps."
+    },
+    {
+        "id": 19,
+        "slug": "microservices-django-rest",
+        "title": "Microservices Architecture with Django REST Framework",
+        "date": "2026-03-30",
+        "updated_at": "2026-03-30",
+        "summary": "When to move from a monolith to microservices, and how to do it correctly using Django and Docker.",
+        "imageUrl": "",
+        "content": "# Microservices with Django\n\nMonolithic architectures are great for MVPs, but microservices offer the independence large teams need. Here is the roadmap."
+    },
+    {
+        "id": 20,
+        "slug": "react-server-components-guide",
+        "title": "React Server Components: A Developer's Deep Dive",
+        "date": "2026-03-30",
+        "updated_at": "2026-03-30",
+        "summary": "Understanding the most significant change to React in years. How Server Components improve performance and DX.",
+        "imageUrl": "",
+        "content": "# React Server Components\n\nRSC is revolutionary. Learn how to leverage server-side logic within your React components to reduce client-side bundle sizes."
+    },
+    {
+        "id": 21,
+        "slug": "cloud-deployment-kerala",
+        "title": "Leveraging Cloud Deployment for Kerala Businesses",
+        "date": "2026-03-30",
+        "updated_at": "2026-03-30",
+        "summary": "Why local hosting is a risk, and how moving to AWS/Azure can safeguard your business data.",
+        "imageUrl": "",
+        "content": "# Cloud Deployment for Kerala Businesses\n\nThe cloud offers reliability that local servers simply cannot match. Learn the benefits of AWS for your Kerala-based enterprise."
+    },
+    {
+        "id": 22,
+        "slug": "state-management-react-2026",
+        "title": "Redux vs Context API vs Zustand: State Management 2026",
+        "date": "2026-03-30",
+        "updated_at": "2026-03-30",
+        "summary": "Stop over-engineering your state management. We compare the best tools for React applications in 2026.",
+        "imageUrl": "",
+        "content": "# State Management in 2026\n\nChoosing between Redux, Zustand, and Context API depends on your app's complexity. We help you make the right choice."
+    },
+    {
+        "id": 23,
+        "slug": "software-development-trends-kochi",
+        "title": "Top Software Development Trends in Kochi for 2026",
+        "date": "2026-03-30",
+        "updated_at": "2026-03-30",
+        "summary": "Staying ahead of the curve in Ernakulam's competitive tech landscape. What Kochi startups are building this year.",
+        "imageUrl": "",
+        "content": "# Kochi Tech Trends 2026\n\nFrom AI-driven logistics to Fintech breakthroughs, Kochi is at the forefront of Kerala's digital revolution."
+    },
+    {
+        "id": 24,
+        "slug": "secure-django-production",
+        "title": "Securing Your Django App: Best Practices for Production",
+        "date": "2026-03-30",
+        "updated_at": "2026-03-30",
+        "summary": "A checklist for ensuring your Django backend is hardened against common security threats (OWASP Top 10).",
+        "imageUrl": "",
+        "content": "# Secure Django in Production\n\nSecurity is not an afterthought. Learn how to implement CSP, secure cookies, and rate limiting in your Django app."
+    },
+    {
+        "id": 25,
+        "slug": "django-channels-real-time",
+        "title": "Building Real-Time Applications with Django Channels",
+        "date": "2026-03-30",
+        "updated_at": "2026-03-30",
+        "summary": "How to implement WebSockets in your Django project for real-time notifications and chat features.",
+        "imageUrl": "",
+        "content": "# Real-Time Apps with Django Channels\n\nWebSockets allow for bidirectional communication. Django Channels makes it easy to integrate into your existing stack."
+    },
+    {
+        "id": 26,
+        "slug": "tailwind-css-4-next-gen",
+        "title": "Tailwind CSS 4.0: Modern Styling for Next-Gen Apps",
+        "date": "2026-03-30",
+        "updated_at": "2026-03-30",
+        "summary": "Exploring the performance improvements and new features in the latest version of Tailwind CSS.",
+        "imageUrl": "",
+        "content": "# Tailwind CSS 4.0\n\nThe most popular utility-first CSS framework just got better. Faster compilation and improved container support."
+    },
+    {
+        "id": 27,
+        "slug": "automate-deployments-github-aws",
+        "title": "Automating Deployments with GitHub Actions and AWS",
+        "date": "2026-03-30",
+        "updated_at": "2026-03-30",
+        "summary": "Stop manual deployments. We show you how to set up a robust CI/CD pipeline for your full-stack projects.",
+        "imageUrl": "",
+        "content": "# Automated CI/CD with GitHub & AWS\n\nConsistent deployments reduce human error. Learn how to automate your workflow using GitHub Actions."
+    },
+    {
+        "id": 28,
+        "slug": "custom-web-app-calicut",
+        "title": "Why your Startup in Calicut Needs a Custom Web App",
+        "date": "2026-03-30",
+        "updated_at": "2026-03-30",
+        "summary": "Building for the unique needs of the Malabar market. Why custom software is an investment, not an expense.",
+        "imageUrl": "",
+        "content": "# Custom Web Apps for Calicut Startups\n\nKozhikode's startup scene is unique. We build software that speaks to your local audience while scaling globally."
+    },
+    {
+        "id": 29,
+        "slug": "mastering-jwt-auth",
+        "title": "Mastering JWT Authentication in React & Django",
+        "date": "2026-03-30",
+        "updated_at": "2026-03-30",
+        "summary": "A complete guide to implementing secure JWT access and refresh token rotation in your full-stack app.",
+        "imageUrl": "",
+        "content": "# Mastering JWT Authentication\n\nStateless authentication is the standard for modern web apps. Here is how to do it right using SimpleJWT and React."
+    },
+    {
+        "id": 30,
+        "slug": "scaling-to-1m-users",
+        "title": "Scaling to 1M Users: Technical Challenges and Solutions",
+        "date": "2026-03-30",
+        "updated_at": "2026-03-30",
+        "summary": "What happens when you go viral? We discuss the bottlenecks and solutions for scaling to millions of users.",
+        "imageUrl": "",
+        "content": "# Scaling to 1 Million Users\n\nDatabase locks, CPU bottlenecks, and network latency. We explore how to overcome the challenges of massive growth."
+    }
+];
+
+export const locations: LocationData[] = [
+    {
+        id: "1",
+        city: "Kochi",
+        slug: "kochi",
+        title: "Full-Stack Developer in Kochi | React & Django Specialist",
+        description: "Empowering Kochi's tech ecosystem with high-performance web solutions. Expert React and Django development for startups in Ernakulam.",
+        content: "# Full-Stack Development in Kochi\n\nKochi is the rising tech hub of Kerala, and your startup deserves world-class engineering... Specializing in building scalable, secure applications for the Kochi market using React, Django, and PostgreSQL."
+    },
+    {
+        id: "2",
+        city: "Calicut",
+        slug: "calicut",
+        title: "Expert Web Development in Calicut | Ashif E.K",
+        description: "Custom web application development for businesses and startups in Kozhikode. Scalable React and Django solutions.",
+        content: "# Web Development in Calicut\n\nServing the entrepreneurial spirit of Malabar with elite full-stack engineering... We help Calicut businesses scale their digital presence with modern web architecture and performance optimization."
+    },
+    {
+        id: "3",
+        city: "Trivandrum",
+        slug: "trivandrum",
+        title: "Software Engineer in Trivandrum | High-Scale Web Apps",
+        description: "Professional software engineering services in the capital city. Building robust backends and dynamic frontends for Trivandrum startups.",
+        content: "# Software Engineering in Trivandrum\n\nFrom Technopark to the global stage, we build apps that scale... Expert development services for the capital's tech community, focusing on reliability, security, and elite user experiences."
     }
 ];

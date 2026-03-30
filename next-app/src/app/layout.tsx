@@ -19,10 +19,10 @@ export const metadata: Metadata = {
   description: 'Ashif E.K – Full-Stack Engineer specializing in React, Django, and scalable web solutions. Explore high-performance projects, technical case studies, and modern architecture.',
   keywords: [
     'Ashif E.K', 
-    'Elite Full-Stack Engineer', 
-    'React 19 Developer', 
-    'Django 5.x Expert', 
-    'SaaS MVP Development', 
+    'React 19 Developer Kochi', 
+    'Django 5.x Expert Calicut', 
+    'Full Stack Developer Trivandrum',
+    'SaaS MVP Development Kerala', 
     'Startup Technical Strategy', 
     'Web Architecture Specialist', 
     'Custom Software Development India',
@@ -109,6 +109,22 @@ export default function RootLayout({
                     "name": "University of Calicut"
                   },
                   "award": "Elite SEO & Performance Specialist"
+                },
+                {
+                  "@type": "ProfessionalService",
+                  "@id": `${baseUrl}/#service`,
+                  "name": "Ashif E.K | Full-Stack Engineering Services",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Kochi",
+                    "addressRegion": "Kerala",
+                    "addressCountry": "IN"
+                  },
+                  "url": baseUrl,
+                  "telephone": "+91-XXXXXXXXXX",
+                  "priceRange": "$$",
+                  "image": `${baseUrl}/profile-icon.jpg`,
+                  "areaServed": ["Kerala", "India", "Global"]
                 },
                 {
                   "@type": "WebSite",

@@ -5,9 +5,22 @@ export interface SocialLink {
 
 export interface Service {
     id: string;
+    slug: string;
     title: string;
     description: string;
     icon: string;
+    content?: string;
+    updated_at?: string;
+}
+
+export interface LocationData {
+    id: string;
+    city: string;
+    slug: string;
+    title: string;
+    description: string;
+    content?: string;
+    updated_at?: string;
 }
 
 export interface Profile {
