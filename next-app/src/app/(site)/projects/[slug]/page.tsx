@@ -12,9 +12,9 @@ import Breadcrumbs from '../../../../components/ui/Breadcrumbs';
 import BlogCTA from '../../../../components/sections/BlogCTA';
 
 interface ProjectPageProps {
-    params: {
+    params: Promise<{
         slug: string;
-    };
+    }>;
 }
 
 // Helper to fetch live projects or fallback to mock
@@ -30,14 +30,19 @@ async function getLiveProjects(): Promise<Project[]> {
 
 export async function generateStaticParams() {
     const allProjects = await getLiveProjects();
-    return allProjects.map((project: Project) => ({
-        slug: project.slug,
-    }));
+    if (!allProjects || allProjects.length === 0) return [];
+
+    return allProjects
+        .filter(p => p && p.slug)
+        .map((project: Project) => ({
+            slug: project.slug,
+        }));
 }
 
 export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
+    const { slug } = await params;
     const allProjects = await getLiveProjects();
-    const project = allProjects.find((p: Project) => p.slug === params.slug);
+    const project = allProjects.find((p: Project) => p.slug === slug);
     if (!project) return {};
 
     return {
@@ -73,8 +78,9 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
+    const { slug } = await params;
     const allProjects = await getLiveProjects();
-    const project = allProjects.find((p: Project) => p.slug === params.slug);
+    const project = allProjects.find((p: Project) => p.slug === slug);
 
     if (!project) {
         notFound();
@@ -185,15 +191,17 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 </header>
 
                 <div className="prose prose-invert prose-academic max-w-none">
-                    <div className="relative rounded-2xl overflow-hidden border border-academic-primary/20 aspect-video mb-12 shadow-2xl">
-                        <Image
-                            src={project.image.startsWith('http') ? project.image : `/projects/${project.image}`}
-                            alt={project.title}
-                            fill
-                            className="object-cover"
-                            priority
-                        />
-                    </div>
+                    {project.image && (
+                        <div className="relative rounded-2xl overflow-hidden border border-academic-primary/20 aspect-video mb-12 shadow-2xl">
+                            <Image
+                                src={project.image.startsWith('http') || project.image.startsWith('/') ? project.image : `/projects/${project.image}`}
+                                alt={project.title}
+                                fill
+                                className="object-cover"
+                                priority
+                            />
+                        </div>
+                    )}
 
                     <div className="bg-academic-primary/5 p-8 rounded-2xl border border-academic-primary/10 mb-12">
                         <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">

@@ -10,9 +10,9 @@ import Breadcrumbs from '../../../../components/ui/Breadcrumbs';
 import BlogCTA from '../../../../components/sections/BlogCTA';
 
 interface ServicePageProps {
-    params: {
+    params: Promise<{
         slug: string;
-    };
+    }>;
 }
 
 async function getLiveServices(): Promise<Service[]> {
@@ -27,14 +27,19 @@ async function getLiveServices(): Promise<Service[]> {
 
 export async function generateStaticParams() {
     const allServices = await getLiveServices();
-    return allServices.map((service: Service) => ({
-        slug: service.slug,
-    }));
+    if (!allServices || allServices.length === 0) return [];
+    
+    return allServices
+        .filter(s => s && s.slug)
+        .map((service: Service) => ({
+            slug: service.slug,
+        }));
 }
 
 export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
+    const { slug } = await params;
     const allServices = await getLiveServices();
-    const service = allServices.find((s: Service) => s.slug === params.slug);
+    const service = allServices.find((s: Service) => s.slug === slug);
     if (!service) return {};
 
     return {
@@ -53,8 +58,9 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
 }
 
 export default async function ServicePage({ params }: ServicePageProps) {
+    const { slug } = await params;
     const allServices = await getLiveServices();
-    const service = allServices.find((s: Service) => s.slug === params.slug);
+    const service = allServices.find((s: Service) => s.slug === slug);
 
     if (!service) {
         notFound();

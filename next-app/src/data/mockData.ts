@@ -120,22 +120,22 @@ export const tools: Tool[] = [
 
 export const projects: Project[] = [
     {
-        "id": "10",
-        "slug": "noirel-ecommerce",
-        "title": "NOIR'EL - Luxury E-Commerce Platform",
-        "description": "Built a full-stack e-commerce platform using React and Django REST Framework covering the complete order lifecycle from browsing to secure payment confirmation. Implemented JWT authentication, admin controls, and payment workflows using Razorpay.",
-        "content": "## Problem Statement\nLuxury brands require a digital aesthetic that matches their product quality. Most out-of-the-box ecommerce solutions fail to provide the necessary customization and performance.\n\n## Architecture\nA modern tech stack using **React** for the library and **Django REST Framework** for the engine. Utilized **PostgreSQL** for relational data integrity and **Razorpay** for secure payments.\n\n## Solution & Results\nBuilt a bespoke platform covering the entire order lifecycle. Implemented JWT authentication and advanced admin controls, resulting in a premium shopping experience with high conversion potential.\n\n### Business Value\n- End-to-end checkout automation\n- Secure payment integration with Razorpay\n- Optimized asset delivery for luxury imagery",
-        "tags": ["React", "Django REST Framework", "PostgreSQL", "Razorpay", "AWS"],
-        "image": "/images/mock/noirel.png",
-        "link": "https://noirel-perfume.vercel.app/",
-        "github": "https://github.com/ashif-ek/noirel-ecommerce"
+        "id": "13",
+        "slug": "salary-checker",
+        "title": "Salary Checker",
+        "description": "Salary Reality Checker delivers AI-powered salary insights using percentile analytics, fuzzy-matched job titles, and machine-learning predictions. It auto-corrects user input, analyzes market trends, and predicts salaries when data is missing. Built with FastAPI, PostgreSQL, scikit-learn.",
+        "content": "## Salary Reality Checker\n\nSalary Reality Checker delivers AI-powered salary insights using percentile analytics, fuzzy-matched job titles, and machine-learning predictions. It auto-corrects user input, analyzes market trends, and predicts salaries when data is missing.\n\n### Key Features\n- AI-powered salary insights\n- Percentile analytics\n- Fuzzy-matched job titles\n- Machine-learning predictions",
+        "tags": ["FastAPI", "PostgreSQL", "Machine Learning", "AI", "Salary Analytics"],
+        "image": "/images/mock/salary.png",
+        "link": "https://ashif-ek.github.io/docs-stack-material/",
+        "github": "https://github.com/ashif-ek/salary-checker"
     },
     {
         "id": "11",
         "slug": "civic-connect",
-        "title": "Civic (CiviTech) - Digital Governance Platform",
+        "title": "Civic (CiviTech) - Cross-Platform Digital Governance Platform",
         "description": "Developed a multi-role civic platform connecting citizens with Panchayath and higher administrative authorities, enabling complaint escalation, service tracking, announcements, moderation, analytics, and citizen engagement.",
-        "content": "## Problem Statement\nCitizens often face bureaucratic hurdles and a lack of transparency when communicating with local government bodies (Panchayaths), leading to slow resolution times for civic issues.\n\n## Architecture\nA decoupled system with a **Django** REST API and a **Flutter** mobile application. Implemented **RBAC** (Role-Based Access Control) to handle complex administrative hierarchies and moderator workflows.\n\n## Solution & Results\nDeveloped a multi-role platform that enables complaint escalation, real-time service tracking, and automated announcements. This has significantly reduced the distance between citizens and administrators.\n\n### Key Features\n- Real-time complaint escalation workflow\n- Administrative analytics dashboard\n- Cross-platform availability (iOS/Android/Web)",
+        "content": "## Civic (CiviTech)\n\nDeveloped a multi-role civic platform connecting citizens with Panchayath and higher administrative authorities, enabling complaint escalation, service tracking, announcements, moderation, analytics, and citizen engagement.",
         "tags": ["Django", "Flutter", "REST API", "RBAC", "PostgreSQL"],
         "image": "/images/mock/civic.png",
         "link": "#",
@@ -146,33 +146,33 @@ export const projects: Project[] = [
         "slug": "system-design-sandbox",
         "title": "Blog System Design Sandbox",
         "description": "Built a full-stack blogging system to experiment with production backend patterns including JWT access/refresh tokens, request validation, structured logging, health checks, and Dockerized deployment.",
-        "content": "## Problem Statement\nExperimenting with high-load architectural patterns in a production environment is risky. This sandbox was created to test and validate various backend strategies safely.\n\n## Architecture\nA micro-monolith approach using **Django REST Framework** within **Docker** containers. The infrastructure is managed via **GitHub Actions** for CI/CD, deploying to **AWS**.\n\n## Solution & Results\nSuccessfully implemented and stress-tested production patterns including JWT rotation, structured logging, and health monitoring. This serves as a template for my professional client projects.\n\n### Technical Highlights\n- JWT Access/Refresh token rotation\n- Comprehensive health checks and metrics\n- Automated deployment via Docker and AWS",
+        "content": "## Blog System Design Sandbox\n\nBuilt a full-stack blogging system to experiment with production backend patterns including JWT access/refresh tokens, request validation, structured logging, health checks, and Dockerized deployment.",
         "tags": ["React", "Django REST Framework", "Docker", "GitHub Actions", "AWS"],
         "image": "/images/mock/architecture.png",
         "link": "#",
         "github": "#"
     },
     {
-        "id": "13",
-        "slug": "salary-checker",
-        "title": "Salary Checker",
-        "description": "Salary Reality Checker delivers AI-powered salary insights using percentile analytics, fuzzy-matched job titles, and machine-learning predictions. It auto-corrects user input, analyzes market trends, and predicts salaries when data is missing.",
-        "content": "## Problem Statement\nJob seekers and employees often lack transparent, data-driven insights into their market value. Static salary surveys are frequently outdated or lack the granularity needed for specific niches.\n\n## Architecture\nBuilt with **FastAPI** and **PostgreSQL** for a high-performance backend, utilizing **scikit-learn** for predictive modeling. The frontend features interactive data visualizations to present complex analytics simply.\n\n## Solution & Results\nSalary Reality Checker delivers real-time salary insights using fuzzy-matched job titles and machine-learning predictions. It auto-corrects user input and predicts salaries even when exact data is missing, helping users negotiate with confidence.\n\n### Key Metrics\n- Processed over 10k data points for training\n- Achieved 85% accuracy in salary predictions\n- Sub-100ms API response times",
-        "tags": ["FastAPI", "PostgreSQL", "Machine Learning", "AI", "Salary Analytics"],
-        "image": "/images/mock/salary.png",
-        "link": "https://ashif-ek.github.io/docs-stack-material/",
-        "github": "https://github.com/ashif-ek/salary-checker"
-    },
-    {
         "id": "14",
         "slug": "time-lens",
         "title": "TimeLens",
         "description": "Time Lens reframes real minutes into life-equivalents, helping you feel the true weight of time. A mindset tool that turns seconds into life-hours, minutes into life-days, and days into life-years.",
-        "content": "## Problem Statement\nPeople often view time as an infinite resource in the abstract, leading to procrastination. Standard countdown timers fail to convey the emotional weight of lost time.\n\n## Architecture\nA lightweight **Python** utility that focuses on mathematical accuracy and minimal overhead. Designed with simplicity as a core tenet to ensure distraction-free usage.\n\n## Solution & Results\nTime Lens reframes real minutes into life-equivalents, turning seconds into life-hours and minutes into life-days. This psychological shift helps users prioritize deep work over trivial tasks.\n\n### Impact\n- Used by developers to track 'Life ROI' on coding tasks\n- Simplistic CLI and potential for GUI expansion\n- Zero-dependency core logic",
+        "content": "## TimeLens\n\nTime Lens reframes real minutes into life-equivalents, helping you feel the true weight of time. A mindset tool that turns seconds into life-hours, minutes into life-days, and days into life-years.",
         "tags": ["Python", "Productivity", "Mindset Tool", "Time Management"],
         "image": "/images/mock/timelens.png",
         "link": "https://ashif-ek.github.io/docs-stack-material/",
         "github": "https://github.com/ashif-ek/time-lens-python"
+    },
+    {
+        "id": "10",
+        "slug": "noirel-ecommerce",
+        "title": "NOIR'EL - Luxury E-Commerce Platform",
+        "description": "Built a full-stack e-commerce platform using React and Django REST Framework covering the complete order lifecycle from browsing to secure payment confirmation. Implemented JWT authentication, admin controls, and payment workflows using Razorpay.",
+        "content": "## NOIR'EL - Luxury E-Commerce\n\nBuilt a full-stack e-commerce platform using React and Django REST Framework covering the complete order lifecycle from browsing to secure payment confirmation. Implemented JWT authentication, admin controls, and payment workflows using Razorpay.",
+        "tags": ["React", "Django REST Framework", "PostgreSQL", "Razorpay", "AWS"],
+        "image": "/images/mock/noirel.png",
+        "link": "https://noirel-perfume.vercel.app/",
+        "github": "https://github.com/ashif-ek/noirel-ecommerce"
     }
 ];
 

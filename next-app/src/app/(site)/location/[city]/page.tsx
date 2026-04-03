@@ -10,9 +10,9 @@ import Breadcrumbs from '../../../../components/ui/Breadcrumbs';
 import BlogCTA from '../../../../components/sections/BlogCTA';
 
 interface LocationPageProps {
-    params: {
+    params: Promise<{
         city: string;
-    };
+    }>;
 }
 
 async function getLiveLocations(): Promise<LocationData[]> {
@@ -27,14 +27,19 @@ async function getLiveLocations(): Promise<LocationData[]> {
 
 export async function generateStaticParams() {
     const allLocations = await getLiveLocations();
-    return allLocations.map((loc: LocationData) => ({
-        city: loc.slug,
-    }));
+    if (!allLocations || allLocations.length === 0) return [];
+
+    return allLocations
+        .filter(l => l && l.slug)
+        .map((loc: LocationData) => ({
+            city: loc.slug,
+        }));
 }
 
 export async function generateMetadata({ params }: LocationPageProps): Promise<Metadata> {
+    const { city } = await params;
     const allLocations = await getLiveLocations();
-    const location = allLocations.find((l: LocationData) => l.slug === params.city);
+    const location = allLocations.find((l: LocationData) => l.slug === city);
     if (!location) return {};
 
     return {
@@ -53,8 +58,9 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
 }
 
 export default async function LocationPage({ params }: LocationPageProps) {
+    const { city } = await params;
     const allLocations = await getLiveLocations();
-    const location = allLocations.find((l: LocationData) => l.slug === params.city);
+    const location = allLocations.find((l: LocationData) => l.slug === city);
 
     if (!location) {
         notFound();

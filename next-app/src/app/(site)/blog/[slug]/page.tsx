@@ -11,9 +11,9 @@ import Breadcrumbs from '../../../../components/ui/Breadcrumbs';
 import BlogCTA from '../../../../components/sections/BlogCTA';
 
 interface BlogPageProps {
-    params: {
+    params: Promise<{
         slug: string;
-    };
+    }>;
 }
 
 async function getLiveBlogs(): Promise<Blog[]> {
@@ -28,14 +28,19 @@ async function getLiveBlogs(): Promise<Blog[]> {
 
 export async function generateStaticParams() {
     const allBlogs = await getLiveBlogs();
-    return allBlogs.map((blog: Blog) => ({
-        slug: blog.slug,
-    }));
+    if (!allBlogs || allBlogs.length === 0) return [];
+
+    return allBlogs
+        .filter(b => b && b.slug)
+        .map((blog: Blog) => ({
+            slug: blog.slug,
+        }));
 }
 
 export async function generateMetadata({ params }: BlogPageProps): Promise<Metadata> {
+    const { slug } = await params;
     const allBlogs = await getLiveBlogs();
-    const blog = allBlogs.find((b: Blog) => b.slug === params.slug);
+    const blog = allBlogs.find((b: Blog) => b.slug === slug);
     if (!blog) return {};
 
     return {
@@ -73,8 +78,9 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
 }
 
 export default async function BlogPage({ params }: BlogPageProps) {
+    const { slug } = await params;
     const allBlogs = await getLiveBlogs();
-    const blog = allBlogs.find((b: Blog) => b.slug === params.slug);
+    const blog = allBlogs.find((b: Blog) => b.slug === slug);
 
     if (!blog) {
         notFound();
@@ -124,7 +130,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
                     {blog.imageUrl && (
                         <div className="relative rounded-2xl overflow-hidden border border-academic-border mb-12 shadow-2xl p-2 bg-academic-bg min-h-[400px]">
                             <Image
-                                src={blog.imageUrl}
+                                src={blog.imageUrl.startsWith('http') || blog.imageUrl.startsWith('/') ? blog.imageUrl : `/${blog.imageUrl}`}
                                 alt={blog.title}
                                 fill
                                 className="object-cover grayscale hover:grayscale-0 transition-all duration-700 p-2 rounded-2xl"
