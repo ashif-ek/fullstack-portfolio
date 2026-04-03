@@ -7,6 +7,7 @@ import { ThemeProvider } from '../providers/ThemeProvider';
 import StatusBadge from '../components/ui/StatusBadge';
 import VisitorTracker from '../components/ui/VisitorTracker';
 import RecruiterBanner from '../components/ui/RecruiterBanner';
+import BackendInitializer from '../components/providers/BackendInitializer';
 
 const baseUrl = 'https://www.ashifek.in';
 
@@ -148,6 +149,7 @@ export default function RootLayout({
             <RecruiterProvider>
               <RecruiterBanner />
               <AuthProvider>
+                <BackendInitializer />
                 <VisitorTracker />
                 {children}
                 <StatusBadge />
