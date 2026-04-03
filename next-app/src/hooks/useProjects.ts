@@ -16,7 +16,7 @@ export const useProjects = () => {
     });
 
     // If there's an error and no data, only then fallback to MOCK_PROJECTS for resilience
-    const displayData = query.data || (query.isError ? MOCK_PROJECTS : []);
+    const displayData = query.data || MOCK_PROJECTS;
 
     return {
         ...query,

@@ -15,7 +15,7 @@ export const useBlogs = () => {
         staleTime: 1000 * 60 * 60, // 1 hour
     });
 
-    const displayData = query.data || (query.isError ? MOCK_BLOGS : []);
+    const displayData = query.data || MOCK_BLOGS;
 
     return {
         ...query,

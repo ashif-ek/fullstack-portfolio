@@ -15,6 +15,6 @@ export const useServices = () => {
         staleTime: 1000 * 60 * 5,
     });
 
-    const displayData = query.data || (query.isError ? MOCK_SERVICES : []);
+    const displayData = query.data || MOCK_SERVICES;
     return { ...query, data: displayData };
 };

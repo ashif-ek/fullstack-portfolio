@@ -15,7 +15,7 @@ export const useCertificates = () => {
         staleTime: 1000 * 60 * 60, // 1 hour
     });
 
-    const displayData = query.data || (query.isError ? MOCK_CERTIFICATES : []);
+    const displayData = query.data || MOCK_CERTIFICATES;
 
     return {
         ...query,

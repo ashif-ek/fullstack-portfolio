@@ -20,7 +20,7 @@ export const useSkills = () => {
         staleTime: 1000 * 60 * 5,
     });
 
-    const displayData = query.data || (query.isError ? MOCK_SKILLS : []);
+    const displayData = query.data || MOCK_SKILLS;
     return { ...query, data: displayData };
 };
 
@@ -31,6 +31,6 @@ export const useTools = () => {
         staleTime: 1000 * 60 * 5,
     });
 
-    const displayData = query.data || (query.isError ? MOCK_TOOLS : []);
+    const displayData = query.data || MOCK_TOOLS;
     return { ...query, data: displayData };
 };
