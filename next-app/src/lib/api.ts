@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const DEFAULT_API_BASE_URL = "http://localhost:8000";
-const REQUEST_TIMEOUT_MS = 60000; // Increased to handle Render cold starts
+const REQUEST_TIMEOUT_MS = 120000; // Increased to 120s for Render cold starts
 const ABSOLUTE_URL_PATTERN = /^[a-z][a-z\d+\-.]*:/i;
 
 const stripTrailingSlashes = (value: string): string => value.replace(/\/+$/, "");

@@ -26,7 +26,7 @@ interface Settings {
 }
 
 export default function Home() {
-  const [sectionsReady, setSectionsReady] = useState(false);
+  const [sectionsReady, setSectionsReady] = useState(true);
   const [settings, setSettings] = useState<Settings>({
     showBlog: true,
     showSkills: true,
@@ -113,24 +113,15 @@ export default function Home() {
       <Hero condensed={isRecruiterMode} />
       <GithubActivity />
       <RecruiterCTA />
-      {sectionsReady ? (
-        <>
-          {!isRecruiterMode && <About />}
-          {!isRecruiterMode && <Services />}
-          {settings.showProjects && <Projects condensed={isRecruiterMode} />}
-          {settings.showSkills && <Skills condensed={isRecruiterMode} />}
-          {!isRecruiterMode && settings.showBlog && <BlogSection />}
-          {!isRecruiterMode && settings.showCertificates && <Certificates />}
-          <Contacts />
-        </>
-      ) : (
-        <section
-          aria-hidden="true"
-          className="min-h-32 py-12 text-center text-sm text-academic-muted border-t border-academic-border"
-        >
-          Loading portfolio sections...
-        </section>
-      )}
+      <>
+        {!isRecruiterMode && <About />}
+        {!isRecruiterMode && <Services />}
+        {settings.showProjects && <Projects condensed={isRecruiterMode} />}
+        {settings.showSkills && <Skills condensed={isRecruiterMode} />}
+        {!isRecruiterMode && settings.showBlog && <BlogSection />}
+        {!isRecruiterMode && settings.showCertificates && <Certificates />}
+        <Contacts />
+      </>
     </>
   );
 }

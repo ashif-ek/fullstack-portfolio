@@ -1,4 +1,4 @@
-import { MetadataRoute } from 'next';
+import type { MetadataRoute } from 'next';
 import { projects as MOCK_PROJECTS, blogs as MOCK_BLOGS, services as MOCK_SERVICES, locations as MOCK_LOCATIONS } from '../data/mockData';
 import Api from '../lib/api';
 
