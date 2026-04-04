@@ -5,26 +5,46 @@ import Api from '../lib/api';
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const baseUrl = 'https://www.ashifek.in';
 
-    // Fetch live data
-    let projects = MOCK_PROJECTS;
-    let blogs = MOCK_BLOGS;
-    let services = MOCK_SERVICES;
-    let locations = MOCK_LOCATIONS;
+    // Helper: Fetch data with a strict timeout
+    const fetchWithTimeout = async <T>(apiCall: Promise<{ data: T }>, fallback: T, label: string): Promise<T> => {
+        const timeout = new Promise<never>((_, reject) =>
+            setTimeout(() => reject(new Error(`${label} fetch timed out`)), 8000)
+        );
 
-    try {
-        const [projRes, blogRes, servRes, locRes] = await Promise.all([
-            Api.get('/projects/'),
-            Api.get('/blogs/'),
-            Api.get('/services/'),
-            Api.get('/locations/')
-        ]);
-        if (projRes.data) projects = projRes.data;
-        if (blogRes.data) blogs = blogRes.data;
-        if (servRes.data) services = servRes.data;
-        if (locRes.data) locations = locRes.data;
-    } catch (error) {
-        console.error("Failed to fetch live data for sitemap:", error);
-    }
+        try {
+            const result = await Promise.race([apiCall, timeout]) as { data: T };
+            if (result && result.data) {
+                console.info(`[Sitemap] Successfully fetched live ${label}`);
+                return result.data;
+            }
+        } catch (error) {
+            console.warn(`[Sitemap] Using fallback for ${label} (${error instanceof Error ? error.message : 'Unknown error'})`);
+        }
+        return fallback;
+    };
+
+    // Fetch live data or use fallback (mockData as source of truth during build failures)
+    const [liveProjects, liveBlogs, liveServices, liveLocations] = await Promise.all([
+        fetchWithTimeout(Api.get('/projects/'), [] as any[], 'projects'),
+        fetchWithTimeout(Api.get('/blogs/'), [] as any[], 'blogs'),
+        fetchWithTimeout(Api.get('/services/'), [] as any[], 'services'),
+        fetchWithTimeout(Api.get('/locations/'), [] as any[], 'locations')
+    ]);
+
+    // Merge logic: Combine Mock and Live, treating Slug as the Unique Key
+    const mergeData = <T extends { slug: string }>(mock: T[], live: T[]): T[] => {
+        const map = new Map<string, T>();
+        // Add mock data first
+        mock.forEach(item => { if (item.slug) map.set(item.slug, item); });
+        // Overwrite/Add with live data
+        live.forEach(item => { if (item.slug) map.set(item.slug, item); });
+        return Array.from(map.values());
+    };
+
+    const projects = mergeData(MOCK_PROJECTS, liveProjects);
+    const blogs = mergeData(MOCK_BLOGS, liveBlogs);
+    const services = mergeData(MOCK_SERVICES, liveServices);
+    const locations = mergeData(MOCK_LOCATIONS, liveLocations);
 
     // Base routes
     const routes = [
@@ -41,44 +61,48 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: route.priority,
     }));
 
-    // Project routes - With strict slug validation and dynamic lastmod
+    // Project routes - Defensive mapping
     const projectRoutes = projects
-        .filter(project => project.slug && project.slug !== 'undefined')
+        .filter(project => project && project.slug && project.slug !== 'undefined')
         .map((project) => ({
             url: `${baseUrl}/projects/${project.slug}`,
-            lastModified: project.updated_at ? new Date(project.updated_at) : new Date(),
+            lastModified: (project as any).updated_at ? new Date((project as any).updated_at) : new Date(),
             changeFrequency: 'monthly' as const,
             priority: 0.8,
         }));
 
-    // Blog routes - With strict slug validation and dynamic lastmod
+    // Blog routes - Defensive mapping
     const blogRoutes = blogs
-        .filter(blog => blog.slug && blog.slug !== 'undefined')
+        .filter(blog => blog && blog.slug && blog.slug !== 'undefined')
         .map((blog) => {
             const isPillar = blog.slug.includes('ultimate-guide') || blog.slug.includes('blueprint');
             return {
                 url: `${baseUrl}/blog/${blog.slug}`,
-                lastModified: blog.updated_at ? new Date(blog.updated_at) : new Date(),
+                lastModified: (blog as any).updated_at ? new Date((blog as any).updated_at) : new Date(),
                 changeFrequency: isPillar ? 'daily' as const : 'weekly' as const,
                 priority: isPillar ? 0.9 : 0.7,
             };
         });
 
     // Service routes
-    const serviceRoutes = services.map((service) => ({
-        url: `${baseUrl}/services/${service.slug}`,
-        lastModified: service.updated_at ? new Date(service.updated_at) : new Date(),
-        changeFrequency: 'weekly' as const,
-        priority: 0.8,
-    }));
+    const serviceRoutes = services
+        .filter(s => s && s.slug)
+        .map((service) => ({
+            url: `${baseUrl}/services/${service.slug}`,
+            lastModified: (service as any).updated_at ? new Date((service as any).updated_at) : new Date(),
+            changeFrequency: 'weekly' as const,
+            priority: 0.8,
+        }));
 
     // Location routes
-    const locationRoutes = locations.map((location) => ({
-        url: `${baseUrl}/location/${location.slug}`,
-        lastModified: location.updated_at ? new Date(location.updated_at) : new Date(),
-        changeFrequency: 'monthly' as const,
-        priority: 0.7,
-    }));
+    const locationRoutes = locations
+        .filter(l => l && l.slug)
+        .map((location) => ({
+            url: `${baseUrl}/location/${location.slug}`,
+            lastModified: (location as any).updated_at ? new Date((location as any).updated_at) : new Date(),
+            changeFrequency: 'monthly' as const,
+            priority: 0.7,
+        }));
 
     return [...routes, ...projectRoutes, ...blogRoutes, ...serviceRoutes, ...locationRoutes];
 }
