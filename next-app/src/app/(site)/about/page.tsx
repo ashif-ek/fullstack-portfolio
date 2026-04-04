@@ -7,11 +7,11 @@ import LazyImage from '../../../components/ui/LazyImage';
 import profileImg from "../../../assets/profile.jpg";
 
 export const metadata: Metadata = {
-    title: 'About Ashif EK | Full-Stack Engineer',
-    description: 'Learn more about Ashif EK, a Full-Stack Engineer specializing in React, Django, and modern web architecture. Discover his journey, expertise, and technical philosophy.',
+    title: 'About Ashif E.K | Full-Stack Engineer',
+    description: 'Learn more about Ashif E.K, a Full-Stack Engineer specializing in React, Django, and modern web architecture. Discover his journey, expertise, and technical philosophy.',
     openGraph: {
-        title: 'About Ashif EK | Professional Journey & Expertise',
-        description: 'The professional profile of Ashif EK. Full-Stack development expert with a focus on scalable systems and premium user experiences.',
+        title: 'About Ashif E.K | Professional Journey & Expertise',
+        description: 'The professional profile of Ashif E.K. Full-Stack development expert with a focus on scalable systems and premium user experiences.',
         images: [{ url: '/profile.jpg' }],
     },
 };
@@ -71,12 +71,12 @@ export default async function AboutPage() {
                     <div className="w-32 h-32 mx-auto mb-8 rounded-full overflow-hidden border-2 border-academic-primary/20 p-1 shadow-2xl">
                         <LazyImage
                             src={resolveAssetUrl(mainAbout.avatar) || profileImg.src}
-                            alt="Ashif EK"
-                            className="w-full h-full object-cover rounded-full filter grayscale hover:grayscale-0 transition-all duration-700"
+                            alt="Ashif E.K"
+                            className="w-full h-full object-cover rounded-full transition-all duration-700"
                         />
                     </div>
                     <h1 className="text-4xl md:text-6xl font-bold mb-4 text-academic-primary">
-                        Ashif EK
+                        Ashif E.K
                     </h1>
                     <p className="text-xl text-academic-text/60 font-serif italic">
                         Full-Stack Engineer

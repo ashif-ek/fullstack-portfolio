@@ -136,7 +136,7 @@ const About = () => {
                     <LazyImage
                       src={resolveAssetUrl(aboutData.avatar) || profile}
                       alt="Formal Portrait"
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                      className="w-full h-full object-cover transition-all duration-700"
                     />
 
                     <div className="absolute inset-0 border-[10px] border-academic-paper/20 pointer-events-none" />

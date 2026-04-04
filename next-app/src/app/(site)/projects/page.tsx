@@ -5,8 +5,8 @@ import { projects as MOCK_PROJECTS } from '../../../data/mockData';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Projects | Ashif EK – Full Stack Engineer',
-    description: 'Explore the portfolio of Ashif EK, featuring full-stack applications, AI tools, and scalable architecture solutions.',
+    title: 'Projects | Ashif E.K – Full Stack Engineer',
+    description: 'Explore the portfolio of Ashif E.K, featuring full-stack applications, AI tools, and scalable architecture solutions.',
 };
 
 export default async function ProjectsPage() {
