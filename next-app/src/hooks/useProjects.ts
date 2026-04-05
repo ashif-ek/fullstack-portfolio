@@ -1,25 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
-import Api from '../lib/api';
+import { DataService } from '../services/dataService';
 import { Project } from '../types';
-import { projects as MOCK_PROJECTS } from '../data/mockData';
-
-const fetchProjects = async (): Promise<Project[]> => {
-    const { data } = await Api.get('/projects/');
-    return data;
-};
 
 export const useProjects = () => {
-    const query = useQuery({
+    return useQuery({
         queryKey: ['projects'],
-        queryFn: fetchProjects,
+        queryFn: () => DataService.getProjects(),
         staleTime: 1000 * 60 * 5, // 5 minutes
     });
-
-    // If there's an error and no data, only then fallback to MOCK_PROJECTS for resilience
-    const displayData = query.data || MOCK_PROJECTS;
-
-    return {
-        ...query,
-        data: displayData
-    };
 };

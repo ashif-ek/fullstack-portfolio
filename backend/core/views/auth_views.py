@@ -1,23 +1,22 @@
-from rest_framework import views, permissions, status
-from rest_framework.response import Response
-from django.contrib.auth import authenticate
+from rest_framework import views, permissions
+from core.services.auth_service import AuthService
+from core.utils.response_wrapper import standard_response
 
 
 class LoginView(views.APIView):
+    """
+    Standardized API for handling administrative login.
+    """
     permission_classes = [permissions.AllowAny]
+    service = AuthService()
 
     def post(self, request):
         username = request.data.get("username")
         password = request.data.get("password")
 
-        user = authenticate(username=username, password=password)
-
-        if user is not None and user.is_staff:  # Admin access
-            return Response(
-                {"success": True, "token": "admin-session-token"},
-                status=status.HTTP_200_OK,
-            )
-
-        return Response(
-            {"error": "Invalid credentials"}, status=status.HTTP_401_UNAUTHORIZED
-        )
+        success, result = self.service.authenticate_admin(username, password)
+        
+        if success:
+            return standard_response(success=True, data=result, status=200)
+        
+        return standard_response(success=False, error=result, status=401)

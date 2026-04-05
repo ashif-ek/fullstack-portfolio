@@ -1,24 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
-import Api from '../lib/api';
-import { Blog } from '../types';
-import { blogs as MOCK_BLOGS } from '../data/mockData';
-
-const fetchBlogs = async (): Promise<Blog[]> => {
-    const { data } = await Api.get('/blogs/?_sort=date&_order=desc');
-    return data;
-};
+import { DataService } from '../services/dataService';
 
 export const useBlogs = () => {
-    const query = useQuery({
+    return useQuery({
         queryKey: ['blogs'],
-        queryFn: fetchBlogs,
-        staleTime: 1000 * 60 * 60, // 1 hour
+        queryFn: () => DataService.getBlogs(),
+        staleTime: 1000 * 60 * 30, // 30 mins
     });
-
-    const displayData = query.data || MOCK_BLOGS;
-
-    return {
-        ...query,
-        data: displayData
-    };
 };

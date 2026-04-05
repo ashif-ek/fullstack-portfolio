@@ -1,15 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
-import Api from '../lib/api';
-
-const fetchVisitors = async (): Promise<{ total_visitors: number }> => {
-    const { data } = await Api.get('/analytics/visitors/');
-    return data;
-};
+import { DataService } from '../services/dataService';
 
 export const useVisitors = () => {
     return useQuery({
         queryKey: ['visitors'],
-        queryFn: fetchVisitors,
+        queryFn: () => DataService.getVisitors(),
         staleTime: 60000, // 1 minute
     });
 };

@@ -1,19 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
-import Api from '../lib/api';
-
-const checkHealth = async (): Promise<boolean> => {
-    try {
-        await Api.get('/health/');
-        return true;
-    } catch (error) {
-        return false;
-    }
-};
+import { DataService } from '../services/dataService';
 
 export const useHealth = () => {
     return useQuery({
         queryKey: ['health'],
-        queryFn: checkHealth,
+        queryFn: () => DataService.checkHealth(),
         // Check often to realize when we are back online
         refetchInterval: 15000, // 15 seconds
         retry: 2, // Retry twice if it fails, helps with cold starts

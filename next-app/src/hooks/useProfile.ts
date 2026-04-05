@@ -1,30 +1,25 @@
 import { useQuery } from '@tanstack/react-query';
-import Api from '../lib/api';
-import { Profile, AboutData } from '../types';
-import { profile as MOCK_PROFILE, about as MOCK_ABOUT } from '../data/mockData';
-
-// The backend /profile/ endpoint returns a combined object that maps to both Profile and AboutData
-const fetchProfile = async (): Promise<any> => {
-    const { data } = await Api.get('/profile/');
-    return data[0] || data;
-};
+import { DataService } from '../services/dataService';
 
 export const useProfile = () => {
-    const query = useQuery({
+    const profileQuery = useQuery({
         queryKey: ['profile'],
-        queryFn: fetchProfile,
+        queryFn: () => DataService.getProfile(),
         staleTime: 1000 * 60 * 60, // 1 hour
     });
 
-    // Extract Profile-specific data
-    const profileData: Profile = query.data || MOCK_PROFILE;
-
-    // Extract About-specific data
-    const aboutData: AboutData = query.data || MOCK_ABOUT[0];
+    const aboutQuery = useQuery({
+        queryKey: ['about'],
+        queryFn: () => DataService.getAbout(),
+        staleTime: 1000 * 60 * 60, // 1 hour
+    });
 
     return {
-        ...query,
-        profile: profileData,
-        about: aboutData
+        profile: profileQuery.data,
+        about: aboutQuery.data,
+        isLoading: profileQuery.isLoading || aboutQuery.isLoading,
+        error: profileQuery.error || aboutQuery.error,
+        profileQuery,
+        aboutQuery
     };
 };

@@ -1,6 +1,6 @@
-from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
 from django.views.decorators.cache import never_cache
+from core.utils.response_wrapper import standard_response
 import logging
 import time
 
@@ -45,10 +45,4 @@ def system_status_view(request):
     # Determine status code (503 if critical checks fail)
     status_code = 200 if db_ok else 503
     
-    response = JsonResponse(status_data, status=status_code)
-    
-    # Double ensure no caching
-    response["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0"
-    response["Pragma"] = "no-cache"
-    
-    return response
+    return standard_response(success=db_ok, data=status_data, status=status_code)

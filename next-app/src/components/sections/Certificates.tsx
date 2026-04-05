@@ -1,20 +1,29 @@
-'use client';
-import { useState, useEffect, useRef, useMemo } from "react";
-import { certificates as mockCertificates } from '../../data/mockData';
-import Api, { resolveAssetUrl } from '../../lib/api';
+import { useState, useRef, useMemo } from "react";
+import { resolveAssetUrl } from '../../lib/api';
 import LazyImage from '../ui/LazyImage';
-import { Certificate } from '../../types';
+import { useCertificates } from "../../hooks/useCertificates";
+import { Skeleton } from "../ui/Skeleton";
 
 // Image imports replaced with online placeholders
 const certificateImages: Record<string, string> = {
   "1": "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&q=80&w=800",
   "2": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800",
   "3": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800",
-  "4": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80&w=800",
-  "5": "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&q=80&w=800",
 };
 
-import { useCertificates } from "../../hooks/useCertificates";
+const CertificateSkeleton = () => (
+  <div className="academic-card flex flex-col">
+    <Skeleton className="h-48 w-full -mx-6 -mt-6 mb-6" />
+    <div className="space-y-4">
+      <div className="flex justify-between">
+        <Skeleton className="h-4 w-20" />
+        <Skeleton className="h-4 w-16" />
+      </div>
+      <Skeleton className="h-8 w-full" />
+      <Skeleton className="h-20 w-full" />
+    </div>
+  </div>
+);
 
 const Certificates = () => {
   const { data: certificates = [], isLoading } = useCertificates();
@@ -24,6 +33,7 @@ const Certificates = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
 
   const categories = useMemo(() => {
+    if (!certificates) return [{ id: "all", name: "All" }];
     const uniqueCategories = Array.from(new Set(certificates.map(c => c.category))).filter(Boolean);
     return [
       { id: "all", name: "All" },
@@ -32,6 +42,7 @@ const Certificates = () => {
   }, [certificates]);
 
   const filteredCertificates = useMemo(() => {
+    if (!certificates) return [];
     const base = selectedCategory === "all"
       ? certificates
       : certificates.filter((cert) => cert.category === selectedCategory);
@@ -48,23 +59,32 @@ const Certificates = () => {
             <p className="text-academic-muted font-serif italic mt-2">Formal recognition of technical proficiency and academic excellence.</p>
           </div>
 
-          <div className="flex flex-wrap justify-end gap-2">
-            {categories.map((category) => (
-              <button
-                key={category.id}
-                className={`px-4 py-1 text-xs uppercase tracking-widest transition-all duration-300 border ${selectedCategory === category.id
-                  ? "bg-academic-primary text-white border-academic-primary"
-                  : "bg-transparent border-academic-border text-academic-muted hover:border-academic-primary hover:text-academic-primary"
+          {!isLoading && (
+            <div className="flex flex-wrap justify-end gap-2">
+              {categories.map((category) => (
+                <button
+                  key={category.id}
+                  className={`px-4 py-1 text-xs uppercase tracking-widest transition-all duration-300 border ${
+                    selectedCategory === category.id
+                      ? "bg-academic-primary text-white border-academic-primary"
+                      : "bg-transparent border-academic-border text-academic-muted hover:border-academic-primary hover:text-academic-primary"
                   }`}
-                onClick={() => setSelectedCategory(category.id)}
-              >
-                {category.name}
-              </button>
-            ))}
-          </div>
+                  onClick={() => setSelectedCategory(category.id)}
+                >
+                  {category.name}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
 
-        {filteredCertificates.length === 0 ? (
+        {isLoading ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <CertificateSkeleton />
+            <CertificateSkeleton />
+            <CertificateSkeleton />
+          </div>
+        ) : filteredCertificates.length === 0 ? (
           <div className="text-center text-academic-muted font-serif italic py-20">
             No archives found in this classification.
           </div>
@@ -115,7 +135,6 @@ const Certificates = () => {
                       {cert.credentialLink && cert.credentialLink !== "#" && (
                         <a
                           href={cert.credentialLink}
-                          aria-label={`Authenticate record for ${cert.title}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-[10px] uppercase tracking-[0.2em] font-bold text-academic-primary hover:text-academic-accent transition-colors flex items-center justify-center gap-2"
@@ -134,7 +153,7 @@ const Certificates = () => {
           </div>
         )}
 
-        {!showAll && certificates.length > 3 && (
+        {!showAll && !isLoading && certificates.length > 3 && (
           <div className="mt-20 flex justify-center">
             <button
               onClick={() => setShowAll(true)}
@@ -161,12 +180,6 @@ const Certificates = () => {
               alt="Certificate Preview"
               className="w-full h-auto object-contain rounded shadow-paper border border-academic-border"
             />
-            <button
-              className="absolute -top-12 right-0 text-academic-primary text-sm uppercase tracking-widest font-bold"
-              onClick={() => setSelectedImage(null)}
-            >
-              Close
-            </button>
           </div>
         </div>
       )}

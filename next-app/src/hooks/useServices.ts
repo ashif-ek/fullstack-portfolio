@@ -1,20 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
-import Api from '../lib/api';
-import { Service } from '../types';
-import { services as MOCK_SERVICES } from '../data/mockData';
-
-const fetchServices = async (): Promise<Service[]> => {
-    const { data } = await Api.get('/services/');
-    return data;
-};
+import { DataService } from '../services/dataService';
 
 export const useServices = () => {
-    const query = useQuery({
+    return useQuery({
         queryKey: ['services'],
-        queryFn: fetchServices,
-        staleTime: 1000 * 60 * 5,
+        queryFn: () => DataService.getServices(),
+        staleTime: 1000 * 60 * 60, // 1 hour
     });
-
-    const displayData = query.data || MOCK_SERVICES;
-    return { ...query, data: displayData };
 };

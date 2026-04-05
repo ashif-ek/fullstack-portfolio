@@ -1,14 +1,12 @@
 'use client';
-import { useEffect, useMemo, useState } from 'react';
-import Image from 'next/image';
+import { useMemo } from 'react';
 import Link from 'next/link';
 import { BookOpen, BriefcaseBusiness, Github, Instagram, Linkedin } from 'lucide-react';
-import { profile as profileData } from '../../data/mockData';
 import profileFallbackImage from '../../assets/profile.jpg';
-import Api, { resolveAssetUrl } from '../../lib/api';
-import { Profile, SocialLink } from '../../types';
-
+import { resolveAssetUrl } from '../../lib/api';
+import { SocialLink } from '../../types';
 import { useProfile } from '../../hooks/useProfile';
+import { Skeleton } from '../ui/Skeleton';
 
 const iconMap: Record<string, React.ElementType> = {
   Github,
@@ -37,13 +35,15 @@ const SocialLinks = ({ links = [] }: { links?: SocialLink[] }) => {
   );
 };
 
-const EmailLink = ({ email }: { email: string }) => (
+const EmailLink = ({ email }: { email?: string }) => (
   <div className="fixed right-5 bottom-0 z-30 hidden md:block">
     <div className="flex flex-col items-center">
-      <a href={`mailto:${email}`}
-        className="p-2 text-academic-muted hover:text-academic-primary transition-colors duration-300 [writing-mode:vertical-rl] tracking-widest text-sm">
-        {email}
-      </a>
+      {email && (
+        <a href={`mailto:${email}`}
+          className="p-2 text-academic-muted hover:text-academic-primary transition-colors duration-300 [writing-mode:vertical-rl] tracking-widest text-sm">
+          {email}
+        </a>
+      )}
       <div className="h-24 w-px bg-academic-border mt-2"></div>
     </div>
   </div>
@@ -52,52 +52,51 @@ const EmailLink = ({ email }: { email: string }) => (
 const Hero = ({ condensed = false }: { condensed?: boolean }) => {
   const { profile, isLoading } = useProfile();
 
-  const { name, title, description, email, socialLinks, avatar } = profile;
   const avatarSrc = useMemo(
-    () => resolveAssetUrl(avatar) || profileFallbackImage.src,
-    [avatar]
+    () => resolveAssetUrl(profile?.avatar) || profileFallbackImage.src,
+    [profile?.avatar]
   );
 
   return (
     <section id="hero" className={`relative flex items-center justify-center bg-academic-bg text-academic-text font-sans transition-all duration-500 ${condensed ? 'min-h-[60svh] py-12' : 'min-h-[100svh]'}`}>
 
-      <SocialLinks links={socialLinks} />
-      <EmailLink email={email} />
+      <SocialLinks links={profile?.socialLinks || []} />
+      <EmailLink email={profile?.email} />
 
       <div className="relative z-20 container mx-auto max-w-5xl px-6 text-center flex flex-col items-center">
 
-        <div className="hidden">
-          {avatarSrc && (
-            <div className="relative w-32 h-32 md:w-36 md:h-36 rounded-full border border-academic-border p-1 bg-academic-paper shadow-sm mx-auto overflow-hidden">
-              <Image
-                src={avatarSrc}
-                alt={name}
-                fill
-                className="object-cover rounded-full"
-                priority
-                sizes="(max-width: 768px) 128px, 160px"
-              />
-            </div>
-          )}
-        </div>
-
         <div className="space-y-4">
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-serif font-bold text-academic-primary tracking-tight px-4">
-            {name}
-          </h1>
+          {isLoading ? (
+            <Skeleton className="h-16 w-96 mx-auto mb-4" />
+          ) : (
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-serif font-bold text-academic-primary tracking-tight px-4">
+              {profile?.name || "Ashif E.K"}
+            </h1>
+          )}
           <div className="h-px w-16 bg-academic-border mx-auto my-4" />
         </div>
 
         <div>
-          <h2 className="text-lg sm:text-xl md:text-2xl font-serif text-academic-muted max-w-2xl mx-auto px-4">
-            {title}
-          </h2>
+          {isLoading ? (
+            <Skeleton className="h-8 w-64 mx-auto mb-4" />
+          ) : (
+            <h2 className="text-lg sm:text-xl md:text-2xl font-serif text-academic-muted max-w-2xl mx-auto px-4">
+              {profile?.title || "Full-Stack Engineer"}
+            </h2>
+          )}
         </div>
 
         <div>
-          <p className={`max-w-xl mt-6 text-base text-academic-muted leading-relaxed transition-all duration-500 ${condensed ? 'line-clamp-2 text-sm' : ''}`}>
-            {description}
-          </p>
+           {isLoading ? (
+            <div className="space-y-2 mt-6">
+              <Skeleton className="h-4 w-96 mx-auto" />
+              <Skeleton className="h-4 w-80 mx-auto" />
+            </div>
+          ) : (
+            <p className={`max-w-xl mt-6 text-base text-academic-muted leading-relaxed transition-all duration-500 ${condensed ? 'line-clamp-2 text-sm' : ''}`}>
+              {profile?.description}
+            </p>
+          )}
         </div>
 
         <div className="mt-12 flex flex-col md:flex-row gap-4">

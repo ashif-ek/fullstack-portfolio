@@ -1,7 +1,7 @@
-'use client';
 import React, { useMemo, useState } from 'react';
 import { useSkills, useTools } from '../../hooks/useSkills';
 import { Skill, Tool } from '../../types';
+import { Skeleton } from '../ui/Skeleton';
 
 interface SkillCardProps {
   skill: Skill;
@@ -103,26 +103,50 @@ const ToolCard = React.memo(({ tool }: { tool: Tool }) => (
   </div>
 ));
 
+const SkillSkeleton = () => (
+  <div className="border-b border-academic-border py-6 px-4">
+    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="flex items-center gap-4">
+        <Skeleton className="w-8 h-8 rounded-full" />
+        <div className="space-y-2">
+          <Skeleton className="h-5 w-32" />
+          <Skeleton className="h-3 w-20" />
+        </div>
+      </div>
+      <div className="flex items-center gap-6">
+        <Skeleton className="hidden md:block w-48 h-1" />
+        <Skeleton className="h-4 w-10" />
+      </div>
+    </div>
+  </div>
+);
+
+const ToolSkeleton = () => (
+  <div className="flex items-center gap-3 px-4 py-2 border border-academic-border bg-academic-paper">
+    <Skeleton className="w-5 h-5" />
+    <Skeleton className="h-4 w-16" />
+  </div>
+);
+
 const Skills = ({ condensed = false }: { condensed?: boolean }) => {
-  const { data: skills = [] } = useSkills();
-  const { data: tools = [] } = useTools();
+  const { data: skills = [], isLoading: skillsLoading } = useSkills();
+  const { data: tools = [], isLoading: toolsLoading } = useTools();
   const [activeCategory, setActiveCategory] = useState('All');
   const [showAll, setShowAll] = useState(false);
 
   const skillCategories = useMemo(() => {
+    if (!skills) return ['All'];
     const uniqueCategories = Array.from(new Set(skills.map(s => s.category))).filter(Boolean);
     return ['All', ...uniqueCategories];
   }, [skills]);
 
   const filteredSkills = useMemo(() => {
+    if (!skills) return [];
     let base = activeCategory === 'All' ? skills : skills.filter(skill => skill.category === activeCategory);
 
-    // For Recruiter Mode (condensed), we show a specific subset
     if (condensed) {
       return base.filter(s => s.level >= 80).slice(0, 6);
     }
-
-    // For regular view, we respect the showAll toggle
     return showAll ? base : base.slice(0, 3);
   }, [activeCategory, skills, condensed, showAll]);
 
@@ -135,13 +159,17 @@ const Skills = ({ condensed = false }: { condensed?: boolean }) => {
             <p className="text-academic-muted font-serif italic mt-2">A comprehensive classification of core competencies and specialized methodologies.</p>
           </div>
 
-          {!condensed && (
+          {!condensed && !skillsLoading && (
             <div className="flex flex-wrap gap-2">
               {skillCategories.map(category => (
                 <button
                   key={category}
                   onClick={() => setActiveCategory(category)}
-                  className={`px-4 py-1 text-xs uppercase tracking-widest transition-all duration-300 border ${activeCategory === category ? 'bg-academic-primary text-white border-academic-primary' : 'bg-transparent border-academic-border text-academic-muted hover:border-academic-primary hover:text-academic-primary'}`}
+                  className={`px-4 py-1 text-xs uppercase tracking-widest transition-all duration-300 border ${
+                    activeCategory === category 
+                      ? 'bg-academic-primary text-white border-academic-primary' 
+                      : 'bg-transparent border-academic-border text-academic-muted hover:border-academic-primary hover:text-academic-primary'
+                  }`}
                 >
                   {category}
                 </button>
@@ -151,12 +179,20 @@ const Skills = ({ condensed = false }: { condensed?: boolean }) => {
         </div>
 
         <div className="grid grid-cols-1 gap-px bg-academic-border border-t border-academic-border">
-          {filteredSkills.map((skill) => (
-            <SkillCard key={skill.id || skill.name} skill={skill} />
-          ))}
+          {skillsLoading ? (
+            <>
+              <SkillSkeleton />
+              <SkillSkeleton />
+              <SkillSkeleton />
+            </>
+          ) : (
+            filteredSkills.map((skill) => (
+              <SkillCard key={skill.id || skill.name} skill={skill} />
+            ))
+          )}
         </div>
 
-        {!showAll && !condensed && skills.length > 3 && (
+        {!showAll && !condensed && !skillsLoading && skills.length > 3 && (
           <div className="mt-12 flex justify-center">
             <button
               onClick={() => setShowAll(true)}
@@ -175,9 +211,13 @@ const Skills = ({ condensed = false }: { condensed?: boolean }) => {
               <div className="flex-grow h-px bg-academic-border" />
             </div>
             <div className="flex flex-wrap gap-4 justify-center">
-              {tools.map(tool => (
-                <ToolCard key={tool.name} tool={tool} />
-              ))}
+              {toolsLoading ? (
+                Array(10).fill(0).map((_, i) => <ToolSkeleton key={i} />)
+              ) : (
+                tools.map(tool => (
+                  <ToolCard key={tool.name} tool={tool} />
+                ))
+              )}
             </div>
           </div>
         )}
