@@ -1,45 +1,24 @@
 import { Metadata } from 'next';
-import { profile, about, skills, tools, certificates } from '../../../data/mockData';
 import { Skill, Tool, Certificate } from '../../../types';
 import { Award, Code, GraduationCap, Laptop, Sparkles, User } from 'lucide-react';
-import Api, { resolveAssetUrl } from '../../../lib/api';
+import { resolveAssetUrl } from '../../../lib/api';
+import { DataService } from '../../../services/dataService';
+import BlogCTA from '../../../components/sections/BlogCTA';
 import LazyImage from '../../../components/ui/LazyImage';
 import profileImg from "../../../assets/profile.jpg";
 
 export const metadata: Metadata = {
-    title: 'About Ashif E.K | Full-Stack Engineer',
-    description: 'Learn more about Ashif E.K, a Full-Stack Engineer specializing in React, Django, and modern web architecture. Discover his journey, expertise, and technical philosophy.',
-    openGraph: {
-        title: 'About Ashif E.K | Professional Journey & Expertise',
-        description: 'The professional profile of Ashif E.K. Full-Stack development expert with a focus on scalable systems and premium user experiences.',
-        images: [{ url: '/profile.jpg' }],
-    },
+    title: 'About | Ashif E.K',
+    description: 'Learn about my journey, technical expertise, and philosophy in full-stack engineering.',
 };
 
 export default async function AboutPage() {
-    // Fetch data with revalidation (e.g., every 1 hour)
-    let liveAbout = about;
-    let liveSkills = skills;
-    let liveTools = tools;
-    let liveCertificates = certificates;
+    const aboutData = await DataService.getAbout();
+    const skills = await DataService.getSkills();
+    const tools = await DataService.getTools();
+    const certificates = await DataService.getCertificates();
 
-    try {
-        const [aboutRes, skillsRes, toolsRes, certsRes] = await Promise.all([
-            Api.get('/about/'),
-            Api.get('/skills/'),
-            Api.get('/tools/'),
-            Api.get('/certificates/'),
-        ]);
-
-        if (aboutRes.data?.length > 0) liveAbout = aboutRes.data;
-        if (skillsRes.data?.length > 0) liveSkills = skillsRes.data;
-        if (toolsRes.data?.length > 0) liveTools = toolsRes.data;
-        if (certsRes.data?.length > 0) liveCertificates = certsRes.data;
-    } catch (error) {
-        console.error("Failed to fetch live about data, using mock fallback:", error);
-    }
-
-    const mainAbout = liveAbout[0] || about[0];
+    const mainAbout = aboutData || { introduction: '', experience: '', philosophy: '', avatar: '' };
 
     const breadcrumbJsonLd = {
         "@context": "https://schema.org",
@@ -102,7 +81,7 @@ export default async function AboutPage() {
                             <h2 className="text-xl font-bold uppercase tracking-widest text-academic-text/80">Core Expertise</h2>
                         </div>
                         <div className="flex flex-wrap gap-3">
-                            {liveSkills.map((skill: Skill) => (
+                            {skills.map((skill: Skill) => (
                                 <span
                                     key={skill.id}
                                     className="px-4 py-2 rounded-lg bg-academic-primary/5 border border-academic-primary/10 text-academic-text/70 text-sm hover:border-academic-primary/30 transition-colors"
@@ -119,7 +98,7 @@ export default async function AboutPage() {
                             <h2 className="text-xl font-bold uppercase tracking-widest text-academic-text/80">Modern Stack</h2>
                         </div>
                         <div className="flex flex-wrap gap-3">
-                            {liveTools.map((tool: Tool) => (
+                            {tools.map((tool: Tool) => (
                                 <span
                                     key={tool.id}
                                     className="px-4 py-2 rounded-lg bg-academic-primary/5 border border-academic-primary/10 text-academic-text/70 text-sm hover:border-academic-primary/30 transition-colors"
@@ -137,7 +116,7 @@ export default async function AboutPage() {
                         <h2 className="text-2xl font-bold uppercase tracking-widest">Recognitions</h2>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {liveCertificates.map((cert: Certificate) => (
+                        {certificates.map((cert: Certificate) => (
                             <div
                                 key={cert.id}
                                 className="p-6 rounded-2xl bg-academic-paper border border-academic-border shadow-academic hover:shadow-paper transition-all flex gap-4"
@@ -167,6 +146,8 @@ export default async function AboutPage() {
                         </p>
                     </div>
                 </section>
+
+                <BlogCTA />
             </div>
         </main>
     );

@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
-import { services as MOCK_SERVICES } from '../../../data/mockData';
+import { DataService } from '../../../services/dataService';
 import { Service } from '../../../types';
-import Api from '../../../lib/api';
 import Link from 'next/link';
 import { 
     Code2, 
@@ -24,14 +23,7 @@ const iconMap: Record<string, any> = {
 };
 
 export default async function ServicesPage() {
-    let services = MOCK_SERVICES;
-
-    try {
-        const res = await Api.get('/services/');
-        if (res.data && res.data.length > 0) services = res.data;
-    } catch (error) {
-        console.error("Failed to fetch services, using mocks:", error);
-    }
+    const services = await DataService.getServices();
 
     return (
         <main className="min-h-screen bg-academic-bg text-academic-text pt-24 pb-16 px-4">

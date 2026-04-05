@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
-import Api from '../../../lib/api';
+import { DataService } from '../../../services/dataService';
 import { Project } from '../../../types';
-import { projects as MOCK_PROJECTS } from '../../../data/mockData';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -10,14 +9,7 @@ export const metadata: Metadata = {
 };
 
 export default async function ProjectsPage() {
-    let projects = MOCK_PROJECTS;
-
-    try {
-        const res = await Api.get('/projects/');
-        if (res.data) projects = res.data;
-    } catch (error) {
-        console.error("Failed to fetch projects, using mocks:", error);
-    }
+    const projects = await DataService.getProjects();
 
     return (
         <main className="min-h-screen bg-academic-bg text-academic-text pt-24 pb-16 px-4">

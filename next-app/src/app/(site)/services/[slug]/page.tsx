@@ -1,11 +1,11 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { services as MOCK_SERVICES } from '../../../../data/mockData';
 import { Service } from '../../../../types';
-import Api from '../../../../lib/api';
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
 import { ArrowLeft, CheckCircle2 } from 'lucide-react';
+
+import { DataService } from '../../../../services/dataService';
 import Breadcrumbs from '../../../../components/ui/Breadcrumbs';
 import BlogCTA from '../../../../components/sections/BlogCTA';
 
@@ -15,18 +15,8 @@ interface ServicePageProps {
     }>;
 }
 
-async function getLiveServices(): Promise<Service[]> {
-    try {
-        const { data } = await Api.get('/services/');
-        if (data && data.length > 0) return data;
-    } catch (error) {
-        console.error("Failed to fetch live services:", error);
-    }
-    return MOCK_SERVICES;
-}
-
 export async function generateStaticParams() {
-    const allServices = await getLiveServices();
+    const allServices = await DataService.getServices();
     if (!allServices || allServices.length === 0) return [];
     
     return allServices
@@ -38,8 +28,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
     const { slug } = await params;
-    const allServices = await getLiveServices();
-    const service = allServices.find((s: Service) => s.slug === slug);
+    const service = await DataService.getServiceBySlug(slug);
     if (!service) return {};
 
     return {
@@ -59,8 +48,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
 
 export default async function ServicePage({ params }: ServicePageProps) {
     const { slug } = await params;
-    const allServices = await getLiveServices();
-    const service = allServices.find((s: Service) => s.slug === slug);
+    const service = await DataService.getServiceBySlug(slug);
 
     if (!service) {
         notFound();

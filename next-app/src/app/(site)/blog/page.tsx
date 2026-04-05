@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
-import Api from '../../../lib/api';
+import { DataService } from '../../../services/dataService';
 import { Blog } from '../../../types';
-import { blogs as MOCK_BLOGS } from '../../../data/mockData';
 import Link from 'next/link';
 import { Calendar } from 'lucide-react';
 
@@ -11,14 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default async function BlogPage() {
-    let blogs = MOCK_BLOGS;
-
-    try {
-        const res = await Api.get('/blogs/');
-        if (res.data) blogs = res.data;
-    } catch (error) {
-        console.error("Failed to fetch blogs, using mocks:", error);
-    }
+    const blogs = await DataService.getBlogs();
 
     // Sort blogs: Pillar content first, then date
     const sortedBlogs = [...blogs].sort((a, b) => {

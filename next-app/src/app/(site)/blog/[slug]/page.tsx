@@ -1,12 +1,11 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { blogs as MOCK_BLOGS } from '../../../../data/mockData';
 import { Blog } from '../../../../types';
-import Api from '../../../../lib/api';
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Calendar, ArrowLeft } from 'lucide-react';
+import { DataService } from '../../../../services/dataService';
 import Breadcrumbs from '../../../../components/ui/Breadcrumbs';
 import BlogCTA from '../../../../components/sections/BlogCTA';
 
@@ -16,18 +15,8 @@ interface BlogPageProps {
     }>;
 }
 
-async function getLiveBlogs(): Promise<Blog[]> {
-    try {
-        const { data } = await Api.get('/blogs/');
-        if (data && data.length > 0) return data;
-    } catch (error) {
-        console.error("Failed to fetch live blogs:", error);
-    }
-    return MOCK_BLOGS;
-}
-
 export async function generateStaticParams() {
-    const allBlogs = await getLiveBlogs();
+    const allBlogs = await DataService.getBlogs();
     if (!allBlogs || allBlogs.length === 0) return [];
 
     return allBlogs
@@ -39,8 +28,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: BlogPageProps): Promise<Metadata> {
     const { slug } = await params;
-    const allBlogs = await getLiveBlogs();
-    const blog = allBlogs.find((b: Blog) => b.slug === slug);
+    const blog = await DataService.getBlogBySlug(slug);
     if (!blog) return {};
 
     return {
@@ -79,8 +67,7 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
 
 export default async function BlogPage({ params }: BlogPageProps) {
     const { slug } = await params;
-    const allBlogs = await getLiveBlogs();
-    const blog = allBlogs.find((b: Blog) => b.slug === slug);
+    const blog = await DataService.getBlogBySlug(slug);
 
     if (!blog) {
         notFound();

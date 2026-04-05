@@ -1,13 +1,12 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { projects } from '../../../../data/mockData';
 import { Project } from '../../../../types';
 import ReactMarkdown from 'react-markdown';
 import { ArrowLeft, Github, Globe, Tag } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import Api from '../../../../lib/api';
+import { DataService } from '../../../../services/dataService';
 import Breadcrumbs from '../../../../components/ui/Breadcrumbs';
 import BlogCTA from '../../../../components/sections/BlogCTA';
 
@@ -17,19 +16,8 @@ interface ProjectPageProps {
     }>;
 }
 
-// Helper to fetch live projects or fallback to mock
-async function getLiveProjects(): Promise<Project[]> {
-    try {
-        const { data } = await Api.get('/projects/');
-        if (data && data.length > 0) return data;
-    } catch (error) {
-        console.error("Failed to fetch live projects:", error);
-    }
-    return projects;
-}
-
 export async function generateStaticParams() {
-    const allProjects = await getLiveProjects();
+    const allProjects = await DataService.getProjects();
     if (!allProjects || allProjects.length === 0) return [];
 
     return allProjects
@@ -41,8 +29,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
     const { slug } = await params;
-    const allProjects = await getLiveProjects();
-    const project = allProjects.find((p: Project) => p.slug === slug);
+    const project = await DataService.getProjectBySlug(slug);
     if (!project) return {};
 
     return {
@@ -79,8 +66,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
     const { slug } = await params;
-    const allProjects = await getLiveProjects();
-    const project = allProjects.find((p: Project) => p.slug === slug);
+    const project = await DataService.getProjectBySlug(slug);
 
     if (!project) {
         notFound();

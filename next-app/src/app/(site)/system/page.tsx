@@ -48,8 +48,8 @@ export default function MonitoringDashboard() {
   const { data, error, isLoading, isFetching } = useQuery<SystemStatus>({
     queryKey: ['system-status'],
     queryFn: async () => {
-      const response = await Api.get('api/system/status/');
-      return response.data;
+      const response = await Api.get('/api/system/status/');
+      return response.data?.data || response.data;
     },
     refetchInterval: REFRESH_INTERVAL,
     retry: 1,

@@ -1,11 +1,10 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { locations as MOCK_LOCATIONS } from '../../../../data/mockData';
 import { LocationData } from '../../../../types';
-import Api from '../../../../lib/api';
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
 import { MapPin, Globe, Users, ShieldCheck } from 'lucide-react';
+import { DataService } from '../../../../services/dataService';
 import Breadcrumbs from '../../../../components/ui/Breadcrumbs';
 import BlogCTA from '../../../../components/sections/BlogCTA';
 
@@ -15,18 +14,8 @@ interface LocationPageProps {
     }>;
 }
 
-async function getLiveLocations(): Promise<LocationData[]> {
-    try {
-        const { data } = await Api.get('/locations/');
-        if (data && data.length > 0) return data;
-    } catch (error) {
-        console.error("Failed to fetch live locations:", error);
-    }
-    return MOCK_LOCATIONS;
-}
-
 export async function generateStaticParams() {
-    const allLocations = await getLiveLocations();
+    const allLocations = await DataService.getLocations();
     if (!allLocations || allLocations.length === 0) return [];
 
     return allLocations
@@ -38,8 +27,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: LocationPageProps): Promise<Metadata> {
     const { city } = await params;
-    const allLocations = await getLiveLocations();
-    const location = allLocations.find((l: LocationData) => l.slug === city);
+    const location = await DataService.getLocationByCity(city);
     if (!location) return {};
 
     return {
@@ -59,8 +47,7 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
 
 export default async function LocationPage({ params }: LocationPageProps) {
     const { city } = await params;
-    const allLocations = await getLiveLocations();
-    const location = allLocations.find((l: LocationData) => l.slug === city);
+    const location = await DataService.getLocationByCity(city);
 
     if (!location) {
         notFound();
