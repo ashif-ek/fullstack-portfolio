@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     'Ashif E.K', 
     'React 19 Developer Kochi', 
     'Django 5.x Expert Calicut', 
-    'Full Stack Developer Trivandrum',
+    'Full-Stack Engineer Trivandrum',
     'SaaS MVP Development Kerala', 
     'Startup Technical Strategy', 
     'Web Architecture Specialist', 
