@@ -2,30 +2,15 @@ import { Profile, AboutData, Skill, Tool, Project, Certificate, Blog, Service, L
 
 export const profile: Profile = {
     "name": "Ashif E.K",
-    "title": "Full-stack Engineer",
+    "title": "Full Stack Engineer",
     "description": "I build high-performance web applications enabling businesses to scale. Specializing in React, Django, and Modern Cloud Architecture, I transform complex requirements into seamless digital experiences.",
     "email": "ashifek11@gmail.com",
     "socialLinks": [
-        {
-            "name": "Github",
-            "url": "https://github.com/ashif-ek"
-        },
-        {
-            "name": "LinkedIn",
-            "url": "https://linkedin.com/in/ashifek"
-        },
-        {
-            "name": "Instagram",
-            "url": "https://instagram.com/ashif.io"
-        },
-        {
-            "name": "Fiverr",
-            "url": "http://www.fiverr.com/s/gDLy45X"
-        },
-        {
-            "name": "Docs Material",
-            "url": "https://ashif-ek.github.io/docs-stack-material/"
-        }
+        { "name": "Github", "url": "https://github.com/ashif-ek" },
+        { "name": "LinkedIn", "url": "https://linkedin.com/in/ashifek" },
+        { "name": "Instagram", "url": "https://instagram.com/ashif.io" },
+        { "name": "Fiverr", "url": "http://www.fiverr.com/s/gDLy45X" },
+        { "name": "Docs Material", "url": "https://ashif-ek.github.io/docs-stack-material/" }
     ]
 };
 
@@ -37,9 +22,9 @@ export const about: AboutData[] = [
         "experience": "With a strong foundation in Computer Science, I have successfully delivered projects ranging from e-commerce platforms to complex governance systems. I have hands-on experience with the modern web stack including Next.js, Django, and Cloud Infrastructure. My work emphasizes performance optimization, security best practices, and intuitive user experience design.",
         "philosophy": "I believe that technology should be invisible—it should work so smoothly that users focus on their goals, not the tools. My approach combines rigorous engineering principles with creative problem-solving to deliver software that is not just functional, but exceptional.",
         "stats": {
-            "projects": 10,
-            "certificates": 4,
-            "technologies": 11
+            "projects": 12,
+            "certificates": 10,
+            "technologies": 15
         }
     }
 ];
@@ -51,7 +36,7 @@ export const services: Service[] = [
         title: "MVP Development",
         description: "Rapid prototyping and development of Minimum Viable Products for startups. Launch your idea quickly with a solid, scalable foundation.",
         icon: "RocketIcon",
-        content: "# MVP Development for Startups\n\nLaunch your vision in weeks, not months. We specialize in building robust MVPs that validate your idea and scale as you grow."
+        content: "# MVP Development\n\nLaunch your vision in weeks, not months. We specialize in building robust MVPs that validate your idea and scale as you grow."
     },
     {
         id: "11",
@@ -67,7 +52,7 @@ export const services: Service[] = [
         title: "Performance Optimization",
         description: "Auditing and optimizing existing applications for speed, accessibility, and SEO. Implementing caching strategies and code splitting.",
         icon: "LightningIcon",
-        content: "# Core Web Vitals & Performance\n\nIs your site slow? We optimize bundle sizes, implement advanced caching (Redis/CDN), and ensure 90+ Lighthouse scores."
+        content: "# Performance Excellence\n\nWe optimize bundle sizes, implement advanced caching (Redis/CDN), and ensure 90+ Lighthouse scores for your production apps."
     },
     {
         id: "13",
@@ -75,7 +60,7 @@ export const services: Service[] = [
         title: "Backend API Development",
         description: "Secure REST APIs using Django REST Framework with authentication and scalable architecture.",
         icon: "CodeIcon",
-        content: "# Enterprise-Grade Backends\n\nCustom backend systems designed for reliability, security, and high-load environments. Decoupled and production-ready."
+        content: "# Backend Engineering\n\nReliable, secure, and high-load backend systems designed with enterprise standards and data integrity at the core."
     },
     {
         id: "14",
@@ -83,7 +68,7 @@ export const services: Service[] = [
         title: "Full Stack Web Development",
         description: "Building responsive web platforms using React, Django, and PostgreSQL.",
         icon: "LayersIcon",
-        content: "# End-to-End Product Excellence\n\nFrom the first pixel in React to the final query in PostgreSQL, we deliver seamless full-stack web experiences."
+        content: "# End-to-End Development\n\nSeamless integration between React frontends and Django backends for a unified, elite user experience."
     },
     {
         id: "15",
@@ -91,7 +76,7 @@ export const services: Service[] = [
         title: "Cloud Deployment",
         description: "Deploying production-ready applications using Docker, AWS EC2, and CI/CD pipelines.",
         icon: "CloudIcon",
-        content: "# Modern Cloud Infrastructure\n\nScalability by design. We use Docker, AWS, and CI/CD to ensure your application is always live and always ready for more users."
+        content: "# Cloud Infrastructure\n\nAutomated deployments and containerized workflows to ensure your application is always live, always scalable."
     }
 ];
 
@@ -124,9 +109,9 @@ export const projects: Project[] = [
         "slug": "salary-checker",
         "title": "Salary Checker",
         "description": "Salary Reality Checker delivers AI-powered salary insights using percentile analytics, fuzzy-matched job titles, and machine-learning predictions. It auto-corrects user input, analyzes market trends, and predicts salaries when data is missing. Built with FastAPI, PostgreSQL, scikit-learn.",
-        "content": "## Salary Reality Checker\n\nSalary Reality Checker delivers AI-powered salary insights using percentile analytics, fuzzy-matched job titles, and machine-learning predictions. It auto-corrects user input, analyzes market trends, and predicts salaries when data is missing.\n\n### Key Features\n- AI-powered salary insights\n- Percentile analytics\n- Fuzzy-matched job titles\n- Machine-learning predictions",
+        "content": "## Salary Reality Checker\n\nSalary Reality Checker delivers AI-powered salary insights using percentile analytics, fuzzy-matched job titles, and machine-learning predictions. It auto-corrects user input, analyzes market trends, and predicts salaries when data is missing.",
         "tags": ["FastAPI", "PostgreSQL", "Machine Learning", "AI", "Salary Analytics"],
-        "image": "/images/mock/salary.png",
+        "image": "",
         "link": "https://ashif-ek.github.io/docs-stack-material/",
         "github": "https://github.com/ashif-ek/salary-checker"
     },
@@ -137,7 +122,7 @@ export const projects: Project[] = [
         "description": "Developed a multi-role civic platform connecting citizens with Panchayath and higher administrative authorities, enabling complaint escalation, service tracking, announcements, moderation, analytics, and citizen engagement.",
         "content": "## Civic (CiviTech)\n\nDeveloped a multi-role civic platform connecting citizens with Panchayath and higher administrative authorities, enabling complaint escalation, service tracking, announcements, moderation, analytics, and citizen engagement.",
         "tags": ["Django", "Flutter", "REST API", "RBAC", "PostgreSQL"],
-        "image": "/images/mock/civic.png",
+        "image": "",
         "link": "#",
         "github": "https://github.com/ashif-ek/civic-connect"
     },
@@ -148,13 +133,13 @@ export const projects: Project[] = [
         "description": "Built a full-stack blogging system to experiment with production backend patterns including JWT access/refresh tokens, request validation, structured logging, health checks, and Dockerized deployment.",
         "content": "## Blog System Design Sandbox\n\nBuilt a full-stack blogging system to experiment with production backend patterns including JWT access/refresh tokens, request validation, structured logging, health checks, and Dockerized deployment.",
         "tags": ["React", "Django REST Framework", "Docker", "GitHub Actions", "AWS"],
-        "image": "/images/mock/architecture.png",
+        "image": "",
         "link": "#",
-        "github": "#"
+        "github": ""
     },
     {
         "id": "14",
-        "slug": "time-lens",
+        "slug": "timelens",
         "title": "TimeLens",
         "description": "Time Lens reframes real minutes into life-equivalents, helping you feel the true weight of time. A mindset tool that turns seconds into life-hours, minutes into life-days, and days into life-years.",
         "content": "## TimeLens\n\nTime Lens reframes real minutes into life-equivalents, helping you feel the true weight of time. A mindset tool that turns seconds into life-hours, minutes into life-days, and days into life-years.",
@@ -502,3 +487,11 @@ export const locations: LocationData[] = [
         content: "# Software Engineering in Trivandrum\n\nFrom Technopark to the global stage, we build apps that scale... Expert development services for the capital's tech community, focusing on reliability, security, and elite user experiences."
     }
 ];
+
+export const settings = {
+    showBlog: true,
+    showSkills: true,
+    showProjects: true,
+    showCertificates: true,
+    maintenanceMode: false
+};

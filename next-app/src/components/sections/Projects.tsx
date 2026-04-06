@@ -34,7 +34,7 @@ const Projects = ({ condensed = false }: { condensed?: boolean }) => {
   const [showAll, setShowAll] = useState(false);
   const router = useRouter();
 
-  const displayedProjects = showAll ? projects : projects.slice(0, 2);
+  const displayedProjects = showAll ? projects : projects.slice(0, 4);
 
   const handleProjectClick = async (projectId: string, projectSlug: string, e: React.MouseEvent) => {
     e.preventDefault();

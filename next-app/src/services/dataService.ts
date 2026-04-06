@@ -19,23 +19,68 @@ import {
     tools as MOCK_TOOLS, 
     services as MOCK_SERVICES, 
     certificates as MOCK_CERTIFICATES, 
-    locations as MOCK_LOCATIONS 
+    locations as MOCK_LOCATIONS,
+    settings as MOCK_SETTINGS 
 } from "../data/mockData";
 
 /**
  * DataService provides a centralized data access layer for both 
  * Server Components (RSC) and Client Components (via React Query).
+ * Now implements a Hybrid Merge Strategy: Live Data + Mock Data.
  */
+
+// --- Internal Utilities ---
+const slugify = (text: string) => {
+    return text
+        .toString()
+        .toLowerCase()
+        .trim()
+        .replace(/\s+/g, '-')     // Replace spaces with -
+        .replace(/[^\w-]+/g, '')  // Remove all non-word chars
+        .replace(/--+/g, '-');    // Replace multiple - with single -
+};
+
+const mergeCollections = <T extends { slug?: string; id?: string | number; title?: string; name?: string }>(
+    liveData: T[],
+    mockData: T[]
+): T[] => {
+    // 1. Ensure all live data has a slug (fallback to slugified title/name)
+    const processedLive = liveData.map(item => {
+        if (!item.slug) {
+            const base = item.title || item.name || '';
+            return { ...item, slug: slugify(base) };
+        }
+        return item;
+    }).filter(item => !!item.slug); // Final safety: must have a slug
+
+    const merged = [...processedLive];
+    const liveSlugs = new Set(processedLive.map(item => item.slug).filter(Boolean));
+    const liveIds = new Set(processedLive.map(item => String(item.id)).filter(Boolean));
+
+    mockData.forEach(mockItem => {
+        const isDuplicate = 
+            (mockItem.slug && liveSlugs.has(mockItem.slug)) || 
+            (mockItem.id && liveIds.has(String(mockItem.id)));
+        
+        if (!isDuplicate) {
+            merged.push(mockItem);
+        }
+    });
+
+    return merged;
+};
+
 export const DataService = {
     // --- Settings & Meta ---
     async getSettings() {
         try {
             const response = await Api.get('/settings/');
             const data = response.data?.data || response.data;
+            if (!data || (Array.isArray(data) && data.length === 0)) return MOCK_SETTINGS;
             return Array.isArray(data) ? data[0] : data;
         } catch (error) {
-            console.error("Failed to fetch settings, using empty default:", error);
-            return null;
+            console.error("Failed to fetch settings, using mock fallback:", error);
+            return MOCK_SETTINGS;
         }
     },
 
@@ -70,141 +115,130 @@ export const DataService = {
 
     // --- Core Collections ---
     async getProjects(): Promise<Project[]> {
+        const liveProjects: Project[] = [];
         try {
             const response = await Api.get('/projects/');
             const data = response.data?.data || response.data;
-            if (!Array.isArray(data) || data.length === 0) return MOCK_PROJECTS;
-            return data.map((p: any) => ({
-                ...p,
-                tags: Array.isArray(p.tags) ? p.tags : (p.tags ? p.tags.split(',').map((t: string) => t.trim()) : [])
-            }));
+            if (Array.isArray(data)) {
+                liveProjects.push(...data.map((p: any) => ({
+                    ...p,
+                    tags: Array.isArray(p.tags) ? p.tags : (p.tags ? p.tags.split(',').map((t: string) => t.trim()) : [])
+                })));
+            }
         } catch (error) {
-            console.error("Failed to fetch projects, using mock fallback:", error);
-            return MOCK_PROJECTS;
+            console.error("Failed to fetch live projects:", error);
         }
+        return mergeCollections(liveProjects, MOCK_PROJECTS);
     },
 
     async getProjectBySlug(slug: string): Promise<Project | null> {
-        try {
-            const projects = await this.getProjects();
-            return projects.find((p: Project) => p.slug === slug) || null;
-        } catch (error) {
-            console.error(`Failed to fetch project by slug: ${slug}, using mock fallback:`, error);
-            return MOCK_PROJECTS.find(p => p.slug === slug) || null;
-        }
+        const projects = await this.getProjects();
+        return projects.find((p: Project) => p.slug === slug) || null;
     },
 
     async getBlogs(): Promise<Blog[]> {
+        const liveBlogs: Blog[] = [];
         try {
             const response = await Api.get('/blogs/');
             const data = response.data?.data || response.data;
-            if (!Array.isArray(data) || data.length === 0) return MOCK_BLOGS;
-            return data.map((b: any) => ({
-                ...b,
-                imageUrl: b.image_url || b.imageUrl || b.image
-            }));
+            if (Array.isArray(data)) {
+                liveBlogs.push(...data.map((b: any) => ({
+                    ...b,
+                    imageUrl: b.image_url || b.imageUrl || b.image
+                })));
+            }
         } catch (error) {
-            console.error("Failed to fetch blogs, using mock fallback:", error);
-            return MOCK_BLOGS;
+            console.error("Failed to fetch live blogs:", error);
         }
+        return mergeCollections(liveBlogs, MOCK_BLOGS);
     },
 
     async getBlogBySlug(slug: string): Promise<Blog | null> {
-        try {
-            const blogs = await this.getBlogs();
-            return blogs.find((b: Blog) => b.slug === slug) || null;
-        } catch (error) {
-            console.error(`Failed to fetch blog by slug: ${slug}, using mock fallback:`, error);
-            return MOCK_BLOGS.find(b => b.slug === slug) || null;
-        }
+        const blogs = await this.getBlogs();
+        return blogs.find((b: Blog) => b.slug === slug) || null;
     },
 
     async getSkills(): Promise<Skill[]> {
+        const liveSkills: Skill[] = [];
         try {
             const response = await Api.get('/skills/');
             const data = response.data?.data || response.data;
-            if (!Array.isArray(data) || data.length === 0) return MOCK_SKILLS;
-            return data;
+            if (Array.isArray(data)) {
+                liveSkills.push(...data);
+            }
         } catch (error) {
-            console.error("Failed to fetch skills, using mock fallback:", error);
-            return MOCK_SKILLS;
+            console.error("Failed to fetch live skills:", error);
         }
+        return mergeCollections(liveSkills, MOCK_SKILLS);
     },
 
     async getTools(): Promise<Tool[]> {
+        const liveTools: Tool[] = [];
         try {
             const response = await Api.get('/tools/');
             const data = response.data?.data || response.data;
-            if (!Array.isArray(data) || data.length === 0) return MOCK_TOOLS;
-            return data;
+            if (Array.isArray(data)) {
+                liveTools.push(...data);
+            }
         } catch (error) {
-            console.error("Failed to fetch tools, using mock fallback:", error);
-            return MOCK_TOOLS;
+            console.error("Failed to fetch live tools:", error);
         }
+        return mergeCollections(liveTools, MOCK_TOOLS);
     },
 
     async getServices(): Promise<Service[]> {
+        const liveServices: Service[] = [];
         try {
             const response = await Api.get('/services/');
             const data = response.data?.data || response.data;
-            if (!Array.isArray(data) || data.length === 0) return MOCK_SERVICES;
-            return data;
+            if (Array.isArray(data)) {
+                liveServices.push(...data);
+            }
         } catch (error) {
-            console.error("Failed to fetch services, using mock fallback:", error);
-            return MOCK_SERVICES;
+            console.error("Failed to fetch live services:", error);
         }
+        return mergeCollections(liveServices, MOCK_SERVICES);
     },
 
     async getServiceBySlug(slug: string): Promise<Service | null> {
-        try {
-            const services = await this.getServices();
-            return services.find((s: Service) => s.slug === slug) || null;
-        } catch (error) {
-            console.error(`Failed to fetch service by slug: ${slug}, using mock fallback:`, error);
-            return MOCK_SERVICES.find(s => s.slug === slug) || null;
-        }
+        const services = await this.getServices();
+        return services.find((s: Service) => s.slug === slug) || null;
     },
 
     async getCertificates(): Promise<Certificate[]> {
+        const liveCerts: Certificate[] = [];
         try {
             const response = await Api.get('/certificates/');
             const data = response.data?.data || response.data;
-            if (!Array.isArray(data) || data.length === 0) return MOCK_CERTIFICATES;
-            return data.map((c: any) => ({
-                ...c,
-                credentialLink: c.credential_link || c.credentialLink || c.link
-            }));
+            if (Array.isArray(data)) {
+                liveCerts.push(...data.map((c: any) => ({
+                    ...c,
+                    credentialLink: c.credential_link || c.credentialLink || c.link
+                })));
+            }
         } catch (error) {
-            console.error("Failed to fetch certificates, using mock fallback:", error);
-            return MOCK_CERTIFICATES;
+            console.error("Failed to fetch live certificates:", error);
         }
+        return mergeCollections(liveCerts, MOCK_CERTIFICATES);
     },
 
     async getLocations(): Promise<LocationData[]> {
+        const liveLocs: LocationData[] = [];
         try {
             const response = await Api.get('/locations/');
             const data = response.data?.data || response.data;
-            if (!Array.isArray(data) || data.length === 0) return MOCK_LOCATIONS;
-            return data;
+            if (Array.isArray(data)) {
+                liveLocs.push(...data);
+            }
         } catch (error) {
-            console.error("Failed to fetch locations, using mock fallback:", error);
-            return MOCK_LOCATIONS;
+            console.error("Failed to fetch live locations:", error);
         }
+        return mergeCollections(liveLocs, MOCK_LOCATIONS);
     },
 
     async getLocationByCity(city: string): Promise<LocationData | null> {
-        try {
-            const response = await Api.get(`/locations/`);
-            const data = response.data?.data || response.data;
-            if (!Array.isArray(data)) return MOCK_LOCATIONS.find(l => l.slug === city || l.city.toLowerCase() === city.toLowerCase()) || null;
-            
-            const loc = data.find((l: LocationData) => l.slug === city || l.city.toLowerCase() === city.toLowerCase());
-            if (!loc) return MOCK_LOCATIONS.find(l => l.slug === city || l.city.toLowerCase() === city.toLowerCase()) || null;
-            return loc;
-        } catch (error) {
-            console.error(`Failed to fetch location by city: ${city}, using mock fallback:`, error);
-            return MOCK_LOCATIONS.find(l => l.slug === city || l.city.toLowerCase() === city.toLowerCase()) || null;
-        }
+        const locations = await this.getLocations();
+        return locations.find(l => l.slug === city || l.city.toLowerCase() === city.toLowerCase()) || null;
     },
 
     // --- Analytical & Health ---
