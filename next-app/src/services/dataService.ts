@@ -75,9 +75,21 @@ export const DataService = {
     async getSettings() {
         try {
             const response = await Api.get('/settings/');
-            const data = response.data?.data || response.data;
-            if (!data || (Array.isArray(data) && data.length === 0)) return MOCK_SETTINGS;
-            return Array.isArray(data) ? data[0] : data;
+            const rawData = response.data?.data || response.data;
+            const data = Array.isArray(rawData) ? rawData[0] : rawData;
+
+            if (!data || typeof data !== 'object') return MOCK_SETTINGS;
+
+            // Normalize snake_case (Django) to camelCase (Frontend)
+            return {
+                showBlog: data.show_blog ?? data.showBlog ?? MOCK_SETTINGS.showBlog,
+                showSkills: data.show_skills ?? data.showSkills ?? MOCK_SETTINGS.showSkills,
+                showProjects: data.show_projects ?? data.showProjects ?? MOCK_SETTINGS.showProjects,
+                showCertificates: data.show_certificates ?? data.showCertificates ?? MOCK_SETTINGS.showCertificates,
+                maintenanceMode: data.maintenance_mode ?? data.maintenanceMode ?? MOCK_SETTINGS.maintenanceMode,
+                siteTitle: data.site_title ?? data.siteTitle ?? "Ashif E.K",
+                welcomeMessage: data.welcome_message ?? data.welcomeMessage ?? ""
+            };
         } catch (error) {
             console.error("Failed to fetch settings, using mock fallback:", error);
             return MOCK_SETTINGS;
@@ -87,13 +99,15 @@ export const DataService = {
     async getProfile(): Promise<Profile | null> {
         try {
             const response = await Api.get('/profile/');
-            const data = response.data?.data || response.data;
-            const p = Array.isArray(data) ? data[0] : data;
+            const rawData = response.data?.data || response.data;
+            const p = Array.isArray(rawData) ? rawData[0] : rawData;
+            
             if (!p || typeof p !== 'object') return MOCK_PROFILE;
             
             return {
                 ...p,
-                socialLinks: p.social_links || p.socialLinks || []
+                // Ensure socialLinks is always camelCase and populated
+                socialLinks: p.social_links || p.socialLinks || MOCK_PROFILE.socialLinks || []
             };
         } catch (error) {
             console.error("Failed to fetch profile, using mock fallback:", error);
