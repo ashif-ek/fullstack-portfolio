@@ -16,14 +16,10 @@ const Contacts = dynamic(() => import("../../components/sections/Contacts"), { s
 const BlogSection = dynamic(() => import("../../components/sections/BlogSection"), { ssr: false });
 const Services = dynamic(() => import("../../components/sections/Services"), { ssr: false });
 
+import { Settings } from "../../types";
+
 interface HomeClientProps {
-  settings: {
-    showBlog: boolean;
-    showSkills: boolean;
-    showProjects: boolean;
-    showCertificates: boolean;
-    maintenanceMode: boolean;
-  };
+  settings: Settings;
 }
 
 export default function HomeClient({ settings }: HomeClientProps) {
@@ -48,17 +44,17 @@ export default function HomeClient({ settings }: HomeClientProps) {
 
   return (
     <>
-      <Hero condensed={isRecruiterMode} />
-      <GithubActivity />
-      <RecruiterCTA />
+      {settings.showHero && <Hero condensed={isRecruiterMode} />}
+      {settings.showGithubActivity && <GithubActivity />}
+      {settings.showRecruiterCta && <RecruiterCTA />}
       <>
-        {!isRecruiterMode && <About />}
-        {!isRecruiterMode && <Services />}
+        {settings.showAbout && <About />}
+        {settings.showServices && <Services />}
         {settings.showProjects && <Projects condensed={isRecruiterMode} />}
         {settings.showSkills && <Skills condensed={isRecruiterMode} />}
-        {!isRecruiterMode && settings.showBlog && <BlogSection />}
-        {!isRecruiterMode && settings.showCertificates && <Certificates />}
-        <Contacts />
+        {settings.showBlog && <BlogSection />}
+        {settings.showCertificates && <Certificates />}
+        {settings.showContacts && <Contacts />}
       </>
     </>
   );

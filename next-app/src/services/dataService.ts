@@ -82,13 +82,20 @@ export const DataService = {
 
             // Normalize snake_case (Django) to camelCase (Frontend)
             return {
+                showHero: data.show_hero ?? data.showHero ?? MOCK_SETTINGS.showHero,
+                showAbout: data.show_about ?? data.showAbout ?? MOCK_SETTINGS.showAbout,
+                showServices: data.show_services ?? data.showServices ?? MOCK_SETTINGS.showServices,
                 showBlog: data.show_blog ?? data.showBlog ?? MOCK_SETTINGS.showBlog,
                 showSkills: data.show_skills ?? data.showSkills ?? MOCK_SETTINGS.showSkills,
                 showProjects: data.show_projects ?? data.showProjects ?? MOCK_SETTINGS.showProjects,
                 showCertificates: data.show_certificates ?? data.showCertificates ?? MOCK_SETTINGS.showCertificates,
+                showGithubActivity: data.show_github_activity ?? data.showGithubActivity ?? MOCK_SETTINGS.showGithubActivity,
+                showBuildJourney: data.show_build_journey ?? data.showBuildJourney ?? MOCK_SETTINGS.showBuildJourney,
+                showRecruiterCta: data.show_recruiter_cta ?? data.showRecruiterCta ?? MOCK_SETTINGS.showRecruiterCta,
+                showContacts: data.show_contacts ?? data.showContacts ?? MOCK_SETTINGS.showContacts,
                 maintenanceMode: data.maintenance_mode ?? data.maintenanceMode ?? MOCK_SETTINGS.maintenanceMode,
-                siteTitle: data.site_title ?? data.siteTitle ?? "Ashif E.K",
-                welcomeMessage: data.welcome_message ?? data.welcomeMessage ?? ""
+                siteTitle: data.site_title ?? data.siteTitle ?? MOCK_SETTINGS.siteTitle,
+                welcomeMessage: data.welcome_message ?? data.welcomeMessage ?? MOCK_SETTINGS.welcomeMessage
             };
         } catch (error) {
             console.error("Failed to fetch settings, using mock fallback:", error);

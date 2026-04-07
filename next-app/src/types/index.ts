@@ -99,3 +99,20 @@ export interface Blog {
     created_at?: string;
     updated_at?: string;
 }
+
+export interface Settings {
+    showHero: boolean;
+    showAbout: boolean;
+    showServices: boolean;
+    showBlog: boolean;
+    showSkills: boolean;
+    showProjects: boolean;
+    showCertificates: boolean;
+    showGithubActivity: boolean;
+    showBuildJourney: boolean;
+    showRecruiterCta: boolean;
+    showContacts: boolean;
+    maintenanceMode: boolean;
+    siteTitle: string;
+    welcomeMessage: string;
+}

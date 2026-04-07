@@ -1,4 +1,4 @@
-import { Profile, AboutData, Skill, Tool, Project, Certificate, Blog, Service, LocationData } from "../types";
+import { Profile, AboutData, Skill, Tool, Project, Certificate, Blog, Service, LocationData, Settings } from "../types";
 
 export const profile: Profile = {
     "name": "Ashif E.K",
@@ -488,10 +488,19 @@ export const locations: LocationData[] = [
     }
 ];
 
-export const settings = {
+export const settings: Settings = {
+    showHero: true,
+    showAbout: true,
+    showServices: true,
     showBlog: true,
     showSkills: true,
     showProjects: true,
     showCertificates: true,
-    maintenanceMode: false
+    showGithubActivity: true,
+    showBuildJourney: false,
+    showRecruiterCta: true,
+    showContacts: true,
+    maintenanceMode: false,
+    siteTitle: "Ashif E.K",
+    welcomeMessage: ""
 };
