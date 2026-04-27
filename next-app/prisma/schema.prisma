@@ -1,0 +1,142 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Skill {
+  id          Int     @id @default(autoincrement())
+  name        String  @db.VarChar(100)
+  level       Int
+  category    String  @db.VarChar(100)
+  icon        String  @db.VarChar(50)
+  description String
+  order       Int     @default(0)
+  color       String  @db.VarChar(20)
+
+  @@map("core_skill")
+}
+
+model Project {
+  id          Int      @id @default(autoincrement())
+  title       String   @db.VarChar(200)
+  description String
+  content     String
+  slug        String   @unique @db.VarChar(255)
+  tags        String   @db.VarChar(500)
+  link        String
+  github      String
+  image       String?  @db.VarChar(100)
+  clicks      Int      @default(0)
+  order       Int      @default(0)
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+
+  @@map("core_project")
+}
+
+model Certificate {
+  id              Int     @id @default(autoincrement())
+  title           String  @db.VarChar(200)
+  issuer          String  @db.VarChar(200)
+  date            String  @db.VarChar(50)
+  category        String  @db.VarChar(100)
+  image           String? @db.VarChar(100)
+  credential_link String
+  description     String
+  order           Int     @default(0)
+
+  @@map("core_certificate")
+}
+
+model Service {
+  id          Int    @id @default(autoincrement())
+  title       String @db.VarChar(200)
+  description String
+  icon        String @db.VarChar(50)
+  order       Int    @default(0)
+
+  @@map("core_service")
+}
+
+model Tool {
+  id    Int    @id @default(autoincrement())
+  name  String @db.VarChar(100)
+  icon  String @db.VarChar(50)
+  order Int    @default(0)
+
+  @@map("core_tool")
+}
+
+model Profile {
+  id           Int          @id @default(autoincrement())
+  name         String       @db.VarChar(100)
+  title        String       @db.VarChar(200)
+  description  String
+  introduction String
+  experience   String
+  philosophy   String
+  email        String       @db.VarChar(254)
+  avatar       String?      @db.VarChar(100)
+  social_links SocialLink[]
+
+  @@map("core_profile")
+}
+
+model SocialLink {
+  id         Int     @id @default(autoincrement())
+  profile_id Int
+  name       String  @db.VarChar(50)
+  url        String  @db.VarChar(200)
+  profile    Profile @relation(fields: [profile_id], references: [id], onDelete: Cascade)
+
+  @@map("core_sociallink")
+}
+
+model Message {
+  id      Int      @id @default(autoincrement())
+  name    String   @db.VarChar(100)
+  email   String   @db.VarChar(254)
+  message String
+  date    DateTime @default(now())
+
+  @@map("core_message")
+}
+
+model SiteSettings {
+  id                   Int     @id @default(autoincrement())
+  site_title           String  @default("Ashif's Portfolio") @db.VarChar(200)
+  show_hero            Boolean @default(true)
+  show_about           Boolean @default(true)
+  show_services        Boolean @default(true)
+  show_blog            Boolean @default(true)
+  show_skills          Boolean @default(true)
+  show_projects        Boolean @default(true)
+  show_certificates    Boolean @default(true)
+  show_github_activity Boolean @default(true)
+  show_build_journey   Boolean @default(true)
+  show_recruiter_cta   Boolean @default(true)
+  show_contacts        Boolean @default(true)
+  maintenance_mode     Boolean @default(false)
+  welcome_message      String
+
+  @@map("core_sitesettings")
+}
+
+model VisitorCount {
+  id             Int      @id @default(autoincrement())
+  total_visitors Int      @default(0)
+  last_updated   DateTime @updatedAt
+
+  @@map("core_visitorcount")
+}
+
+model PortfolioAnalytics {
+  id          Int @id @default(autoincrement())
+  total_views Int @default(0)
+
+  @@map("core_portfolioanalytics")
+}
