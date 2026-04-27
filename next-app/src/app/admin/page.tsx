@@ -2,8 +2,6 @@
 import React, { useEffect } from 'react';
 import { useVisitors } from '../../hooks/useVisitors';
 import { useProjects } from '../../hooks/useProjects';
-import AdminLayout from '../../components/layout/AdminLayout';
-
 export default function AnalyticsDashboard() {
     const { data: visitorData, isLoading: isLoadingVisitors } = useVisitors();
     const { data: projects = [], isLoading: isLoadingProjects } = useProjects();
@@ -14,9 +12,8 @@ export default function AnalyticsDashboard() {
     }, []);
 
     return (
-        <AdminLayout>
-            <div className="min-h-screen bg-academic-paper text-academic-text p-8">
-                <div className="max-w-6xl mx-auto">
+        <div className="text-academic-text">
+            <div className="max-w-6xl mx-auto">
                     <h1 className="text-4xl font-serif font-bold text-academic-primary mb-12 italic border-b border-academic-border pb-4">
                         System Analytics<span className="text-academic-accent">.</span>Dashboard
                     </h1>
@@ -74,7 +71,6 @@ export default function AnalyticsDashboard() {
                         )}
                     </div>
                 </div>
-            </div>
-        </AdminLayout>
+        </div>
     );
 }

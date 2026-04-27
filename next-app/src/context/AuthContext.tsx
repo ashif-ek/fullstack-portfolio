@@ -48,7 +48,13 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
   const login = useCallback(async (username: string, password: string) => {
     try {
-      const { data } = await Api.post<LoginResponse>("/login", { username, password });
+      // Use internal Next.js BFF API
+      const res = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password })
+      });
+      const data = await res.json();
       const isAuthenticated = Boolean(data?.success);
       setIsAdmin(isAuthenticated);
       return isAuthenticated;
@@ -59,10 +65,11 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     }
   }, []);
 
-  const logout = useCallback(() => {
+  const logout = useCallback(async () => {
     setIsAdmin(false);
     try {
       sessionStorage.removeItem(ADMIN_SESSION_KEY);
+      await fetch("/api/auth/logout", { method: "POST" });
     } catch {
       // Ignore storage errors to keep logout deterministic.
     }
