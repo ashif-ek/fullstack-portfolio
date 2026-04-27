@@ -14,5 +14,11 @@ export const mockSource = {
     return normalizeList(ProjectSchema, [
       { id: 1, title: 'Mock Project 1', slug: 'mock-1', tags: ['React'] }
     ], 'MOCK');
+  },
+
+  getAbout: async (): Promise<AboutData> => {
+    // Import mock about from existing data
+    const { about } = await import('../../data/mockData');
+    return normalize(AboutSchema, about[0], 'MOCK');
   }
 };

@@ -124,12 +124,12 @@ export const DataService = {
 
     async getAbout(): Promise<AboutData | null> {
         try {
-            const response = await Api.get('/about/');
-            const data = response.data?.data || response.data;
-            const a = Array.isArray(data) ? data[0] : data;
-            return a || MOCK_ABOUT[0] || null;
+            // Refactored to hit Next.js BFF layer instead of Django directly
+            const response = await fetch('/api/data/about');
+            if (!response.ok) throw new Error(`BFF returned ${response.status}`);
+            return await response.json();
         } catch (error) {
-            console.error("Failed to fetch about, using mock fallback:", error);
+            console.error("Failed to fetch about from BFF, using mock fallback:", error);
             return MOCK_ABOUT[0] || null;
         }
     },

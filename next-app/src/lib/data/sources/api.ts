@@ -17,5 +17,12 @@ export const apiSource = {
     if (!res.ok) throw new Error(`API returned ${res.status}`);
     const data = await res.json();
     return normalizeList(ProjectSchema, data?.data || data, 'API');
+  },
+
+  getAbout: async (): Promise<AboutData> => {
+    const res = await fetch(`${API_BASE_URL}/about/`);
+    if (!res.ok) throw new Error(`API returned ${res.status}`);
+    const data = await res.json();
+    return normalize(AboutSchema, data?.data?.[0] || data?.[0] || data, 'API');
   }
 };
