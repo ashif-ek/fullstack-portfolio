@@ -1,7 +1,7 @@
 import prisma from '../../prisma';
-import { Settings, Project, AboutData, Profile, Skill } from '../types';
+import { Settings, Project, AboutData, Profile, Skill, Blog, Message, Certificate, Tool } from '../types';
 import { normalize, normalizeList } from '../normalizer';
-import { SettingsSchema, ProjectSchema, AboutSchema, ProfileSchema, SkillSchema } from '../types';
+import { SettingsSchema, ProjectSchema, AboutSchema, ProfileSchema, SkillSchema, BlogSchema, MessageSchema, CertificateSchema, ToolSchema } from '../types';
 
 export const dbSource = {
   getSettings: async (): Promise<Settings> => {
@@ -63,10 +63,36 @@ export const dbSource = {
     return normalizeList(SkillSchema, data, 'DB');
   },
 
-  getBlogs: async () => [],
-  getTools: async () => await prisma.tool.findMany(),
-  getServices: async () => await prisma.service.findMany(),
-  getCertificates: async () => await prisma.certificate.findMany(),
+  getBlogs: async (): Promise<Blog[]> => {
+    const data = await prisma.blog.findMany({
+      orderBy: { date: 'desc' }
+    });
+    return normalizeList(BlogSchema, data, 'DB');
+  },
+
+  getTools: async (): Promise<Tool[]> => {
+    const data = await prisma.tool.findMany({
+      orderBy: { order: 'asc' }
+    });
+    return normalizeList(ToolSchema, data, 'DB');
+  },
+
+  getServices: async () => await prisma.service.findMany({ orderBy: { order: 'asc' } }),
+
+  getCertificates: async (): Promise<Certificate[]> => {
+    const data = await prisma.certificate.findMany({
+      orderBy: { order: 'asc' }
+    });
+    return normalizeList(CertificateSchema, data, 'DB');
+  },
+
+  getMessages: async (): Promise<Message[]> => {
+    const data = await prisma.message.findMany({
+      orderBy: { date: 'desc' }
+    });
+    return normalizeList(MessageSchema, data, 'DB');
+  },
+
   getLocations: async () => [],
   getVisitors: async () => {
     const data = await prisma.visitorCount.findFirst();

@@ -12,11 +12,17 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     const navItems = [
         { name: 'Dashboard', href: '/admin', icon: <LayoutDashboard size={18} /> },
         { name: 'Projects', href: '/admin/projects', icon: <FolderKanban size={18} /> },
-        { name: 'Skills', href: '/admin/skills', icon: <PenTool size={18} /> },
-        { name: 'Services', href: '/admin/services', icon: <Briefcase size={18} /> },
-        { name: 'Identity', href: '/admin/profile', icon: <User size={18} /> },
-        { name: 'Settings', href: '/admin/settings', icon: <Settings size={18} /> },
+        { name: 'Academic Blog', href: '/admin/blogs', icon: <FileText size={18} /> },
+        { name: 'Knowledge Base (Skills)', href: '/admin/skills', icon: <PenTool size={18} /> },
+        { name: 'Certifications', href: '/admin/certificates', icon: <Award size={18} /> },
+        { name: 'Technical Matrices (Tools)', href: '/admin/tools', icon: <PenTool size={18} /> },
+        { name: 'Services Catalog', href: '/admin/services', icon: <Briefcase size={18} /> },
+        { name: 'Identity & Biography', href: '/admin/profile', icon: <User size={18} /> },
+        { name: 'Correspondence', href: '/admin/messages', icon: <Mail size={18} /> },
+        { name: 'Global Settings', href: '/admin/settings', icon: <Settings size={18} /> },
     ];
+
+
 
     const handleLogout = async () => {
         await logout();

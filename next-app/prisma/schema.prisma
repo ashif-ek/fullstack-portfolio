@@ -139,3 +139,19 @@ model PortfolioAnalytics {
 
   @@map("core_portfolioanalytics")
 }
+
+model Blog {
+  id         Int      @id @default(autoincrement())
+  title      String   @db.VarChar(200)
+  slug       String   @unique @db.VarChar(255)
+  excerpt    String
+  content    String
+  date       DateTime @default(now())
+  readTime   String   @db.VarChar(50)
+  category   String   @db.VarChar(100)
+  image      String?  @db.VarChar(100)
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  @@map("core_blog")
+}

@@ -69,15 +69,56 @@ export const SkillSchema = z.object({
   description: z.string().default("")
 });
 
+export const CertificateSchema = z.object({
+  id: z.number().or(z.string()).optional(),
+  title: z.string(),
+  issuer: z.string(),
+  date: z.string(),
+  category: z.string(),
+  credential_link: z.string().default(""),
+  description: z.string().default(""),
+  image: z.string().nullable().optional(),
+  order: z.number().default(0),
+});
+
+export const ToolSchema = z.object({
+  id: z.number().or(z.string()).optional(),
+  name: z.string(),
+  icon: z.string().default("CodeIcon"),
+  order: z.number().default(0),
+});
+
+export const MessageSchema = z.object({
+  id: z.number().or(z.string()).optional(),
+  name: z.string(),
+  email: z.string().email(),
+  message: z.string(),
+  date: z.date().or(z.string()),
+});
+
+export const BlogSchema = z.object({
+  id: z.number().or(z.string()).optional(),
+  title: z.string(),
+  slug: z.string(),
+  excerpt: z.string().default(""),
+  content: z.string().default(""),
+  date: z.date().or(z.string()).default(() => new Date().toISOString()),
+  readTime: z.string().default("5 min read"),
+  category: z.string().default("General"),
+  image: z.string().nullable().optional(),
+});
+
 export type Settings = z.infer<typeof SettingsSchema>;
 export type Project = z.infer<typeof ProjectSchema>;
 export type AboutData = z.infer<typeof AboutSchema>;
 export type Profile = z.infer<typeof ProfileSchema>;
 export type Skill = z.infer<typeof SkillSchema>;
+export type Certificate = z.infer<typeof CertificateSchema>;
+export type Tool = z.infer<typeof ToolSchema>;
+export type Message = z.infer<typeof MessageSchema>;
+export type Blog = z.infer<typeof BlogSchema>;
 
-// Shared Types
-export interface Tool { id: string | number; name: string; icon: string; }
-export interface Service { id: string | number; slug: string; title: string; description: string; icon: string; content?: string; }
-export interface Certificate { id: string | number; title: string; issuer: string; date: string; category: string; credentialLink: string; description: string; image?: string; }
-export interface Blog { id: string | number; title: string; slug: string; excerpt: string; date: string; readTime: string; category: string; content?: string; }
+// Shared Interfaces (Legacy Support)
 export interface LocationData { id: string | number; city: string; slug: string; country: string; active: boolean; }
+export interface Service { id: string | number; slug: string; title: string; description: string; icon: string; content?: string; }
+

@@ -12,8 +12,17 @@ export async function updateProfile(formData: FormData) {
         const philosophy = formData.get('philosophy') as string;
         const description = formData.get('description') as string;
 
+        // Parse Social Links from form
+        const socialLinkNames = formData.getAll('social_name[]') as string[];
+        const socialLinkUrls = formData.getAll('social_url[]') as string[];
+        const socialLinks = socialLinkNames.map((name, i) => ({
+            name,
+            url: socialLinkUrls[i]
+        })).filter(link => link.name && link.url);
+
         // Upsert Profile (singleton pattern)
         const existing = await prisma.profile.findFirst();
+        let profileId: number;
         
         if (existing) {
             await prisma.profile.update({
@@ -28,8 +37,9 @@ export async function updateProfile(formData: FormData) {
                     philosophy,
                 }
             });
+            profileId = existing.id;
         } else {
-            await prisma.profile.create({
+            const created = await prisma.profile.create({
                 data: {
                     name,
                     title,
@@ -40,15 +50,27 @@ export async function updateProfile(formData: FormData) {
                     philosophy,
                 }
             });
+            profileId = created.id;
+        }
+
+        // Sync Social Links (Delete all and recreate for simplicity in this singleton pattern)
+        await prisma.socialLink.deleteMany({ where: { profile_id: profileId } });
+        if (socialLinks.length > 0) {
+            await prisma.socialLink.createMany({
+                data: socialLinks.map(link => ({
+                    ...link,
+                    profile_id: profileId
+                }))
+            });
         }
 
         revalidatePath('/');
         revalidatePath('/about');
         revalidatePath('/admin/profile');
-        revalidatePath('/admin/about');
         
         return { success: true };
     } catch (error: any) {
         return { success: false, error: error.message };
     }
 }
+

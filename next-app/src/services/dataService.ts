@@ -11,7 +11,7 @@ import {
     profile as MOCK_PROFILE,
     settings as MOCK_SETTINGS
 } from '../data/mockData';
-import { Project, Blog, Skill, Tool, Service, Certificate, LocationData, Profile, Settings, AboutData } from '../lib/data/types';
+import { Project, Blog, Skill, Tool, Service, Certificate, LocationData, Profile, Settings, AboutData, Message } from '../lib/data/types';
 
 /**
  * DataService handles all data fetching for the portfolio.
@@ -130,6 +130,15 @@ export const DataService = {
         } catch (error) {
             console.error("Failed to fetch locations from BFF, using mock fallback:", error);
             return MOCK_LOCATIONS;
+        }
+    },
+
+    async getMessages(): Promise<Message[]> {
+        try {
+            return await bffFetch('messages');
+        } catch (error) {
+            console.error("Failed to fetch messages from BFF:", error);
+            return [];
         }
     },
 
