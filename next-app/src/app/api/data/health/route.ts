@@ -1,13 +1,13 @@
 import { NextResponse } from 'next/server';
-import { orchestrator } from '../../../../lib/data/orchestrator';
-import { apiSource } from '../../../../lib/data/sources/api';
+import prisma from '../../../../lib/prisma';
 
 export async function GET() {
   try {
-    // Basic health check
-    const isLive = await apiSource.checkHealth().catch(() => false);
-    return NextResponse.json({ live: isLive });
+    // Check database connectivity via Prisma
+    await prisma.$queryRaw`SELECT 1`;
+    return NextResponse.json({ live: true, source: 'prisma' });
   } catch (error) {
-    return NextResponse.json({ live: false });
+    console.error('Health check failed:', error);
+    return NextResponse.json({ live: false, source: 'prisma' });
   }
 }

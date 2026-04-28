@@ -1,6 +1,5 @@
 'use client';
 import React, { useState } from 'react';
-import Api from '../../lib/api';
 
 const SendIcon = () => (
   <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -24,7 +23,12 @@ const Contact = () => {
     setStatus({ submitting: true, succeeded: false, error: null });
 
     try {
-      await Api.post('/messages/', formData);
+      const res = await fetch('/api/data/messages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error('Failed to send message');
       setStatus({ submitting: false, succeeded: true, error: null });
       setFormData({ name: '', email: '', message: '' });
     } catch (err: any) {

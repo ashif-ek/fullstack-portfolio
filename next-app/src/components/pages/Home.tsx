@@ -15,7 +15,6 @@ import Services from '../sections/Services';
 import Footer from '../layout/Footer';
 import UserLayout from '../layout/UserLayout';
 import LoadingSpinner from '../ui/LoadingSpinner';
-import Api, { API_BASE_URL } from '../../lib/api';
 
 export default function Home() {
   const [settings, setSettings] = useState({
@@ -33,20 +32,20 @@ export default function Home() {
   });
 
   useEffect(() => {
-    Api.get('/settings')
-      .then(res => {
-        if (res.data && res.data.length > 0) {
-          // SiteSettings is often a single record or list depending on implementation
-          const siteSettings = Array.isArray(res.data) ? res.data[0] : res.data;
-          setSettings(siteSettings);
+    // Fetch settings from Next.js BFF route (backed by Prisma)
+    fetch('/api/data/settings')
+      .then(res => res.json())
+      .then(data => {
+        if (data && !data.error) {
+          setSettings(data);
         }
       })
       .catch(err => console.error("Failed to load settings", err));
   }, []);
 
   useEffect(() => {
-    // Register global portfolio view
-    Api.post('/portfolio-view/')
+    // Register portfolio view via BFF route
+    fetch('/api/data/track/view', { method: 'POST' })
       .catch(err => console.error("Failed to register portfolio view", err));
   }, []);
 
@@ -58,12 +57,12 @@ export default function Home() {
         <h1 className="text-4xl font-bold mb-4">Under Maintenance</h1>
         <p className="text-gray-400 mb-8">We are currently upgrading the site. Please check back later.</p>
 
-        <a
-          href={`${API_BASE_URL}/admin`}
+        <Link
+          href="/login"
           className="opacity-20 hover:opacity-100 transition-opacity text-sm text-gray-500 hover:text-cyan-400 absolute bottom-10"
         >
           Admin Login
-        </a>
+        </Link>
       </div>
     );
   }

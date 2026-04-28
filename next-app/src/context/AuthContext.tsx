@@ -7,7 +7,6 @@ import {
   useMemo,
   useState,
 } from "react";
-import Api from "../lib/api";
 
 interface AuthContextType {
   isAdmin: boolean;

@@ -45,14 +45,20 @@ export class DataOrchestrator {
 
   private getPreferredOrder(): DataSource[] {
     const forced = process.env.FORCE_SOURCE?.toUpperCase() as DataSource;
-    if (forced) return [forced, 'API', 'DB', 'MOCK'];
+    if (forced) return [forced, 'DB', 'MOCK'];
+
+    // Django API is disconnected — go directly to DB → MOCK.
+    // If USE_API is explicitly set to 'true', re-enable adaptive routing.
+    if (process.env.USE_API !== 'true') {
+      return ['DB', 'MOCK'];
+    }
 
     const apiSnap = metrics.getSnapshot('API');
     const dbSnap = metrics.getSnapshot('DB');
 
-    // Cold start strategy: strictly API -> DB -> MOCK
+    // Cold start strategy
     if (apiSnap.successes < MIN_SAMPLES_FOR_ADAPTIVE || dbSnap.successes < MIN_SAMPLES_FOR_ADAPTIVE) {
-      return ['API', 'DB', 'MOCK'];
+      return ['DB', 'API', 'MOCK'];
     }
 
     // Adaptive logic: load awareness + latency
@@ -61,12 +67,11 @@ export class DataOrchestrator {
     const apiSuccessRate = metrics.getSuccessRate('API');
     const dbSuccessRate = metrics.getSuccessRate('DB');
 
-    // Soft degradation
     if (apiSuccessRate < 0.8 || (apiLatency > dbLatency * 1.5 && dbSuccessRate > 0.9)) {
       return ['DB', 'API', 'MOCK'];
     }
 
-    return ['API', 'DB', 'MOCK'];
+    return ['DB', 'API', 'MOCK'];
   }
 
   public async fetch<T>(

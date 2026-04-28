@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import { useParams } from "next/navigation";
-import Api, { resolveAssetUrl } from '../../../lib/api';
+import { resolveAssetUrl } from '../../../lib/api';
 import LazyImage from "../../ui/LazyImage";
 import { Project } from "../../../types";
 
@@ -15,11 +15,20 @@ const ProjectDetail = () => {
     useEffect(() => {
         let isMounted = true;
 
-        Api.get<Project>(`/projects/${id}/`)
-            .then((res) => {
+        // Fetch all projects from BFF and find by slug/id
+        fetch(`/api/data/projects`)
+            .then(res => res.json())
+            .then((projects: Project[]) => {
                 if (!isMounted) return;
-                setProject(res.data);
-                setError(false);
+                const found = projects.find(
+                    (p: Project) => String(p.id) === id || p.slug === id
+                );
+                if (found) {
+                    setProject(found);
+                    setError(false);
+                } else {
+                    setError(true);
+                }
             })
             .catch((err) => {
                 if (!isMounted) return;

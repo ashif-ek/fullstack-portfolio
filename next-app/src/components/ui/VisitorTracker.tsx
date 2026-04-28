@@ -1,6 +1,5 @@
 'use client';
 import { useEffect, useRef } from 'react';
-import Api from '../../lib/api';
 
 export default function VisitorTracker() {
     const hasTracked = useRef(false);
@@ -11,7 +10,7 @@ export default function VisitorTracker() {
         // Track only once per session
         const tracked = sessionStorage.getItem('visitor_tracked');
         if (!tracked) {
-            Api.post('/analytics/visitors/increment/')
+            fetch('/api/data/track/view', { method: 'POST' })
                 .then(() => {
                     sessionStorage.setItem('visitor_tracked', 'true');
                     hasTracked.current = true;

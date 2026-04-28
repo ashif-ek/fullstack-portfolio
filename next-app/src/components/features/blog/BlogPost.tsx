@@ -4,7 +4,6 @@ import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import { useParams } from "next/navigation";
 import { blogs as mockBlogs } from "../../../data/mockData";
-import Api from '../../../lib/api';
 import LazyImage from "../../ui/LazyImage";
 import { Blog } from "../../../types";
 
@@ -12,7 +11,7 @@ import { Blog } from "../../../types";
 /*  Main BlogPost Component */
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
-  // Hybrid Data Strategy: Init with mock, update with API
+  // Hybrid Data Strategy: Init with mock, update with BFF/Prisma
   const initialPost = mockBlogs.find((candidate) => candidate.slug === slug) || null;
   const [post, setPost] = useState<Blog | null>(initialPost);
   const [error, setError] = useState(!initialPost);
@@ -20,14 +19,14 @@ const BlogPost = () => {
   useEffect(() => {
     let isMounted = true;
 
-    Api.get<Blog[]>(`/blogs?slug=${slug}`)
-      .then((res) => {
-        if (!isMounted) {
-          return;
-        }
+    fetch('/api/data/blogs')
+      .then(res => res.json())
+      .then((blogs: Blog[]) => {
+        if (!isMounted) return;
 
-        if (res.data && res.data.length > 0) {
-          setPost(res.data[0]);
+        const found = blogs.find((b: Blog) => b.slug === slug);
+        if (found) {
+          setPost(found);
           setError(false);
           return;
         }
@@ -36,9 +35,7 @@ const BlogPost = () => {
         setError(true);
       })
       .catch((err) => {
-        if (!isMounted) {
-          return;
-        }
+        if (!isMounted) return;
 
         console.error("Failed to fetch fresh post", err);
         setPost((previous) => previous ?? initialPost);
