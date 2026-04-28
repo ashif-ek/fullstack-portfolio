@@ -5,7 +5,7 @@ import { updateProfile } from '../../../lib/actions/profileActions';
 import { Share2, Plus, Trash2, User, BookOpen, Mail } from 'lucide-react';
 
 export default function ProfileAdminPage() {
-    const { data: profile, isLoading, refetch } = useProfile();
+    const { profile, isLoading, refetch } = useProfile();
     const [status, setStatus] = useState<{ type: 'success' | 'error', msg: string } | null>(null);
     const [localSocialLinks, setLocalSocialLinks] = useState<{name: string, url: string}[]>([]);
 

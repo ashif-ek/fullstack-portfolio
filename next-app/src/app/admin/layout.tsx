@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useAuth } from '../../context/AuthContext';
-import { LayoutDashboard, FolderKanban, Settings, LogOut, ArrowLeft, PenTool, User, Briefcase, Award, FileText } from 'lucide-react';
+import { LayoutDashboard, FolderKanban, Settings, LogOut, ArrowLeft, PenTool, User, Briefcase, Award, FileText, Mail } from 'lucide-react';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
     const pathname = usePathname();

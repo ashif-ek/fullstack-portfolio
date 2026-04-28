@@ -4,7 +4,7 @@ import { useProjects } from '../../../hooks/useProjects';
 import { createProject, updateProject, deleteProject } from '../../../lib/actions/projectActions';
 
 export default function ProjectsAdminPage() {
-    const { data: projects = [], isLoading, mutate } = useProjects();
+    const { data: projects = [], isLoading, refetch: mutate } = useProjects();
     const [isEditing, setIsEditing] = useState<number | null>(null);
     const [isCreating, setIsCreating] = useState(false);
 

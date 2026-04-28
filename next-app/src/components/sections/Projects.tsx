@@ -65,7 +65,7 @@ const Projects = ({ condensed = false }: { condensed?: boolean }) => {
               <div
                 key={project.id}
                 className="group flex flex-col bg-academic-bg border border-academic-border overflow-hidden shadow-academic hover:shadow-paper transition-all duration-500 cursor-pointer"
-                onClick={(e) => handleProjectClick(project.id, project.slug, e)}
+                onClick={(e) => handleProjectClick(String(project.id), project.slug, e)}
               >
                 <div className="relative overflow-hidden h-64 border-b border-academic-border">
                   <LazyImage
@@ -100,7 +100,7 @@ const Projects = ({ condensed = false }: { condensed?: boolean }) => {
 
                   <div className="mt-auto flex flex-wrap gap-2">
                     <button
-                      onClick={(e) => handleProjectClick(project.id, project.slug, e)}
+                      onClick={(e) => handleProjectClick(String(project.id), project.slug, e)}
                       className="flex-grow basis-full md:basis-0 inline-block academic-button text-[10px] uppercase tracking-[0.2em] font-bold w-full text-center py-4 px-2"
                     >
                       Read Case Study

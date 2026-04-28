@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { DataService } from '../../../services/dataService';
-import { Blog } from '../../../types';
+import { Blog } from '../../../lib/data/types';
 import Link from 'next/link';
 import { Calendar } from 'lucide-react';
 
@@ -47,11 +47,11 @@ export default async function BlogPage() {
                                 </h2>
                                 <div className="flex items-center gap-2 text-academic-muted text-sm shrink-0">
                                     <Calendar className="w-4 h-4" />
-                                    <time dateTime={blog.date}>{new Date(blog.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+                                    <time dateTime={String(blog.date)}>{new Date(blog.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
                                 </div>
                             </div>
                             <p className="text-academic-text/70 text-lg leading-relaxed mb-6 line-clamp-2">
-                                {blog.summary}
+                                {blog.excerpt}
                             </p>
                             <Link 
                                 href={`/blog/${blog.slug}`}

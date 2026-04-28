@@ -5,7 +5,7 @@ import { createSkill, updateSkill, deleteSkill } from '../../../lib/actions/cont
 import { Plus, Edit2, Trash2, X, Save } from 'lucide-react';
 
 export default function SkillsAdminPage() {
-    const { data: skills = [], isLoading, mutate } = useSkills();
+    const { data: skills = [], isLoading, refetch: mutate } = useSkills();
     const [editingId, setEditingId] = useState<number | null>(null);
     const [isAdding, setIsAdding] = useState(false);
 

@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { LocationData } from '../../../../types';
+import { LocationData } from '../../../../lib/data/types';
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
 import { MapPin, Globe, Users, ShieldCheck } from 'lucide-react';

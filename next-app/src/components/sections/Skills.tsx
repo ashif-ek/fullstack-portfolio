@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { useSkills, useTools } from '../../hooks/useSkills';
-import { Skill, Tool } from '../../types';
+import { Skill, Tool } from '../../lib/data/types';
 import { Skeleton } from '../ui/Skeleton';
 
 interface SkillCardProps {

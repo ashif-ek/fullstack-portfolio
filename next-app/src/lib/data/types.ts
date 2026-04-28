@@ -119,6 +119,6 @@ export type Message = z.infer<typeof MessageSchema>;
 export type Blog = z.infer<typeof BlogSchema>;
 
 // Shared Interfaces (Legacy Support)
-export interface LocationData { id: string | number; city: string; slug: string; country: string; active: boolean; }
+export interface LocationData { id: string | number; city: string; slug: string; country: string; active: boolean; title: string; description: string; content?: string; }
 export interface Service { id: string | number; slug: string; title: string; description: string; icon: string; content?: string; }
 

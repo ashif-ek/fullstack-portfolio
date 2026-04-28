@@ -55,7 +55,7 @@ const Certificates = () => {
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
           <div className="text-left">
-            <h2 className="section-title">Certifications & Accreditations</h2>
+            <h2 className="section-title">Certifications &amp; Accreditations</h2>
             <p className="text-academic-muted font-serif italic mt-2">Formal recognition of technical proficiency and academic excellence.</p>
           </div>
 
@@ -132,9 +132,9 @@ const Certificates = () => {
                     </p>
 
                     <div className="mt-auto pt-6 border-t border-academic-border">
-                      {cert.credentialLink && cert.credentialLink !== "#" && (
+                      {cert.credential_link && cert.credential_link !== "#" && (
                         <a
-                          href={cert.credentialLink}
+                          href={cert.credential_link}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-[10px] uppercase tracking-[0.2em] font-bold text-academic-primary hover:text-academic-accent transition-colors flex items-center justify-center gap-2"

@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { Skill, Tool, Certificate } from '../../../types';
+import { Skill, Tool, Certificate } from '../../../lib/data/types';
 import { Award, Code, GraduationCap, Laptop, Sparkles, User } from 'lucide-react';
 import { resolveAssetUrl } from '../../../lib/api';
 import { DataService } from '../../../services/dataService';

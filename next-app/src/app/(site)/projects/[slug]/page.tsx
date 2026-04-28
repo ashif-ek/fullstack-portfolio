@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { Project } from '../../../../types';
+import { Project } from '../../../../lib/data/types';
 import ReactMarkdown from 'react-markdown';
 import { ArrowLeft, Github, Globe, Tag } from 'lucide-react';
 import Link from 'next/link';

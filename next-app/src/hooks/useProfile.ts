@@ -19,6 +19,7 @@ export const useProfile = () => {
         about: aboutQuery.data,
         isLoading: profileQuery.isLoading || aboutQuery.isLoading,
         error: profileQuery.error || aboutQuery.error,
+        refetch: profileQuery.refetch,
         profileQuery,
         aboutQuery
     };

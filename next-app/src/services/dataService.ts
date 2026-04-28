@@ -1,4 +1,3 @@
-import Api, { API_BASE_URL } from '../lib/api';
 import { 
     projects as MOCK_PROJECTS, 
     about as MOCK_ABOUT, 
@@ -46,7 +45,7 @@ export const DataService = {
             return await bffFetch('profile');
         } catch (error) {
             console.error("Failed to fetch profile from BFF, using mock fallback:", error);
-            return MOCK_PROFILE;
+            return MOCK_PROFILE as unknown as Profile;
         }
     },
 
@@ -55,7 +54,7 @@ export const DataService = {
             return await bffFetch('about');
         } catch (error) {
             console.error("Failed to fetch about from BFF, using mock fallback:", error);
-            return MOCK_ABOUT[0] || null;
+            return (MOCK_ABOUT[0] || null) as unknown as AboutData;
         }
     },
 
@@ -65,7 +64,7 @@ export const DataService = {
             return await bffFetch('projects');
         } catch (error) {
             console.error("Failed to fetch projects from BFF, using mock fallback:", error);
-            return MOCK_PROJECTS;
+            return MOCK_PROJECTS as unknown as Project[];
         }
     },
 
@@ -79,7 +78,7 @@ export const DataService = {
             return await bffFetch('blogs');
         } catch (error) {
             console.error("Failed to fetch blogs from BFF, using mock fallback:", error);
-            return MOCK_BLOGS;
+            return MOCK_BLOGS as unknown as Blog[];
         }
     },
 
@@ -93,7 +92,7 @@ export const DataService = {
             return await bffFetch('skills');
         } catch (error) {
             console.error("Failed to fetch skills from BFF, using mock fallback:", error);
-            return MOCK_SKILLS;
+            return MOCK_SKILLS as unknown as Skill[];
         }
     },
 
@@ -102,7 +101,7 @@ export const DataService = {
             return await bffFetch('tools');
         } catch (error) {
             console.error("Failed to fetch tools from BFF, using mock fallback:", error);
-            return MOCK_TOOLS;
+            return MOCK_TOOLS as unknown as Tool[];
         }
     },
 
@@ -111,7 +110,7 @@ export const DataService = {
             return await bffFetch('services');
         } catch (error) {
             console.error("Failed to fetch services from BFF, using mock fallback:", error);
-            return MOCK_SERVICES;
+            return MOCK_SERVICES as unknown as Service[];
         }
     },
 
@@ -120,7 +119,7 @@ export const DataService = {
             return await bffFetch('certificates');
         } catch (error) {
             console.error("Failed to fetch certificates from BFF, using mock fallback:", error);
-            return MOCK_CERTIFICATES;
+            return MOCK_CERTIFICATES as unknown as Certificate[];
         }
     },
 
@@ -129,7 +128,7 @@ export const DataService = {
             return await bffFetch('locations');
         } catch (error) {
             console.error("Failed to fetch locations from BFF, using mock fallback:", error);
-            return MOCK_LOCATIONS;
+            return MOCK_LOCATIONS as unknown as LocationData[];
         }
     },
 
@@ -169,5 +168,15 @@ export const DataService = {
     async trackProjectClick(projectId: string | number) {
         const baseUrl = getBaseUrl();
         return fetch(`${baseUrl}/api/data/track/click/${projectId}`, { method: 'POST' }).catch(() => {});
+    },
+
+    async getLocationByCity(city: string): Promise<LocationData | null> {
+        const locations = await this.getLocations();
+        return locations.find((l: LocationData) => l.slug === city) || null;
+    },
+
+    async getServiceBySlug(slug: string): Promise<Service | null> {
+        const services = await this.getServices();
+        return services.find((s: Service) => s.slug === slug) || null;
     }
 };

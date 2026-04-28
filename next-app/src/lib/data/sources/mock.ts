@@ -1,6 +1,6 @@
-import { Settings, Project, AboutData, Profile, Skill } from '../types';
+import { Settings, Project, AboutData, Profile, Skill, Blog, Tool, Certificate, Service, LocationData } from '../types';
 import { normalize, normalizeList } from '../normalizer';
-import { SettingsSchema, ProjectSchema, AboutSchema, ProfileSchema, SkillSchema } from '../types';
+import { SettingsSchema, ProjectSchema, AboutSchema, ProfileSchema, SkillSchema, BlogSchema, ToolSchema, CertificateSchema } from '../types';
 
 export const mockSource = {
   getSettings: async (): Promise<Settings> => {
@@ -26,5 +26,32 @@ export const mockSource = {
   getSkills: async (): Promise<Skill[]> => {
     const { skills } = await import('../../../data/mockData');
     return normalizeList(SkillSchema, skills, 'MOCK');
-  }
+  },
+
+  getBlogs: async (): Promise<Blog[]> => {
+    const { blogs } = await import('../../../data/mockData');
+    return normalizeList(BlogSchema, blogs, 'MOCK');
+  },
+
+  getTools: async (): Promise<Tool[]> => {
+    const { tools } = await import('../../../data/mockData');
+    return normalizeList(ToolSchema, tools, 'MOCK');
+  },
+
+  getServices: async (): Promise<Service[]> => {
+    const { services } = await import('../../../data/mockData');
+    return services || [];
+  },
+
+  getCertificates: async (): Promise<Certificate[]> => {
+    const { certificates } = await import('../../../data/mockData');
+    return normalizeList(CertificateSchema, certificates, 'MOCK');
+  },
+
+  getLocations: async (): Promise<LocationData[]> => {
+    const { locations } = await import('../../../data/mockData');
+    return (locations || []) as LocationData[];
+  },
+
+  getVisitors: async () => ({ total_visitors: 0 }),
 };

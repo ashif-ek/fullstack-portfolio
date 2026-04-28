@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { DataService } from '../../../services/dataService';
-import { Project } from '../../../types';
+import { Project } from '../../../lib/data/types';
 import Link from 'next/link';
 
 export const metadata: Metadata = {

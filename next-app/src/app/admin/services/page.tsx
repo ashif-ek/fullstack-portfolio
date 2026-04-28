@@ -5,7 +5,7 @@ import { createService, updateService, deleteService } from '../../../lib/action
 import { Plus, Edit2, Trash2, X, Save } from 'lucide-react';
 
 export default function ServicesAdminPage() {
-    const { data: services = [], isLoading, mutate } = useServices();
+    const { data: services = [], isLoading, refetch: mutate } = useServices();
     const [editingId, setEditingId] = useState<number | null>(null);
     const [isAdding, setIsAdding] = useState(false);
 

@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { DataService } from '../../../services/dataService';
-import { Service } from '../../../types';
+import { Service } from '../../../lib/data/types';
 import Link from 'next/link';
 import { 
     Code2, 

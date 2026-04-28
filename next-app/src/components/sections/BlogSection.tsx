@@ -67,7 +67,7 @@ const BlogSection = () => {
                   </Link>
 
                   <p className="text-academic-muted font-light leading-relaxed line-clamp-2 text-sm">
-                    {post.summary}
+                    {post.excerpt}
                   </p>
 
                   <div className="flex items-center justify-between pt-4">

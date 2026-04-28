@@ -23,10 +23,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         return Array.from(map.values());
     };
 
-    const projects = mergeData(MOCK_PROJECTS, liveProjects);
-    const blogs = mergeData(MOCK_BLOGS, liveBlogs);
-    const services = mergeData(MOCK_SERVICES, liveServices);
-    const locations = mergeData(MOCK_LOCATIONS, liveLocations);
+    const projects = mergeData(MOCK_PROJECTS as any[], liveProjects as any[]);
+    const blogs = mergeData(MOCK_BLOGS as any[], liveBlogs as any[]);
+    const services = mergeData(MOCK_SERVICES as any[], liveServices as any[]);
+    const locations = mergeData(MOCK_LOCATIONS as any[], liveLocations as any[]);
 
     // Helper: Safe date parsing
     const safeDate = (dateStr?: string | null): Date => {

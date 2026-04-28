@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { Service } from '../../../../types';
+import { Service } from '../../../../lib/data/types';
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
 import { ArrowLeft, CheckCircle2 } from 'lucide-react';

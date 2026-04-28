@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { Blog } from '../../../../types';
+import { Blog } from '../../../../lib/data/types';
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -33,20 +33,20 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
 
     return {
         title: `${blog.title} | Journal`,
-        description: blog.summary,
+        description: blog.excerpt,
         alternates: {
             canonical: `/blog/${blog.slug}`,
         },
         openGraph: {
             title: blog.title,
-            description: blog.summary,
+            description: blog.excerpt,
             type: 'article',
             url: `/blog/${blog.slug}`,
-            publishedTime: blog.date,
+            publishedTime: String(blog.date),
             authors: ['Ashif E.K'],
             images: [
                 { 
-                    url: blog.imageUrl || '/blog-placeholder.png',
+                    url: blog.image || '/blog-placeholder.png',
                     width: 1200,
                     height: 630,
                     alt: blog.title 
@@ -58,8 +58,8 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
         twitter: {
             card: 'summary_large_image',
             title: blog.title,
-            description: blog.summary,
-            images: [blog.imageUrl || '/blog-placeholder.png'],
+            description: blog.excerpt,
+            images: [blog.image || '/blog-placeholder.png'],
             creator: '@ashif_io',
         },
     };
@@ -77,7 +77,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": blog.title,
-        "description": blog.summary,
+        "description": blog.excerpt,
         "datePublished": blog.date,
         "author": {
             "@type": "Person",
@@ -114,10 +114,10 @@ export default async function BlogPage({ params }: BlogPageProps) {
                 </header>
 
                 <article className="prose prose-invert prose-academic max-w-none">
-                    {blog.imageUrl && (
+                    {blog.image && (
                         <div className="relative rounded-2xl overflow-hidden border border-academic-border mb-12 shadow-2xl p-2 bg-academic-bg min-h-[400px]">
                             <Image
-                                src={blog.imageUrl.startsWith('http') || blog.imageUrl.startsWith('/') ? blog.imageUrl : `/${blog.imageUrl}`}
+                                src={blog.image.startsWith('http') || blog.image.startsWith('/') ? blog.image : `/${blog.image}`}
                                 alt={blog.title}
                                 fill
                                 className="object-cover grayscale hover:grayscale-0 transition-all duration-700 p-2 rounded-2xl"
