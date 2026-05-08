@@ -1,0 +1,2212 @@
+
+> next-app@0.1.0 build
+> prisma generate && next build
+
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+
+Γ£ö Generated Prisma Client (v7.8.0) to .\node_modules\@prisma\client in 226ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+
+  Γû▓ Next.js 14.2.35
+  - Environments: .env.local, .env
+
+   Creating an optimized production build ...
+ Γ£ô Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54175)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55011)
+    at async Object.m [as generateStaticParams] (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6158)
+    at async buildParams (D:\typescript-portfolio\next-app\node_modules\next\dist\build\utils.js:1026:40)
+    at async D:\typescript-portfolio\next-app\node_modules\next\dist\build\utils.js:1043:33
+    at async D:\typescript-portfolio\next-app\node_modules\next\dist\build\utils.js:1178:114
+    at async Span.traceAsyncFn (D:\typescript-portfolio\next-app\node_modules\next\dist\trace\trace.js:154:20) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch services from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6726)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:8078)
+    at async Object.u [as generateStaticParams] (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6154)
+    at async buildParams (D:\typescript-portfolio\next-app\node_modules\next\dist\build\utils.js:1026:40)
+    at async D:\typescript-portfolio\next-app\node_modules\next\dist\build\utils.js:1043:33
+    at async D:\typescript-portfolio\next-app\node_modules\next\dist\build\utils.js:1178:114
+    at async Span.traceAsyncFn (D:\typescript-portfolio\next-app\node_modules\next\dist\trace\trace.js:154:20) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch locations from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:11722)
+    at async Object.getLocations (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:13401)
+    at async Object.h [as generateStaticParams] (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:6835)
+    at async buildParams (D:\typescript-portfolio\next-app\node_modules\next\dist\build\utils.js:1026:40)
+    at async D:\typescript-portfolio\next-app\node_modules\next\dist\build\utils.js:1043:33
+    at async D:\typescript-portfolio\next-app\node_modules\next\dist\build\utils.js:1178:114
+    at async Span.traceAsyncFn (D:\typescript-portfolio\next-app\node_modules\next\dist\trace\trace.js:154:20) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+   Generating static pages (0/79) ...
+{"level":"INFO","timestamp":"2026-05-08T11:24:59.069Z","operation":"fetch","source":"DB","latencyMs":0,"fallbackChain":["API"]}
+Failed to fetch services from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async v (D:\typescript-portfolio\next-app\.next\server\app\sitemap.xml\route.js:1:31789)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\sitemap.xml\route.js:1:33090)
+    at async Promise.all (index 2)
+    at async S (D:\typescript-portfolio\next-app\.next\server\app\sitemap.xml\route.js:1:34242)
+    at async A (D:\typescript-portfolio\next-app\.next\server\app\sitemap.xml\route.js:1:36115)
+    at async D:\typescript-portfolio\next-app\node_modules\next\dist\compiled\next-server\app-route.runtime.prod.js:6:38411
+    at async e_.execute (D:\typescript-portfolio\next-app\node_modules\next\dist\compiled\next-server\app-route.runtime.prod.js:6:27880)
+    at async e_.handle (D:\typescript-portfolio\next-app\node_modules\next\dist\compiled\next-server\app-route.runtime.prod.js:6:39943) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch locations from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async v (D:\typescript-portfolio\next-app\.next\server\app\sitemap.xml\route.js:1:31789)
+    at async Object.getLocations (D:\typescript-portfolio\next-app\.next\server\app\sitemap.xml\route.js:1:33395)
+    at async Promise.all (index 3)
+    at async S (D:\typescript-portfolio\next-app\.next\server\app\sitemap.xml\route.js:1:34242)
+    at async A (D:\typescript-portfolio\next-app\.next\server\app\sitemap.xml\route.js:1:36115)
+    at async D:\typescript-portfolio\next-app\node_modules\next\dist\compiled\next-server\app-route.runtime.prod.js:6:38411
+    at async e_.execute (D:\typescript-portfolio\next-app\node_modules\next\dist\compiled\next-server\app-route.runtime.prod.js:6:27880)
+    at async e_.handle (D:\typescript-portfolio\next-app\node_modules\next\dist\compiled\next-server\app-route.runtime.prod.js:6:39943) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async v (D:\typescript-portfolio\next-app\.next\server\app\sitemap.xml\route.js:1:31789)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\sitemap.xml\route.js:1:32593)
+    at async Promise.all (index 1)
+    at async S (D:\typescript-portfolio\next-app\.next\server\app\sitemap.xml\route.js:1:34242)
+    at async A (D:\typescript-portfolio\next-app\.next\server\app\sitemap.xml\route.js:1:36115)
+    at async D:\typescript-portfolio\next-app\node_modules\next\dist\compiled\next-server\app-route.runtime.prod.js:6:38411
+    at async e_.execute (D:\typescript-portfolio\next-app\node_modules\next\dist\compiled\next-server\app-route.runtime.prod.js:6:27880)
+    at async e_.handle (D:\typescript-portfolio\next-app\node_modules\next\dist\compiled\next-server\app-route.runtime.prod.js:6:39943) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+(node:10636) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:16796) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:10140) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:16848) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{"level":"INFO","timestamp":"2026-05-08T11:25:00.749Z","operation":"fetch_visitors","source":"MOCK","latencyMs":2,"fallbackChain":["API","DB"]}
+(node:3580) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{"level":"INFO","timestamp":"2026-05-08T11:25:00.831Z","operation":"fetch_services","source":"MOCK","latencyMs":7,"fallbackChain":["API","DB"]}
+{"level":"INFO","timestamp":"2026-05-08T11:25:00.861Z","operation":"fetch_blogs","source":"MOCK","latencyMs":10,"fallbackChain":["API","DB"]}
+   Generating static pages (19/79) 
+(node:9640) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:9396) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{"level":"INFO","timestamp":"2026-05-08T11:25:01.982Z","operation":"fetch_tools","source":"MOCK","latencyMs":6,"fallbackChain":["API","DB"]}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11556)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12392)
+    at async l (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:4491) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11556)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12392)
+    at async l (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:4491) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+{"level":"INFO","timestamp":"2026-05-08T11:25:02.701Z","operation":"fetch_settings","source":"MOCK","latencyMs":5,"fallbackChain":["API","DB"]}
+{"level":"INFO","timestamp":"2026-05-08T11:25:02.704Z","operation":"fetch_projects","source":"MOCK","latencyMs":6,"fallbackChain":["API","DB"]}
+{"level":"INFO","timestamp":"2026-05-08T11:25:02.801Z","operation":"fetch_profile","source":"MOCK","latencyMs":4,"fallbackChain":["API","DB"]}
+{"level":"INFO","timestamp":"2026-05-08T11:25:02.965Z","operation":"fetch_skills","source":"MOCK","latencyMs":5,"fallbackChain":["API","DB"]}
+{"level":"INFO","timestamp":"2026-05-08T11:25:03.070Z","operation":"fetch_about","source":"MOCK","latencyMs":4,"fallbackChain":["API","DB"]}
+Failed to fetch services from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:7640)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8992)
+    at async m (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:5533) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch services from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:7640)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8992)
+    at async m (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:5533) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11556)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12392)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12537)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11556)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12392)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12537)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6726)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7562)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7707)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54175)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55011)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55156)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54175)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55011)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55156)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6726)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7562)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7707)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:7640)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8476)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8621)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:7640)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8476)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8621)
+    at async Module.h (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:7640)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8476)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8621)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+   Generating static pages (39/79) 
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11556)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12392)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12537)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11556)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12392)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12537)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6726)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7562)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7707)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6726)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7562)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7707)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:7640)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8476)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8621)
+    at async Module.h (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54175)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55011)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55156)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54175)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55011)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55156)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11556)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12392)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12537)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11556)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12392)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12537)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6726)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7562)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7707)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6726)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7562)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7707)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:7640)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8476)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8621)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:7640)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8476)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8621)
+    at async Module.h (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:7640)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8476)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8621)
+    at async Module.h (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:7640)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8476)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8621)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:11722)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:12558)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:12703)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54175)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55011)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55156)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54175)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55011)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55156)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11556)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12392)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12537)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11556)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12392)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12537)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6726)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7562)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7707)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6726)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7562)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7707)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:11722)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:12558)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:12703)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+{"level":"INFO","timestamp":"2026-05-08T11:25:04.958Z","operation":"fetch_certificates","source":"MOCK","latencyMs":3,"fallbackChain":["API","DB"]}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6726)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7562)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7707)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6726)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7562)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7707)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:7640)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8476)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8621)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:7640)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8476)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8621)
+    at async Module.h (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:7640)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8476)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8621)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:7640)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8476)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8621)
+    at async Module.h (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11556)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12392)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12537)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11556)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12392)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12537)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54175)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55011)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55156)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54175)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55011)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55156)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:11722)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:12558)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:12703)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:11722)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:12558)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:12703)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6726)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7562)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7707)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6726)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7562)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7707)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:7640)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8476)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8621)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:7640)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8476)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8621)
+    at async Module.h (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:7640)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8476)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8621)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:7640)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8476)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8621)
+    at async Module.h (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11556)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12392)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12537)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11556)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12392)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12537)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async o (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:42956)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43792)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43937)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+   Generating static pages (59/79) 
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54175)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55011)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55156)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54175)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55011)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55156)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:11722)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:12558)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:12703)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:11722)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:12558)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:12703)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch services from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11556)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12908)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:13978)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6608) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch services from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11556)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12908)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:13978)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6608) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch services from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch services from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch services from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:7640)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8992)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:10062)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6608) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch services from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:7640)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8992)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:10062)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6608) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch services from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:7640)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8992)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:10062)
+    at async Module.m (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6302) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch services from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:7640)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:8992)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:10062)
+    at async Module.m (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6302) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch services from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:11722)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:13074)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:14144)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6608) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch services from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:11722)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:13074)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:14144)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6608) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch services from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch services from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch services from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54175)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55527)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:56597)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6608) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch services from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54175)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55527)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:56597)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6608) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch services from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch services from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async o (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:42956)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43792)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43937)
+    at async Module.h (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async o (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:42956)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43792)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43937)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async o (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:42956)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43792)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43937)
+    at async Module.h (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6726)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7562)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7707)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6726)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7562)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7707)
+    at async g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch blogs from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch services from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11556)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12908)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:13978)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6608) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch services from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11556)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12908)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:13978)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6608) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch services from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch services from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch services from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54175)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55527)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:56597)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6608) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch services from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54175)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55527)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:56597)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6608) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch services from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch services from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch locations from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54175)
+    at async Object.getLocations (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55854)
+    at async Object.getLocationByCity (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:56510)
+    at async f (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:7258) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch locations from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54175)
+    at async Object.getLocations (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55854)
+    at async Object.getLocationByCity (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:56510)
+    at async f (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:7258) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch locations from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch locations from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch locations from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11556)
+    at async Object.getLocations (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:13235)
+    at async Object.getLocationByCity (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:13891)
+    at async f (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:7258) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch locations from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11556)
+    at async Object.getLocations (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:13235)
+    at async Object.getLocationByCity (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:13891)
+    at async f (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:7258) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch locations from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch locations from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch locations from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:7640)
+    at async Object.getLocations (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:9319)
+    at async Object.getLocationByCity (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:9975)
+    at async f (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:7258) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch locations from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:7640)
+    at async Object.getLocations (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:9319)
+    at async Object.getLocationByCity (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:9975)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:6984) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch locations from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:7640)
+    at async Object.getLocations (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:9319)
+    at async Object.getLocationByCity (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:9975)
+    at async f (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:7258) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+Failed to fetch locations from BFF, using mock fallback: TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:7640)
+    at async Object.getLocations (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:9319)
+    at async Object.getLocationByCity (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:9975)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:6984) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+ Γ£ô Generating static pages (79/79)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                             Size     First Load JS
+Γöî Γùï /                                                   19.9 kB         198 kB
+Γö£ Γùï /_not-found                                         146 B          87.7 kB
+Γö£ Γùï /about                                              3.08 kB         105 kB
+Γö£ Γùï /admin                                              1.98 kB         109 kB
+Γö£ Γùï /admin/blogs                                        4.52 kB         112 kB
+Γö£ Γùï /admin/certificates                                 4.67 kB         112 kB
+Γö£ Γùï /admin/messages                                     3.25 kB         110 kB
+Γö£ Γùï /admin/profile                                      4.19 kB         111 kB
+Γö£ Γùï /admin/projects                                     2.47 kB         109 kB
+Γö£ Γùï /admin/services                                     3.81 kB         111 kB
+Γö£ Γùï /admin/settings                                     2.67 kB         110 kB
+Γö£ Γùï /admin/skills                                       4.15 kB         111 kB
+Γö£ Γùï /admin/tools                                        3.74 kB         111 kB
+Γö£ ╞Æ /api/auth/login                                     0 B                0 B
+Γö£ ╞Æ /api/auth/logout                                    0 B                0 B
+Γö£ Γùï /api/data/about                                     0 B                0 B
+Γö£ Γùï /api/data/blogs                                     0 B                0 B
+Γö£ Γùï /api/data/certificates                              0 B                0 B
+Γö£ Γùï /api/data/health                                    0 B                0 B
+Γö£ Γùï /api/data/locations                                 0 B                0 B
+Γö£ ╞Æ /api/data/messages                                  0 B                0 B
+Γö£ Γùï /api/data/profile                                   0 B                0 B
+Γö£ Γùï /api/data/projects                                  0 B                0 B
+Γö£ Γùï /api/data/services                                  0 B                0 B
+Γö£ Γùï /api/data/settings                                  0 B                0 B
+Γö£ Γùï /api/data/skills                                    0 B                0 B
+Γö£ Γùï /api/data/tools                                     0 B                0 B
+Γö£ ╞Æ /api/data/track/view                                0 B                0 B
+Γö£ Γùï /api/data/visitors                                  0 B                0 B
+Γö£ Γùï /blog                                               185 B          96.5 kB
+Γö£ ΓùÅ /blog/[slug]                                        2.41 kB         104 kB
+Γö£   Γö£ /blog/scalable-architecture-django-react
+Γö£   Γö£ /blog/optimizing-nextjs-performance
+Γö£   Γö£ /blog/getting-started-with-react-beginners-guide
+Γö£   Γöö [+23 more paths]
+Γö£ Γùï /contact                                            146 B          87.7 kB
+Γö£ ΓùÅ /location/[city]                                    2.4 kB         98.7 kB
+Γö£   Γö£ /location/kochi
+Γö£   Γö£ /location/calicut
+Γö£   Γöö /location/trivandrum
+Γö£ Γùï /login                                              2.44 kB          90 kB
+Γö£ Γùï /projects                                           185 B          96.5 kB
+Γö£ ΓùÅ /projects/[slug]                                    2.41 kB         104 kB
+Γö£   Γö£ /projects/salary-checker
+Γö£   Γö£ /projects/civic-connect
+Γö£   Γö£ /projects/system-design-sandbox
+Γö£   Γöö [+2 more paths]
+Γö£ Γùï /robots.txt                                         0 B                0 B
+Γö£ Γùï /services                                           185 B          96.5 kB
+Γö£ ΓùÅ /services/[slug]                                    2.4 kB         98.7 kB
+Γö£   Γö£ /services/mvp-development
+Γö£   Γö£ /services/api-design-integration
+Γö£   Γö£ /services/performance-optimization
+Γö£   Γöö [+3 more paths]
+Γö£ Γùï /sitemap.xml                                        0 B                0 B
+Γöö Γùï /system                                             2.75 kB        98.4 kB
++ First Load JS shared by all                           87.6 kB
+  Γö£ chunks/2117-0f329177d5abed45.js                     31.7 kB
+  Γö£ chunks/fd9d1056-a6c95c8af213f770.js                 53.6 kB
+  Γöö other shared chunks (total)                         2.21 kB
+
+
+Γùï  (Static)   prerendered as static content
+ΓùÅ  (SSG)      prerendered as static HTML (uses getStaticProps)
+╞Æ  (Dynamic)  server-rendered on demand
+

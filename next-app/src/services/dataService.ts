@@ -18,9 +18,16 @@ import { Project, Blog, Skill, Tool, Service, Certificate, LocationData, Profile
  */
 
 const getBaseUrl = () => {
-    // Use relative internal routes both on the client and on the Next.js server.
-    // This avoids build-time localhost fetches when prerendering pages.
-    return '';
+    if (typeof window !== 'undefined') return '';
+
+    const publicUrl = process.env.NEXT_PUBLIC_BASE_URL?.replace(/\/$/, '');
+    if (publicUrl) return publicUrl;
+
+    if (process.env.VERCEL_URL) {
+        return `https://${process.env.VERCEL_URL.replace(/\/$/, '')}`;
+    }
+
+    return 'http://localhost:3000';
 };
 
 const bffFetch = async (endpoint: string) => {
