@@ -1,11 +1,11 @@
-import { 
-    projects as MOCK_PROJECTS, 
-    about as MOCK_ABOUT, 
-    skills as MOCK_SKILLS, 
-    tools as MOCK_TOOLS, 
-    services as MOCK_SERVICES, 
-    certificates as MOCK_CERTIFICATES, 
-    locations as MOCK_LOCATIONS, 
+import {
+    projects as MOCK_PROJECTS,
+    about as MOCK_ABOUT,
+    skills as MOCK_SKILLS,
+    tools as MOCK_TOOLS,
+    services as MOCK_SERVICES,
+    certificates as MOCK_CERTIFICATES,
+    locations as MOCK_LOCATIONS,
     blogs as MOCK_BLOGS,
     profile as MOCK_PROFILE,
     settings as MOCK_SETTINGS
@@ -18,8 +18,9 @@ import { Project, Blog, Skill, Tool, Service, Certificate, LocationData, Profile
  */
 
 const getBaseUrl = () => {
-    if (typeof window !== 'undefined') return '';
-    return process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+    // Use relative internal routes both on the client and on the Next.js server.
+    // This avoids build-time localhost fetches when prerendering pages.
+    return '';
 };
 
 const bffFetch = async (endpoint: string) => {
@@ -161,13 +162,11 @@ export const DataService = {
     },
 
     async trackPortfolioView() {
-        const baseUrl = getBaseUrl();
-        return fetch(`${baseUrl}/api/data/track/view`, { method: 'POST' }).catch(() => {});
+        return fetch('/api/data/track/view', { method: 'POST' }).catch(() => { });
     },
 
     async trackProjectClick(projectId: string | number) {
-        const baseUrl = getBaseUrl();
-        return fetch(`${baseUrl}/api/data/track/click/${projectId}`, { method: 'POST' }).catch(() => {});
+        return fetch(`/api/data/track/click/${projectId}`, { method: 'POST' }).catch(() => { });
     },
 
     async getLocationByCity(city: string): Promise<LocationData | null> {

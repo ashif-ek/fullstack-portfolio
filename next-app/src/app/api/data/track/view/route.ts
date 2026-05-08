@@ -17,7 +17,12 @@ export async function POST() {
     }
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error('Failed to track visitor:', error);
+    const err = error as any;
+    if (err?.code === 'P2021') {
+      console.error('Visitor tracking disabled: Prisma visitorCount table is missing.', err.message || err);
+    } else {
+      console.error('Failed to track visitor:', error);
+    }
     return NextResponse.json({ success: false });
   }
 }

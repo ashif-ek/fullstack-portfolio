@@ -1,0 +1,1055 @@
+
+> next-app@0.1.0 build
+> next build
+
+  Γû▓ Next.js 14.2.35
+  - Environments: .env.local, .env
+
+   Creating an optimized production build ...
+ Γ£ô Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54102)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54889)
+    at async Object.m [as generateStaticParams] (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6158)
+    at async buildParams (D:\typescript-portfolio\next-app\node_modules\next\dist\build\utils.js:1026:40)
+    at async D:\typescript-portfolio\next-app\node_modules\next\dist\build\utils.js:1043:33
+    at async D:\typescript-portfolio\next-app\node_modules\next\dist\build\utils.js:1178:114
+    at async Span.traceAsyncFn (D:\typescript-portfolio\next-app\node_modules\next\dist\trace\trace.js:154:20)
+Failed to fetch locations from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6653)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getLocations (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:8283)
+    at async Object.h [as generateStaticParams] (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:6835)
+    at async buildParams (D:\typescript-portfolio\next-app\node_modules\next\dist\build\utils.js:1026:40)
+    at async D:\typescript-portfolio\next-app\node_modules\next\dist\build\utils.js:1043:33
+    at async D:\typescript-portfolio\next-app\node_modules\next\dist\build\utils.js:1178:114
+    at async Span.traceAsyncFn (D:\typescript-portfolio\next-app\node_modules\next\dist\trace\trace.js:154:20)
+Failed to fetch services from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:10310)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11613)
+    at async Object.u [as generateStaticParams] (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6154)
+    at async buildParams (D:\typescript-portfolio\next-app\node_modules\next\dist\build\utils.js:1026:40)
+    at async D:\typescript-portfolio\next-app\node_modules\next\dist\build\utils.js:1043:33
+    at async D:\typescript-portfolio\next-app\node_modules\next\dist\build\utils.js:1178:114
+    at async Span.traceAsyncFn (D:\typescript-portfolio\next-app\node_modules\next\dist\trace\trace.js:154:20)
+   Generating static pages (0/79) ...
+(node:4232) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:13820) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:4532) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{"level":"INFO","timestamp":"2026-05-08T09:08:30.542Z","operation":"fetch","source":"DB","latencyMs":1,"fallbackChain":["API"]}
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at v (D:\typescript-portfolio\next-app\.next\server\app\sitemap.xml\route.js:1:31716)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\sitemap.xml\route.js:1:32471)
+    at async Promise.all (index 1)
+    at async S (D:\typescript-portfolio\next-app\.next\server\app\sitemap.xml\route.js:1:34163)
+    at async A (D:\typescript-portfolio\next-app\.next\server\app\sitemap.xml\route.js:1:36036)
+    at async D:\typescript-portfolio\next-app\node_modules\next\dist\compiled\next-server\app-route.runtime.prod.js:6:38411
+    at async e_.execute (D:\typescript-portfolio\next-app\node_modules\next\dist\compiled\next-server\app-route.runtime.prod.js:6:27880)
+    at async e_.handle (D:\typescript-portfolio\next-app\node_modules\next\dist\compiled\next-server\app-route.runtime.prod.js:6:39943)
+    at async exportAppRoute (D:\typescript-portfolio\next-app\node_modules\next\dist\export\routes\app-route.js:77:26)
+Failed to fetch services from BFF, using mock fallback: Error: BFF returned 500
+    at v (D:\typescript-portfolio\next-app\.next\server\app\sitemap.xml\route.js:1:31716)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\sitemap.xml\route.js:1:32968)
+    at async Promise.all (index 2)
+    at async S (D:\typescript-portfolio\next-app\.next\server\app\sitemap.xml\route.js:1:34163)
+    at async A (D:\typescript-portfolio\next-app\.next\server\app\sitemap.xml\route.js:1:36036)
+    at async D:\typescript-portfolio\next-app\node_modules\next\dist\compiled\next-server\app-route.runtime.prod.js:6:38411
+    at async e_.execute (D:\typescript-portfolio\next-app\node_modules\next\dist\compiled\next-server\app-route.runtime.prod.js:6:27880)
+    at async e_.handle (D:\typescript-portfolio\next-app\node_modules\next\dist\compiled\next-server\app-route.runtime.prod.js:6:39943)
+    at async exportAppRoute (D:\typescript-portfolio\next-app\node_modules\next\dist\export\routes\app-route.js:77:26)
+Failed to fetch locations from BFF, using mock fallback: Error: BFF returned 500
+    at v (D:\typescript-portfolio\next-app\.next\server\app\sitemap.xml\route.js:1:31716)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getLocations (D:\typescript-portfolio\next-app\.next\server\app\sitemap.xml\route.js:1:33273)
+    at async Promise.all (index 3)
+    at async S (D:\typescript-portfolio\next-app\.next\server\app\sitemap.xml\route.js:1:34163)
+    at async A (D:\typescript-portfolio\next-app\.next\server\app\sitemap.xml\route.js:1:36036)
+    at async D:\typescript-portfolio\next-app\node_modules\next\dist\compiled\next-server\app-route.runtime.prod.js:6:38411
+    at async e_.execute (D:\typescript-portfolio\next-app\node_modules\next\dist\compiled\next-server\app-route.runtime.prod.js:6:27880)
+    at async e_.handle (D:\typescript-portfolio\next-app\node_modules\next\dist\compiled\next-server\app-route.runtime.prod.js:6:39943)
+    at async exportAppRoute (D:\typescript-portfolio\next-app\node_modules\next\dist\export\routes\app-route.js:77:26)
+(node:8488) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{"level":"INFO","timestamp":"2026-05-08T09:08:31.381Z","operation":"fetch_services","source":"MOCK","latencyMs":7,"fallbackChain":["API","DB"]}
+{"level":"INFO","timestamp":"2026-05-08T09:08:31.449Z","operation":"fetch_visitors","source":"MOCK","latencyMs":4,"fallbackChain":["API","DB"]}
+{"level":"INFO","timestamp":"2026-05-08T09:08:31.528Z","operation":"fetch_blogs","source":"MOCK","latencyMs":9,"fallbackChain":["API","DB"]}
+   Generating static pages (19/79) 
+(node:22016) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:14552) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:22040) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:10310)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11097)
+    at async l (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:4491)
+{"level":"INFO","timestamp":"2026-05-08T09:08:34.195Z","operation":"fetch_profile","source":"MOCK","latencyMs":8,"fallbackChain":["API","DB"]}
+Failed to fetch services from BFF, using mock fallback: Error: BFF returned 500
+    at a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54102)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55405)
+    at async h (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:5533)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:10310)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11097)
+    at async l (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:4491)
+Failed to fetch services from BFF, using mock fallback: Error: BFF returned 500
+    at a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54102)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55405)
+    at async h (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\page.js:1:5533)
+{"level":"INFO","timestamp":"2026-05-08T09:08:34.710Z","operation":"fetch_settings","source":"MOCK","latencyMs":5,"fallbackChain":["API","DB"]}
+{"level":"INFO","timestamp":"2026-05-08T09:08:34.713Z","operation":"fetch_about","source":"MOCK","latencyMs":5,"fallbackChain":["API","DB"]}
+{"level":"INFO","timestamp":"2026-05-08T09:08:34.838Z","operation":"fetch_projects","source":"MOCK","latencyMs":12,"fallbackChain":["API","DB"]}
+{"level":"INFO","timestamp":"2026-05-08T09:08:34.998Z","operation":"fetch_skills","source":"MOCK","latencyMs":6,"fallbackChain":["API","DB"]}
+   Generating static pages (39/79) 
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:10310)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11097)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11242)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:10310)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11097)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11242)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:10310)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11097)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11242)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:10310)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11097)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11242)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+{"level":"INFO","timestamp":"2026-05-08T09:08:35.976Z","operation":"fetch_tools","source":"MOCK","latencyMs":2,"fallbackChain":["API","DB"]}
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12270)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12415)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+{"level":"INFO","timestamp":"2026-05-08T09:08:36.346Z","operation":"fetch_certificates","source":"MOCK","latencyMs":2,"fallbackChain":["API","DB"]}
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:4618)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5405)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5550)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12270)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12415)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:4618)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5405)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5550)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12270)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12415)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12270)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12415)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at o (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:42883)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43670)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43815)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12270)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12415)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12270)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12415)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:10310)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11097)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11242)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:10310)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11097)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11242)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54102)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54889)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55034)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:4618)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5405)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5550)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:4618)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5405)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5550)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54102)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54889)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55034)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6653)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7440)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7585)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6653)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7440)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7585)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at o (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:42883)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43670)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43815)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at o (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:42883)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43670)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43815)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at o (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:42883)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43670)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43815)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:10310)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11097)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11242)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:10310)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11097)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11242)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12270)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12415)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12270)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12415)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12270)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12415)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54102)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54889)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55034)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54102)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54889)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55034)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:4618)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5405)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5550)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:4618)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5405)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5550)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6653)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7440)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7585)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6653)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7440)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7585)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12270)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12415)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12270)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12415)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12270)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12415)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at o (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:42883)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43670)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43815)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at o (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:42883)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43670)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43815)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at o (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:42883)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43670)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43815)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at o (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:42883)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43670)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43815)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:10310)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11097)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11242)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:10310)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11097)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11242)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:10310)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11097)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11242)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:10310)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11097)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11242)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12270)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12415)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12270)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12415)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12270)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12415)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12270)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12415)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:4618)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5405)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5550)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:4618)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5405)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5550)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54102)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54889)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55034)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54102)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54889)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55034)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54102)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54889)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55034)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54102)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54889)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55034)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6653)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7440)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7585)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6653)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7440)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7585)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6653)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7440)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7585)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6653)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7440)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7585)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+   Generating static pages (59/79) 
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12270)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12415)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:10310)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11097)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11242)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:10310)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11097)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11242)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:4618)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5405)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5550)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:4618)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5405)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5550)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at o (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:42883)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43670)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43815)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12270)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12415)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12270)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12415)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54102)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54889)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55034)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54102)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54889)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55034)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6653)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7440)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7585)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6653)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7440)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7585)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12270)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12415)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12270)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12415)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12270)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12415)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:4618)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5405)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5550)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:4618)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5405)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5550)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at o (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:42883)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43670)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43815)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at o (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:42883)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43670)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43815)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at o (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:42883)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43670)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43815)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:10310)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11097)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11242)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:10310)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11097)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11242)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12270)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12415)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12270)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12415)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6653)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7440)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7585)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6653)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7440)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7585)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54102)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54889)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55034)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54102)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54889)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55034)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:4618)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5405)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5550)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:4618)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5405)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5550)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:10310)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11097)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11242)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:10310)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11097)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11242)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12270)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12415)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12270)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12415)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at o (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:42883)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43670)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43815)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch locations from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getLocations (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:13113)
+    at async Object.getLocationByCity (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:13812)
+    at async f (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:7258)
+Failed to fetch locations from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6653)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getLocations (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:8283)
+    at async Object.getLocationByCity (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:8982)
+    at async f (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:7258)
+Failed to fetch locations from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6653)
+    at async Object.getLocations (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:8283)
+    at async Object.getLocationByCity (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:8982)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:6984)
+Failed to fetch locations from BFF, using mock fallback: Error: BFF returned 500
+    at a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54102)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getLocations (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55732)
+    at async Object.getLocationByCity (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:56431)
+    at async f (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:7258)
+Failed to fetch locations from BFF, using mock fallback: Error: BFF returned 500
+    at a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54102)
+    at async Object.getLocations (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55732)
+    at async Object.getLocationByCity (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:56431)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:6984)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at o (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:42883)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43670)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43815)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at o (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:42883)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43670)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43815)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at o (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:42883)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43670)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:43815)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:10310)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11097)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11242)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:10310)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11097)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11242)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:4618)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5405)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5550)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:4618)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5405)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5550)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12270)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12415)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6930)
+Failed to fetch blogs from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getBlogs (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12270)
+    at async Object.getBlogBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12415)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\[slug]\page.js:1:6303)
+Failed to fetch locations from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getLocations (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:13113)
+    at async Object.getLocationByCity (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:13812)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:6984)
+Failed to fetch locations from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getLocations (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:13113)
+    at async Object.getLocationByCity (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:13812)
+    at async f (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:7258)
+Failed to fetch locations from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getLocations (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:13113)
+    at async Object.getLocationByCity (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:13812)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:6984)
+Failed to fetch locations from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6653)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getLocations (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:8283)
+    at async Object.getLocationByCity (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:8982)
+    at async f (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:7258)
+Failed to fetch locations from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6653)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getLocations (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:8283)
+    at async Object.getLocationByCity (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:8982)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:6984)
+Failed to fetch locations from BFF, using mock fallback: Error: BFF returned 500
+    at a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54102)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getLocations (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55732)
+    at async Object.getLocationByCity (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:56431)
+    at async f (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:7258)
+Failed to fetch locations from BFF, using mock fallback: Error: BFF returned 500
+    at a (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:54102)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getLocations (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:55732)
+    at async Object.getLocationByCity (D:\typescript-portfolio\next-app\.next\server\app\(site)\page.js:1:56431)
+    at async Module.g (D:\typescript-portfolio\next-app\.next\server\app\(site)\location\[city]\page.js:1:6984)
+Failed to fetch services from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:10310)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11613)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:12726)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6608)
+Failed to fetch services from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:10310)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11613)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:12726)
+    at async Module.m (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6302)
+Failed to fetch services from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12786)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:13899)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6608)
+Failed to fetch services from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12786)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:13899)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6608)
+Failed to fetch services from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12786)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:13899)
+    at async Module.m (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6302)
+Failed to fetch services from BFF, using mock fallback: Error: BFF returned 500
+    at o (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:42883)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:44186)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:45299)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6608)
+Failed to fetch services from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:4618)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5921)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:7034)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6608)
+Failed to fetch services from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:4618)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5921)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:7034)
+    at async Module.m (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6302)
+Failed to fetch services from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:10310)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11613)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:12726)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6608)
+Failed to fetch services from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:10310)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:11613)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:12726)
+    at async Module.m (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6302)
+Failed to fetch services from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6653)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7956)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:9069)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6608)
+Failed to fetch services from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6653)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7956)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:9069)
+    at async Module.m (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6302)
+Failed to fetch services from BFF, using mock fallback: Error: BFF returned 500
+    at o (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:42883)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:44186)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:45299)
+    at async Module.m (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6302)
+Failed to fetch services from BFF, using mock fallback: Error: BFF returned 500
+    at o (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:42883)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:44186)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:45299)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6608)
+Failed to fetch services from BFF, using mock fallback: Error: BFF returned 500
+    at o (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:42883)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:44186)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\about\page.js:3:45299)
+    at async Module.m (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6302)
+Failed to fetch services from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12786)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:13899)
+    at async Module.m (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6302)
+Failed to fetch services from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12786)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:13899)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6608)
+Failed to fetch services from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12786)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:13899)
+    at async Module.m (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6302)
+Failed to fetch services from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12786)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:13899)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6608)
+Failed to fetch services from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:11483)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:12786)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\[slug]\page.js:1:13899)
+    at async Module.m (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6302)
+Failed to fetch services from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:4618)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5921)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:7034)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6608)
+Failed to fetch services from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:4618)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:5921)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\projects\page.js:1:7034)
+    at async Module.m (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6302)
+Failed to fetch services from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6653)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7956)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:9069)
+    at async x (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6608)
+Failed to fetch services from BFF, using mock fallback: Error: BFF returned 500
+    at i (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:6653)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getServices (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:7956)
+    at async Object.getServiceBySlug (D:\typescript-portfolio\next-app\.next\server\app\(site)\blog\page.js:1:9069)
+    at async Module.m (D:\typescript-portfolio\next-app\.next\server\app\(site)\services\[slug]\page.js:1:6302)
+ Γ£ô Generating static pages (79/79)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                             Size     First Load JS
+Γöî Γùï /                                                   19.9 kB         198 kB
+Γö£ Γùï /_not-found                                         146 B          87.7 kB
+Γö£ Γùï /about                                              3.08 kB         105 kB
+Γö£ Γùï /admin                                              1.19 kB         108 kB
+Γö£ Γùï /admin/blogs                                        3.73 kB         111 kB
+Γö£ Γùï /admin/certificates                                 3.87 kB         111 kB
+Γö£ Γùï /admin/messages                                     2.46 kB         109 kB
+Γö£ Γùï /admin/profile                                      3.4 kB          110 kB
+Γö£ Γùï /admin/projects                                     1.67 kB         109 kB
+Γö£ Γùï /admin/services                                     3.02 kB         110 kB
+Γö£ Γùï /admin/settings                                     1.88 kB         109 kB
+Γö£ Γùï /admin/skills                                       3.35 kB         110 kB
+Γö£ Γùï /admin/tools                                        2.94 kB         110 kB
+Γö£ ╞Æ /api/auth/login                                     0 B                0 B
+Γö£ ╞Æ /api/auth/logout                                    0 B                0 B
+Γö£ Γùï /api/data/about                                     0 B                0 B
+Γö£ Γùï /api/data/blogs                                     0 B                0 B
+Γö£ Γùï /api/data/certificates                              0 B                0 B
+Γö£ Γùï /api/data/health                                    0 B                0 B
+Γö£ Γùï /api/data/locations                                 0 B                0 B
+Γö£ ╞Æ /api/data/messages                                  0 B                0 B
+Γö£ Γùï /api/data/profile                                   0 B                0 B
+Γö£ Γùï /api/data/projects                                  0 B                0 B
+Γö£ Γùï /api/data/services                                  0 B                0 B
+Γö£ Γùï /api/data/settings                                  0 B                0 B
+Γö£ Γùï /api/data/skills                                    0 B                0 B
+Γö£ Γùï /api/data/tools                                     0 B                0 B
+Γö£ ╞Æ /api/data/track/view                                0 B                0 B
+Γö£ Γùï /api/data/visitors                                  0 B                0 B
+Γö£ Γùï /blog                                               185 B          96.5 kB
+Γö£ ΓùÅ /blog/[slug]                                        2.41 kB         104 kB
+Γö£   Γö£ /blog/scalable-architecture-django-react
+Γö£   Γö£ /blog/optimizing-nextjs-performance
+Γö£   Γö£ /blog/getting-started-with-react-beginners-guide
+Γö£   Γöö [+23 more paths]
+Γö£ Γùï /contact                                            146 B          87.7 kB
+Γö£ ΓùÅ /location/[city]                                    2.4 kB         98.7 kB
+Γö£   Γö£ /location/kochi
+Γö£   Γö£ /location/calicut
+Γö£   Γöö /location/trivandrum
+Γö£ Γùï /login                                              2.44 kB          90 kB
+Γö£ Γùï /projects                                           185 B          96.5 kB
+Γö£ ΓùÅ /projects/[slug]                                    2.41 kB         104 kB
+Γö£   Γö£ /projects/salary-checker
+Γö£   Γö£ /projects/civic-connect
+Γö£   Γö£ /projects/system-design-sandbox
+Γö£   Γöö [+2 more paths]
+Γö£ Γùï /robots.txt                                         0 B                0 B
+Γö£ Γùï /services                                           185 B          96.5 kB
+Γö£ ΓùÅ /services/[slug]                                    2.4 kB         98.7 kB
+Γö£   Γö£ /services/mvp-development
+Γö£   Γö£ /services/api-design-integration
+Γö£   Γö£ /services/performance-optimization
+Γö£   Γöö [+3 more paths]
+Γö£ Γùï /sitemap.xml                                        0 B                0 B
+Γöö Γùï /system                                             2.75 kB        98.4 kB
++ First Load JS shared by all                           87.6 kB
+  Γö£ chunks/2117-0f329177d5abed45.js                     31.7 kB
+  Γö£ chunks/fd9d1056-a6c95c8af213f770.js                 53.6 kB
+  Γöö other shared chunks (total)                         2.21 kB
+
+
+Γùï  (Static)   prerendered as static content
+ΓùÅ  (SSG)      prerendered as static HTML (uses getStaticProps)
+╞Æ  (Dynamic)  server-rendered on demand
+
