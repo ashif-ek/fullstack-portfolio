@@ -30,11 +30,37 @@ const getBaseUrl = () => {
     return 'http://localhost:3000';
 };
 
+const responseCache = new Map<string, Promise<unknown>>();
+const warnedKeys = new Set<string>();
+
+const formatErrorKey = (endpoint: string, error: unknown) => {
+    const code = typeof error === 'object' && error !== null && 'code' in error
+        ? String((error as { code?: string }).code)
+        : '';
+    const message = error instanceof Error ? error.message : String(error);
+    return `${endpoint}:${code}:${message}`;
+};
+
+const logFallbackOnce = (endpoint: string, error: unknown, message: string) => {
+    const key = formatErrorKey(endpoint, error);
+    if (warnedKeys.has(key)) return;
+    warnedKeys.add(key);
+    console.warn(message, error);
+};
+
 const bffFetch = async (endpoint: string) => {
+    const cached = responseCache.get(endpoint);
+    if (cached) return cached;
+
     const baseUrl = getBaseUrl();
-    const response = await fetch(`${baseUrl}/api/data/${endpoint}`);
-    if (!response.ok) throw new Error(`BFF returned ${response.status}`);
-    return await response.json();
+    const promise = (async () => {
+        const response = await fetch(`${baseUrl}/api/data/${endpoint}`);
+        if (!response.ok) throw new Error(`BFF returned ${response.status}`);
+        return await response.json();
+    })();
+
+    responseCache.set(endpoint, promise);
+    return promise;
 };
 
 export const DataService = {
@@ -43,7 +69,7 @@ export const DataService = {
         try {
             return await bffFetch('settings');
         } catch (error) {
-            console.error("Failed to fetch settings from BFF, using mock fallback:", error);
+            logFallbackOnce('settings', error, "Failed to fetch settings from BFF, using mock fallback:");
             return MOCK_SETTINGS;
         }
     },
@@ -52,7 +78,7 @@ export const DataService = {
         try {
             return await bffFetch('profile');
         } catch (error) {
-            console.error("Failed to fetch profile from BFF, using mock fallback:", error);
+            logFallbackOnce('profile', error, "Failed to fetch profile from BFF, using mock fallback:");
             return MOCK_PROFILE as unknown as Profile;
         }
     },
@@ -61,7 +87,7 @@ export const DataService = {
         try {
             return await bffFetch('about');
         } catch (error) {
-            console.error("Failed to fetch about from BFF, using mock fallback:", error);
+            logFallbackOnce('about', error, "Failed to fetch about from BFF, using mock fallback:");
             return (MOCK_ABOUT[0] || null) as unknown as AboutData;
         }
     },
@@ -71,7 +97,7 @@ export const DataService = {
         try {
             return await bffFetch('projects');
         } catch (error) {
-            console.error("Failed to fetch projects from BFF, using mock fallback:", error);
+            logFallbackOnce('projects', error, "Failed to fetch projects from BFF, using mock fallback:");
             return MOCK_PROJECTS as unknown as Project[];
         }
     },
@@ -85,7 +111,7 @@ export const DataService = {
         try {
             return await bffFetch('blogs');
         } catch (error) {
-            console.error("Failed to fetch blogs from BFF, using mock fallback:", error);
+            logFallbackOnce('blogs', error, "Failed to fetch blogs from BFF, using mock fallback:");
             return MOCK_BLOGS as unknown as Blog[];
         }
     },
@@ -99,7 +125,7 @@ export const DataService = {
         try {
             return await bffFetch('skills');
         } catch (error) {
-            console.error("Failed to fetch skills from BFF, using mock fallback:", error);
+            logFallbackOnce('skills', error, "Failed to fetch skills from BFF, using mock fallback:");
             return MOCK_SKILLS as unknown as Skill[];
         }
     },
@@ -108,7 +134,7 @@ export const DataService = {
         try {
             return await bffFetch('tools');
         } catch (error) {
-            console.error("Failed to fetch tools from BFF, using mock fallback:", error);
+            logFallbackOnce('tools', error, "Failed to fetch tools from BFF, using mock fallback:");
             return MOCK_TOOLS as unknown as Tool[];
         }
     },
@@ -117,7 +143,7 @@ export const DataService = {
         try {
             return await bffFetch('services');
         } catch (error) {
-            console.error("Failed to fetch services from BFF, using mock fallback:", error);
+            logFallbackOnce('services', error, "Failed to fetch services from BFF, using mock fallback:");
             return MOCK_SERVICES as unknown as Service[];
         }
     },
@@ -126,7 +152,7 @@ export const DataService = {
         try {
             return await bffFetch('certificates');
         } catch (error) {
-            console.error("Failed to fetch certificates from BFF, using mock fallback:", error);
+            logFallbackOnce('certificates', error, "Failed to fetch certificates from BFF, using mock fallback:");
             return MOCK_CERTIFICATES as unknown as Certificate[];
         }
     },
@@ -135,7 +161,7 @@ export const DataService = {
         try {
             return await bffFetch('locations');
         } catch (error) {
-            console.error("Failed to fetch locations from BFF, using mock fallback:", error);
+            logFallbackOnce('locations', error, "Failed to fetch locations from BFF, using mock fallback:");
             return MOCK_LOCATIONS as unknown as LocationData[];
         }
     },
@@ -144,7 +170,7 @@ export const DataService = {
         try {
             return await bffFetch('messages');
         } catch (error) {
-            console.error("Failed to fetch messages from BFF:", error);
+            logFallbackOnce('messages', error, "Failed to fetch messages from BFF:");
             return [];
         }
     },
