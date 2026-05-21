@@ -66,40 +66,20 @@ const bffFetch = async (endpoint: string) => {
 export const DataService = {
     // --- Settings & Meta ---
     async getSettings(): Promise<Settings> {
-        try {
-            return await bffFetch('settings');
-        } catch (error) {
-            logFallbackOnce('settings', error, "Failed to fetch settings from BFF, using mock fallback:");
-            return MOCK_SETTINGS;
-        }
+        return MOCK_SETTINGS;
     },
 
     async getProfile(): Promise<Profile | null> {
-        try {
-            return await bffFetch('profile');
-        } catch (error) {
-            logFallbackOnce('profile', error, "Failed to fetch profile from BFF, using mock fallback:");
-            return MOCK_PROFILE as unknown as Profile;
-        }
+        return MOCK_PROFILE as unknown as Profile;
     },
 
     async getAbout(): Promise<AboutData | null> {
-        try {
-            return await bffFetch('about');
-        } catch (error) {
-            logFallbackOnce('about', error, "Failed to fetch about from BFF, using mock fallback:");
-            return (MOCK_ABOUT[0] || null) as unknown as AboutData;
-        }
+        return (MOCK_ABOUT[0] || null) as unknown as AboutData;
     },
 
     // --- Core Collections ---
     async getProjects(): Promise<Project[]> {
-        try {
-            return await bffFetch('projects');
-        } catch (error) {
-            logFallbackOnce('projects', error, "Failed to fetch projects from BFF, using mock fallback:");
-            return MOCK_PROJECTS as unknown as Project[];
-        }
+        return MOCK_PROJECTS as unknown as Project[];
     },
 
     async getProjectBySlug(slug: string): Promise<Project | null> {
@@ -108,12 +88,7 @@ export const DataService = {
     },
 
     async getBlogs(): Promise<Blog[]> {
-        try {
-            return await bffFetch('blogs');
-        } catch (error) {
-            logFallbackOnce('blogs', error, "Failed to fetch blogs from BFF, using mock fallback:");
-            return MOCK_BLOGS as unknown as Blog[];
-        }
+        return MOCK_BLOGS as unknown as Blog[];
     },
 
     async getBlogBySlug(slug: string): Promise<Blog | null> {
@@ -122,84 +97,44 @@ export const DataService = {
     },
 
     async getSkills(): Promise<Skill[]> {
-        try {
-            return await bffFetch('skills');
-        } catch (error) {
-            logFallbackOnce('skills', error, "Failed to fetch skills from BFF, using mock fallback:");
-            return MOCK_SKILLS as unknown as Skill[];
-        }
+        return MOCK_SKILLS as unknown as Skill[];
     },
 
     async getTools(): Promise<Tool[]> {
-        try {
-            return await bffFetch('tools');
-        } catch (error) {
-            logFallbackOnce('tools', error, "Failed to fetch tools from BFF, using mock fallback:");
-            return MOCK_TOOLS as unknown as Tool[];
-        }
+        return MOCK_TOOLS as unknown as Tool[];
     },
 
     async getServices(): Promise<Service[]> {
-        try {
-            return await bffFetch('services');
-        } catch (error) {
-            logFallbackOnce('services', error, "Failed to fetch services from BFF, using mock fallback:");
-            return MOCK_SERVICES as unknown as Service[];
-        }
+        return MOCK_SERVICES as unknown as Service[];
     },
 
     async getCertificates(): Promise<Certificate[]> {
-        try {
-            return await bffFetch('certificates');
-        } catch (error) {
-            logFallbackOnce('certificates', error, "Failed to fetch certificates from BFF, using mock fallback:");
-            return MOCK_CERTIFICATES as unknown as Certificate[];
-        }
+        return MOCK_CERTIFICATES as unknown as Certificate[];
     },
 
     async getLocations(): Promise<LocationData[]> {
-        try {
-            return await bffFetch('locations');
-        } catch (error) {
-            logFallbackOnce('locations', error, "Failed to fetch locations from BFF, using mock fallback:");
-            return MOCK_LOCATIONS as unknown as LocationData[];
-        }
+        return MOCK_LOCATIONS as unknown as LocationData[];
     },
 
     async getMessages(): Promise<Message[]> {
-        try {
-            return await bffFetch('messages');
-        } catch (error) {
-            logFallbackOnce('messages', error, "Failed to fetch messages from BFF:");
-            return [];
-        }
+        return [];
     },
 
     // --- Analytical & Health ---
     async checkHealth(): Promise<boolean> {
-        try {
-            const baseUrl = getBaseUrl();
-            const res = await fetch(`${baseUrl}/api/data/health`);
-            return res.ok;
-        } catch (error) {
-            return false;
-        }
+        return true;
     },
 
     async getVisitors(): Promise<{ total_visitors: number }> {
-        try {
-            return await bffFetch('visitors');
-        } catch (error) {
-            return { total_visitors: 0 };
-        }
+        return { total_visitors: 0 };
     },
 
     async trackPortfolioView() {
-        return fetch('/api/data/track/view', { method: 'POST' }).catch(() => { });
+        return Promise.resolve();
     },
 
     async trackProjectClick(projectId: string | number) {
-        return fetch(`/api/data/track/click/${projectId}`, { method: 'POST' }).catch(() => { });
+        return Promise.resolve();
     },
 
     async getLocationByCity(city: string): Promise<LocationData | null> {

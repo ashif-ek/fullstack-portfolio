@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { profile } from '../../../data/mockData';
-import { Mail, Github, Linkedin, Instagram, ArrowRight } from 'lucide-react';
+import { Mail, Github, Linkedin, Instagram, ArrowRight, Phone } from 'lucide-react';
 
 export const metadata: Metadata = {
     title: 'Correspondence | Ashif E.K – Full Stack Engineer',
@@ -48,7 +48,8 @@ export default function ContactPage() {
                                             {link.name === 'Github' && <Github className="w-5 h-5" />}
                                             {link.name === 'LinkedIn' && <Linkedin className="w-5 h-5" />}
                                             {link.name === 'Instagram' && <Instagram className="w-5 h-5" />}
-                                            {link.name !== 'Github' && link.name !== 'LinkedIn' && link.name !== 'Instagram' && <Mail className="w-5 h-5" />}
+                                            {link.name === 'Phone' && <Phone className="w-5 h-5" />}
+                                            {link.name !== 'Github' && link.name !== 'LinkedIn' && link.name !== 'Instagram' && link.name !== 'Phone' && <Mail className="w-5 h-5" />}
                                         </span>
                                         <span className="font-bold text-sm uppercase tracking-wider">{link.name}</span>
                                     </a>
