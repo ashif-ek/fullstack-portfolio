@@ -3,13 +3,15 @@ import { Profile, AboutData, Skill, Tool, Project, Certificate, Blog, Service, L
 export const profile: Profile = {
     "name": "Ashif E.K",
     "title": "Full-Stack Engineer",
-    "description": "Full-Stack Engineer focused on building reliable, production-grade web platforms. Experienced with Django REST Framework, React, PostgreSQL, Docker, and AWS to design secure APIs, scalable backend systems, and high-performance applications. Emphasizes system reliability, automation, and real-world operational constraints through CI/CD pipelines, payment integrations, and cloud deployment, delivering software that operates correctly in production environments.",
+    "description": "Full-Stack Engineer specializing in production-grade web platforms. Experienced in designing secure APIs, scalable backends, and high-performance frontends using Django, React, PostgreSQL, and AWS. Dedicated to automation, CI/CD, and system reliability.",
     "email": "ashifek11@gmail.com",
     "socialLinks": [
-        { "name": "Github", "url": "https://github.com/ashif-ek" },
+        { "name": "GitHub", "url": "https://github.com/ashif-ek" },
         { "name": "LinkedIn", "url": "https://www.linkedin.com/in/ashifek" },
-        { "name": "Portfolio", "url": "https://ashifek.in/" },
-        { "name": "Docs Stack", "url": "https://ashif-ek.github.io/docs-stack-material/" },
+        { "name": "Fiverr", "url": "http://www.fiverr.com/s/gDLy45X" },
+        { "name": "Docs Material", "url": "https://ashif-ek.github.io/docs-stack-material/" },
+        { "name": "WhatsApp", "url": "https://wa.me/919037499763" },
+        { "name": "Instagram", "url": "https://instagram.com/ashif.io" },
         { "name": "Phone", "url": "tel:+919037499763" }
     ]
 };

@@ -1,6 +1,31 @@
 import { Metadata } from 'next';
 import { profile } from '../../../data/mockData';
-import { Mail, Github, Linkedin, Instagram, ArrowRight, Phone } from 'lucide-react';
+import { Mail, Github, Linkedin, Instagram, ArrowRight, Phone, BookOpen, Globe } from 'lucide-react';
+import { TbBrandFiverr, TbBrandWhatsapp } from 'react-icons/tb';
+
+const iconMap: Record<string, React.ElementType> = {
+  Github: Github,
+  github: Github,
+  GitHub: Github,
+  LinkedIn: Linkedin,
+  linkedin: Linkedin,
+  Linkedin: Linkedin,
+  Instagram: Instagram,
+  instagram: Instagram,
+  Fiverr: TbBrandFiverr,
+  fiverr: TbBrandFiverr,
+  "Docs Material": BookOpen,
+  "Docs Stack": BookOpen,
+  "docs material": BookOpen,
+  "docs stack": BookOpen,
+  WhatsApp: TbBrandWhatsapp,
+  whatsapp: TbBrandWhatsapp,
+  whtsapp: TbBrandWhatsapp,
+  Phone: Phone,
+  phone: Phone,
+  Portfolio: Globe,
+  portfolio: Globe,
+};
 
 export const metadata: Metadata = {
     title: 'Correspondence | Ashif E.K – Full Stack Engineer',
@@ -36,24 +61,23 @@ export default function ContactPage() {
                         <div>
                             <h2 className="text-sm uppercase tracking-[0.2em] text-academic-muted mb-6 font-bold">Digital Presence</h2>
                             <div className="grid grid-cols-2 gap-4">
-                                {profile.socialLinks.map((link) => (
-                                    <a 
-                                        key={link.name} 
-                                        href={link.url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="p-4 rounded-xl bg-academic-paper border border-academic-border hover:border-academic-primary/30 transition-all flex items-center gap-3"
-                                    >
-                                        <span className="p-2 bg-academic-primary/5 rounded-lg text-academic-primary">
-                                            {link.name === 'Github' && <Github className="w-5 h-5" />}
-                                            {link.name === 'LinkedIn' && <Linkedin className="w-5 h-5" />}
-                                            {link.name === 'Instagram' && <Instagram className="w-5 h-5" />}
-                                            {link.name === 'Phone' && <Phone className="w-5 h-5" />}
-                                            {link.name !== 'Github' && link.name !== 'LinkedIn' && link.name !== 'Instagram' && link.name !== 'Phone' && <Mail className="w-5 h-5" />}
-                                        </span>
-                                        <span className="font-bold text-sm uppercase tracking-wider">{link.name}</span>
-                                    </a>
-                                ))}
+                                {profile.socialLinks.map((link) => {
+                                    const IconComponent = iconMap[link.name] || Mail;
+                                    return (
+                                        <a 
+                                            key={link.name} 
+                                            href={link.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="p-4 rounded-xl bg-academic-paper border border-academic-border hover:border-academic-primary/30 transition-all flex items-center gap-3"
+                                        >
+                                            <span className="p-2 bg-academic-primary/5 rounded-lg text-academic-primary">
+                                                <IconComponent className="w-5 h-5" />
+                                            </span>
+                                            <span className="font-bold text-sm uppercase tracking-wider">{link.name}</span>
+                                        </a>
+                                    );
+                                })}
                             </div>
                         </div>
                     </section>

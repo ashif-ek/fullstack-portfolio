@@ -1,7 +1,8 @@
 'use client';
 import { useMemo } from 'react';
 import Link from 'next/link';
-import { BookOpen, BriefcaseBusiness, Github, Instagram, Linkedin } from 'lucide-react';
+import { BookOpen, Github, Instagram, Linkedin, Phone, Globe } from 'lucide-react';
+import { TbBrandFiverr, TbBrandWhatsapp } from 'react-icons/tb';
 import profileFallbackImage from '../../assets/profile.jpg';
 import { resolveAssetUrl } from '../../lib/api';
 import { SocialLink } from '../../types';
@@ -9,11 +10,27 @@ import { useProfile } from '../../hooks/useProfile';
 import { Skeleton } from '../ui/Skeleton';
 
 const iconMap: Record<string, React.ElementType> = {
-  Github,
+  Github: Github,
+  github: Github,
+  GitHub: Github,
   LinkedIn: Linkedin,
-  Instagram,
-  Fiverr: BriefcaseBusiness,
+  linkedin: Linkedin,
+  Linkedin: Linkedin,
+  Instagram: Instagram,
+  instagram: Instagram,
+  Fiverr: TbBrandFiverr,
+  fiverr: TbBrandFiverr,
   "Docs Material": BookOpen,
+  "Docs Stack": BookOpen,
+  "docs material": BookOpen,
+  "docs stack": BookOpen,
+  WhatsApp: TbBrandWhatsapp,
+  whatsapp: TbBrandWhatsapp,
+  whtsapp: TbBrandWhatsapp,
+  Phone: Phone,
+  phone: Phone,
+  Portfolio: Globe,
+  portfolio: Globe,
 };
 
 const SocialLinks = ({ links = [] }: { links?: SocialLink[] }) => {
@@ -29,7 +46,7 @@ const SocialLinks = ({ links = [] }: { links?: SocialLink[] }) => {
             </a>
           );
         })}
-        <div className="h-24 w-px bg-academic-border mt-2"></div>
+        <div className="h-10 w-px bg-academic-border mt-2"></div>
       </div>
     </div>
   );
@@ -44,7 +61,7 @@ const EmailLink = ({ email }: { email?: string }) => (
           {email}
         </a>
       )}
-      <div className="h-24 w-px bg-academic-border mt-2"></div>
+      <div className="h-10 w-px bg-academic-border mt-2"></div>
     </div>
   </div>
 );

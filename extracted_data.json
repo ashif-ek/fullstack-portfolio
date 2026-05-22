@@ -1,11 +1,11 @@
 [
 {
   "model": "core.profile",
-  "pk": 1,
+  "pk": 2,
   "fields": {
     "name": "Ashif E.K",
     "title": "Full-Stack Engineer",
-    "description": "Full-Stack Engineer focused on building reliable, production-grade web platforms. Experienced with Django REST Framework, React, PostgreSQL, Docker, and AWS to design secure APIs, scalable backend systems, and high-performance applications. Emphasizes system reliability, automation, and real-world operational constraints through CI/CD pipelines, payment integrations, and cloud deployment, delivering software that operates correctly in production environments.",
+    "description": "Full-Stack Engineer specializing in production-grade web platforms. Experienced in designing secure APIs, scalable backends, and high-performance frontends using Django, React, PostgreSQL, and AWS. Dedicated to automation, CI/CD, and system reliability.",
     "introduction": "Full-Stack Engineer focused on building reliable, production-grade web platforms. Experienced in designing secure APIs and scalable backend systems using Django REST Framework, and building high-performance frontends with React. I prioritize system reliability, automation, and pragmatic engineering practices that operate correctly in production.",
     "experience": "[{\"role\": \"Full Stack Developer\", \"company\": \"Bridgeon\", \"period\": \"May 2025 \\u2013 Present\", \"highlights\": [\"Architected and delivered scalable web applications using Django REST Framework, React, and PostgreSQL following modular service-oriented design principles.\", \"Designed secure REST APIs implementing JWT authentication, role-based access control (RBAC), and layered permission enforcement.\", \"Improved backend performance by optimizing database queries and request execution paths, reducing API response latency by up to 35%.\", \"Built state-driven admin interfaces using React + Redux Toolkit, ensuring predictable data flow and reducing UI inconsistency bugs.\", \"Implemented Razorpay payment workflows with transaction verification, idempotent order handling, and failure recovery mechanisms.\", \"Deployed applications on AWS (EC2, RDS) with Nginx + Gunicorn, implementing reverse proxying, process management, and zero-downtime deployment strategies via CI/CD pipelines.\"], \"link\": \"https://noirel-perfume.vercel.app/\"}, {\"role\": \"Project Intern\", \"company\": \"Regional Technologies\", \"period\": \"Oct 2024 \\u2013 Mar 2025\", \"highlights\": [\"Built a cross-platform digital governance platform using Django backend services and a Flutter mobile application to streamline citizen\\u2013administration interaction.\", \"Modeled hierarchical governance architecture (District \\u2192 Higher Authority \\u2192 Panchayath \\u2192 Citizens) with role-based permission controls.\", \"Developed REST APIs supporting citizen services such as service requests, complaint submission, notifications, and community updates.\", \"Implemented complaint escalation workflows allowing unresolved Panchayath-level issues to be forwarded to higher administrative authorities.\", \"Built an announcement and update feed enabling Panchayath administrators to publish news, alerts, and public service information to residents.\", \"Enabled citizen engagement features including community posts, media sharing, and interaction within local governance networks.\", \"Designed normalized and query-efficient data models, reducing redundant joins and improving query performance under relational workloads.\"]}]",
     "philosophy": "Emphasizes reliability, observability, and maintainability: automated deployments, secure defaults, performance-first frontend patterns, and production-focused testing and monitoring.",
@@ -15,43 +15,43 @@
 },
 {
   "model": "core.sociallink",
-  "pk": 1,
+  "pk": 5,
   "fields": {
-    "profile": 1,
+    "profile": 2,
     "name": "GitHub",
     "url": "https://github.com/ashif-ek"
   }
 },
 {
   "model": "core.sociallink",
-  "pk": 2,
+  "pk": 6,
   "fields": {
-    "profile": 1,
+    "profile": 2,
     "name": "LinkedIn",
     "url": "https://www.linkedin.com/in/ashifek"
   }
 },
 {
   "model": "core.sociallink",
-  "pk": 3,
+  "pk": 7,
   "fields": {
-    "profile": 1,
+    "profile": 2,
     "name": "Portfolio",
     "url": "https://ashifek.in/"
   }
 },
 {
   "model": "core.sociallink",
-  "pk": 4,
+  "pk": 8,
   "fields": {
-    "profile": 1,
+    "profile": 2,
     "name": "Docs Stack",
     "url": "https://ashif-ek.github.io/docs-stack-material/"
   }
 },
 {
   "model": "core.skill",
-  "pk": 1,
+  "pk": 7,
   "fields": {
     "name": "Django & Python",
     "level": 95,
@@ -64,7 +64,7 @@
 },
 {
   "model": "core.skill",
-  "pk": 2,
+  "pk": 8,
   "fields": {
     "name": "React & Next.js",
     "level": 90,
@@ -77,7 +77,7 @@
 },
 {
   "model": "core.skill",
-  "pk": 3,
+  "pk": 9,
   "fields": {
     "name": "TypeScript",
     "level": 85,
@@ -90,7 +90,7 @@
 },
 {
   "model": "core.skill",
-  "pk": 4,
+  "pk": 10,
   "fields": {
     "name": "Database Design",
     "level": 88,
@@ -103,7 +103,7 @@
 },
 {
   "model": "core.skill",
-  "pk": 5,
+  "pk": 11,
   "fields": {
     "name": "DevOps & Cloud",
     "level": 80,
@@ -116,7 +116,7 @@
 },
 {
   "model": "core.skill",
-  "pk": 6,
+  "pk": 12,
   "fields": {
     "name": "Flutter",
     "level": 80,
@@ -129,7 +129,7 @@
 },
 {
   "model": "core.project",
-  "pk": 1,
+  "pk": 7,
   "fields": {
     "title": "Cipher Analytics",
     "description": "A privacy-preserving distributed AI analytics platform enabling secure computation on encrypted datasets using Fully Homomorphic Encryption (FHE CKKS), featuring a multi-queue distributed architecture (Celery + Redis) and a WebGL 3D data visualization layer.",
@@ -141,13 +141,13 @@
     "image": "",
     "clicks": 0,
     "order": 0,
-    "created_at": "2026-05-21T13:18:02.689Z",
-    "updated_at": "2026-05-21T13:18:02.689Z"
+    "created_at": "2026-05-21T13:27:40.317Z",
+    "updated_at": "2026-05-21T13:27:40.317Z"
   }
 },
 {
   "model": "core.project",
-  "pk": 2,
+  "pk": 8,
   "fields": {
     "title": "Salary Checker",
     "description": "Salary Reality Checker delivers AI-powered salary insights using percentile analytics, fuzzy-matched job titles, and machine-learning predictions. It auto-corrects user input, analyzes market trends, and predicts salaries when data is missing. Built with FastAPI, PostgreSQL, scikit-learn.",
@@ -159,13 +159,13 @@
     "image": "",
     "clicks": 0,
     "order": 0,
-    "created_at": "2026-05-21T13:18:02.762Z",
-    "updated_at": "2026-05-21T13:18:02.762Z"
+    "created_at": "2026-05-21T13:27:40.384Z",
+    "updated_at": "2026-05-21T13:27:40.384Z"
   }
 },
 {
   "model": "core.project",
-  "pk": 3,
+  "pk": 9,
   "fields": {
     "title": "Civic (CiviTech) - Cross-Platform Digital Governance Platform",
     "description": "Developed a multi-role civic platform connecting citizens with Panchayath and higher administrative authorities, enabling complaint escalation, service tracking, announcements, moderation, analytics, and citizen engagement.",
@@ -177,13 +177,13 @@
     "image": "",
     "clicks": 0,
     "order": 0,
-    "created_at": "2026-05-21T13:18:02.827Z",
-    "updated_at": "2026-05-21T13:18:02.827Z"
+    "created_at": "2026-05-21T13:27:40.446Z",
+    "updated_at": "2026-05-21T13:27:40.446Z"
   }
 },
 {
   "model": "core.project",
-  "pk": 4,
+  "pk": 10,
   "fields": {
     "title": "Blog System Design Sandbox",
     "description": "Built a full-stack blogging system to experiment with production backend patterns including JWT access/refresh tokens, request validation, structured logging, health checks, and Dockerized deployment.",
@@ -195,13 +195,13 @@
     "image": "",
     "clicks": 0,
     "order": 0,
-    "created_at": "2026-05-21T13:18:02.894Z",
-    "updated_at": "2026-05-21T13:18:02.894Z"
+    "created_at": "2026-05-21T13:27:40.506Z",
+    "updated_at": "2026-05-21T13:27:40.506Z"
   }
 },
 {
   "model": "core.project",
-  "pk": 5,
+  "pk": 11,
   "fields": {
     "title": "TimeLens",
     "description": "Time Lens reframes real minutes into life-equivalents, helping you feel the true weight of time. A mindset tool that turns seconds into life-hours, minutes into life-days, and days into life-years.",
@@ -213,13 +213,13 @@
     "image": "/images/mock/timelens.png",
     "clicks": 0,
     "order": 0,
-    "created_at": "2026-05-21T13:18:02.966Z",
-    "updated_at": "2026-05-21T13:18:02.966Z"
+    "created_at": "2026-05-21T13:27:40.567Z",
+    "updated_at": "2026-05-21T13:27:40.567Z"
   }
 },
 {
   "model": "core.project",
-  "pk": 6,
+  "pk": 12,
   "fields": {
     "title": "NOIR'EL - Luxury E-Commerce Platform",
     "description": "Built a full-stack e-commerce platform using React and Django REST Framework covering the complete order lifecycle from browsing to secure payment confirmation. Implemented JWT authentication, admin controls, and payment workflows using Razorpay.",
@@ -231,13 +231,13 @@
     "image": "/images/mock/noirel.png",
     "clicks": 0,
     "order": 0,
-    "created_at": "2026-05-21T13:18:03.034Z",
-    "updated_at": "2026-05-21T13:18:03.034Z"
+    "created_at": "2026-05-21T13:27:40.628Z",
+    "updated_at": "2026-05-21T13:27:40.628Z"
   }
 },
 {
   "model": "core.certificate",
-  "pk": 1,
+  "pk": 3,
   "fields": {
     "title": "Bachelor of Computer Applications",
     "issuer": "University of Calicut",
@@ -251,7 +251,7 @@
 },
 {
   "model": "core.certificate",
-  "pk": 2,
+  "pk": 4,
   "fields": {
     "title": "Full Stack Development Certification",
     "issuer": "Regional Technologies",
@@ -265,7 +265,7 @@
 },
 {
   "model": "core.service",
-  "pk": 1,
+  "pk": 5,
   "fields": {
     "title": "Full-Stack Web Development",
     "description": "End-to-end development of responsive web applications using React, Next.js, and Django. I handle everything from database design to frontend interactivity.",
@@ -275,7 +275,7 @@
 },
 {
   "model": "core.service",
-  "pk": 2,
+  "pk": 6,
   "fields": {
     "title": "MVP Development",
     "description": "Rapid prototyping and development of Minimum Viable Products for startups. Launch your idea quickly with a solid, scalable foundation.",
@@ -285,7 +285,7 @@
 },
 {
   "model": "core.service",
-  "pk": 3,
+  "pk": 7,
   "fields": {
     "title": "API Design & Integration",
     "description": "Building secure and scalable RESTful APIs. Integration of third-party services like payment gateways (Stripe), authentication (OAuth), and cloud storage.",
@@ -295,7 +295,7 @@
 },
 {
   "model": "core.service",
-  "pk": 4,
+  "pk": 8,
   "fields": {
     "title": "Performance Optimization",
     "description": "Auditing and optimizing existing applications for speed, accessibility, and SEO. Implementing caching strategies and code splitting.",
@@ -305,7 +305,7 @@
 },
 {
   "model": "core.tool",
-  "pk": 1,
+  "pk": 7,
   "fields": {
     "name": "VS Code",
     "icon": "CodeIcon",
@@ -314,7 +314,7 @@
 },
 {
   "model": "core.tool",
-  "pk": 2,
+  "pk": 8,
   "fields": {
     "name": "PostgreSQL",
     "icon": "DatabaseIcon",
@@ -323,7 +323,7 @@
 },
 {
   "model": "core.tool",
-  "pk": 3,
+  "pk": 9,
   "fields": {
     "name": "Docker",
     "icon": "DockerIcon",
@@ -332,7 +332,7 @@
 },
 {
   "model": "core.tool",
-  "pk": 4,
+  "pk": 10,
   "fields": {
     "name": "Git & GitHub",
     "icon": "GitIcon",
@@ -341,7 +341,7 @@
 },
 {
   "model": "core.tool",
-  "pk": 5,
+  "pk": 11,
   "fields": {
     "name": "Figma",
     "icon": "FigmaIcon",
@@ -350,7 +350,7 @@
 },
 {
   "model": "core.tool",
-  "pk": 6,
+  "pk": 12,
   "fields": {
     "name": "Postman",
     "icon": "PostmanIcon",
@@ -359,7 +359,7 @@
 },
 {
   "model": "core.blogpost",
-  "pk": 1,
+  "pk": 3,
   "fields": {
     "title": "Building Scalable Architecture with Django and React",
     "slug": "scalable-architecture-django-react",
@@ -368,13 +368,13 @@
     "content": "# Building Scalable Architecture...\n\n(Placeholder for technical article content...)",
     "image_url": "",
     "order": 0,
-    "created_at": "2026-05-21T13:18:03.664Z",
-    "updated_at": "2026-05-21T13:18:03.665Z"
+    "created_at": "2026-05-21T13:27:41.306Z",
+    "updated_at": "2026-05-21T13:27:41.307Z"
   }
 },
 {
   "model": "core.blogpost",
-  "pk": 2,
+  "pk": 4,
   "fields": {
     "title": "Optimizing Next.js Performance: A Practical Guide",
     "slug": "optimizing-nextjs-performance",
@@ -383,8 +383,24 @@
     "content": "# Optimizing Next.js...",
     "image_url": "",
     "order": 0,
-    "created_at": "2026-05-21T13:18:03.741Z",
-    "updated_at": "2026-05-21T13:18:03.741Z"
+    "created_at": "2026-05-21T13:27:41.368Z",
+    "updated_at": "2026-05-21T13:27:41.368Z"
+  }
+},
+{
+  "model": "core.visitorcount",
+  "pk": 1,
+  "fields": {
+    "total_visitors": 1,
+    "last_updated": "2026-05-21T13:25:11.228Z"
+  }
+},
+{
+  "model": "core.visitorcount",
+  "pk": 2,
+  "fields": {
+    "total_visitors": 1,
+    "last_updated": "2026-05-21T13:25:11.262Z"
   }
 }
 ]

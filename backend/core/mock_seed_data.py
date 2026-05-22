@@ -33,11 +33,12 @@ MOCK_ABOUT = {
 }
 
 MOCK_SOCIAL_LINKS = [
-    {"name": "Github", "url": "https://github.com/ashif-ek"},
-    {"name": "LinkedIn", "url": "https://linkedin.com/in/ashifek"},
-    {"name": "Instagram", "url": "https://instagram.com/ashif.io"},
+    {"name": "GitHub", "url": "https://github.com/ashif-ek"},
+    {"name": "LinkedIn", "url": "https://www.linkedin.com/in/ashifek"},
     {"name": "Fiverr", "url": "http://www.fiverr.com/s/gDLy45X"},
     {"name": "Docs Material", "url": "https://ashif-ek.github.io/docs-stack-material/"},
+    {"name": "WhatsApp", "url": "https://wa.me/919037499763"},
+    {"name": "Instagram", "url": "https://instagram.com/ashif.io"},
 ]
 
 MOCK_SKILLS = [

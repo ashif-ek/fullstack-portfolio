@@ -59,7 +59,7 @@ def sync_data():
     p = Profile.objects.create(
         name="Ashif E.K",
         title="Full-Stack Engineer",
-        description="Full-Stack Engineer focused on building reliable, production-grade web platforms. Experienced with Django REST Framework, React, PostgreSQL, Docker, and AWS to design secure APIs, scalable backend systems, and high-performance applications. Emphasizes system reliability, automation, and real-world operational constraints through CI/CD pipelines, payment integrations, and cloud deployment, delivering software that operates correctly in production environments.",
+        description="Full-Stack Engineer specializing in production-grade web platforms. Experienced in designing secure APIs, scalable backends, and high-performance frontends using Django, React, PostgreSQL, and AWS. Dedicated to automation, CI/CD, and system reliability.",
         introduction="Full-Stack Engineer focused on building reliable, production-grade web platforms. Experienced in designing secure APIs and scalable backend systems using Django REST Framework, and building high-performance frontends with React. I prioritize system reliability, automation, and pragmatic engineering practices that operate correctly in production.",
         experience=json.dumps(experience_list),
         philosophy="Emphasizes reliability, observability, and maintainability: automated deployments, secure defaults, performance-first frontend patterns, and production-focused testing and monitoring.",
@@ -69,8 +69,10 @@ def sync_data():
     links_data = [
         {"name": "GitHub", "url": "https://github.com/ashif-ek"},
         {"name": "LinkedIn", "url": "https://www.linkedin.com/in/ashifek"},
-        {"name": "Portfolio", "url": "https://ashifek.in/"},
-        {"name": "Docs Stack", "url": "https://ashif-ek.github.io/docs-stack-material/"},
+        {"name": "Fiverr", "url": "http://www.fiverr.com/s/gDLy45X"},
+        {"name": "Docs Material", "url": "https://ashif-ek.github.io/docs-stack-material/"},
+        {"name": "WhatsApp", "url": "https://wa.me/919037499763"},
+        {"name": "Instagram", "url": "https://instagram.com/ashif.io"},
     ]
     for link in links_data:
         SocialLink.objects.create(profile=p, **link)
