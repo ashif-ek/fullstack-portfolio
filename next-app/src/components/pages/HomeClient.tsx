@@ -4,6 +4,7 @@ import { useAuth } from "../../context/AuthContext";
 import { useRecruiterMode } from "../../context/RecruiterContext";
 import Hero from "../../components/sections/Hero";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import { API_BASE_URL } from "../../lib/api";
 import GithubActivity from "../../components/sections/GithubActivity";
 import RecruiterCTA from "../../components/sections/RecruiterCTA";
@@ -32,12 +33,12 @@ export default function HomeClient({ settings }: HomeClientProps) {
         <h1 className="text-4xl font-bold mb-4">Under Maintenance</h1>
         <p className="text-gray-400 mb-8">We are currently upgrading the site. Please check back later.</p>
 
-        <a
-          href={`${API_BASE_URL}/admin`}
+        <Link
+          href="/login"
           className="opacity-20 hover:opacity-100 transition-opacity text-sm text-gray-500 hover:text-cyan-400 absolute bottom-10"
         >
           Admin Login
-        </a>
+        </Link>
       </div>
     );
   }

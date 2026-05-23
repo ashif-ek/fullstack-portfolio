@@ -80,28 +80,14 @@ const Header = () => {
             >
               Collaborate
             </Link>
-            <div className="relative group">
-              <button
-                className="text-academic-muted hover:text-academic-primary transition-colors cursor-pointer p-2 focus:outline-none"
-                aria-label="Admin Login Options"
+              <Link
+                href="/login"
+                className="text-academic-muted hover:text-academic-primary transition-colors cursor-pointer p-2 focus:outline-none flex items-center gap-2"
+                aria-label="Admin Login"
               >
                 <UserIcon />
-              </button>
-              <div className="absolute right-0 mt-2 w-48 bg-academic-paper border border-academic-border rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col z-50">
-                <Link
-                  href="/login"
-                  className="px-4 py-3 text-sm text-academic-text hover:bg-academic-bg hover:text-academic-primary transition-colors border-b border-academic-border"
-                >
-                  Next.js App Login
-                </Link>
-                <a
-                  href={`${API_BASE_URL}/admin`}
-                  className="px-4 py-3 text-sm text-academic-text hover:bg-academic-bg hover:text-academic-primary transition-colors"
-                >
-                  Django Admin Login
-                </a>
-              </div>
-            </div>
+                <span className="sr-only">Admin Login</span>
+              </Link>
             <button
               onClick={toggleRecruiterMode}
               className={`flex items-center gap-2 px-3 py-1.5 rounded-full border transition-all duration-300 ${isRecruiterMode
@@ -178,25 +164,13 @@ const Header = () => {
             </div>
 
             <div className="flex flex-col items-center gap-4">
-              <div className="flex flex-col items-center gap-2 w-full border-t border-academic-border pt-4">
-                <div className="text-academic-muted flex items-center justify-center gap-2 text-sm uppercase tracking-widest pb-2">
-                  <UserIcon /> {isAdmin ? 'Dashboard Options' : 'Login Options'}
-                </div>
                 <Link
                   href="/login"
                   onClick={closeMenu}
-                  className="text-academic-muted hover:text-academic-primary transition-colors cursor-pointer text-sm"
+                  className="text-academic-muted hover:text-academic-primary transition-colors cursor-pointer text-sm flex items-center gap-2"
                 >
-                  Next.js App Login
+                  <UserIcon /> {isAdmin ? 'Dashboard Options' : 'Admin Login'}
                 </Link>
-                <a
-                  href={`${API_BASE_URL}/admin`}
-                  onClick={closeMenu}
-                  className="text-academic-muted hover:text-academic-primary transition-colors cursor-pointer text-sm"
-                >
-                  Django Admin Login
-                </a>
-              </div>
               <div>
                 <ThemeToggle />
               </div>

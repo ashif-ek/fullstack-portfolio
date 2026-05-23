@@ -8,7 +8,7 @@ export async function POST(request: Request) {
     const { username, password } = await request.json();
 
     // Verify against environment variables for simple secure admin login
-    const validUsername = process.env.ADMIN_USER || 'admin';
+    const validUsername = process.env.ADMIN_USER || process.env.ADMIN_USERNAME || 'admin';
     const validPassword = process.env.ADMIN_PASSWORD || 'password123';
 
     if (username === validUsername && password === validPassword) {
