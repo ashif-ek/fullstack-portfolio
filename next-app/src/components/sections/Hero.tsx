@@ -110,7 +110,7 @@ const Hero = ({ condensed = false }: { condensed?: boolean }) => {
               <Skeleton className="h-4 w-80 mx-auto" />
             </div>
           ) : (
-            <p className={`max-w-xl mt-6 text-base text-academic-muted leading-relaxed transition-all duration-500 ${condensed ? 'line-clamp-2 text-sm' : ''}`}>
+            <p className={`max-w-4xl mt-6 text-base text-academic-muted leading-relaxed transition-all duration-500 mx-auto ${condensed ? 'line-clamp-2 text-sm' : ''}`}>
               {profile?.description}
             </p>
           )}

@@ -11,6 +11,7 @@ import BlogSection from '../sections/BlogSection';
 import Contacts from '../sections/Contacts';
 import GithubActivity from '../sections/GithubActivity';
 import RecruiterCTA from '../sections/RecruiterCTA';
+import TerminalSection from '../sections/TerminalSection';
 import Services from '../sections/Services';
 import Footer from '../layout/Footer';
 import UserLayout from '../layout/UserLayout';
@@ -71,6 +72,7 @@ export default function Home() {
     <>
       {settings.show_hero && <Hero />}
       {settings.show_about && <About />}
+      <TerminalSection />
       {settings.show_github_activity && <GithubActivity />}
       {settings.show_services && <Services />}
       {settings.show_blog && <BlogSection />}

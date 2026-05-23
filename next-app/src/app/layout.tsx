@@ -47,13 +47,13 @@ export const metadata: Metadata = {
     title: 'Ashif E.K | Full-Stack Engineer',
     description: 'Expert React & Django developer building secure, scalable, and high-performance web applications.',
     siteName: 'Ashif E.K Portfolio',
-    images: [{ url: '/profile-icon.jpg', width: 1200, height: 630, alt: 'Ashif E.K Portfolio' }],
+    images: [{ url: '/api/og?title=Full-Stack%20Engineer&subtitle=Ashif%20E.K', width: 1200, height: 630, alt: 'Ashif E.K Portfolio' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Ashif E.K | Full-Stack Engineer',
     description: 'Portfolio of Ashif E.K – React & Django expert creating modern web solutions.',
-    images: ['/social-preview.png'],
+    images: ['/api/og?title=Full-Stack%20Engineer&subtitle=Ashif%20E.K'],
     creator: '@ashif_io',
   },
   robots: {

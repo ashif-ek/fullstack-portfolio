@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useAuth } from '../../context/AuthContext';
 import { useRecruiterMode } from '../../context/RecruiterContext';
 import { ThemeToggle } from '../ui/ThemeToggle';
-import { Briefcase } from 'lucide-react';
+import { Briefcase, Terminal } from 'lucide-react';
 
 const UserIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg {...props} xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -79,6 +79,14 @@ const Header = () => {
               aria-label="Contact Ashif"
             >
               Collaborate
+            </Link>
+            <Link
+              href="/terminal"
+              className="text-academic-muted hover:text-academic-primary transition-colors cursor-pointer p-2 focus:outline-none flex items-center gap-2"
+              aria-label="Interactive Terminal"
+            >
+              <Terminal size={20} />
+              <span className="sr-only">Interactive Terminal</span>
             </Link>
               <Link
                 href="/login"
@@ -164,6 +172,13 @@ const Header = () => {
             </div>
 
             <div className="flex flex-col items-center gap-4">
+                <Link
+                  href="/terminal"
+                  onClick={closeMenu}
+                  className="text-academic-muted hover:text-academic-primary transition-colors cursor-pointer text-sm flex items-center gap-2"
+                >
+                  <Terminal size={20} /> Interactive Terminal
+                </Link>
                 <Link
                   href="/login"
                   onClick={closeMenu}

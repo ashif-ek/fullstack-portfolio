@@ -3,7 +3,7 @@ import { Profile, AboutData, Skill, Tool, Project, Certificate, Blog, Service, L
 export const profile: Profile = {
     "name": "Ashif E.K",
     "title": "Full-Stack Engineer",
-    "description": "Full-Stack Engineer specializing in production-grade web platforms. Experienced in designing secure APIs, scalable backends, and high-performance frontends using Django, React, PostgreSQL, and AWS. Dedicated to automation, CI/CD, and system reliability.",
+    "description": "Full-Stack Engineer specializing in production-grade web platforms. Experienced in architecting secure APIs, scalable backend systems, and high-performance frontends using Django, React, PostgreSQL, and AWS. Passionate about automation, CI/CD pipelines, performance optimization, and building resilient, reliable digital infrastructure.",
     "email": "ashifek11@gmail.com",
     "socialLinks": [
         { "name": "GitHub", "url": "https://github.com/ashif-ek" },

@@ -71,19 +71,25 @@ export default function RecruiterCTA() {
                                     </div>
                                 </div>
 
-                                <h3 className="text-2xl md:text-3xl font-serif font-bold text-academic-primary mb-6">
+                                <h3 className="text-2xl md:text-3xl font-serif font-bold text-academic-primary mb-3">
                                     Ready to contribute to your next high-impact project.
                                 </h3>
+                                <div className="border-l-2 border-academic-primary/30 pl-5 py-1 mb-8">
+                                    <p className="text-academic-muted text-sm font-serif italic leading-relaxed max-w-xl">
+                                        Focused on the architectural design and implementation of highly scalable, production-grade distributed systems. By leveraging rigorous software engineering paradigms, I deliver resilient digital infrastructure optimized for enterprise-grade performance, maintainability, and measurable business impact.
+                                    </p>
+                                </div>
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
                                 <a
                                     href="mailto:ashifek11@gmail.com?subject=Hiring Inquiry"
-                                    className="academic-button group flex items-center justify-center gap-2 py-4"
+                                    className="academic-button group flex items-center justify-center gap-2 py-4 relative overflow-hidden"
                                     aria-label="Hire Me: Send an email"
                                 >
-                                    <Mail size={18} className="group-hover:scale-110 transition-transform" />
-                                    <span>Hire Me</span>
+                                    <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-1000 ease-in-out" />
+                                    <Mail size={18} className="group-hover:scale-110 transition-transform relative z-10" />
+                                    <span className="relative z-10">Hire Me</span>
                                 </a>
 
                                 <a

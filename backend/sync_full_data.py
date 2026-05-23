@@ -59,7 +59,7 @@ def sync_data():
     p = Profile.objects.create(
         name="Ashif E.K",
         title="Full-Stack Engineer",
-        description="Full-Stack Engineer specializing in production-grade web platforms. Experienced in designing secure APIs, scalable backends, and high-performance frontends using Django, React, PostgreSQL, and AWS. Dedicated to automation, CI/CD, and system reliability.",
+        description="Full-Stack Engineer specializing in production-grade web platforms. Experienced in architecting secure APIs, scalable backend systems, and high-performance frontends using Django, React, PostgreSQL, and AWS. Passionate about automation, CI/CD pipelines, performance optimization, and building resilient, reliable digital infrastructure.",
         introduction="Full-Stack Engineer focused on building reliable, production-grade web platforms. Experienced in designing secure APIs and scalable backend systems using Django REST Framework, and building high-performance frontends with React. I prioritize system reliability, automation, and pragmatic engineering practices that operate correctly in production.",
         experience=json.dumps(experience_list),
         philosophy="Emphasizes reliability, observability, and maintainability: automated deployments, secure defaults, performance-first frontend patterns, and production-focused testing and monitoring.",
