@@ -8,8 +8,13 @@ export async function POST(request: Request) {
     const { username, password } = await request.json();
 
     // Verify against environment variables for simple secure admin login
-    const validUsername = process.env.ADMIN_USER || process.env.ADMIN_USERNAME || 'admin';
-    const validPassword = process.env.ADMIN_PASSWORD || 'password123';
+    const validUsername = process.env.ADMIN_USER || process.env.ADMIN_USERNAME;
+    const validPassword = process.env.ADMIN_PASSWORD;
+
+    if (!validUsername || !validPassword) {
+      console.error('Admin credentials are not configured in environment variables.');
+      return NextResponse.json({ success: false, error: 'Server configuration error' }, { status: 500 });
+    }
 
     if (username === validUsername && password === validPassword) {
       // Create JWT
