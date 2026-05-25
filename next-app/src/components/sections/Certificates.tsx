@@ -10,12 +10,13 @@ import cert3 from '../../assets/certificates/django.png';
 import cert4 from '../../assets/certificates/image.png';
 import cert5 from '../../assets/certificates/prosevo.jpg';
 
-const certificateImages: Record<string, string> = {
-  "1": cert1.src,
-  "2": cert2.src,
-  "3": cert3.src,
-  "4": cert4.src,
-  "5": cert5.src,
+const getCertImage = (cert: any) => {
+  const title = (cert.title || '').toLowerCase();
+  if (title.includes('bachelor') || title.includes('bca')) return cert1.src;
+  if (title.includes('cyber') || title.includes('ccsa')) return cert2.src;
+  if (title.includes('flutter') || title.includes('django')) return cert3.src;
+  if (title.includes('workshop') || title.includes('prosevo')) return cert5.src;
+  return cert4.src;
 };
 
 const CertificateSkeleton = () => (
@@ -54,7 +55,19 @@ const Certificates = () => {
       ? certificates
       : certificates.filter((cert) => cert.category === selectedCategory);
 
-    return showAll ? base : base.slice(0, 3);
+    const desiredOrder = ['bachelor', 'flutter', 'workshop', 'cyber'];
+    const sorted = [...base].sort((a, b) => {
+      const titleA = (a.title || '').toLowerCase();
+      const titleB = (b.title || '').toLowerCase();
+      const indexA = desiredOrder.findIndex(kw => titleA.includes(kw));
+      const indexB = desiredOrder.findIndex(kw => titleB.includes(kw));
+      if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+      if (indexA !== -1) return -1;
+      if (indexB !== -1) return 1;
+      return 0;
+    });
+
+    return showAll ? sorted : sorted.slice(0, 3);
   }, [selectedCategory, certificates, showAll]);
 
   return (
@@ -98,7 +111,7 @@ const Certificates = () => {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredCertificates.map((cert) => {
-              const imgSrc = resolveAssetUrl(cert.image) || certificateImages[String(cert.id)];
+              const imgSrc = getCertImage(cert);
               return (
                 <div
                   key={cert.id}

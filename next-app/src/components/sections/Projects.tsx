@@ -12,11 +12,14 @@ import project2 from '../../assets/projects/project2.jpg';
 import project3 from '../../assets/projects/project3.jpg';
 import project4 from '../../assets/projects/project4.jpg';
 
-const projectImages: Record<string, string> = {
-  '1': project1.src,
-  '2': project2.src,
-  '3': project3.src,
-  '4': project4.src,
+const getProjectImage = (project: any) => {
+  const slug = (project.slug || '').toLowerCase();
+  const title = (project.title || '').toLowerCase();
+  if (slug.includes('cipher') || title.includes('cipher')) return project1.src;
+  if (slug.includes('noirel') || title.includes('noirel')) return project2.src;
+  if (slug.includes('blog') || slug.includes('system') || title.includes('blog')) return project3.src;
+  if (slug.includes('civic') || title.includes('civic')) return project4.src;
+  return project1.src;
 };
 
 const ProjectSkeleton = () => (
@@ -39,7 +42,17 @@ const Projects = ({ condensed = false }: { condensed?: boolean }) => {
   const [showAll, setShowAll] = useState(false);
   const router = useRouter();
 
-  const displayedProjects = showAll ? projects : projects.slice(0, 4);
+  const desiredOrder = ['cipher-analytics', 'noirel-ecommerce', 'system-design-sandbox'];
+  const sortedProjects = [...projects].sort((a, b) => {
+    const indexA = desiredOrder.findIndex(slug => (a.slug || '').includes(slug));
+    const indexB = desiredOrder.findIndex(slug => (b.slug || '').includes(slug));
+    if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+    if (indexA !== -1) return -1;
+    if (indexB !== -1) return 1;
+    return 0;
+  });
+
+  const displayedProjects = showAll ? sortedProjects : sortedProjects.slice(0, 4);
 
   const handleProjectClick = async (projectId: string, projectSlug: string, e: React.MouseEvent) => {
     e.preventDefault();
@@ -74,7 +87,7 @@ const Projects = ({ condensed = false }: { condensed?: boolean }) => {
               >
                 <div className="relative overflow-hidden h-64 border-b border-academic-border">
                   <LazyImage
-                    src={projectImages[String(project.id)] ?? resolveAssetUrl(project.image)}
+                    src={getProjectImage(project)}
                     alt={project.title}
                     className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700"
                   />
