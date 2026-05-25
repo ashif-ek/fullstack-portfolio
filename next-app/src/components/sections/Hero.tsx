@@ -144,6 +144,19 @@ const Hero = ({ condensed = false }: { condensed?: boolean }) => {
             Correspondence
           </Link>
         </div>
+
+        {/* Mobile Social Links */}
+        <div className="mt-12 flex md:hidden items-center justify-center gap-6 flex-wrap">
+          {profile?.socialLinks?.map(({ name, url }) => {
+            const Icon = iconMap[name];
+            return (
+              <a key={name} href={url} target="_blank" rel="noopener noreferrer" aria-label={name}
+                className="text-academic-muted hover:text-academic-primary transition-colors duration-300">
+                {Icon && <Icon size={24} strokeWidth={1.5} />}
+              </a>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { API_BASE_URL } from '../../lib/api';
 import Link from 'next/link';
 import { useAuth } from '../../context/AuthContext';
@@ -21,12 +21,37 @@ const Header = () => {
   const { isAdmin } = useAuth();
   const { isRecruiterMode, toggleRecruiterMode } = useRecruiterMode();
 
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef(0);
+  const scrollTimeout = useRef<NodeJS.Timeout | null>(null);
+
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      const currentScrollY = window.scrollY;
+      
+      setIsScrolled(currentScrollY > 10);
+      
+      // Hide if scrolling down past 80px, otherwise show
+      if (currentScrollY > lastScrollY.current && currentScrollY > 80) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+      
+      lastScrollY.current = currentScrollY;
+
+      // Show header after scrolling stops
+      if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
+      scrollTimeout.current = setTimeout(() => {
+        setIsVisible(true);
+      }, 1200);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
+    };
   }, []);
 
   // Toggle body scroll when mobile menu is open
@@ -47,7 +72,13 @@ const Header = () => {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-500 ${isScrolled || isOpen ? 'bg-academic-paper/95 backdrop-blur-md border-b border-academic-border' : 'bg-transparent'}`}>
+    <header 
+      className={`fixed w-full z-50 transition-all duration-500 ease-in-out ${
+        isVisible || isRecruiterMode || isOpen ? 'translate-y-0' : '-translate-y-full'
+      } ${
+        isScrolled || isOpen ? 'bg-academic-paper/95 backdrop-blur-md border-b border-academic-border' : 'bg-transparent'
+      }`}
+    >
       <div className="container mx-auto px-6 py-3">
         <div className="flex justify-between items-center">
           <Link
