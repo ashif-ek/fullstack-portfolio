@@ -4,11 +4,18 @@ import LazyImage from '../ui/LazyImage';
 import { useCertificates } from "../../hooks/useCertificates";
 import { Skeleton } from "../ui/Skeleton";
 
-// Image imports replaced with online placeholders
+import cert1 from '../../assets/certificates/bca.jpg';
+import cert2 from '../../assets/certificates/ccsa.jpg';
+import cert3 from '../../assets/certificates/django.png';
+import cert4 from '../../assets/certificates/image.png';
+import cert5 from '../../assets/certificates/prosevo.jpg';
+
 const certificateImages: Record<string, string> = {
-  "1": "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&q=80&w=800",
-  "2": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800",
-  "3": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800",
+  "1": cert1.src,
+  "2": cert2.src,
+  "3": cert3.src,
+  "4": cert4.src,
+  "5": cert5.src,
 };
 
 const CertificateSkeleton = () => (

@@ -129,6 +129,14 @@ const Hero = ({ condensed = false }: { condensed?: boolean }) => {
           >
             Expertise Profile
           </Link>
+          <a
+            href="/resume/ASHIF%20E.K%20RESUME.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-3 text-sm font-medium uppercase tracking-widest text-academic-primary hover:bg-academic-primary/5 border border-academic-primary/30 transition-all duration-300 cursor-pointer text-center rounded-lg"
+          >
+            View Resume
+          </a>
           <Link
             href="/contact"
             className="px-8 py-3 text-sm font-medium uppercase tracking-widest text-academic-primary hover:text-academic-accent transition-colors duration-300 cursor-pointer text-center"

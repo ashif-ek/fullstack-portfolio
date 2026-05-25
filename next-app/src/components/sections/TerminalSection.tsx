@@ -66,6 +66,7 @@ export default function TerminalSection({ isStandalone = false }: TerminalSectio
             <p><span className="text-academic-primary font-bold w-24 inline-block">projects</span> - View active deployments</p>
             <p><span className="text-academic-primary font-bold w-24 inline-block">education</span> - Display accreditations</p>
             <p><span className="text-academic-primary font-bold w-24 inline-block">services</span> - List expertise areas</p>
+            <p><span className="text-academic-primary font-bold w-24 inline-block">resume</span> - View curriculum vitae</p>
             <p><span className="text-academic-primary font-bold w-24 inline-block">blog</span> - List recent articles</p>
             <p><span className="text-academic-primary font-bold w-24 inline-block">contact</span> - Display contact info</p>
             <p><span className="text-academic-primary font-bold w-24 inline-block">clear</span> - Clear terminal output</p>
@@ -111,7 +112,7 @@ export default function TerminalSection({ isStandalone = false }: TerminalSectio
             {certificates?.map(cert => (
               <div key={cert.id}>
                 <p className="text-academic-primary font-bold">{cert.title}</p>
-                <p className="text-sm">{cert.issuer} - {cert.year}</p>
+                <p className="text-sm">{cert.issuer} - {cert.date}</p>
               </div>
             ))}
           </div>
@@ -130,6 +131,19 @@ export default function TerminalSection({ isStandalone = false }: TerminalSectio
           </div>
         );
         break;
+      case 'resume':
+      case 'cv':
+        output = (
+          <div className="text-academic-muted space-y-2">
+            <p>Accessing curriculum vitae...</p>
+            <p>
+              <a href="/resume/ASHIF%20E.K%20RESUME.pdf" target="_blank" rel="noopener noreferrer" className="text-academic-accent underline hover:text-academic-primary">
+                [Click here to view / download resume]
+              </a>
+            </p>
+          </div>
+        );
+        break;
       case 'blog':
       case 'journal':
         output = (
@@ -137,7 +151,7 @@ export default function TerminalSection({ isStandalone = false }: TerminalSectio
             {blogs?.slice(0, 3).map(blog => (
               <div key={blog.id}>
                 <p className="text-academic-primary font-bold">{blog.title}</p>
-                <p className="text-sm">{new Date(blog.published_at).toLocaleDateString()}</p>
+                <p className="text-sm">{new Date(blog.date).toLocaleDateString()}</p>
               </div>
             ))}
           </div>

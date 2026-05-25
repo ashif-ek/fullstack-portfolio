@@ -7,11 +7,16 @@ import { resolveAssetUrl } from '../../lib/api';
 import { DataService } from '../../services/dataService';
 import { Skeleton } from '../ui/Skeleton';
 
+import project1 from '../../assets/projects/project1.png';
+import project2 from '../../assets/projects/project2.jpg';
+import project3 from '../../assets/projects/project3.jpg';
+import project4 from '../../assets/projects/project4.jpg';
+
 const projectImages: Record<string, string> = {
-  '1': "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=800",
-  '2': "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
-  '3': "https://images.unsplash.com/photo-1499750310159-5254f4cc65af?auto=format&fit=crop&q=80&w=800",
-  '4': "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80&w=800",
+  '1': project1.src,
+  '2': project2.src,
+  '3': project3.src,
+  '4': project4.src,
 };
 
 const ProjectSkeleton = () => (
