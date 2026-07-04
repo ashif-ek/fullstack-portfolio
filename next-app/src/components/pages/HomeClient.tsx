@@ -10,6 +10,7 @@ import GithubActivity from "../../components/sections/GithubActivity";
 import RecruiterCTA from "../../components/sections/RecruiterCTA";
 
 const About = dynamic(() => import("../../components/sections/About"), { ssr: false });
+const Experience = dynamic(() => import("../../components/sections/Experience"), { ssr: false });
 const Skills = dynamic(() => import("../../components/sections/Skills"), { ssr: false });
 const Projects = dynamic(() => import("../../components/sections/Projects"), { ssr: false });
 const Certificates = dynamic(() => import("../../components/sections/Certificates"), { ssr: false });
@@ -50,6 +51,7 @@ export default function HomeClient({ settings }: HomeClientProps) {
       {settings.showRecruiterCta && <RecruiterCTA />}
       <>
         {settings.showAbout && <About />}
+        <Experience />
         {settings.showServices && <Services />}
         {settings.showProjects && <Projects condensed={isRecruiterMode} />}
         {settings.showSkills && <Skills condensed={isRecruiterMode} />}

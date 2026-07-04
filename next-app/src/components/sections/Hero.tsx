@@ -80,7 +80,7 @@ const Hero = ({ condensed = false }: { condensed?: boolean }) => {
       <SocialLinks links={profile?.socialLinks || []} />
       <EmailLink email={profile?.email} />
 
-      <div className="relative z-20 container mx-auto max-w-5xl px-6 text-center flex flex-col items-center">
+      <div className="relative z-20 container mx-auto max-w-5xl px-6 text-center flex flex-col items-center pt-24 md:pt-0 pb-12 md:pb-0">
 
         <div className="space-y-4">
           {isLoading ? (

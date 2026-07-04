@@ -35,17 +35,7 @@ const About = () => {
   const [activeTab, setActiveTab] = useState<string>("biography");
   const { about: aboutData, isLoading } = useProfile();
 
-  // Safely parse JSON experience list
-  const experienceList = useMemo(() => {
-    if (!aboutData?.experience) return null;
-    try {
-      const parsed = JSON.parse(aboutData.experience);
-      if (Array.isArray(parsed)) return parsed;
-    } catch (e) {
-      console.warn("Failed to parse aboutData.experience JSON", e);
-    }
-    return null;
-  }, [aboutData?.experience]);
+
 
   /* Tabs Content */
   const tabs = useMemo(
@@ -74,92 +64,7 @@ const About = () => {
         ),
       },
 
-      experience: {
-        title: "Professional Tenure",
-        content: (
-          <div className="space-y-6">
-            {isLoading ? (
-              <div className="space-y-4">
-                <Skeleton className="h-4 w-full" />
-                <Skeleton className="h-4 w-5/6" />
-                <Skeleton className="h-20 w-full" />
-              </div>
-            ) : experienceList ? (
-              <div className="relative pl-3 border-l border-academic-border/60 ml-3 space-y-8 py-2">
-                {experienceList.map((item: any, idx: number) => (
-                  <div key={idx} className="relative pl-6 group">
-                    {/* Timeline Node */}
-                    <div className="absolute -left-[21px] top-1.5 w-4 h-4 rounded-full bg-academic-paper border-2 border-academic-accent flex items-center justify-center group-hover:bg-academic-accent transition-colors duration-300">
-                      <span className="w-1.5 h-1.5 rounded-full bg-academic-accent group-hover:bg-academic-paper transition-colors duration-300" />
-                    </div>
-                    
-                    {/* Time Period */}
-                    <div className="flex items-center gap-1.5 text-xs text-academic-muted font-mono uppercase tracking-wider mb-1">
-                      <Calendar className="w-3.5 h-3.5 text-academic-accent" />
-                      <span>{item.period}</span>
-                    </div>
 
-                    {/* Role & Company */}
-                    <h4 className="text-base font-serif font-bold text-academic-primary flex items-center flex-wrap gap-x-2">
-                      <span>{item.role}</span>
-                      <span className="text-academic-muted font-light text-sm">at</span>
-                      {item.link ? (
-                        <a 
-                          href={item.link} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="text-academic-accent hover:underline inline-flex items-center gap-1 group/link"
-                        >
-                          {item.company}
-                          <ExternalLink className="w-3 h-3 opacity-70 group-hover/link:opacity-100 transition-opacity" />
-                        </a>
-                      ) : (
-                        <span className="text-academic-primary font-medium">{item.company}</span>
-                      )}
-                    </h4>
-
-                    {/* Highlights */}
-                    {item.highlights && Array.isArray(item.highlights) && (
-                      <ul className="mt-3 space-y-2 text-sm text-academic-muted font-light leading-relaxed">
-                        {item.highlights.map((highlight: string, hIdx: number) => (
-                          <li key={hIdx} className="flex items-start gap-2.5">
-                            <span className="w-1.5 h-1.5 rounded-full bg-academic-accent/60 mt-2 shrink-0" />
-                            <span>{highlight}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <p className="text-academic-muted font-light leading-relaxed whitespace-pre-line">
-                {aboutData?.experience}
-              </p>
-            )}
-
-            <div className="pt-6 border-t border-academic-border">
-              <h4 className="text-xs uppercase tracking-widest font-bold text-academic-primary mb-4">
-                Core Focus Areas
-              </h4>
-
-              <ul className="grid grid-cols-2 gap-4 text-sm text-academic-muted">
-                {[
-                  "Fullstack Architecture",
-                  "Scalable API Design",
-                  "Distributed Systems",
-                  "UI/UX Research",
-                ].map((item) => (
-                  <li key={item} className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-academic-accent rounded-full" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        ),
-      },
 
       philosophy: {
         title: "Philosophical Framework",

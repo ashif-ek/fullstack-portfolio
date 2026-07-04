@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useAuth } from "../../context/AuthContext";
 import Hero from '../sections/Hero';
 import About from '../sections/About';
+import Experience from '../sections/Experience';
 import Skills from '../sections/Skills';
 import Projects from '../sections/Projects';
 import Certificates from '../sections/Certificates';
@@ -72,6 +73,7 @@ export default function Home() {
     <>
       {settings.show_hero && <Hero />}
       {settings.show_about && <About />}
+      <Experience />
       <TerminalSection />
       {settings.show_github_activity && <GithubActivity />}
       {settings.show_services && <Services />}
