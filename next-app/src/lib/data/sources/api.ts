@@ -5,7 +5,7 @@ import { SettingsSchema, ProjectSchema, AboutSchema, ProfileSchema, SkillSchema 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api';
 
 const apiFetch = async (endpoint: string) => {
-    const res = await fetch(`${API_BASE_URL}${endpoint}`);
+    const res = await fetch(`${API_BASE_URL}${endpoint}`, { cache: 'no-store' });
     if (!res.ok) throw new Error(`API returned ${res.status}`);
     const json = await res.json();
     return json?.data || json;
@@ -64,7 +64,7 @@ export const apiSource = {
   getVisitors: async () => await apiFetch('/analytics/visitors/'),
   
   checkHealth: async () => {
-    const res = await fetch(`${API_BASE_URL}/health/`).catch(() => ({ ok: false }));
+    const res = await fetch(`${API_BASE_URL}/health/`, { cache: 'no-store' }).catch(() => ({ ok: false }));
     return res.ok;
   }
 };
