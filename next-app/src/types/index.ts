@@ -38,6 +38,15 @@ export interface AboutStats {
     technologies: number;
 }
 
+export interface ExperienceItem {
+    role: string;
+    company: string;
+    period: string;
+    highlights: string[];
+    link?: string;
+}
+
+
 export interface AboutData {
     id: string;
     introduction: string;

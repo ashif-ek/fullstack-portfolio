@@ -10,18 +10,11 @@ import { DataService } from '../../services/dataService';
 import { Skeleton } from '../ui/Skeleton';
 
 import project1 from '../../assets/projects/project1.png';
-import project2 from '../../assets/projects/project2.jpg';
-import project3 from '../../assets/projects/project3.jpg';
-import project4 from '../../assets/projects/project4.jpg';
+import { cn, buttonClasses, Button } from '../ui/Button';
 
 const getProjectImage = (project: any) => {
-  const slug = (project.slug || '').toLowerCase();
-  const title = (project.title || '').toLowerCase();
-  if (slug.includes('cipher') || title.includes('cipher')) return project1.src;
-  if (slug.includes('noirel') || title.includes('noirel')) return project2.src;
-  if (slug.includes('blog') || slug.includes('system') || title.includes('blog')) return project3.src;
-  if (slug.includes('civic') || title.includes('civic')) return project4.src;
-  return project1.src;
+  if (project.image) return project.image;
+  return project1.src; // Fallback
 };
 
 const ProjectSkeleton = () => (
@@ -84,8 +77,7 @@ const Projects = ({ condensed = false }: { condensed?: boolean }) => {
             displayedProjects.map((project) => (
               <div
                 key={project.id}
-                className="group flex flex-col bg-academic-bg border border-academic-border overflow-hidden shadow-academic hover:shadow-paper transition-all duration-500 cursor-pointer"
-                onClick={(e) => handleProjectClick(String(project.id), project.slug, e)}
+                className="group flex flex-col bg-academic-bg border border-academic-border overflow-hidden shadow-academic hover:shadow-paper transition-all duration-500 relative"
               >
                 <div className="relative overflow-hidden h-64 border-b border-academic-border">
                   <LazyImage
@@ -119,19 +111,19 @@ const Projects = ({ condensed = false }: { condensed?: boolean }) => {
                   </div>
 
                   <div className="mt-auto flex flex-wrap gap-2">
-                    <button
+                    <Button
                       onClick={(e) => handleProjectClick(String(project.id), project.slug, e)}
-                      className="flex-grow basis-full md:basis-0 inline-block academic-button text-[10px] uppercase tracking-[0.2em] font-bold w-full text-center py-4 px-2"
+                      className="flex-grow basis-full md:basis-0 py-4 px-2 text-[10px] uppercase tracking-[0.2em] font-bold text-center w-full"
                     >
                       Read Case Study
-                    </button>
+                    </Button>
                     {project.link && (
                       <a
                         href={project.link}
                         onClick={(e) => e.stopPropagation()}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-grow basis-full md:basis-0 inline-block bg-academic-bg text-academic-primary border border-academic-border hover:bg-academic-paper transition-all duration-300 text-[10px] uppercase tracking-[0.2em] font-bold text-center py-4 px-2"
+                        className={cn(buttonClasses, "flex-grow basis-full md:basis-0 py-4 px-2 text-[10px] uppercase tracking-[0.2em] font-bold text-center w-full")}
                       >
                         Live Demo
                       </a>
@@ -157,7 +149,7 @@ const Projects = ({ condensed = false }: { condensed?: boolean }) => {
         <div className="mt-10 flex justify-center border-t border-academic-border pt-10">
           <Link
             href="/projects"
-            className="academic-button px-12 py-4 text-[10px] uppercase tracking-[0.3em] font-bold flex items-center gap-4 group"
+            className={cn(buttonClasses, "px-12 py-4 flex items-center gap-4 group text-[10px] uppercase tracking-[0.3em] font-bold")}
           >
             Review Full Archive
             <span className="w-8 h-px bg-academic-paper group-hover:w-12 transition-all" />

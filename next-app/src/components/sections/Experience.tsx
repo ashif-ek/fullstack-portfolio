@@ -7,6 +7,7 @@ import { useCertificates } from '../../hooks/useCertificates';
 import { Skeleton } from '../ui/Skeleton';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Briefcase, GraduationCap, Code2, Award, Star, ExternalLink, Plus, GitMerge, ChevronRight } from 'lucide-react';
+import { Project, Certificate, ExperienceItem } from '../../types';
 
 const achievementsMock = [
   {
@@ -33,8 +34,7 @@ export default function Experience() {
   
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Parse Experience
-  const experienceList = useMemo(() => {
+  const experienceList: ExperienceItem[] = useMemo(() => {
     if (!aboutData?.experience) return [];
     try {
       const parsed = JSON.parse(aboutData.experience);
@@ -61,7 +61,7 @@ export default function Experience() {
       subtitle: 'Roles, responsibilities & impact',
       content: (
         <div className="space-y-10 mt-6 pt-6 border-t border-academic-border/50">
-          {experienceList.map((exp: any, idx: number) => (
+          {experienceList.map((exp, idx) => (
             <div key={idx} className="relative">
               <h4 className="text-lg font-bold text-academic-primary">{exp.company}</h4>
               <p className="text-academic-primary font-medium text-sm mb-1">{exp.role}</p>
@@ -88,7 +88,7 @@ export default function Experience() {
       subtitle: 'Academic journey & milestones',
       content: (
         <div className="space-y-10 mt-6 pt-6 border-t border-academic-border/50">
-          {educationList.map((edu: any, idx: number) => (
+          {educationList.map((edu, idx) => (
             <div key={idx} className="relative">
               <h4 className="text-lg font-bold text-academic-primary">{edu.title}</h4>
               <p className="text-academic-primary font-medium text-sm mb-1">{edu.issuer}</p>
@@ -106,7 +106,7 @@ export default function Experience() {
       subtitle: 'Professional credentials & courses',
       content: (
         <div className="space-y-10 mt-6 pt-6 border-t border-academic-border/50">
-          {certsList.map((cert: any, idx: number) => (
+          {certsList.map((cert, idx) => (
             <div key={idx} className="relative">
               <h4 className="text-lg font-bold text-academic-primary">{cert.title}</h4>
               <p className="text-academic-primary font-medium text-sm mb-1">{cert.issuer}</p>
@@ -124,7 +124,7 @@ export default function Experience() {
       subtitle: 'Showcase of major work',
       content: (
         <div className="space-y-10 mt-6 pt-6 border-t border-academic-border/50">
-          {(projects || []).slice(0, 3).map((proj: any, idx: number) => (
+          {(projects || []).slice(0, 3).map((proj, idx) => (
             <div key={idx} className="relative">
               <div className="flex items-center gap-2 mb-2">
                 <h4 className="text-lg font-bold text-academic-primary">{proj.title}</h4>
@@ -285,9 +285,17 @@ export default function Experience() {
                         <div className="w-full md:w-[480px] lg:w-[520px]">
                           <motion.div 
                             layout
+                            role="button"
+                            tabIndex={0}
+                            onKeyDown={(e) => {
+                              if (e.key === 'Enter' || e.key === ' ') {
+                                e.preventDefault();
+                                setActiveBranch(isActive ? null : branch.id);
+                              }
+                            }}
                             onHoverStart={() => setHoveredBranch(branch.id)}
                             onHoverEnd={() => setHoveredBranch(null)}
-                            className={`bg-academic-paper border rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 ${
+                            className={`bg-academic-paper border rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-academic-accent ${
                               isActive 
                                 ? 'border-academic-accent/30 shadow-[0_8px_30px_rgb(0,0,0,0.06)] -translate-y-[2px]' 
                                 : 'border-academic-border/60 shadow-[0_2px_10px_rgb(0,0,0,0.02)] hover:-translate-y-[3px] hover:shadow-[0_8px_20px_rgb(0,0,0,0.04)] hover:border-academic-border'

@@ -8,6 +8,7 @@ import { resolveAssetUrl } from '../../lib/api';
 import { SocialLink } from '../../types';
 import { useProfile } from '../../hooks/useProfile';
 import { Skeleton } from '../ui/Skeleton';
+import { buttonClasses, cn } from '../ui/Button';
 
 const iconMap: Record<string, React.ElementType> = {
   Github: Github,
@@ -119,13 +120,13 @@ const Hero = ({ condensed = false }: { condensed?: boolean }) => {
         <div className="mt-12 flex flex-col md:flex-row gap-4">
           <Link
             href="/projects"
-            className="academic-button text-sm uppercase tracking-widest px-8 py-3 cursor-pointer"
+            className={cn(buttonClasses, "text-sm tracking-widest py-3 px-8")}
           >
             Review Works
           </Link>
           <Link
             href="/about"
-            className="academic-button text-sm uppercase tracking-widest px-8 py-3 cursor-pointer"
+            className={cn(buttonClasses, "text-sm tracking-widest py-3 px-8")}
           >
             Expertise Profile
           </Link>
@@ -133,13 +134,13 @@ const Hero = ({ condensed = false }: { condensed?: boolean }) => {
             href="/resume/Ashif%20E.K%20RESUME%20FULL-STACK.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="academic-button text-sm uppercase tracking-widest px-8 py-3 cursor-pointer"
+            className={cn(buttonClasses, "text-sm tracking-widest py-3 px-8")}
           >
             View Resume
           </a>
           <Link
             href="/contact"
-            className="academic-button text-sm uppercase tracking-widest px-8 py-3 cursor-pointer"
+            className={cn(buttonClasses, "text-sm tracking-widest py-3 px-8")}
           >
             Correspondence
           </Link>
