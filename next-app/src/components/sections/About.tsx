@@ -4,6 +4,7 @@ import LazyImage from "../ui/LazyImage";
 import profileImg from "../../assets/profile.jpg";
 import { useProfile } from "../../hooks/useProfile";
 import { Skeleton } from "../ui/Skeleton";
+import { Card } from "../ui/Card";
 import { Calendar, ExternalLink } from "lucide-react";
 
 const profile = profileImg.src;
@@ -98,7 +99,7 @@ const About = () => {
           <div className="md:col-span-5 w-full flex justify-center md:block">
             <div className="md:sticky md:top-32">
               <div className="relative">
-                <div className="academic-card !p-3 group w-full max-w-[260px] md:max-w-sm mx-auto">
+                <Card className="!p-3 group w-full max-w-[260px] md:max-w-sm mx-auto">
                   <div className="relative overflow-hidden aspect-[4/5]">
                     {isLoading ? (
                       <Skeleton className="absolute inset-0" />
@@ -111,7 +112,7 @@ const About = () => {
                     )}
                     <div className="absolute inset-0 border-[10px] border-academic-paper/20 pointer-events-none" />
                   </div>
-                </div>
+                </Card>
                 <div className="hidden md:block absolute -bottom-6 -right-6 w-28 h-28 border-r border-b border-academic-accent opacity-30" />
               </div>
 
@@ -143,10 +144,18 @@ const About = () => {
             </div>
 
             {/* Tabs */}
-            <div className="flex flex-wrap md:flex-nowrap border-b border-academic-border mb-8 md:mb-12 gap-2 md:gap-0">
+            <div 
+              role="tablist"
+              aria-label="Curriculum Vitae Sections"
+              className="flex flex-wrap md:flex-nowrap border-b border-academic-border mb-8 md:mb-12 gap-2 md:gap-0"
+            >
               {Object.keys(tabs).map((tabKey) => (
                 <button
                   key={tabKey}
+                  role="tab"
+                  aria-selected={activeTab === tabKey}
+                  aria-controls={`tabpanel-${tabKey}`}
+                  id={`tab-${tabKey}`}
                   onClick={() => setActiveTab(tabKey)}
                   className={`px-6 md:px-8 py-3 md:py-4 text-[10px] uppercase tracking-[0.2em] font-bold transition-all relative ${
                     activeTab === tabKey
@@ -163,7 +172,13 @@ const About = () => {
             </div>
 
             {/* Tab Content */}
-            <div key={activeTab} className="min-h-[220px]">
+            <div 
+              key={activeTab} 
+              id={`tabpanel-${activeTab}`}
+              role="tabpanel"
+              aria-labelledby={`tab-${activeTab}`}
+              className="min-h-[220px]"
+            >
               {tabs[activeTab as keyof typeof tabs].content}
             </div>
 

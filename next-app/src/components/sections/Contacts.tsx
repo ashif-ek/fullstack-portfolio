@@ -1,5 +1,7 @@
 'use client';
 import React, { useState } from 'react';
+import { Card } from '../ui/Card';
+import { Button } from '../ui/Button';
 
 const SendIcon = () => (
   <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -80,7 +82,7 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="md:col-span-2">
-            <div className="academic-card !p-10">
+            <Card className="!p-10">
               {status.succeeded ? (
                 <div className="text-center py-12">
                   <p className="text-2xl font-serif italic text-academic-accent mb-4">Transmission Successful</p>
@@ -140,20 +142,20 @@ const Contact = () => {
                     <p className="text-academic-accent text-[10px] italic">{status.error}</p>
                   )}
 
-                  <button
+                  <Button
                     type="submit"
                     disabled={status.submitting}
-                    className="academic-button w-full py-5 text-xs uppercase tracking-[0.3em] font-bold flex items-center justify-center gap-4"
+                    className="w-full py-5 text-xs uppercase tracking-[0.3em] font-bold flex items-center justify-center gap-4"
                   >
                     {status.submitting ? (
                       <><SpinnerIcon /> Processing...</>
                     ) : (
                       <>Dispatch Correspondence <SendIcon /></>
                     )}
-                  </button>
+                  </Button>
                 </form>
               )}
-            </div>
+            </Card>
           </div>
         </div>
       </div>

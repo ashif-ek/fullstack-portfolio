@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useVisitors } from '../../hooks/useVisitors';
+import { Card } from '../ui/Card';
 
 const Footer = () => {
   const { data: visitorData } = useVisitors();
@@ -147,16 +148,16 @@ const Footer = () => {
               Temporal Data
             </h4>
             <div className="flex flex-col gap-4">
-              <div className="p-4 bg-academic-bg border border-academic-border rounded-sm hover:shadow-academic transition-shadow duration-300">
+              <Card className="!p-4 bg-academic-bg border-academic-border !shadow-none hover:!shadow-academic">
                 <div className="text-xl font-serif text-academic-primary tabular-nums font-bold tracking-wider">
                   {currentTime || '--:--:--'}
                 </div>
                 <p className="text-[9px] text-academic-muted uppercase tracking-[0.2em] mt-1">
                   IST // Kerala, India
                 </p>
-              </div>
+              </Card>
 
-              <div className="p-4 bg-academic-bg border border-academic-border rounded-sm hover:shadow-academic transition-shadow duration-300 relative overflow-hidden group">
+              <Card className="!p-4 bg-academic-bg border-academic-border !shadow-none hover:!shadow-academic relative overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-academic-accent/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
                 <p className="text-[9px] text-academic-muted uppercase tracking-[0.2em] font-bold mb-1">
                   Global Identification
@@ -167,7 +168,7 @@ const Footer = () => {
                 <p className="text-[8px] text-academic-muted uppercase tracking-[0.25em] mt-1">
                   Unique Sessions
                 </p>
-              </div>
+              </Card>
             </div>
           </div>
         </div>
