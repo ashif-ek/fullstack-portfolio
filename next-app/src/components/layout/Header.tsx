@@ -79,7 +79,7 @@ const Header = () => {
         isScrolled || isOpen ? 'bg-academic-paper/95 backdrop-blur-md border-b border-academic-border' : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-6 py-3">
+      <div className="w-full px-6 md:px-10 lg:px-16 py-3">
         <div className="flex justify-between items-center">
           <Link
             href="/#hero"
