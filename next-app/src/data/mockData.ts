@@ -3,7 +3,7 @@ import { Profile, AboutData, Skill, Tool, Project, Certificate, Blog, Service, L
 export const profile: Profile = {
     "name": "Ashif E.K",
     "title": "Full-Stack Engineer",
-    "description": "Full-Stack Engineer specializing in production-grade web platforms. Experienced in architecting secure APIs, scalable backend systems, and high-performance frontends using Django, React, PostgreSQL, and AWS. Passionate about automation, CI/CD pipelines, performance optimization, and building resilient, reliable digital infrastructure.",
+    "description": "Full-Stack Engineer specializing in scalable, production-grade web platforms and enterprise SaaS applications. Experienced in designing secure REST APIs, microservices, and multi-tenant architectures using Django, Django REST Framework (DRF), FastAPI, Next.js, PostgreSQL, Docker, and AWS. Passionate about building reliable, maintainable cloud-native systems with a strong focus on Clean Architecture, performance optimization, CI/CD, and operational excellence.",
     "email": "ashifek11@gmail.com",
     "socialLinks": [
         { "name": "GitHub", "url": "https://github.com/ashif-ek" },
@@ -112,18 +112,18 @@ export const services: Service[] = [
 ];
 
 export const skills: Skill[] = [
-    { "id": 19, "name": "Django REST Framework", "level": 90, "category": "Technology", "color": "#44B78B", "icon": "PythonIcon", "description": "Designing secure, modular REST APIs for production-grade backend systems." },
-    { "id": 20, "name": "React.js", "level": 90, "category": "Technology", "color": "#61DAFB", "icon": "ReactIcon", "description": "Building responsive frontend applications with reusable components and API-driven architecture." },
-    { "id": 21, "name": "PostgreSQL", "level": 75, "category": "Technology", "color": "#336791", "icon": "DatabaseIcon", "description": "Modeling relational data and optimizing queries for scalable backend performance." },
-    { "id": 22, "name": "Docker", "level": 75, "category": "DevOps", "color": "#2496ED", "icon": "DockerIcon", "description": "Containerizing services for environment parity across development and production." },
-    { "id": 23, "name": "AWS (EC2, RDS, S3)", "level": 50, "category": "Cloud Platform", "color": "#FF9900", "icon": "CloudIcon", "description": "Amazon Web Services for cloud computing and infrastructure" },
-    { "id": 24, "name": "MySQL", "level": 75, "category": "Database", "color": "#4479A1", "icon": "DatabaseIcon", "description": "Relational database management system" },
-    { "id": 25, "name": "Redis", "level": 85, "category": "Caching", "color": "#D82C20", "icon": "ServerIcon", "description": "In-memory data structure store for caching" },
-    { "id": 26, "name": "Docker Compose", "level": 80, "category": "DevOps", "color": "#2496ED", "icon": "DockerIcon", "description": "Tool for defining and running multi-container Docker applications" },
-    { "id": 27, "name": "REST APIs", "level": 90, "category": "Backend Development", "color": "#44B78B", "icon": "CodeIcon", "description": "Representational State Transfer APIs for client-server communication" },
-    { "id": 28, "name": "GraphQL", "level": 75, "category": "Backend Development", "color": "#E10098", "icon": "CodeIcon", "description": "Query language for APIs with strong typing and schema definition" },
-    { "id": 29, "name": "Production Reliability", "level": 80, "category": "DevOps", "color": "#44B78B", "icon": "ShieldCheckIcon", "description": "Ensuring systems remain operational and stable in production environments" },
-    { "id": 30, "name": "Dart", "level": 70, "category": "Language", "color": "#00B4AB", "icon": "DartIcon", "description": "Cross-platform mobile development with Flutter" }
+    { "id": 19, "name": "Django REST Framework", "level": 90, "category": "Backend", "color": "#44B78B", "icon": "PythonIcon", "description": "Designing secure, modular REST APIs for production-grade backend systems." },
+    { "id": 20, "name": "React.js", "level": 90, "category": "Frontend", "color": "#61DAFB", "icon": "ReactIcon", "description": "Building responsive frontend applications with reusable components." },
+    { "id": 21, "name": "PostgreSQL", "level": 85, "category": "Database", "color": "#336791", "icon": "DatabaseIcon", "description": "Modeling relational data and optimizing queries." },
+    { "id": 22, "name": "FastAPI", "level": 85, "category": "Backend", "color": "#009688", "icon": "CodeIcon", "description": "Building high-performance, asynchronous REST APIs." },
+    { "id": 23, "name": "Next.js", "level": 80, "category": "Frontend", "color": "#000000", "icon": "CodeIcon", "description": "Developing SSR and statically generated React applications." },
+    { "id": 24, "name": "Docker", "level": 80, "category": "DevOps", "color": "#2496ED", "icon": "DockerIcon", "description": "Containerizing services for environment parity." },
+    { "id": 25, "name": "AWS (EC2, RDS, S3)", "level": 75, "category": "Cloud Platform", "color": "#FF9900", "icon": "CloudIcon", "description": "Cloud infrastructure deployment and management." },
+    { "id": 26, "name": "Redis", "level": 85, "category": "Caching", "color": "#D82C20", "icon": "ServerIcon", "description": "In-memory data structure store for caching and queues." },
+    { "id": 27, "name": "Clean Architecture", "level": 80, "category": "Engineering", "color": "#44B78B", "icon": "ShieldCheckIcon", "description": "Building maintainable, decoupled system architectures." },
+    { "id": 28, "name": "Supabase & Neon", "level": 75, "category": "Database", "color": "#3ECF8E", "icon": "DatabaseIcon", "description": "Modern serverless Postgres and backend-as-a-service." },
+    { "id": 29, "name": "Zustand", "level": 85, "category": "Frontend", "color": "#F7DF1E", "icon": "ReactIcon", "description": "Predictable state management for React applications." },
+    { "id": 30, "name": "CI/CD & GitHub Actions", "level": 80, "category": "DevOps", "color": "#2088FF", "icon": "GitIcon", "description": "Automated testing and deployment pipelines." }
 ];
 
 export const tools: Tool[] = [
@@ -237,6 +237,27 @@ NOIR'EL is a high-performance e-commerce engine focused on luxury aesthetics, hi
         "image": "/images/mock/noirel.png",
         "link": "https://noirel-perfume.vercel.app/",
         "github": "https://github.com/ashif-ek/noirel-ecommerce"
+    },
+    {
+        "id": "16",
+        "slug": "workpilot-ai",
+        "title": "WorkPilot AI - Multi-Tenant Automation Platform",
+        "description": "A multi-tenant SaaS platform built with Next.js, FastAPI, and PostgreSQL to automate organizational workflows featuring RBAC, tenant-aware data isolation, and SSO.",
+        "content": `## WorkPilot AI — Multi-Tenant Workflow Automation Platform
+
+WorkPilot AI is a scalable SaaS platform designed to automate HR, IT, and organizational workflows across multiple tenants securely.
+
+### Core Architecture & Technical Highlights
+* **Schema-Based Multi-Tenancy**: Implemented secure data isolation across organizations with tenant-aware middleware and PostgreSQL schema separation.
+* **Modern Auth Services**: Developed comprehensive authentication including JWT access/refresh tokens, HTTP-only cookies, RBAC, SSO, and tenant-aware login flows.
+* **Microservices Backend**: Built using FastAPI for high-performance, asynchronous REST APIs following Clean Architecture principles.
+* **Dynamic Workflow Engine**: Engineered workflow features to support approval processes, department-specific rules, and automated notifications.
+* **Next.js Front-End**: Created a responsive, tenant-aware frontend authentication flow utilizing Next.js App Router, TypeScript, and Zustand for state management.
+* **DevOps & CI/CD**: Containerized the environment with Docker and orchestrated continuous delivery pipelines via GitHub Actions.`,
+        "tags": ["Next.js", "FastAPI", "PostgreSQL", "Multi-Tenant", "Zustand", "Docker"],
+        "image": "",
+        "link": "#",
+        "github": ""
     }
 ];
 

@@ -93,7 +93,7 @@ export default function RecruiterCTA() {
                                 </a>
 
                                 <a
-                                    href="/resume/Ashif-Resume.pdf"
+                                    href="/resume/Ashif%20E.K%20RESUME%20FULL-STACK.pdf"
                                     download
                                     className="px-6 py-4 rounded-lg bg-academic-paper border border-academic-border text-academic-primary hover:bg-academic-primary/5 transition-all text-center flex items-center justify-center gap-2 group font-medium tracking-wide"
                                     aria-label="Download Resume"
