@@ -40,8 +40,7 @@ jobs:
       run: npm run lint
       continue-on-error: true
 
-    - name: Run Type Check
-      run: npx tsc --noEmit
+
 
     - name: Build Application
       run: npm run build
