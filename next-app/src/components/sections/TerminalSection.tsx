@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Terminal } from 'lucide-react';
+import { trackResumeDownload } from '../../app/actions/resumeAnalytics';
 import { useProfile } from '../../hooks/useProfile';
 import { useSkills } from '../../hooks/useSkills';
 import { useProjects } from '../../hooks/useProjects';
@@ -137,7 +138,7 @@ export default function TerminalSection({ isStandalone = false }: TerminalSectio
           <div className="text-academic-muted space-y-2">
             <p>Accessing curriculum vitae...</p>
             <p>
-              <a href="/resume/Ashif%20E.K%20RESUME%20FULL-STACK.pdf" target="_blank" rel="noopener noreferrer" className="text-academic-accent underline hover:text-academic-primary">
+              <a href="/resume/Ashif%20E.K%20RESUME%20FULL-STACK.pdf" target="_blank" rel="noopener noreferrer" onClick={() => trackResumeDownload().catch(console.error)} className="text-academic-accent underline hover:text-academic-primary">
                 [Click here to view / download resume]
               </a>
             </p>

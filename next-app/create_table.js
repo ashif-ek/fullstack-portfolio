@@ -8,21 +8,15 @@ async function run() {
   await client.connect();
   try {
     await client.query(`
-      CREATE TABLE IF NOT EXISTS core_collaborationrequest (
+      CREATE TABLE IF NOT EXISTS core_resumedownload (
         id SERIAL PRIMARY KEY,
-        "fullName" VARCHAR(100) NOT NULL,
-        email VARCHAR(254) NOT NULL,
-        company VARCHAR(100),
-        role VARCHAR(100),
-        "projectType" VARCHAR(50) NOT NULL,
-        budget VARCHAR(50),
-        timeline VARCHAR(50),
-        message TEXT NOT NULL,
-        status VARCHAR(20) DEFAULT 'PENDING' NOT NULL,
+        "ipAddress" VARCHAR(50),
+        "userAgent" VARCHAR(500),
+        referer VARCHAR(500),
         "createdAt" TIMESTAMP(3) DEFAULT CURRENT_TIMESTAMP NOT NULL
       );
     `);
-    console.log('Table created successfully');
+    console.log('Table core_resumedownload created successfully');
   } catch (err) {
     console.error('Error creating table:', err);
   } finally {

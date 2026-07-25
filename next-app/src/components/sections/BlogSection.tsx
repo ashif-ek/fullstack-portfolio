@@ -93,7 +93,7 @@ const BlogSection = () => {
                     </h3>
                   </Link>
                   <p className="text-academic-muted font-light leading-relaxed line-clamp-2 text-sm">
-                    {post.excerpt || post.summary}
+                    {post.excerpt || (post as any).summary}
                   </p>
                   <div className="flex items-center justify-between pt-2 mt-auto">
                     <span className="text-[10px] uppercase tracking-widest font-bold px-2 py-1 bg-academic-paper border border-academic-border text-academic-muted">

@@ -31,7 +31,7 @@ export async function submitCollaborationRequest(data: CollaborationRequestInput
   } catch (error) {
     console.error('Failed to submit collaboration request:', error);
     if (error instanceof z.ZodError) {
-      return { success: false, error: 'Validation failed', details: (error as z.ZodError).errors };
+      return { success: false, error: 'Validation failed', details: (error as any).errors };
     }
     return { success: false, error: 'Failed to submit request. Please try again later.' };
   }
