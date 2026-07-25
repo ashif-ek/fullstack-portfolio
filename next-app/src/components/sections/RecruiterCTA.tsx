@@ -14,9 +14,12 @@ import {
     Clock
 } from 'lucide-react';
 
+import { CollaborationModal } from '../ui/CollaborationModal';
+
 export default function RecruiterCTA() {
     const [currentTime, setCurrentTime] = useState<string>('');
     const [timezone, setTimezone] = useState<string>('');
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
         const updateTime = () => {
@@ -82,15 +85,15 @@ export default function RecruiterCTA() {
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
-                                <a
-                                    href="mailto:ashifek11@gmail.com?subject=Hiring Inquiry"
+                                <button
+                                    onClick={() => setIsModalOpen(true)}
                                     className="academic-button group flex items-center justify-center gap-2 py-4 relative overflow-hidden"
-                                    aria-label="Hire Me: Send an email"
+                                    aria-label="Hire Me: Request Collaboration"
                                 >
                                     <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-1000 ease-in-out" />
                                     <Mail size={18} className="group-hover:scale-110 transition-transform relative z-10" />
                                     <span className="relative z-10">Hire Me</span>
-                                </a>
+                                </button>
 
                                 <a
                                     href="/resume/Ashif%20E.K%20RESUME%20FULL-STACK.pdf"
@@ -191,6 +194,11 @@ export default function RecruiterCTA() {
                     </div>
                 </div>
             </div>
+            
+            <CollaborationModal 
+                isOpen={isModalOpen} 
+                onClose={() => setIsModalOpen(false)} 
+            />
         </section>
     );
 }
