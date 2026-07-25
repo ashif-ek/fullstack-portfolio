@@ -4,21 +4,36 @@ import { useBlogs } from "../../hooks/useBlogs";
 import { Skeleton } from "../ui/Skeleton";
 
 const BlogSkeleton = () => (
-  <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-academic-border last:border-b-0">
-    <div className="md:col-span-1 pt-2">
+  <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 pb-12 border-b border-academic-border last:border-b-0">
+    <div className="md:col-span-2 pt-2">
       <Skeleton className="h-4 w-24" />
       <div className="mt-2 h-px w-8 bg-academic-border" />
     </div>
-    <div className="md:col-span-3 space-y-4">
-      <Skeleton className="h-8 w-3/4" />
-      <Skeleton className="h-16 w-full" />
-      <div className="flex items-center justify-between pt-4">
-        <Skeleton className="h-6 w-32" />
+    <div className="md:col-span-4 h-48 md:h-32 lg:h-40">
+      <Skeleton className="w-full h-full" />
+    </div>
+    <div className="md:col-span-6 space-y-3 flex flex-col justify-center">
+      <Skeleton className="h-6 w-3/4" />
+      <Skeleton className="h-12 w-full" />
+      <div className="flex items-center justify-between pt-2">
+        <Skeleton className="h-6 w-20" />
         <Skeleton className="h-4 w-24" />
       </div>
     </div>
   </div>
 );
+
+const mockImages = [
+  '/images/mock/image.png',
+  '/images/mock/image copy.png',
+  '/images/mock/image copy 2.png',
+  '/images/mock/image copy 3.png',
+  '/images/mock/image copy 4.png',
+  '/images/mock/image copy 5.png',
+  '/images/mock/image copy 6.png',
+  '/images/mock/image copy 7.png',
+  '/images/mock/image copy 8.png'
+];
 
 const BlogSection = () => {
   const { data: allPosts = [], isLoading } = useBlogs();
@@ -42,41 +57,48 @@ const BlogSection = () => {
               <BlogSkeleton />
             </>
           ) : (
-            postsToShow.map((post) => (
+            postsToShow.map((post, index) => (
               <article
                 key={post.id}
-                className="group grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-academic-border last:border-b-0"
+                className="group grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 pb-12 border-b border-academic-border last:border-b-0"
               >
                 {/* Date Column */}
-                <div className="md:col-span-1 pt-2">
-                  <time className="text-[10px] uppercase tracking-[0.3em] font-bold text-academic-accent">
+                <div className="md:col-span-2 pt-2">
+                  <time className="text-[10px] uppercase tracking-[0.3em] font-bold text-academic-accent block mb-2">
                     {post.date ? new Date(post.date).toLocaleDateString("en-US", {
-                      month: "long",
+                      month: "short",
                       year: "numeric",
                     }) : "N/A"}
                   </time>
-                  <div className="mt-2 h-px w-8 bg-academic-border group-hover:w-16 transition-all duration-500" />
+                  <div className="h-px w-8 bg-academic-border group-hover:w-16 transition-all duration-500" />
+                </div>
+
+                {/* Image Column */}
+                <div className="md:col-span-4 relative h-48 md:h-32 lg:h-40 overflow-hidden border border-academic-border">
+                  <Link href={`/blog/${post.slug}`} className="block w-full h-full">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img 
+                      src={(post as any).imageUrl || post.image || mockImages[index % mockImages.length]} 
+                      alt={post.title}
+                      className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                    />
+                  </Link>
                 </div>
 
                 {/* Content Column */}
-                <div className="md:col-span-3 space-y-4">
+                <div className="md:col-span-6 space-y-3 flex flex-col justify-center">
                   <Link href={`/blog/${post.slug}`} className="block">
-                    <h3 className="text-2xl font-serif font-bold text-academic-primary group-hover:text-academic-accent transition-colors leading-tight">
+                    <h3 className="text-xl md:text-2xl font-serif font-bold text-academic-primary group-hover:text-academic-accent transition-colors leading-tight">
                       {post.title}
                     </h3>
                   </Link>
-
                   <p className="text-academic-muted font-light leading-relaxed line-clamp-2 text-sm">
-                    {post.excerpt}
+                    {post.excerpt || post.summary}
                   </p>
-
-                  <div className="flex items-center justify-between pt-4">
-                    <div className="flex gap-2">
-                      <span className="text-[10px] uppercase tracking-widest font-bold px-2 py-1 bg-academic-paper border border-academic-border text-academic-muted">
-                        Full-Stack Engineering
-                      </span>
-                    </div>
-
+                  <div className="flex items-center justify-between pt-2 mt-auto">
+                    <span className="text-[10px] uppercase tracking-widest font-bold px-2 py-1 bg-academic-paper border border-academic-border text-academic-muted">
+                      Engineering
+                    </span>
                     <Link
                       href={`/blog/${post.slug}`}
                       className="text-[10px] uppercase tracking-[0.2em] font-bold text-academic-primary hover:text-academic-accent transition-colors flex items-center gap-2"

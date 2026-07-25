@@ -9,18 +9,31 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Briefcase, GraduationCap, Code2, Award, Star, ExternalLink, Plus, GitMerge, ChevronRight } from 'lucide-react';
 import { Project, Certificate, ExperienceItem } from '../../types';
 
-const achievementsMock = [
+const journeyMock = [
   {
-    id: "ach-1",
-    title: "Best Developer Award 2024",
-    date: "Dec 2024",
-    description: "Recognized for outstanding contribution to open-source projects."
+    id: "journey-1",
+    year: "2021",
+    description: "Started learning software development by exploring and modifying open-source GitHub projects to understand how real-world applications are built."
   },
   {
-    id: "ach-2",
-    title: "Hackathon Winner",
-    date: "Aug 2024",
-    description: "First place in the Kerala Tech Summit Hackathon for building an AI-driven accessibility tool."
+    id: "journey-2",
+    year: "2022",
+    description: "Built my first original web applications while learning modern full-stack development technologies."
+  },
+  {
+    id: "journey-3",
+    year: "2025",
+    description: "Joined Bridgeon Solutions as a Full-Stack Developer Intern."
+  },
+  {
+    id: "journey-4",
+    year: "2025",
+    description: "Built several production-quality full-stack applications covering e-commerce, AI, enterprise workflows, authentication systems, and scalable backend architectures."
+  },
+  {
+    id: "journey-5",
+    year: "2026",
+    description: "Building scalable SaaS platforms using React, Next.js, Django, FastAPI, PostgreSQL, Docker, AWS, and modern engineering practices."
   }
 ];
 
@@ -148,19 +161,24 @@ export default function Experience() {
       )
     },
     {
-      id: 'achievements',
-      title: 'Achievements',
+      id: 'journey',
+      title: 'Developer Journey',
       icon: <Star size={20} strokeWidth={1.5} />,
-      subtitle: 'Recognition & accomplishments',
+      subtitle: 'Growth from curiosity to professional software engineering.',
       content: (
-        <div className="space-y-10 mt-6 pt-6 border-t border-academic-border/50">
-          {achievementsMock.map((ach: any, idx: number) => (
-            <div key={idx} className="relative">
-              <h4 className="text-lg font-bold text-academic-primary">{ach.title}</h4>
-              <p className="text-academic-muted text-xs font-mono mb-4">{ach.date}</p>
-              <p className="text-sm text-academic-muted font-light">{ach.description}</p>
-            </div>
-          ))}
+        <div className="mt-6 pt-6 border-t border-academic-border/50 relative">
+          <div className="absolute left-[7px] md:left-[13px] top-10 bottom-2 w-px bg-academic-border/60"></div>
+          
+          <div className="space-y-12">
+            {journeyMock.map((item, idx) => (
+              <div key={idx} className="relative pl-8 md:pl-12">
+                <div className="absolute left-0 md:left-1.5 top-1.5 w-4 h-4 rounded-full bg-academic-bg border-2 border-academic-primary z-10"></div>
+                
+                <h4 className="text-xl font-bold text-academic-primary mb-3 font-mono">{item.year}</h4>
+                <p className="text-sm text-academic-muted font-light leading-relaxed">{item.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       )
     }

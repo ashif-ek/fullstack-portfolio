@@ -153,7 +153,7 @@ Cipher Analytics is a security-first, high-throughput analytics system designed 
 * **Clustering & AI Explainability**: Applied SHAP (SHapley Additive exPlanations) for local model explanation, and integrated UMAP and HDBSCAN algorithms to cluster and identify anomalies in encrypted datasets.
 * **Production-Grade Security**: Orchestrated services using Docker with secure shared-volume mounts. Enforced strict rate-limiting, comprehensive audit logging (via django-simple-history), static typing (mypy), and security scanning (bandit).`,
         "tags": ["Django REST Framework", "React", "Fully Homomorphic Encryption (FHE)", "Celery & Redis", "Three.js", "Docker"],
-        "image": "",
+        "image": "/images/projects/cipher-analytics.png",
         "link": "#",
         "github": "https://github.com/ashif-ek"
     },
@@ -164,7 +164,7 @@ Cipher Analytics is a security-first, high-throughput analytics system designed 
         "description": "Salary Reality Checker delivers AI-powered salary insights using percentile analytics, fuzzy-matched job titles, and machine-learning predictions. It auto-corrects user input, analyzes market trends, and predicts salaries when data is missing. Built with FastAPI, PostgreSQL, scikit-learn.",
         "content": "## Salary Reality Checker\n\nSalary Reality Checker delivers AI-powered salary insights using percentile analytics, fuzzy-matched job titles, and machine-learning predictions. It auto-corrects user input, analyzes market trends, and predicts salaries when data is missing.",
         "tags": ["FastAPI", "PostgreSQL", "Machine Learning", "AI", "Salary Analytics"],
-        "image": "",
+        "image": "/images/projects/salary-checker.png",
         "link": "https://ashif-ek.github.io/docs-stack-material/",
         "github": "https://github.com/ashif-ek/salary-checker"
     },
@@ -183,7 +183,7 @@ Civic is a comprehensive multi-role civic engagement system bridging communicati
 * **Public Information Broadcasting**: Developed alert and news feeds allowing Panchayath administrators to broadcast alerts and announcements directly to residents.
 * **Citizen Engagement Tools**: Designed community forums, multimedia file sharing, and discussion threads utilizing efficient querying to minimize relational database joins.`,
         "tags": ["Django", "Flutter", "REST API", "RBAC", "PostgreSQL"],
-        "image": "",
+        "image": "/images/projects/civic-connect.png",
         "link": "#",
         "github": "https://github.com/ashif-ek/civic-connect"
     },
@@ -203,7 +203,7 @@ This project serves as a secure, production-grade template sandbox designed to e
 * **Environment Parity**: Fully containerized the system utilizing multi-stage Docker builds to verify parity across development, staging, and production.
 * **CI/CD Integration**: Engineered deployment pipelines using GitHub Actions to perform style checks, automated unit tests, and build validation.`,
         "tags": ["React", "Django REST Framework", "Docker", "GitHub Actions", "AWS"],
-        "image": "",
+        "image": "/images/projects/system-design-sandbox.png",
         "link": "#",
         "github": ""
     },
@@ -214,7 +214,7 @@ This project serves as a secure, production-grade template sandbox designed to e
         "description": "Time Lens reframes real minutes into life-equivalents, helping you feel the true weight of time. A mindset tool that turns seconds into life-hours, minutes into life-days, and days into life-years.",
         "content": "## TimeLens\n\nTime Lens reframes real minutes into life-equivalents, helping you feel the true weight of time. A mindset tool that turns seconds into life-hours, minutes into life-days, and days into life-years.",
         "tags": ["Python", "Productivity", "Mindset Tool", "Time Management"],
-        "image": "/images/mock/timelens.png",
+        "image": "/images/projects/timelens.png",
         "link": "https://ashif-ek.github.io/docs-stack-material/",
         "github": "https://github.com/ashif-ek/time-lens-python"
     },
@@ -234,7 +234,7 @@ NOIR'EL is a high-performance e-commerce engine focused on luxury aesthetics, hi
 * **Optimal Performance**: Leveraged component lazy loading, image optimization, and bundle splitting, hitting a 100/100 Lighthouse performance grade.
 * **Cloud Infrastructure**: Deployed on AWS (EC2 & RDS) behind Nginx and Gunicorn process managers, with CD pipelines driving automatic code delivery.`,
         "tags": ["React", "Django REST Framework", "PostgreSQL", "Razorpay", "AWS"],
-        "image": "/images/mock/noirel.png",
+        "image": "/images/projects/noirel-ecommerce.png",
         "link": "https://noirel-perfume.vercel.app/",
         "github": "https://github.com/ashif-ek/noirel-ecommerce"
     },
@@ -255,7 +255,7 @@ WorkPilot AI is a scalable SaaS platform designed to automate HR, IT, and organi
 * **Next.js Front-End**: Created a responsive, tenant-aware frontend authentication flow utilizing Next.js App Router, TypeScript, and Zustand for state management.
 * **DevOps & CI/CD**: Containerized the environment with Docker and orchestrated continuous delivery pipelines via GitHub Actions.`,
         "tags": ["Next.js", "FastAPI", "PostgreSQL", "Multi-Tenant", "Zustand", "Docker"],
-        "image": "",
+        "image": "/images/projects/workpilot-ai.png",
         "link": "#",
         "github": ""
     }
@@ -311,7 +311,7 @@ export const blogs: Blog[] = [
         "title": "Building Scalable Architecture with Django and React",
         "date": "2025-11-10",
         "summary": "A deep dive into decoupling frontend and backend to create high-performance web applications that scale.",
-        "imageUrl": "/images/mock/architecture.png",
+        "imageUrl": "/images/mock/image.png",
         "content": "# Building Scalable Architecture with Django and React\n\nIn modern web engineering, the separation of concerns between front-end and back-end is no longer just a preference—it's a requirement for scalability. By decoupling **Django REST Framework** from a **React/Next.js** frontend, we achieve perfect modularity. This article explores how to architect systems that handle thousands of concurrent requests while maintaining a sub-200ms latency profile through strategic caching (Redis), optimized database querying (PostgreSQL), and containerized deployments (Docker)."
     },
     {
@@ -320,7 +320,7 @@ export const blogs: Blog[] = [
         "title": "Optimizing Next.js Performance: A Practical Guide",
         "date": "2025-10-25",
         "summary": "Techniques for reducing bundle size and improving Core Web Vitals in large-scale Next.js applications.",
-        "imageUrl": "/images/mock/timelens.png",
+        "imageUrl": "/images/mock/image copy.png",
         "content": "# Optimizing Next.js Performance\n\nSpeed is the ultimate feature. In this guide, we dive deep into Next.js 19's **Server Actions**, **Partial Prerendering (PPR)**, and **Streaming**. We'll look at how to reduce bundle size by 60% and improve Core Web Vitals to achieve that elusive 100/100 Lighthouse score for enterprise-grade SEO and user retention."
     },
     {
@@ -329,7 +329,7 @@ export const blogs: Blog[] = [
         "title": "Getting Started with React: A Beginner's Guide",
         "date": "2026-03-06",
         "summary": "Learn the fundamentals of React, including components, JSX, props, and state. This comprehensive guide will help you get started on your journey to mastering React development.",
-        "imageUrl": "",
+        "imageUrl": "/images/mock/image copy 2.png",
         "content": "# Getting Started with React\r\n\r\nReact is a powerful JavaScript library for building user interfaces. In this article, we'll explore the key concepts that every React developer should understand.\r\n\r\n## What is React?\r\n\r\nReact is a JavaScript library maintained by Facebook that simplifies the process of building interactive user interfaces. It uses a component-based architecture to create reusable and maintainable code.\r\n\r\n## Key Concepts\r\n\r\n### Components\r\nComponents are the building blocks of any React application. They are reusable pieces of UI that encapsulate their own structure and behavior.\r\n\r\n### JSX\r\nJSX is a syntax extension that looks similar to HTML. It allows you to write UI code in a more readable and intuitive way.\r\n\r\n### Props\r\nProps are the way to pass data from parent to child components. They are read-only and help maintain unidirectional data flow.\r\n\r\n### State\r\nState allows components to manage their own data. Unlike props, state is mutable and can be updated over time."
     },
     {
@@ -338,7 +338,7 @@ export const blogs: Blog[] = [
         "title": "Django Best Practices for Production",
         "date": "2026-03-06",
         "summary": "Learn the essential best practices for deploying Django applications to production environments. This guide covers configuration, security, and performance optimization.",
-        "imageUrl": "",
+        "imageUrl": "/images/mock/image copy 3.png",
         "content": "# Django Best Practices for Production\r\n\r\n## Environment Configuration\r\nAlways use environment variables for sensitive configuration like database credentials, API keys, and secret keys. Never hardcode these values in your source code.\r\n\r\n## Security Measures\r\n- Enable DEBUG = False in production\r\n- Use HTTPS everywhere\r\n- Set ALLOWED_HOSTS properly\r\n- Use Django's built-in security middleware\r\n- Keep Django and dependencies updated\r\n\r\n## Database Optimization\r\n- Use database indexing strategically\r\n- Monitor query performance with Django Debug Toolbar\r\n- Implement connection pooling\r\n- Use raw SQL only when necessary\r\n\r\n## Caching Strategy\r\nImplement caching at multiple levels to improve performance:\r\n- Browser caching\r\n- Server-side caching with Redis\r\n- Database query caching\r\n- View-level caching"
     },
     {
@@ -347,7 +347,7 @@ export const blogs: Blog[] = [
         "title": "Advanced Redux Patterns and Middleware",
         "date": "2026-03-06",
         "summary": "Master advanced Redux patterns including middleware, sagas, and thunks. Learn how to manage complex state in large-scale applications effectively.",
-        "imageUrl": "",
+        "imageUrl": "/images/mock/image copy 4.png",
         "content": "# Advanced Redux Patterns\r\n\r\n## Redux Middleware\r\nMiddleware functions are powerful tools for handling side effects in Redux applications. They sit between actions and reducers, allowing you to intercept and modify actions.\r\n\r\n## Redux Thunk\r\nRedux Thunk is a middleware that allows you to return functions from action creators instead of objects. This is useful for async operations.\r\n\r\n```javascript\r\nconst myAction = (param) => (dispatch) => {\r\n  dispatch(actionStart());\r\n  setTimeout(() => {\r\n    dispatch(actionSuccess(param));\r\n  }, 1000);\r\n};\r\n```\r\n\r\n## Redux Saga\r\nRedux Saga is an alternative middleware for handling side effects using generator functions. It provides more advanced control over asynchronous operations.\r\n\r\n## Best Practices\r\n- Keep actions pure and side-effect free\r\n- Use middleware for async operations\r\n- Structure your reducers properly\r\n- Use selector functions to access state"
     },
     {
@@ -356,7 +356,7 @@ export const blogs: Blog[] = [
         "title": "Understanding React Hooks",
         "date": "2026-03-06",
         "summary": "Master React Hooks to write functional components with state and side effects. This guide covers useState, useEffect, useContext, and custom hooks.",
-        "imageUrl": "",
+        "imageUrl": "/images/mock/image copy 5.png",
         "content": "# React Hooks Guide\r\n\r\nReact Hooks allow you to use state and other React features without writing a class component. They are functions that let you \"hook into\" React state and lifecycle features from functional components.\r\n\r\n## Common Hooks\r\n\r\n### useState\r\nuseState is the most basic Hook. It lets you add state to functional components.\r\n\r\n### useEffect\r\nuseEffect is used for side effects in functional components. It runs after the component renders.\r\n\r\n### useContext\r\nuseContext allows you to subscribe to React context without introducing nesting.\r\n\r\n### useReducer\r\nuseReducer is a more complex alternative to useState for managing complex state logic.\r\n\r\n## Best Practices\r\n- Only use Hooks at the top level\r\n- Only use Hooks from React function components\r\n- Use the ESLint plugin to enforce these rules"
     },
     {
@@ -366,7 +366,7 @@ export const blogs: Blog[] = [
         "date": "2026-03-30",
         "updated_at": "2026-03-30",
         "summary": "Master the world's most powerful full-stack duo. Learn how React 19's Server Components and Django 5's async breakthroughs are redefining web engineering.",
-        "imageUrl": "",
+        "imageUrl": "/images/mock/image copy 6.png",
         "content": "# React 19 & Django 5.x: Engineering the Future\n\nIn the ever-evolving landscape of web development, two titans have consistently stood the test of time: **React** and **Django**. With the release of React 19 and Django 5.x, this combination has transformed from a reliable choice into an unstoppable force for elite engineers. \n\n## Why This Stack Dominates the Enterprise\n\nWhen we talk about 'Full-Stack Excellence', we are talking about three things: **Scalability, Security, and Speed**. \n\n1. **Pythonic Powerhouse**: Django 5.x brings enhanced async support and database-computed default values, reducing boilerplate and increasing runtime efficiency.\n2. **React 19 Revolution**: Server Components and improved hydration mean faster First Contentful Paint (LCP) and a frictionless user experience.\n\n### The Decoupled Architecture\n\nAs an engineer, my philosophy is centered around a clean, decoupled architecture. By using **Django REST Framework (DRF)** as the engine and **Next.js** as the driver, we achieve perfect separation of concerns.\n\n```python\n# Django 5.x Async View Example\nasync def my_view(request):\n    data = await MyModel.objects.all().afirst()\n    return JsonResponse({'data': data})\n```\n\n## 10x Performance Optimization\n\nPerformance isn't just about code; it's about architecture. Implementing **Redis** for caching, **PostgreSQL** for relational integrity, and **Docker** for environment parity ensures that your application scales from a single user to millions without breaking a sweat.\n\n## FAQ: Is Django still relevant in 2026?\n**Absolutely.** While newer frameworks come and go, Django's 'batteries-included' philosophy and massive ecosystem make it the most secure and scalable choice for startups and enterprises alike. Combined with React 19, it's virtually unbeatable for complex, data-driven applications."
     },
     {
@@ -376,7 +376,7 @@ export const blogs: Blog[] = [
         "date": "2026-03-30",
         "updated_at": "2026-03-30",
         "summary": "Most MVPs fail not because the idea is bad, but because the tech is fragile. Learn the strategy for building a 'Minimum Awesome Product' that scales.",
-        "imageUrl": "",
+        "imageUrl": "/images/mock/image copy 7.png",
         "content": "# The Scalable MVP Blueprint\n\nFor startup founders, time-to-market is everything. But speed should never come at the cost of stability. As an elite SEO strategist and full-stack architect, I've seen too many brilliant ideas die due to technical debt. Here is the blueprint for a 'Minimum Awesome Product'.\n\n## Phase 1: The Foundation (React + Django)\n\nChoosing a tech stack isn't just a technical decision; it's a business decision. React and Django allow you to:\n- **Iterate Faster**: Modular components and built-in admin panels.\n- **Hire Easier**: Access to a global pool of elite talent.\n- **Scale Simpler**: Robust migration systems and cloud-ready architectures.\n\n## Phase 2: Feature Prioritization\n\nDon't build everything. Build the *right* thing. Use the **MoSCoW** method (Must have, Should have, Could have, Won't have) to identify the core value proposition of your MVP.\n\n### Core Metrics to Track\n1. **LCP (Largest Contentful Paint)**: Keep it under 2.5s for SEO and UX.\n2. **Retention Rate**: Are users coming back?\n3. **Conversion Velocity**: How fast do users reach the 'Aha!' moment?\n\n## Conclusion: Start Fast, Stay Solid\n\nA scalable MVP is one that validates your business model while providing a robust path to version 2.0. By focusing on elite engineering from day one, you ensure that success won't be your greatest bottleneck."
     },
     {
@@ -386,7 +386,7 @@ export const blogs: Blog[] = [
         "date": "2026-03-30",
         "updated_at": "2026-03-30",
         "summary": "Finding the right technical partner in Kerala can be difficult. Learn the key traits of an elite full-stack engineer and how to evaluate their expertise.",
-        "imageUrl": "",
+        "imageUrl": "/images/mock/image copy 8.png",
         "content": "# How to Hire an Elite Full-Stack Developer in Kerala\n\nKerala's startup ecosystem is booming, but the talent gap remains a challenge for many non-technical founders. In this guide, we explore how to find and hire developers who aren't just coders, but strategic partners."
     },
     {
@@ -396,7 +396,7 @@ export const blogs: Blog[] = [
         "date": "2026-03-30",
         "updated_at": "2026-03-30",
         "summary": "Learn the architectural patterns required to build a SaaS MVP that won't break when you hit your first 10,000 users.",
-        "imageUrl": "",
+        "imageUrl": "/images/mock/image.png",
         "content": "# Building Scalable SaaS MVPs\n\nScalability starts at day one. Using React for the frontend and Django for the backend provides a robust foundation for any SaaS product."
     },
     {
@@ -406,7 +406,7 @@ export const blogs: Blog[] = [
         "date": "2026-03-30",
         "updated_at": "2026-03-30",
         "summary": "A deep dive into optimizing Next.js applications for Google's Core Web Vitals. Speed is a ranking factor you cannot ignore.",
-        "imageUrl": "",
+        "imageUrl": "/images/mock/image copy.png",
         "content": "# Next.js Performance & SEO\n\nCore Web Vitals are now a critical part of Google's ranking algorithm. Learn how to achieve 100/100 Lighthouse scores."
     },
     {
@@ -416,7 +416,7 @@ export const blogs: Blog[] = [
         "date": "2026-03-30",
         "updated_at": "2026-03-30",
         "summary": "How to leverage Python's AI ecosystem within a Django application to build intelligent features.",
-        "imageUrl": "",
+        "imageUrl": "/images/mock/image copy 2.png",
         "content": "# AI Integration in Django\n\nPython is the language of AI. Integrating LLMs and machine learning models into your Django backend is easier than you think."
     },
     {
@@ -426,7 +426,7 @@ export const blogs: Blog[] = [
         "date": "2026-03-30",
         "updated_at": "2026-03-30",
         "summary": "Why off-the-shelf solutions often fail growing Kerala brands, and how custom development drives higher ROI.",
-        "imageUrl": "",
+        "imageUrl": "/images/mock/image copy 3.png",
         "content": "# Custom E-commerce Development\n\nFor businesses in Kerala, a generic Shopify store might not be enough. We build bespoke e-commerce experiences that convert."
     },
     {
@@ -436,7 +436,7 @@ export const blogs: Blog[] = [
         "date": "2026-03-30",
         "updated_at": "2026-03-30",
         "summary": "Choosing the right database is crucial for long-term scalability. We compare the two giants for full-stack applications.",
-        "imageUrl": "",
+        "imageUrl": "/images/mock/image copy 4.png",
         "content": "# Database Scalability: Postgres vs MongoDB\n\nWhen should you choose relational over NoSQL? We break down the trade-offs for production-scale apps."
     },
     {
@@ -446,7 +446,7 @@ export const blogs: Blog[] = [
         "date": "2026-03-30",
         "updated_at": "2026-03-30",
         "summary": "When to move from a monolith to microservices, and how to do it correctly using Django and Docker.",
-        "imageUrl": "",
+        "imageUrl": "/images/mock/image copy 5.png",
         "content": "# Microservices with Django\n\nMonolithic architectures are great for MVPs, but microservices offer the independence large teams need. Here is the roadmap."
     },
     {
@@ -456,7 +456,7 @@ export const blogs: Blog[] = [
         "date": "2026-03-30",
         "updated_at": "2026-03-30",
         "summary": "Understanding the most significant change to React in years. How Server Components improve performance and DX.",
-        "imageUrl": "",
+        "imageUrl": "/images/mock/image copy 6.png",
         "content": "# React Server Components\n\nRSC is revolutionary. Learn how to leverage server-side logic within your React components to reduce client-side bundle sizes."
     },
     {
@@ -466,7 +466,7 @@ export const blogs: Blog[] = [
         "date": "2026-03-30",
         "updated_at": "2026-03-30",
         "summary": "Why local hosting is a risk, and how moving to AWS/Azure can safeguard your business data.",
-        "imageUrl": "",
+        "imageUrl": "/images/mock/image copy 7.png",
         "content": "# Cloud Deployment for Kerala Businesses\n\nThe cloud offers reliability that local servers simply cannot match. Learn the benefits of AWS for your Kerala-based enterprise."
     },
     {
@@ -476,7 +476,7 @@ export const blogs: Blog[] = [
         "date": "2026-03-30",
         "updated_at": "2026-03-30",
         "summary": "Stop over-engineering your state management. We compare the best tools for React applications in 2026.",
-        "imageUrl": "",
+        "imageUrl": "/images/mock/image copy 8.png",
         "content": "# State Management in 2026\n\nChoosing between Redux, Zustand, and Context API depends on your app's complexity. We help you make the right choice."
     },
     {
@@ -486,7 +486,7 @@ export const blogs: Blog[] = [
         "date": "2026-03-30",
         "updated_at": "2026-03-30",
         "summary": "Staying ahead of the curve in Ernakulam's competitive tech landscape. What Kochi startups are building this year.",
-        "imageUrl": "",
+        "imageUrl": "/images/mock/image.png",
         "content": "# Kochi Tech Trends 2026\n\nFrom AI-driven logistics to Fintech breakthroughs, Kochi is at the forefront of Kerala's digital revolution."
     },
     {
@@ -496,7 +496,7 @@ export const blogs: Blog[] = [
         "date": "2026-03-30",
         "updated_at": "2026-03-30",
         "summary": "A checklist for ensuring your Django backend is hardened against common security threats (OWASP Top 10).",
-        "imageUrl": "",
+        "imageUrl": "/images/mock/image copy.png",
         "content": "# Secure Django in Production\n\nSecurity is not an afterthought. Learn how to implement CSP, secure cookies, and rate limiting in your Django app."
     },
     {
@@ -506,7 +506,7 @@ export const blogs: Blog[] = [
         "date": "2026-03-30",
         "updated_at": "2026-03-30",
         "summary": "How to implement WebSockets in your Django project for real-time notifications and chat features.",
-        "imageUrl": "",
+        "imageUrl": "/images/mock/image copy 2.png",
         "content": "# Real-Time Apps with Django Channels\n\nWebSockets allow for bidirectional communication. Django Channels makes it easy to integrate into your existing stack."
     },
     {
@@ -516,7 +516,7 @@ export const blogs: Blog[] = [
         "date": "2026-03-30",
         "updated_at": "2026-03-30",
         "summary": "Exploring the performance improvements and new features in the latest version of Tailwind CSS.",
-        "imageUrl": "",
+        "imageUrl": "/images/mock/image copy 3.png",
         "content": "# Tailwind CSS 4.0\n\nThe most popular utility-first CSS framework just got better. Faster compilation and improved container support."
     },
     {
@@ -526,7 +526,7 @@ export const blogs: Blog[] = [
         "date": "2026-03-30",
         "updated_at": "2026-03-30",
         "summary": "Stop manual deployments. We show you how to set up a robust CI/CD pipeline for your full-stack projects.",
-        "imageUrl": "",
+        "imageUrl": "/images/mock/image copy 4.png",
         "content": "# Automated CI/CD with GitHub & AWS\n\nConsistent deployments reduce human error. Learn how to automate your workflow using GitHub Actions."
     },
     {
@@ -536,7 +536,7 @@ export const blogs: Blog[] = [
         "date": "2026-03-30",
         "updated_at": "2026-03-30",
         "summary": "Building for the unique needs of the Malabar market. Why custom software is an investment, not an expense.",
-        "imageUrl": "",
+        "imageUrl": "/images/mock/image copy 5.png",
         "content": "# Custom Web Apps for Calicut Startups\n\nKozhikode's startup scene is unique. We build software that speaks to your local audience while scaling globally."
     },
     {
@@ -546,7 +546,7 @@ export const blogs: Blog[] = [
         "date": "2026-03-30",
         "updated_at": "2026-03-30",
         "summary": "A complete guide to implementing secure JWT access and refresh token rotation in your full-stack app.",
-        "imageUrl": "",
+        "imageUrl": "/images/mock/image copy 6.png",
         "content": "# Mastering JWT Authentication\n\nStateless authentication is the standard for modern web apps. Here is how to do it right using SimpleJWT and React."
     },
     {
@@ -556,7 +556,7 @@ export const blogs: Blog[] = [
         "date": "2026-03-30",
         "updated_at": "2026-03-30",
         "summary": "What happens when you go viral? We discuss the bottlenecks and solutions for scaling to millions of users.",
-        "imageUrl": "",
+        "imageUrl": "/images/mock/image copy 7.png",
         "content": "# Scaling to 1 Million Users\n\nDatabase locks, CPU bottlenecks, and network latency. We explore how to overcome the challenges of massive growth."
     }
 ];

@@ -11,6 +11,7 @@ import { Skeleton } from '../ui/Skeleton';
 
 import project1 from '../../assets/projects/project1.png';
 import { cn, buttonClasses, Button } from '../ui/Button';
+import { Lightbox } from '../ui/Lightbox';
 
 const getProjectImage = (project: any) => {
   if (project.image) return project.image;
@@ -37,7 +38,7 @@ const Projects = ({ condensed = false }: { condensed?: boolean }) => {
   const [showAll, setShowAll] = useState(false);
   const router = useRouter();
 
-  const desiredOrder = ['cipher-analytics', 'noirel-ecommerce', 'system-design-sandbox'];
+  const desiredOrder = ['workpilot-ai', 'cipher-analytics', 'noirel-ecommerce', 'system-design-sandbox'];
   const sortedProjects = [...projects].sort((a, b) => {
     const indexA = desiredOrder.findIndex(slug => (a.slug || '').includes(slug));
     const indexB = desiredOrder.findIndex(slug => (b.slug || '').includes(slug));
@@ -80,12 +81,14 @@ const Projects = ({ condensed = false }: { condensed?: boolean }) => {
                 className="group flex flex-col bg-academic-bg border border-academic-border overflow-hidden shadow-academic hover:shadow-paper transition-all duration-500 relative"
               >
                 <div className="relative overflow-hidden h-64 border-b border-academic-border">
-                  <LazyImage
-                    src={getProjectImage(project)}
-                    alt={project.title}
-                    className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700"
-                  />
-                  <div className="absolute inset-0 bg-academic-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <Lightbox src={getProjectImage(project)} alt={project.title}>
+                    <LazyImage
+                      src={getProjectImage(project)}
+                      alt={project.title}
+                      className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700"
+                    />
+                    <div className="absolute inset-0 bg-academic-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                  </Lightbox>
                 </div>
 
                 <div className="p-8 flex flex-col flex-grow">
@@ -94,6 +97,13 @@ const Projects = ({ condensed = false }: { condensed?: boolean }) => {
                       {project.title}
                     </h3>
                   </div>
+
+                  {(project.slug === 'cipher-analytics' || project.slug === 'noirel-ecommerce') && (
+                    <div className="mb-4 py-1.5 px-3 bg-amber-500/10 border border-amber-500/20 text-amber-700 dark:text-amber-500 text-[10px] uppercase tracking-widest font-bold flex items-center gap-2 w-fit">
+                      <span className="w-1.5 h-1.5 rounded-full bg-amber-500 flex-shrink-0 animate-pulse" />
+                      AWS credits expired — Frontend only
+                    </div>
+                  )}
 
                   <p className={`text-academic-muted mb-8 leading-relaxed font-light text-sm transition-all duration-500 ${condensed ? 'line-clamp-2' : 'line-clamp-3'}`}>
                     {project.description}
@@ -136,25 +146,24 @@ const Projects = ({ condensed = false }: { condensed?: boolean }) => {
         </div>
 
         {!isLoading && projects.length > 2 && (
-          <div className="mt-10 flex justify-center">
-             <button
+          <div className="mt-16 flex flex-col-reverse md:flex-row justify-between items-center gap-8 border-t border-academic-border pt-10">
+            <Link
+              href="/projects"
+              className="group flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-academic-muted transition-colors hover:text-academic-primary"
+            >
+              <span className="transition-transform group-hover:-translate-x-1">←</span>
+              Review Full Archive
+            </Link>
+
+            <button
               onClick={() => setShowAll(!showAll)}
-              className="text-xs uppercase tracking-widest font-bold text-academic-muted hover:text-academic-primary transition-colors"
+              className={cn(buttonClasses, "px-12 py-4 flex items-center gap-4 group text-[10px] uppercase tracking-[0.3em] font-bold")}
             >
               {showAll ? 'Show Fewer Projects' : `View All ${projects.length} Technical Works`}
+              <span className="w-8 h-px bg-academic-paper group-hover:w-12 transition-all" />
             </button>
           </div>
         )}
-
-        <div className="mt-10 flex justify-center border-t border-academic-border pt-10">
-          <Link
-            href="/projects"
-            className={cn(buttonClasses, "px-12 py-4 flex items-center gap-4 group text-[10px] uppercase tracking-[0.3em] font-bold")}
-          >
-            Review Full Archive
-            <span className="w-8 h-px bg-academic-paper group-hover:w-12 transition-all" />
-          </Link>
-        </div>
       </div>
     </section>
   );
