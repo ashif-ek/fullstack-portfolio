@@ -5,7 +5,8 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Send, Loader2 } from 'lucide-react';
-import { CollaborationRequestSchema, CollaborationRequestInput, submitCollaborationRequest } from '../../app/actions/collaboration';
+import { submitCollaborationRequest } from '../../app/actions/collaboration';
+import { CollaborationRequestSchema, CollaborationRequestInput } from '../../lib/validations/collaboration';
 import { Toast } from './Toast';
 
 interface CollaborationModalProps {

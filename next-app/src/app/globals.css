@@ -101,6 +101,25 @@ body {
     overflow-x: hidden;
 }
 
+/* Custom Scrollbar for better UI */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-academic-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-academic-border);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-academic-muted);
+}
+
 html {
     scroll-behavior: smooth;
 }

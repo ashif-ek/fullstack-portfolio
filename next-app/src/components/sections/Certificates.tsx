@@ -1,6 +1,7 @@
 import { useState, useRef, useMemo } from "react";
 import { resolveAssetUrl } from '../../lib/api';
 import LazyImage from '../ui/LazyImage';
+import { Lightbox } from '../ui/Lightbox';
 import { useCertificates } from "../../hooks/useCertificates";
 import { Skeleton } from "../ui/Skeleton";
 
@@ -36,7 +37,6 @@ const CertificateSkeleton = () => (
 const Certificates = () => {
   const { data: certificates = [], isLoading } = useCertificates();
   const [selectedCategory, setSelectedCategory] = useState("all");
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [showAll, setShowAll] = useState(false);
   const sectionRef = useRef<HTMLElement | null>(null);
 
@@ -118,16 +118,15 @@ const Certificates = () => {
                   className="academic-card flex flex-col group"
                 >
                   {/* Image Section */}
-                  <div
-                    className="relative h-48 overflow-hidden cursor-pointer bg-academic-bg border-b border-academic-border -mx-6 -mt-6 mb-6"
-                    onClick={() => setSelectedImage(imgSrc)}
-                  >
-                    <LazyImage
-                      src={imgSrc}
-                      alt={cert.title}
-                      className="w-full h-full object-contain p-4 filter grayscale group-hover:grayscale-0 transition-all duration-700"
-                    />
-                    <div className="absolute top-4 right-4 bg-academic-paper/80 backdrop-blur-sm border border-academic-border px-2 py-1 text-[8px] uppercase tracking-widest text-academic-primary font-bold">
+                  <div className="relative h-48 overflow-hidden bg-academic-bg border-b border-academic-border -mx-6 -mt-6 mb-6">
+                    <Lightbox src={imgSrc} alt={cert.title}>
+                      <LazyImage
+                        src={imgSrc}
+                        alt={cert.title}
+                        className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700"
+                      />
+                    </Lightbox>
+                    <div className="absolute top-4 right-4 bg-academic-paper/80 backdrop-blur-sm border border-academic-border px-2 py-1 text-[8px] uppercase tracking-widest text-academic-primary font-bold z-10 pointer-events-none">
                       {cert.category}
                     </div>
                   </div>
@@ -186,23 +185,6 @@ const Certificates = () => {
         )}
       </div>
 
-      {selectedImage && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-academic-bg/95 backdrop-blur-sm p-4 cursor-zoom-out"
-          onClick={() => setSelectedImage(null)}
-        >
-          <div
-            className="relative max-w-4xl w-full"
-            onClick={(e: React.MouseEvent<HTMLDivElement>) => e.stopPropagation()}
-          >
-            <LazyImage
-              src={selectedImage}
-              alt="Certificate Preview"
-              className="w-full h-auto object-contain rounded shadow-paper border border-academic-border"
-            />
-          </div>
-        </div>
-      )}
     </section>
   );
 };
