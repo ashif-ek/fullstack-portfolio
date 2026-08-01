@@ -157,18 +157,20 @@ const Footer = () => {
                 </p>
               </Card>
 
-              <Card className="!p-4 bg-academic-bg border-academic-border !shadow-none hover:!shadow-academic relative overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-academic-accent/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-                <p className="text-[9px] text-academic-muted uppercase tracking-[0.2em] font-bold mb-1">
-                  Global Identification
-                </p>
-                <div className="text-xl font-serif text-academic-primary tabular-nums font-bold tracking-wider">
-                  {visitorData?.total_visitors ? String(visitorData.total_visitors).padStart(5, '0') : '-----'}
-                </div>
-                <p className="text-[8px] text-academic-muted uppercase tracking-[0.25em] mt-1">
-                  Unique Sessions
-                </p>
-              </Card>
+              {visitorData?.total_visitors ? (
+                <Card className="!p-4 bg-academic-bg border-academic-border !shadow-none hover:!shadow-academic relative overflow-hidden group">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-academic-accent/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+                  <p className="text-[9px] text-academic-muted uppercase tracking-[0.2em] font-bold mb-1">
+                    Global Identification
+                  </p>
+                  <div className="text-xl font-serif text-academic-primary tabular-nums font-bold tracking-wider">
+                    {String(visitorData.total_visitors).padStart(5, '0')}
+                  </div>
+                  <p className="text-[8px] text-academic-muted uppercase tracking-[0.25em] mt-1">
+                    Unique Sessions
+                  </p>
+                </Card>
+              ) : null}
             </div>
           </div>
         </div>

@@ -101,7 +101,7 @@ const Projects = ({ condensed = false }: { condensed?: boolean }) => {
                   {(project.slug === 'cipher-analytics' || project.slug === 'noirel-ecommerce') && (
                     <div className="mb-4 py-1.5 px-3 bg-amber-500/10 border border-amber-500/20 text-amber-700 dark:text-amber-500 text-[10px] uppercase tracking-widest font-bold flex items-center gap-2 w-fit">
                       <span className="w-1.5 h-1.5 rounded-full bg-amber-500 flex-shrink-0 animate-pulse" />
-                      AWS credits expired — Frontend only
+                      Interactive UI Demo (Backend offline for scheduled maintenance)
                     </div>
                   )}
 

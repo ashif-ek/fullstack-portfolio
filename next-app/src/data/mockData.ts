@@ -154,7 +154,7 @@ Cipher Analytics is a security-first, high-throughput analytics system designed 
 * **Production-Grade Security**: Orchestrated services using Docker with secure shared-volume mounts. Enforced strict rate-limiting, comprehensive audit logging (via django-simple-history), static typing (mypy), and security scanning (bandit).`,
         "tags": ["Django REST Framework", "React", "Fully Homomorphic Encryption (FHE)", "Celery & Redis", "Three.js", "Docker"],
         "image": "/images/projects/cipher-analytics.png",
-        "link": "#",
+        "link": "https://github.com/ashif-ek/cipher-analytics",
         "github": "https://github.com/ashif-ek"
     },
     {
@@ -185,7 +185,7 @@ Civic is a comprehensive multi-role civic engagement system bridging communicati
         "tags": ["Django", "Flutter", "REST API", "RBAC", "PostgreSQL"],
         "image": "/images/projects/civic-connect.png",
         "link": "#",
-        "github": "https://github.com/ashif-ek/civic-connect"
+        "github": "https://github.com/ashif-ek/CiviTech"
     },
     {
         "id": "12",
@@ -204,8 +204,8 @@ This project serves as a secure, production-grade template sandbox designed to e
 * **CI/CD Integration**: Engineered deployment pipelines using GitHub Actions to perform style checks, automated unit tests, and build validation.`,
         "tags": ["React", "Django REST Framework", "Docker", "GitHub Actions", "AWS"],
         "image": "/images/projects/system-design-sandbox.png",
-        "link": "#",
-        "github": ""
+        "link": "https://github.com/ashif-ek/django_jwt_fastapi_blog",
+        "github": "https://github.com/ashif-ek/django_jwt_fastapi_blog"
     },
     {
         "id": "14",
@@ -256,8 +256,8 @@ WorkPilot AI is a scalable SaaS platform designed to automate HR, IT, and organi
 * **DevOps & CI/CD**: Containerized the environment with Docker and orchestrated continuous delivery pipelines via GitHub Actions.`,
         "tags": ["Next.js", "FastAPI", "PostgreSQL", "Multi-Tenant", "Zustand", "Docker"],
         "image": "/images/projects/workpilot-ai.png",
-        "link": "#",
-        "github": ""
+        "link": "https://github.com/ashif-ek",
+        "github": "https://github.com/ashif-ek"
     }
 ];
 

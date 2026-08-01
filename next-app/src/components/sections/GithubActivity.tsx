@@ -59,7 +59,7 @@ export default function GithubActivity() {
                     >
                         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
                             <h3 className="text-academic-primary font-medium text-lg">
-                                {CONTRIBUTION_DATA[selectedYear].count} contributions in {selectedYear}
+                                Activity Overview for {selectedYear}
                             </h3>
                             <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-academic-muted">
                                 <span>Contribution settings</span>
