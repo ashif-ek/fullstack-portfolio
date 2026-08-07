@@ -74,7 +74,7 @@ const Contact = () => {
             <div className="pt-8 border-t border-academic-border">
               <p className="text-[10px] uppercase tracking-widest text-academic-muted leading-loose">
                 Adhering to principles of <br />
-                <span className="text-academic-accent font-bold">Informativo</span> and <br />
+                <span className="text-academic-accent font-bold">Informative</span> and <br />
                 <span className="text-academic-secondary font-bold">Minimalist</span> design.
               </p>
             </div>

@@ -33,7 +33,7 @@ const Footer = () => {
 
   const contactLinks = [
     { name: 'ashifek11@gmail.com', url: 'mailto:ashifek11@gmail.com' },
-    { name: '+91 9037 499 763', url: 'tel:+919037499763' },
+    { name: '+91 90374 99763', url: 'tel:+919037499763' },
     { name: 'WhatsApp', url: 'https://wa.me/919037499763' },
   ];
 
@@ -58,7 +58,7 @@ const Footer = () => {
           {/* Brand section */}
           <div className="md:col-span-2 lg:col-span-4 flex flex-col lg:border-r border-academic-border lg:pr-8">
             <h3 className="text-2xl font-serif font-bold text-academic-primary mb-4 italic transition-transform duration-500 hover:-translate-y-1 hover:text-academic-accent cursor-default">
-              Ashif<span className="text-academic-accent">.</span>E.K
+              Ashif E.K
             </h3>
             <p className="text-sm text-academic-muted leading-relaxed font-light">
               Synthesizing complex technical architectures through the lens of minimalist and informative design.
@@ -188,7 +188,7 @@ const Footer = () => {
             </span>
             <span className="flex items-center gap-2 group cursor-default">
               <span className="w-2 h-2 bg-academic-accent rounded-full shadow-[0_0_5px_var(--academic-accent)] transition-transform duration-300 group-hover:scale-125" />
-              <span className="group-hover:text-academic-accent transition-colors duration-300">Informativo Index</span>
+              <span className="group-hover:text-academic-accent transition-colors duration-300">Informative Index</span>
             </span>
           </div>
         </div>
