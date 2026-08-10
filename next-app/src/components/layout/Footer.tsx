@@ -45,7 +45,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative bg-academic-paper text-academic-text border-t border-academic-border py-12 md:py-16 overflow-hidden">
+    <footer className="relative bg-academic-bg text-academic-text border-t border-academic-border py-12 md:py-16 overflow-hidden">
       {/* Background Ornaments */}
       <div className="absolute -top-[200px] -right-[200px] w-[400px] h-[400px] bg-academic-accent/5 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute -bottom-[200px] -left-[200px] w-[400px] h-[400px] bg-academic-secondary/5 rounded-full blur-[100px] pointer-events-none" />
