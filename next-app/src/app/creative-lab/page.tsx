@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import prisma from '../../lib/prisma';
 import { CreativeLabGrid } from '../../components/creative-lab/CreativeLabGrid';
 import { ErrorBoundary } from 'react-error-boundary';
-import { ErrorFallback } from '../../components/ui/ErrorFallback';
+import ErrorFallback from '../../components/ui/ErrorFallback';
 
 export const metadata: Metadata = {
   title: 'Creative Lab | Ashif',
