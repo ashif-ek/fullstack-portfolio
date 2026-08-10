@@ -11,6 +11,7 @@ export default function AdminSidebar() {
 
     const navItems = [
         { name: 'Dashboard', href: '/admin', icon: <LayoutDashboard size={18} /> },
+        { name: 'Creative Lab', href: '/admin/creative-lab', icon: <FolderKanban size={18} /> },
         { name: 'Projects', href: '/admin/projects', icon: <FolderKanban size={18} /> },
         { name: 'Academic Blog', href: '/admin/blogs', icon: <FileText size={18} /> },
         { name: 'Knowledge Base (Skills)', href: '/admin/skills', icon: <PenTool size={18} /> },

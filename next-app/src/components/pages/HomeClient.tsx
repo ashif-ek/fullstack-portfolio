@@ -19,12 +19,15 @@ const BlogSection = dynamic(() => import("../../components/sections/BlogSection"
 const Services = dynamic(() => import("../../components/sections/Services"), { ssr: false });
 
 import { Settings } from "../../types";
+import { CreativeLabItem } from "@prisma/client";
+import { CreativeLabSection } from "../creative-lab/CreativeLabSection";
 
 interface HomeClientProps {
   settings: Settings;
+  creativeLabItems: CreativeLabItem[];
 }
 
-export default function HomeClient({ settings }: HomeClientProps) {
+export default function HomeClient({ settings, creativeLabItems }: HomeClientProps) {
   const { isAdmin } = useAuth();
   const { isRecruiterMode } = useRecruiterMode();
 
@@ -52,6 +55,7 @@ export default function HomeClient({ settings }: HomeClientProps) {
       <>
         {settings.showAbout && <About />}
         <Experience />
+        <CreativeLabSection items={creativeLabItems} />
         {settings.showServices && <Services />}
         {settings.showProjects && <Projects condensed={isRecruiterMode} />}
         {settings.showSkills && <Skills condensed={isRecruiterMode} />}

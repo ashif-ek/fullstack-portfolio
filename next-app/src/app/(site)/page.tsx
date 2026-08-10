@@ -5,12 +5,13 @@ import {
 } from '@tanstack/react-query';
 import { DataService } from '../../services/dataService';
 import HomeClient from '../../components/pages/HomeClient';
+import prisma from '../../lib/prisma';
+
+export const revalidate = 3600;
 
 export default async function Home() {
   const queryClient = new QueryClient();
 
-  // Prefetch core settings and profile data on the server
-  // This ensures they are available immediately on the client
   await Promise.all([
     queryClient.prefetchQuery({
       queryKey: ['settings'],
@@ -35,10 +36,16 @@ export default async function Home() {
   ]);
 
   const settings = await DataService.getSettings();
+  
+  const creativeLabItems = await prisma.creativeLabItem.findMany({
+    where: { published: true, featured: true },
+    orderBy: [{ sortOrder: 'asc' }, { createdAt: 'desc' }],
+    take: 6
+  });
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <HomeClient settings={settings} />
+      <HomeClient settings={settings} creativeLabItems={creativeLabItems} />
     </HydrationBoundary>
   );
 }

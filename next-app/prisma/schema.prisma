@@ -181,3 +181,41 @@ model ResumeDownload {
 
   @@map("core_resumedownload")
 }
+
+enum CreativeLabMediaType {
+  VIDEO
+  IMAGE
+  GIF
+  INTERACTIVE
+}
+
+enum CreativeLabCategory {
+  AI_VIDEO
+  AI_VISUAL
+  CREATIVE_CODE
+  ANIMATION
+  EXPERIMENT
+  OTHER
+}
+
+model CreativeLabItem {
+  id                     Int                  @id @default(autoincrement())
+  title                  String               @db.VarChar(200)
+  slug                   String               @unique @db.VarChar(255)
+  description            String
+  mediaType              CreativeLabMediaType
+  mediaUrl               String               @db.VarChar(500)
+  thumbnailUrl           String?              @db.VarChar(500)
+  cloudinaryPublicId     String?              @db.VarChar(255)
+  cloudinaryResourceType String?              @db.VarChar(50)
+  category               CreativeLabCategory
+  tools                  String[]
+  duration               String?              @db.VarChar(50)
+  featured               Boolean              @default(false)
+  published              Boolean              @default(false)
+  sortOrder              Int                  @default(0)
+  createdAt              DateTime             @default(now())
+  updatedAt              DateTime             @updatedAt
+
+  @@map("core_creativelabitem")
+}

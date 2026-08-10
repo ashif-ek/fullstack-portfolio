@@ -118,7 +118,7 @@ const Hero = ({ condensed = false }: { condensed?: boolean }) => {
           )}
         </div>
 
-        <div className="mt-12 flex flex-col md:flex-row gap-4">
+        <div className="mt-12 flex flex-col md:flex-row flex-wrap justify-center gap-4">
           <Link
             href="/projects"
             className={cn(buttonClasses, "text-sm tracking-widest py-3 px-8")}
@@ -145,6 +145,12 @@ const Hero = ({ condensed = false }: { condensed?: boolean }) => {
             className={cn(buttonClasses, "text-sm tracking-widest py-3 px-8")}
           >
             Correspondence
+          </Link>
+          <Link
+            href="/creative-lab"
+            className={cn(buttonClasses, "text-sm tracking-widest py-3 px-8")}
+          >
+            Creative Lab
           </Link>
         </div>
 
