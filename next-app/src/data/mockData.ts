@@ -11,7 +11,7 @@ export const profile: Profile = {
         { "name": "Fiverr", "url": "http://www.fiverr.com/s/gDLy45X" },
         { "name": "Docs Material", "url": "https://ashif-ek.github.io/docs-stack-material/" },
         { "name": "WhatsApp", "url": "https://wa.me/919037499763" },
-        { "name": "Instagram", "url": "https://instagram.com/ashif.io" },
+        { "name": "Instagram", "url": "https://www.instagram.com/ashif_e.k" },
         { "name": "Phone", "url": "tel:+919037499763" }
     ]
 };

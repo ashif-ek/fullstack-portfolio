@@ -28,7 +28,7 @@ const Footer = () => {
   const socialLinks = [
     { name: 'LinkedIn', url: 'https://www.linkedin.com/in/ashifek/' },
     { name: 'GitHub', url: 'https://github.com/ashif-ek' },
-    { name: 'Instagram', url: 'https://www.instagram.com/ashif.io' },
+    { name: 'Instagram', url: 'https://www.instagram.com/ashif_e.k' },
   ];
 
   const contactLinks = [

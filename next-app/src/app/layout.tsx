@@ -121,7 +121,7 @@ export default function RootLayout({
                   "sameAs": [
                     "https://github.com/ashif-ek",
                     "https://linkedin.com/in/ashifek",
-                    "https://instagram.com/ashif.io",
+                    "https://www.instagram.com/ashif_e.k",
                     "http://www.fiverr.com/s/gDLy45X",
                     "https://ashif-ek.github.io/docs-stack-material/"
                   ],
