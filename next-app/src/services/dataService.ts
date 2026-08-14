@@ -66,20 +66,20 @@ const bffFetch = async (endpoint: string) => {
 export const DataService = {
     // --- Settings & Meta ---
     async getSettings(): Promise<Settings> {
-        return MOCK_SETTINGS;
+        return await bffFetch('settings').catch(() => MOCK_SETTINGS) as Settings;
     },
 
     async getProfile(): Promise<Profile | null> {
-        return MOCK_PROFILE as unknown as Profile;
+        return await bffFetch('profile').catch(() => MOCK_PROFILE) as Profile;
     },
 
     async getAbout(): Promise<AboutData | null> {
-        return (MOCK_ABOUT[0] || null) as unknown as AboutData;
+        return await bffFetch('about').catch(() => MOCK_ABOUT[0]) as AboutData;
     },
 
     // --- Core Collections ---
     async getProjects(): Promise<Project[]> {
-        return MOCK_PROJECTS as unknown as Project[];
+        return await bffFetch('projects').catch(() => MOCK_PROJECTS) as Project[];
     },
 
     async getProjectBySlug(slug: string): Promise<Project | null> {
@@ -88,7 +88,7 @@ export const DataService = {
     },
 
     async getBlogs(): Promise<Blog[]> {
-        return MOCK_BLOGS as unknown as Blog[];
+        return await bffFetch('blogs').catch(() => MOCK_BLOGS) as Blog[];
     },
 
     async getBlogBySlug(slug: string): Promise<Blog | null> {
@@ -97,27 +97,27 @@ export const DataService = {
     },
 
     async getSkills(): Promise<Skill[]> {
-        return MOCK_SKILLS as unknown as Skill[];
+        return await bffFetch('skills').catch(() => MOCK_SKILLS) as Skill[];
     },
 
     async getTools(): Promise<Tool[]> {
-        return MOCK_TOOLS as unknown as Tool[];
+        return await bffFetch('tools').catch(() => MOCK_TOOLS) as Tool[];
     },
 
     async getServices(): Promise<Service[]> {
-        return MOCK_SERVICES as unknown as Service[];
+        return await bffFetch('services').catch(() => MOCK_SERVICES) as Service[];
     },
 
     async getCertificates(): Promise<Certificate[]> {
-        return MOCK_CERTIFICATES as unknown as Certificate[];
+        return await bffFetch('certificates').catch(() => MOCK_CERTIFICATES) as Certificate[];
     },
 
     async getLocations(): Promise<LocationData[]> {
-        return MOCK_LOCATIONS as unknown as LocationData[];
+        return await bffFetch('locations').catch(() => MOCK_LOCATIONS) as LocationData[];
     },
 
     async getMessages(): Promise<Message[]> {
-        return [];
+        return await bffFetch('messages').catch(() => []) as Message[];
     },
 
     // --- Analytical & Health ---

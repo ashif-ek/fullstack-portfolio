@@ -33,10 +33,10 @@ export const ProjectSchema = z.object({
 
 export const AboutSchema = z.object({
   id: z.string().or(z.number()).optional(),
-  avatar: z.string().default(""),
-  introduction: z.string().default(""),
-  experience: z.string().default(""),
-  philosophy: z.string().default(""),
+  avatar: z.string().nullable().optional().transform(v => v || ""),
+  introduction: z.string().nullable().optional().transform(v => v || ""),
+  experience: z.string().nullable().optional().transform(v => v || ""),
+  philosophy: z.string().nullable().optional().transform(v => v || ""),
   stats: z.object({
     projects: z.number().default(0),
     certificates: z.number().default(0),
