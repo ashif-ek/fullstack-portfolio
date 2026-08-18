@@ -1,6 +1,10 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { GitHubCalendar } from 'react-github-calendar';
+import dynamic from 'next/dynamic';
+const GitHubCalendar = dynamic(() => import('react-github-calendar').then((mod) => mod.GitHubCalendar || mod.default), {
+    ssr: false,
+    loading: () => <div className="py-24 animate-pulse bg-academic-bg min-h-[150px]" />
+});
 import { motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
 

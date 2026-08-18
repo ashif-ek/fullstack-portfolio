@@ -129,3 +129,8 @@ html {
         scroll-behavior: auto;
     }
 }
+
+/* Fix react-activity-calendar unsupported fill animation which causes non-composited animations */
+.react-activity-calendar--loading-animation {
+    animation-name: none !important;
+}
