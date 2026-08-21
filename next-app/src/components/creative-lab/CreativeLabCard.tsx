@@ -41,10 +41,10 @@ export function CreativeLabCard({ item, onClick }: CreativeLabCardProps) {
       onMouseLeave={handleMouseLeave}
       onFocus={handleMouseEnter}
       onBlur={handleMouseLeave}
-      className="group flex flex-col text-left w-full bg-academic-paper border border-academic-border overflow-hidden transition-all duration-300 hover:shadow-academic hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-academic-primary focus:-translate-y-1"
+      className="group flex flex-col text-left w-full transition-all duration-500 focus:outline-none focus:ring-2 focus:ring-academic-primary focus:ring-offset-8 focus:ring-offset-academic-bg"
       aria-label={`View ${item.title}`}
     >
-      <div className="relative aspect-video w-full overflow-hidden bg-academic-bg/50 border-b border-academic-border">
+      <div className="relative aspect-[4/3] md:aspect-video w-full overflow-hidden bg-academic-bg/50 border border-academic-border/50 group-hover:border-academic-border transition-colors duration-500">
         {displayImage && (
           <Image
             src={displayImage}
@@ -75,16 +75,28 @@ export function CreativeLabCard({ item, onClick }: CreativeLabCardProps) {
         )}
       </div>
 
-      <div className="p-5 flex-1 flex flex-col">
-        <span className="text-[10px] font-bold text-academic-muted uppercase tracking-widest mb-2">
+      <div className="pt-6 pb-2 flex-1 flex flex-col w-full">
+        <span className="text-[10px] font-bold text-academic-muted uppercase tracking-widest mb-3">
           {item.category.replace('_', ' ')}
         </span>
-        <h3 className="text-lg font-serif text-academic-primary font-bold mb-2 group-hover:text-academic-accent transition-colors line-clamp-1">
+        <h3 className="text-xl font-serif text-academic-primary mb-3 group-hover:text-academic-accent transition-colors">
           {item.title}
         </h3>
-        <p className="text-sm text-academic-text/80 line-clamp-2 leading-relaxed">
-          {item.description}
-        </p>
+        {item.description && (
+          <p className="text-sm text-academic-text/80 leading-relaxed mb-6 line-clamp-3">
+            {item.description}
+          </p>
+        )}
+        
+        <div className="mt-auto flex items-center text-[10px] text-academic-muted font-bold uppercase tracking-widest">
+          <span>2026</span>
+          {item.duration && (
+            <>
+              <span className="mx-2 text-academic-border">•</span>
+              <span>{item.duration}</span>
+            </>
+          )}
+        </div>
       </div>
     </button>
   );
