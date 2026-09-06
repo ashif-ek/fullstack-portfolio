@@ -126,13 +126,13 @@ const Hero = ({ condensed = false }: { condensed?: boolean }) => {
             Review Works
           </Link>
           <Link
-            href="/about"
+            href="/expertise"
             className={cn(buttonClasses, "text-sm tracking-widest py-3 px-8")}
           >
             Expertise Profile
           </Link>
           <a
-            href="/resume/Ashif%20E.K%20RESUME%20FULL-STACK.pdf"
+            href="/resume/ASHIF_E.K.pdf"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackResumeDownload().catch(console.error)}

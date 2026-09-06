@@ -63,10 +63,10 @@ const Header = () => {
   }, [isOpen]);
 
   const navLinks = [
-    { name: 'About', href: '/about' },
-    { name: 'Projects', href: '/projects' },
-    { name: 'Journal', href: '/blog' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'About', href: '#about' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Journal', href: '#blog' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   const closeMenu = () => setIsOpen(false);
