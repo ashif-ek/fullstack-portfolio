@@ -37,7 +37,7 @@ export default async function Home() {
 
   const settings = await DataService.getSettings();
   
-  let creativeLabItems = [];
+  let creativeLabItems: any[] = [];
   try {
     creativeLabItems = await prisma.creativeLabItem.findMany({
       where: { published: true, featured: true },
