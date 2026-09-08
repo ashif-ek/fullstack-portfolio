@@ -37,11 +37,17 @@ export default async function Home() {
 
   const settings = await DataService.getSettings();
   
-  const creativeLabItems = await prisma.creativeLabItem.findMany({
-    where: { published: true, featured: true },
-    orderBy: [{ sortOrder: 'asc' }, { createdAt: 'desc' }],
-    take: 6
-  });
+  let creativeLabItems = [];
+  try {
+    creativeLabItems = await prisma.creativeLabItem.findMany({
+      where: { published: true, featured: true },
+      orderBy: [{ sortOrder: 'asc' }, { createdAt: 'desc' }],
+      take: 6
+    });
+  } catch (error) {
+    console.error("Failed to fetch creative lab items:", error);
+  }
+
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
