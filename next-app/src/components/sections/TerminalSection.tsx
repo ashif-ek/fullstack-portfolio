@@ -138,7 +138,7 @@ export default function TerminalSection({ isStandalone = false }: TerminalSectio
           <div className="text-academic-muted space-y-2">
             <p>Accessing curriculum vitae...</p>
             <p>
-              <a href="/resume/ASHIF_E.K.pdf" target="_blank" rel="noopener noreferrer" onClick={() => trackResumeDownload().catch(console.error)} className="text-academic-accent underline hover:text-academic-primary">
+              <a href="/resume/ASHIF-E.K-RESUME-FULL-STACK.pdf" target="_blank" rel="noopener noreferrer" onClick={() => trackResumeDownload().catch(console.error)} className="text-academic-accent underline hover:text-academic-primary">
                 [Click here to view / download resume]
               </a>
             </p>

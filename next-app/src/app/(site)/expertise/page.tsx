@@ -368,7 +368,7 @@ export default async function AboutPage() {
                             <a href="mailto:ashifek11@gmail.com" className="px-8 py-3 bg-academic-primary text-white rounded-lg font-bold shadow-lg shadow-academic-primary/20 hover:bg-academic-primary/90 hover:shadow-xl hover:-translate-y-0.5 transition-all">
                                 Get in Touch
                             </a>
-                            <Link href="/resume/ASHIF_E.K.pdf" target="_blank" className="px-8 py-3 border border-academic-border bg-academic-bg rounded-lg font-bold text-academic-primary hover:bg-academic-primary/5 transition-colors">
+                            <Link href="/resume/ASHIF-E.K-RESUME-FULL-STACK.pdf" target="_blank" className="px-8 py-3 border border-academic-border bg-academic-bg rounded-lg font-bold text-academic-primary hover:bg-academic-primary/5 transition-colors">
                                 View Resume
                             </Link>
                         </div>

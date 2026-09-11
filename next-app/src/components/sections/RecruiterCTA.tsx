@@ -97,7 +97,7 @@ export default function RecruiterCTA() {
                                 </button>
 
                                 <a
-                                    href="/resume/ASHIF_E.K.pdf"
+                                    href="/resume/ASHIF-E.K-RESUME-FULL-STACK.pdf"
                                     download
                                     onClick={() => trackResumeDownload().catch(console.error)}
                                     className="px-6 py-4 rounded-lg bg-academic-paper border border-academic-border text-academic-primary hover:bg-academic-primary/5 transition-all text-center flex items-center justify-center gap-2 group font-medium tracking-wide"
