@@ -9,6 +9,7 @@ import StatusBadge from '../components/ui/StatusBadge';
 import VisitorTracker from '../components/ui/VisitorTracker';
 import RecruiterBanner from '../components/ui/RecruiterBanner';
 import BackendInitializer from '../components/providers/BackendInitializer';
+import { Chatbot } from '../components/ui/Chatbot';
 
 const baseUrl = 'https://www.ashifek.in';
 
@@ -174,6 +175,7 @@ export default function RootLayout({
                 <VisitorTracker />
                 {children}
                 <StatusBadge />
+                <Chatbot />
               </AuthProvider>
             </RecruiterProvider>
           </ThemeProvider>
