@@ -1,12 +1,19 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
-const GitHubCalendar = dynamic(() => import('react-github-calendar').then((mod) => mod.GitHubCalendar), {
+const ActivityCalendarDynamic = dynamic(() => import('react-activity-calendar').then(mod => mod.ActivityCalendar as any), {
     ssr: false,
     loading: () => <div className="py-24 animate-pulse bg-academic-bg min-h-[150px]" />
 });
+const ActivityCalendar = ActivityCalendarDynamic as any;
 import { motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
+
+interface ContributionData {
+    date: string;
+    count: number;
+    level: 0 | 1 | 2 | 3 | 4;
+}
 
 const CONTRIBUTION_DATA: Record<number, { count: number, repos: string[] }> = {
     2026: { count: 42, repos: ['portfolio-next', 'ci-cd-automation'] },
@@ -15,16 +22,56 @@ const CONTRIBUTION_DATA: Record<number, { count: number, repos: string[] }> = {
 };
 
 export default function GithubActivity() {
-    const [selectedYear, setSelectedYear] = useState<number>(2026);
-    const { theme, resolvedTheme } = useTheme();
+    const [selectedYear, setSelectedYear] = useState<number>(new Date().getFullYear());
+    const { resolvedTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
     
-    const years = [2026, 2025, 2024];
+    const [contributions, setContributions] = useState<ContributionData[]>([]);
+    const [totalCount, setTotalCount] = useState<number>(0);
+    const [isLoading, setIsLoading] = useState<boolean>(true);
+    const [error, setError] = useState<string | null>(null);
 
-    // Avoid hydration mismatch
+    // Dynamic years based on current date down to 2024
+    const currentYear = new Date().getFullYear();
+    const years = Array.from({ length: currentYear - 2024 + 1 }, (_, i) => currentYear - i);
+
     useEffect(() => {
         setMounted(true);
     }, []);
+
+    useEffect(() => {
+        let isMounted = true;
+        
+        async function fetchGitHubData() {
+            setIsLoading(true);
+            setError(null);
+            try {
+                const response = await fetch(`/api/github?username=ashif-ek&year=${selectedYear}`);
+                if (!response.ok) throw new Error('Failed to fetch data');
+                
+                const data = await response.json();
+                if (isMounted) {
+                    setContributions(data.contributions || []);
+                    setTotalCount(data.totalCount || 0);
+                }
+            } catch (err) {
+                if (isMounted) {
+                    console.error(err);
+                    setError('Unable to load GitHub contributions.');
+                }
+            } finally {
+                if (isMounted) {
+                    setIsLoading(false);
+                }
+            }
+        }
+
+        fetchGitHubData();
+
+        return () => {
+            isMounted = false;
+        };
+    }, [selectedYear]);
 
     if (!mounted) {
         return <div className="py-24 animate-pulse bg-academic-bg min-h-[400px]" />;
@@ -32,8 +79,14 @@ export default function GithubActivity() {
 
     const isDark = resolvedTheme === 'dark';
 
+    // Theme values tuned for contrast in both dark and light modes
+    const themeColors = {
+        light: ['#ebedf0', '#9be9a8', '#40c463', '#30a14e', '#216e39'],
+        dark: ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353'],
+    };
+
     return (
-        <section id="github-activity" className="py-24 bg-academic-bg relative border-t border-academic-border overflow-hidden">
+        <section id="github-activity" className={`py-24 relative border-t overflow-hidden transition-colors duration-300 ${isDark ? 'bg-academic-bg border-academic-border' : 'bg-gray-50 border-gray-200'}`}>
             <div className="container mx-auto px-6 relative z-10 max-w-6xl">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -42,8 +95,8 @@ export default function GithubActivity() {
                     transition={{ duration: 0.6 }}
                     className="text-left mb-12"
                 >
-                    <h2 className="section-title !text-left">Engineering Velocity</h2>
-                    <p className="text-academic-muted font-serif italic mt-2 max-w-2xl">
+                    <h2 className={`section-title !text-left ${isDark ? '' : '!text-gray-900'}`}>Engineering Velocity</h2>
+                    <p className={`font-serif italic mt-2 max-w-2xl ${isDark ? 'text-academic-muted' : 'text-gray-600'}`}>
                         A longitudinal record of technical contributions and architectural developments.
                     </p>
                 </motion.div>
@@ -55,59 +108,71 @@ export default function GithubActivity() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className={`xl:col-span-9 rounded-xl p-6 md:p-10 shadow-academic overflow-hidden border transition-colors duration-500 ${
+                        className={`xl:col-span-9 rounded-xl p-5 md:px-10 md:py-8 shadow-lg overflow-hidden border transition-colors duration-500 ${
                             isDark 
-                            ? 'bg-[#0d1117] border-[#30363d]' 
-                            : 'bg-academic-paper border-academic-border'
+                            ? 'bg-[#0d1117] border-[#30363d] shadow-black/50' 
+                            : 'bg-white border-gray-200 shadow-gray-200/50'
                         }`}
                     >
-                        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
-                            <h3 className="text-academic-primary font-medium text-lg">
+                        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                            <h3 className={`font-medium text-lg ${isDark ? 'text-academic-primary' : 'text-gray-900'}`}>
                                 Activity Overview for {selectedYear}
                             </h3>
-                            <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-academic-muted">
+                            <div className={`flex items-center gap-2 text-[10px] uppercase tracking-widest ${isDark ? 'text-academic-muted' : 'text-gray-500'}`}>
                                 <span>Contribution settings</span>
-                                <div className="w-px h-3 bg-academic-border" />
+                                <div className={`w-px h-3 ${isDark ? 'bg-academic-border' : 'bg-gray-300'}`} />
                                 <span className="flex items-center gap-1 cursor-help">
                                     Metrics Registry
                                 </span>
                             </div>
                         </div>
 
-                        <div className="relative w-full overflow-x-auto pb-4 scrollbar-hide">
-                            <div className="min-w-[800px] flex justify-center py-4">
-                                <GitHubCalendar
-                                    username="ashif-ek"
-                                    blockSize={12}
-                                    blockMargin={4}
-                                    fontSize={12}
-                                    showWeekdayLabels
-                                    year={selectedYear}
-                                    labels={{
-                                        totalCount: `{{count}} contributions in ${selectedYear}`,
-                                    }}
-                                    theme={{
-                                        light: ['#ebedf0', '#9be9a8', '#40c463', '#30a14e', '#216e39'],
-                                        dark: ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353'],
-                                    }}
-                                />
+                        <div className="relative w-full overflow-x-auto pb-2 scrollbar-hide">
+                            <div className="min-w-[800px] flex justify-center py-2">
+                                {isLoading ? (
+                                    <div className="flex items-center justify-center min-h-[150px] w-full animate-pulse bg-gray-100 dark:bg-gray-800 rounded-md">
+                                        <p className="text-sm text-gray-500 dark:text-gray-400">Loading fine-grained data...</p>
+                                    </div>
+                                ) : error ? (
+                                    <div className="flex flex-col items-center justify-center min-h-[150px] w-full text-red-500 dark:text-red-400 border border-red-200 dark:border-red-900/30 rounded-md bg-red-50 dark:bg-red-900/10 p-4">
+                                        <p className="text-sm font-medium">{error}</p>
+                                        <button onClick={() => setSelectedYear(selectedYear)} className="mt-2 text-xs underline hover:text-red-700 dark:hover:text-red-300">Retry</button>
+                                    </div>
+                                ) : contributions.length === 0 ? (
+                                    <div className="flex items-center justify-center min-h-[150px] w-full text-gray-500 dark:text-gray-400">
+                                        <p className="text-sm">No activity recorded for {selectedYear}</p>
+                                    </div>
+                                ) : (
+                                    <ActivityCalendar
+                                        data={contributions}
+                                        blockSize={12}
+                                        blockMargin={4}
+                                        fontSize={12}
+                                        showWeekdayLabels
+                                        labels={{
+                                            totalCount: `${totalCount} contributions in ${selectedYear}`,
+                                        }}
+                                        theme={{
+                                            light: themeColors.light,
+                                            dark: themeColors.dark,
+                                        }}
+                                        colorScheme={isDark ? 'dark' : 'light'}
+                                    />
+                                )}
                             </div>
                         </div>
 
-                        <div className="mt-8 pt-6 border-t border-academic-border/30 flex flex-wrap justify-between items-center gap-6">
-                            <div className="flex items-center gap-6 text-[11px] text-academic-muted">
-                                <a href="https://github.com/ashif-ek" target="_blank" rel="noopener noreferrer" className="hover:text-academic-accent transition-colors">
+                        <div className={`mt-6 pt-4 border-t flex flex-wrap justify-between items-center gap-6 ${isDark ? 'border-academic-border/30' : 'border-gray-200'}`}>
+                            <div className={`flex items-center gap-6 text-[11px] ${isDark ? 'text-academic-muted' : 'text-gray-500'}`}>
+                                <a href="https://github.com/ashif-ek" target="_blank" rel="noopener noreferrer" className={`transition-colors ${isDark ? 'hover:text-academic-accent' : 'hover:text-slate-900'}`}>
                                     GitHub Contribution Protocol
                                 </a>
                             </div>
-                            <div className="flex items-center gap-2 text-[11px] text-academic-muted">
+                            <div className={`flex items-center gap-2 text-[11px] ${isDark ? 'text-academic-muted' : 'text-gray-500'}`}>
                                 <span>Less</span>
                                 <div className="flex gap-1">
-                                    {(isDark 
-                                        ? ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353']
-                                        : ['#ebedf0', '#9be9a8', '#40c463', '#30a14e', '#216e39']
-                                    ).map(c => (
-                                        <div key={c} className="w-2.5 h-2.5 rounded-sm border border-academic-border/10" style={{ backgroundColor: c }} />
+                                    {(isDark ? themeColors.dark : themeColors.light).map(c => (
+                                        <div key={c} className={`w-2.5 h-2.5 rounded-sm border ${isDark ? 'border-white/10' : 'border-black/10'}`} style={{ backgroundColor: c }} />
                                     ))}
                                 </div>
                                 <span>More</span>
@@ -121,27 +186,34 @@ export default function GithubActivity() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="xl:col-span-3 space-y-4"
+                        className="xl:col-span-3 space-y-3"
                     >
                         <div className="flex xl:flex-col gap-2 overflow-x-auto pb-2 xl:pb-0">
-                            {years.map((year) => (
-                                <button
-                                    key={year}
-                                    onClick={() => setSelectedYear(year)}
-                                    className={`flex-1 xl:flex-none px-4 py-3 rounded-lg text-sm font-bold transition-all text-center xl:text-left border ${
-                                        selectedYear === year
-                                            ? 'bg-academic-primary text-academic-paper border-academic-primary shadow-lg shadow-academic-primary/20'
-                                            : 'bg-academic-paper text-academic-muted border-academic-border hover:border-academic-primary/50 hover:text-academic-primary'
-                                    }`}
-                                >
-                                    {year}
-                                </button>
-                            ))}
+                            {years.map((year) => {
+                                const isSelected = selectedYear === year;
+                                return (
+                                    <button
+                                        key={year}
+                                        onClick={() => setSelectedYear(year)}
+                                        className={`flex-1 xl:flex-none px-4 py-2 rounded-lg text-sm font-bold transition-all text-center xl:text-left border ${
+                                            isSelected
+                                                ? isDark 
+                                                    ? 'bg-academic-primary text-academic-paper border-academic-primary shadow-lg shadow-academic-primary/20' 
+                                                    : 'bg-slate-900 text-white border-slate-900 shadow-md shadow-slate-900/20'
+                                                : isDark 
+                                                    ? 'bg-academic-paper text-academic-muted border-academic-border hover:border-academic-primary/50 hover:text-academic-primary' 
+                                                    : 'bg-white text-gray-600 border-gray-200 hover:border-gray-300 hover:text-slate-900'
+                                        }`}
+                                    >
+                                        {year}
+                                    </button>
+                                );
+                            })}
                         </div>
 
-                        <div className="academic-card !p-6 hidden xl:block">
-                            <h4 className="text-[10px] uppercase tracking-widest font-black text-academic-primary mb-4">Activity Portfolio</h4>
-                            <div className="space-y-4">
+                        <div className="academic-card !p-5 hidden xl:block mt-3">
+                            <h4 className="text-[10px] uppercase tracking-widest font-black text-academic-primary mb-3">Activity Portfolio</h4>
+                            <div className="space-y-3">
                                 <div className="flex items-start gap-3">
                                     <div className="w-1.5 h-1.5 rounded-full bg-academic-accent mt-1.5" />
                                     <p className="text-xs text-academic-muted leading-relaxed">
@@ -151,7 +223,7 @@ export default function GithubActivity() {
                                 <div className="p-3 rounded-lg bg-academic-primary/5 border border-academic-border">
                                     <p className="text-[10px] uppercase font-bold text-academic-muted mb-1">Impact Repositories</p>
                                     <div className="flex flex-wrap gap-2 mt-2">
-                                        {CONTRIBUTION_DATA[selectedYear].repos.map(repo => (
+                                        {(CONTRIBUTION_DATA[selectedYear]?.repos || []).map(repo => (
                                             <span key={repo} className="text-[9px] px-2 py-0.5 rounded bg-academic-paper border border-academic-border text-academic-primary font-mono cursor-default">
                                                 {repo}
                                             </span>

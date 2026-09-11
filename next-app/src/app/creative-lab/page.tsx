@@ -7,6 +7,7 @@ import { CreativeLabGrid } from '../../components/creative-lab/CreativeLabGrid';
 import { CreativeLabFeatured } from '../../components/creative-lab/CreativeLabFeatured';
 import { ErrorBoundary } from 'react-error-boundary';
 import ErrorFallback from '../../components/ui/ErrorFallback';
+import { ThemeToggle } from '../../components/ui/ThemeToggle';
 
 export const metadata: Metadata = {
   title: 'Creative Lab | Ashif',
@@ -45,7 +46,7 @@ export default async function CreativeLabPage() {
     <div className="min-h-screen bg-academic-bg pt-12 md:pt-16 pb-32">
       <div className="max-w-6xl mx-auto px-6">
         
-        <nav className="mb-10 md:mb-12">
+        <nav className="mb-10 md:mb-12 flex items-center justify-between">
           <Link 
             href="/" 
             className="group inline-flex items-center text-sm font-medium text-academic-muted hover:text-academic-primary transition-colors focus:outline-none focus:ring-2 focus:ring-academic-primary focus:ring-offset-4 focus:ring-offset-academic-bg rounded-sm"
@@ -53,6 +54,7 @@ export default async function CreativeLabPage() {
             <ArrowLeft className="w-4 h-4 mr-2 transition-transform duration-300 group-hover:-translate-x-1" />
             Back to home
           </Link>
+          <ThemeToggle />
         </nav>
 
         <header className="mb-16 grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-12 items-start">
