@@ -72,7 +72,7 @@ export async function POST(req: Request) {
       contents: contents,
       generationConfig: {
         temperature: 0.2, // Keep it focused and deterministic
-        maxOutputTokens: 250, // Keep responses short and concise
+        maxOutputTokens: 1024,
       }
     };
 

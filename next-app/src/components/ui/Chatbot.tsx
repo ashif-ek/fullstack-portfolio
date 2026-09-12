@@ -11,10 +11,9 @@ interface Message {
 }
 
 const SUGGESTED_QUESTIONS = [
-  "What does Ashif E.K build?",
-  "Tell me about his projects",
-  "What's his tech stack?",
-  "Why hire Ashif E.K?"
+  "Tech stack",
+  "Projects",
+  "Experience"
 ];
 
 export function Chatbot() {
@@ -76,19 +75,21 @@ export function Chatbot() {
 
   return (
     <>
-      {/* Floating Action Button */}
-      <div className="fixed bottom-6 right-6 z-50">
+      {/* Floating Action Button / Launcher */}
+      <div className="fixed bottom-3 right-3 md:bottom-6 md:right-6 z-50">
         <AnimatePresence>
           {!isOpen && (
             <motion.button
-              initial={{ scale: 0, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0, opacity: 0 }}
+              initial={{ opacity: 0, y: 4 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 4 }}
+              transition={{ duration: 0.15 }}
               onClick={() => setIsOpen(true)}
-              className="bg-academic-primary text-white p-4 rounded-full shadow-academic hover:shadow-lg transition-shadow flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-academic-primary focus:ring-offset-2"
-              aria-label="Ask AI"
+              className="w-16 h-16 flex flex-col items-center justify-center bg-academic-paper border border-academic-border shadow-sm hover:-translate-y-px transition-transform focus:outline-none"
+              aria-label="Open portfolio assistant"
             >
-              <MessageCircle className="w-6 h-6" />
+              <Bot className="w-5 h-5 text-academic-text mb-1" strokeWidth={1.5} />
+              <span className="text-[10px] font-medium tracking-[0.15em] text-academic-text">CHAT</span>
             </motion.button>
           )}
         </AnimatePresence>
@@ -98,139 +99,118 @@ export function Chatbot() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            transition={{ duration: 0.2 }}
-            className="fixed bottom-3 right-3 md:bottom-6 md:right-6 z-50 w-[calc(100vw-24px)] md:w-[380px] md:max-w-[calc(100vw-32px)] h-[550px] max-h-[calc(100dvh-80px)] md:max-h-[min(650px,calc(100vh-32px))] bg-academic-paper border border-academic-border shadow-md rounded-2xl flex flex-col overflow-hidden"
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 8 }}
+            transition={{ duration: 0.15, ease: "easeOut" }}
+            className="fixed bottom-3 right-3 md:bottom-6 md:right-6 z-50 w-[calc(100vw-24px)] md:w-[380px] h-[540px] max-h-[calc(100dvh-24px)] md:max-h-[min(540px,calc(100vh-32px))] bg-academic-paper border border-academic-border shadow-sm flex flex-col overflow-hidden"
           >
             {/* Header */}
-            <div className="flex items-center justify-between p-4 border-b border-academic-border bg-academic-bg">
-              <div className="flex items-center gap-2">
-                <div className="bg-academic-primary/10 p-2 rounded-lg">
-                  <Bot className="w-5 h-5 text-academic-primary" />
-                </div>
-                <div>
-                  <h3 className="font-serif font-semibold text-academic-primary text-sm">Ashif E.K AI</h3>
-                  <p className="text-xs text-academic-muted">Portfolio Assistant</p>
+            <div className="flex items-center justify-between px-4 py-3 border-b border-academic-border bg-academic-bg">
+              <div className="flex items-center gap-3">
+                <Bot className="w-5 h-5 text-academic-text" strokeWidth={1.5} />
+                <div className="flex flex-col">
+                  <span className="font-serif text-sm font-semibold text-academic-text leading-none mb-1">Ashif E.K AI</span>
+                  <span className="text-[10px] text-academic-muted uppercase tracking-wider leading-none">Portfolio Assistant</span>
                 </div>
               </div>
               <button
                 onClick={() => setIsOpen(false)}
-                className="text-academic-muted hover:text-academic-primary p-1 rounded-md transition-colors"
-                aria-label="Close chat"
+                className="text-academic-muted hover:text-academic-text p-1 transition-colors focus:outline-none"
+                aria-label="Close portfolio assistant"
               >
-                <X className="w-5 h-5" />
+                <X className="w-4 h-4" />
               </button>
             </div>
 
             {/* Messages Area */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-academic-bg/50">
+            <div className="flex-1 overflow-y-auto flex flex-col p-4 bg-white/30">
               {messages.length === 0 ? (
-                <div className="space-y-4">
-                  <div className="flex gap-3 max-w-[85%]">
-                    <div className="w-8 h-8 rounded-full bg-academic-primary flex items-center justify-center flex-shrink-0">
-                      <Bot className="w-4 h-4 text-white" />
-                    </div>
-                    <div className="bg-academic-paper border border-academic-border p-3 rounded-2xl rounded-tl-sm text-sm text-academic-text shadow-sm">
-                      Hi! I'm Ashif E.K's AI assistant. Ask me about his skills, projects, experience, or background.
-                    </div>
-                  </div>
-                  
-                  <div className="flex flex-col gap-2 mt-4">
+                <div className="mt-auto mb-2 space-y-4">
+                  <p className="text-sm font-medium text-academic-text">How can I help?</p>
+                  <div className="flex flex-wrap gap-2">
                     {SUGGESTED_QUESTIONS.map((q, idx) => (
                       <button
                         key={idx}
                         onClick={() => handleSend(q)}
-                        className="text-left bg-academic-paper border border-academic-border px-3 py-2 rounded-lg text-sm text-academic-muted hover:text-academic-primary hover:border-academic-primary transition-colors flex items-center gap-2 w-fit shadow-sm"
+                        className="text-xs border border-academic-border bg-academic-paper px-3 py-1.5 hover:border-academic-text transition-colors text-academic-muted hover:text-academic-text rounded-none"
                       >
-                        <Sparkles className="w-3 h-3" />
                         {q}
                       </button>
                     ))}
                   </div>
                 </div>
               ) : (
-                messages.map((msg, idx) => (
-                  <div
-                    key={idx}
-                    className={`flex gap-3 ${msg.role === 'user' ? 'flex-row-reverse' : ''}`}
-                  >
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
-                      msg.role === 'user' ? 'bg-academic-muted' : 'bg-academic-primary'
-                    }`}>
-                      {msg.role === 'user' ? (
-                        <User className="w-4 h-4 text-white" />
-                      ) : (
-                        <Bot className="w-4 h-4 text-white" />
-                      )}
+                <div className="space-y-4">
+                  {messages.map((msg, idx) => (
+                    <div
+                      key={idx}
+                      className={`flex w-full ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
+                    >
+                      <div className={`p-3 text-sm max-w-[85%] ${
+                        msg.role === 'user' 
+                          ? 'bg-academic-text text-white' 
+                          : 'bg-academic-paper border border-academic-border text-academic-text'
+                      }`}>
+                        {msg.role === 'assistant' ? (
+                          <div className="prose-chatbot break-words leading-relaxed">
+                            <ReactMarkdown
+                              components={{
+                                a: ({ node, ...props }) => <a className="underline hover:text-academic-primary transition-colors" target="_blank" rel="noopener noreferrer" {...props} />,
+                                p: ({ node, ...props }) => <p className="mb-2 last:mb-0" {...props} />,
+                                ul: ({ node, ...props }) => <ul className="list-disc ml-4 mb-2 space-y-1" {...props} />,
+                                ol: ({ node, ...props }) => <ol className="list-decimal ml-4 mb-2 space-y-1" {...props} />,
+                                li: ({ node, ...props }) => <li className="" {...props} />,
+                                strong: ({ node, ...props }) => <strong className="font-semibold" {...props} />,
+                                code: ({ node, ...props }) => <code className="bg-academic-bg px-1 py-0.5 text-[11px] font-mono border border-academic-border" {...props} />
+                              }}
+                            >
+                              {msg.content}
+                            </ReactMarkdown>
+                          </div>
+                        ) : (
+                          msg.content
+                        )}
+                      </div>
                     </div>
-                    <div className={`p-3 text-sm shadow-sm ${
-                      msg.role === 'user' 
-                        ? 'bg-academic-primary text-white rounded-2xl rounded-tr-sm' 
-                        : 'bg-academic-paper border border-academic-border text-academic-text rounded-2xl rounded-tl-sm'
-                    } max-w-[85%]`}>
-                      {msg.role === 'assistant' ? (
-                        <div className="prose-chatbot overflow-hidden break-words">
-                          <ReactMarkdown
-                            components={{
-                              a: ({ node, ...props }) => <a className="text-academic-primary hover:underline" target="_blank" rel="noopener noreferrer" {...props} />,
-                              p: ({ node, ...props }) => <p className="mb-2 last:mb-0" {...props} />,
-                              ul: ({ node, ...props }) => <ul className="list-disc ml-4 mb-2" {...props} />,
-                              ol: ({ node, ...props }) => <ol className="list-decimal ml-4 mb-2" {...props} />,
-                              li: ({ node, ...props }) => <li className="mb-1" {...props} />,
-                              strong: ({ node, ...props }) => <strong className="font-semibold" {...props} />,
-                              h1: ({ node, ...props }) => <h1 className="font-bold text-base mb-2" {...props} />,
-                              h2: ({ node, ...props }) => <h2 className="font-bold text-sm mb-2" {...props} />,
-                              h3: ({ node, ...props }) => <h3 className="font-semibold text-sm mb-1" {...props} />,
-                              code: ({ node, ...props }) => <code className="bg-academic-bg px-1 py-0.5 rounded text-[11px] font-mono text-academic-primary" {...props} />
-                            }}
-                          >
-                            {msg.content}
-                          </ReactMarkdown>
-                        </div>
-                      ) : (
-                        msg.content
-                      )}
+                  ))}
+                  {isLoading && (
+                    <div className="flex w-full justify-start">
+                       <div className="bg-academic-paper border border-academic-border p-3 flex items-center justify-center h-[40px] w-[50px]">
+                         <span className="w-1.5 h-1.5 bg-academic-muted rounded-full animate-bounce [animation-delay:-0.3s]"></span>
+                         <span className="w-1.5 h-1.5 bg-academic-muted rounded-full animate-bounce [animation-delay:-0.15s] mx-1"></span>
+                         <span className="w-1.5 h-1.5 bg-academic-muted rounded-full animate-bounce"></span>
+                       </div>
                     </div>
-                  </div>
-                ))
-              )}
-
-              {isLoading && (
-                <div className="flex gap-3 max-w-[85%]">
-                  <div className="w-8 h-8 rounded-full bg-academic-primary flex items-center justify-center flex-shrink-0">
-                    <Bot className="w-4 h-4 text-white" />
-                  </div>
-                  <div className="bg-academic-paper border border-academic-border p-4 rounded-2xl rounded-tl-sm shadow-sm flex items-center">
-                    <Loader2 className="w-4 h-4 text-academic-primary animate-spin" />
-                  </div>
+                  )}
+                  <div ref={messagesEndRef} />
                 </div>
               )}
-              <div ref={messagesEndRef} />
             </div>
 
             {/* Input Area */}
-            <div className="p-3 border-t border-academic-border bg-academic-paper">
-              <div className="relative flex items-end gap-2">
-                <textarea
+            <div className="p-3 border-t border-academic-border bg-academic-paper shrink-0">
+              <div className="relative flex items-center gap-2">
+                <input
+                  type="text"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={(e) => {
-                    if (e.key === 'Enter' && !e.shiftKey) {
+                    if (e.key === 'Enter') {
                       e.preventDefault();
                       handleSend(input);
                     }
                   }}
                   placeholder="Ask a question..."
-                  className="w-full max-h-32 min-h-[44px] bg-academic-bg border border-academic-border rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-academic-primary resize-none placeholder-academic-muted"
-                  rows={1}
+                  className="flex-1 h-[44px] bg-academic-bg border border-transparent px-4 text-sm focus:outline-none focus:border-academic-border placeholder-academic-muted transition-colors"
                   disabled={isLoading}
+                  aria-label="Ask a question"
                 />
                 <button
                   onClick={() => handleSend(input)}
                   disabled={!input.trim() || isLoading}
-                  className="bg-academic-primary text-white p-2.5 rounded-xl flex-shrink-0 hover:bg-academic-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  className="w-11 h-[44px] flex items-center justify-center bg-academic-text text-white hover:bg-academic-primary disabled:opacity-50 transition-colors focus:outline-none shrink-0"
+                  aria-label="Send message"
                 >
                   <Send className="w-4 h-4" />
                 </button>
