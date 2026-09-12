@@ -76,7 +76,7 @@ export function Chatbot() {
   return (
     <>
       {/* Floating Action Button / Launcher */}
-      <div className="fixed bottom-16 right-4 md:bottom-24 md:right-20 z-50">
+      <div className="fixed bottom-3 right-3 md:bottom-12 md:right-12 z-50">
         <AnimatePresence>
           {!isOpen && (
             <motion.button
@@ -103,7 +103,7 @@ export function Chatbot() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 8 }}
             transition={{ duration: 0.15, ease: "easeOut" }}
-            className="fixed bottom-16 right-4 md:bottom-24 md:right-20 z-50 w-[calc(100vw-24px)] md:w-[380px] h-[540px] max-h-[calc(100dvh-24px)] md:max-h-[min(540px,calc(100vh-32px))] bg-academic-paper border border-academic-border shadow-sm flex flex-col overflow-hidden"
+            className="fixed bottom-3 right-3 md:bottom-12 md:right-12 z-50 w-[calc(100vw-24px)] md:w-[380px] h-[540px] max-h-[calc(100dvh-24px)] md:max-h-[min(540px,calc(100vh-48px))] bg-academic-paper border border-academic-border shadow-sm flex flex-col overflow-hidden"
           >
             {/* Header */}
             <div className="flex items-center justify-between px-4 py-3 border-b border-academic-border bg-academic-bg">
