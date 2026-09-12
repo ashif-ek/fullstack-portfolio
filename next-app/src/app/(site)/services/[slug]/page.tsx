@@ -132,7 +132,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                             </ul>
                             
                             <Link 
-                                href="/contact"
+                                href="/#contact"
                                 className="mt-8 w-full btn-primary inline-flex items-center justify-center py-3 bg-academic-primary text-white rounded-xl font-bold hover:bg-academic-primary/90 transition-all"
                             >
                                 Start Your Project

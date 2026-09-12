@@ -132,7 +132,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
                                     "Dedicated to building the next generation of scalable SaaS products for the entrepreneurial spirit of {location.city}."
                                 </p>
                                 <Link 
-                                    href="/contact"
+                                    href="/#contact"
                                     className="btn-primary px-8 py-3 bg-academic-primary text-white rounded-xl font-bold hover:bg-academic-primary/90 transition-all uppercase tracking-widest text-xs"
                                 >
                                     Partner in {location.city}

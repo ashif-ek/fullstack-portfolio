@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, X, Send, Bot, Sparkles, User, Loader2 } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
 
 interface Message {
   role: 'user' | 'assistant';
@@ -30,6 +31,14 @@ export function Chatbot() {
   useEffect(() => {
     scrollToBottom();
   }, [messages, isLoading]);
+
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsOpen(false);
+    };
+    if (isOpen) window.addEventListener('keydown', handleEsc);
+    return () => window.removeEventListener('keydown', handleEsc);
+  }, [isOpen]);
 
   const handleSend = async (text: string) => {
     if (!text.trim()) return;
@@ -93,7 +102,7 @@ export function Chatbot() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="fixed bottom-6 right-6 z-50 w-[90vw] max-w-[380px] h-[550px] max-h-[80vh] bg-academic-paper border border-academic-border shadow-paper rounded-2xl flex flex-col overflow-hidden"
+            className="fixed bottom-3 right-3 md:bottom-6 md:right-6 z-50 w-[calc(100vw-24px)] md:w-[380px] md:max-w-[calc(100vw-32px)] h-[550px] max-h-[calc(100dvh-80px)] md:max-h-[min(650px,calc(100vh-32px))] bg-academic-paper border border-academic-border shadow-md rounded-2xl flex flex-col overflow-hidden"
           >
             {/* Header */}
             <div className="flex items-center justify-between p-4 border-b border-academic-border bg-academic-bg">
@@ -161,7 +170,28 @@ export function Chatbot() {
                         ? 'bg-academic-primary text-white rounded-2xl rounded-tr-sm' 
                         : 'bg-academic-paper border border-academic-border text-academic-text rounded-2xl rounded-tl-sm'
                     } max-w-[85%]`}>
-                      {msg.content}
+                      {msg.role === 'assistant' ? (
+                        <div className="prose-chatbot overflow-hidden break-words">
+                          <ReactMarkdown
+                            components={{
+                              a: ({ node, ...props }) => <a className="text-academic-primary hover:underline" target="_blank" rel="noopener noreferrer" {...props} />,
+                              p: ({ node, ...props }) => <p className="mb-2 last:mb-0" {...props} />,
+                              ul: ({ node, ...props }) => <ul className="list-disc ml-4 mb-2" {...props} />,
+                              ol: ({ node, ...props }) => <ol className="list-decimal ml-4 mb-2" {...props} />,
+                              li: ({ node, ...props }) => <li className="mb-1" {...props} />,
+                              strong: ({ node, ...props }) => <strong className="font-semibold" {...props} />,
+                              h1: ({ node, ...props }) => <h1 className="font-bold text-base mb-2" {...props} />,
+                              h2: ({ node, ...props }) => <h2 className="font-bold text-sm mb-2" {...props} />,
+                              h3: ({ node, ...props }) => <h3 className="font-semibold text-sm mb-1" {...props} />,
+                              code: ({ node, ...props }) => <code className="bg-academic-bg px-1 py-0.5 rounded text-[11px] font-mono text-academic-primary" {...props} />
+                            }}
+                          >
+                            {msg.content}
+                          </ReactMarkdown>
+                        </div>
+                      ) : (
+                        msg.content
+                      )}
                     </div>
                   </div>
                 ))

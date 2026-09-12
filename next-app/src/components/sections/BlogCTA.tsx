@@ -25,7 +25,7 @@ const BlogCTA = () => {
                 
                 <div className="shrink-0 flex flex-col gap-4 w-full md:w-auto">
                     <Link 
-                        href="/contact"
+                        href="/#contact"
                         className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-academic-primary font-bold rounded-xl hover:bg-white/90 transition-all group/btn"
                     >
                         Schedule a Strategy Call

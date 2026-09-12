@@ -41,11 +41,6 @@ export const metadata: Metadata = {
     apple: '/profile-icon.jpg',
   },
   manifest: '/manifest.json',
-  appleWebApp: {
-    capable: true,
-    statusBarStyle: 'default',
-    title: 'Ashif E.K',
-  },
   openGraph: {
     type: 'website',
     locale: 'en_US',

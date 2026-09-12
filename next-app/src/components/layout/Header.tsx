@@ -103,22 +103,23 @@ const Header = () => {
           </nav>
 
           {/* Action Button */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-3 lg:space-x-4">
             <Link
-              href="/contact"
+              href="/#contact"
               className="academic-button text-sm uppercase tracking-widest"
               aria-label="Contact Ashif"
             >
               Collaborate
             </Link>
-            <Link
-              href="/terminal"
-              className="text-academic-muted hover:text-academic-primary transition-colors cursor-pointer p-2 focus:outline-none flex items-center gap-2"
-              aria-label="Interactive Terminal"
-            >
-              <Terminal size={20} />
-              <span className="sr-only">Interactive Terminal</span>
-            </Link>
+            <div className="hidden lg:flex items-center space-x-2">
+              <Link
+                href="/terminal"
+                className="text-academic-muted hover:text-academic-primary transition-colors cursor-pointer p-2 focus:outline-none flex items-center gap-2"
+                aria-label="Interactive Terminal"
+              >
+                <Terminal size={20} />
+                <span className="sr-only">Interactive Terminal</span>
+              </Link>
               <Link
                 href="/login"
                 className="text-academic-muted hover:text-academic-primary transition-colors cursor-pointer p-2 focus:outline-none flex items-center gap-2"
@@ -127,19 +128,20 @@ const Header = () => {
                 <UserIcon />
                 <span className="sr-only">Admin Login</span>
               </Link>
-            <button
-              onClick={toggleRecruiterMode}
-              className={`flex items-center gap-2 px-3 py-1.5 rounded-full border transition-all duration-300 ${isRecruiterMode
-                  ? 'bg-academic-accent/10 border-academic-accent text-academic-accent shadow-sm'
-                  : 'bg-academic-paper border-academic-border text-academic-muted hover:border-academic-primary hover:text-academic-primary'
-                }`}
-              aria-label="Toggle Recruiter Mode"
-            >
-              <Briefcase size={14} className={isRecruiterMode ? 'animate-pulse' : ''} />
-              <span className="text-[10px] font-black uppercase tracking-widest hidden lg:inline">
-                {isRecruiterMode ? 'Recruiter Mode' : 'Standard View'}
-              </span>
-            </button>
+              <button
+                onClick={toggleRecruiterMode}
+                className={`flex items-center gap-2 px-3 py-1.5 rounded-full border transition-all duration-300 ${isRecruiterMode
+                    ? 'bg-academic-accent/10 border-academic-accent text-academic-accent shadow-sm'
+                    : 'bg-academic-paper border-academic-border text-academic-muted hover:border-academic-primary hover:text-academic-primary'
+                  }`}
+                aria-label="Toggle Recruiter Mode"
+              >
+                <Briefcase size={14} className={isRecruiterMode ? 'animate-pulse' : ''} />
+                <span className="text-[10px] font-black uppercase tracking-widest hidden xl:inline">
+                  {isRecruiterMode ? 'Recruiter Mode' : 'Standard View'}
+                </span>
+              </button>
+            </div>
             <ThemeToggle />
           </div>
 
@@ -176,7 +178,7 @@ const Header = () => {
               </Link>
             ))}
             <Link
-              href="/contact"
+              href="/#contact"
               onClick={closeMenu}
               className="inline-block academic-button uppercase tracking-widest mb-4"
             >

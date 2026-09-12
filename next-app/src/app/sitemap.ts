@@ -42,7 +42,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         { path: '/blog', priority: 0.9, changeFreq: 'weekly' as const },
         { path: '/services', priority: 0.9, changeFreq: 'weekly' as const },
         { path: '/about', priority: 0.6, changeFreq: 'monthly' as const },
-        { path: '/contact', priority: 0.6, changeFreq: 'monthly' as const },
+        { path: '/#contact', priority: 0.6, changeFreq: 'monthly' as const },
     ].map((route) => ({
         url: `${baseUrl}${route.path}`,
         lastModified: new Date(),
