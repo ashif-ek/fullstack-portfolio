@@ -40,9 +40,9 @@ export default async function Home() {
   let creativeLabItems: any[] = [];
   try {
     creativeLabItems = await prisma.creativeLabItem.findMany({
-      where: { published: true, featured: true },
+      where: { published: true },
       orderBy: [{ sortOrder: 'asc' }, { createdAt: 'desc' }],
-      take: 6
+      take: 4
     });
   } catch (error) {
     console.error("Failed to fetch creative lab items:", error);
