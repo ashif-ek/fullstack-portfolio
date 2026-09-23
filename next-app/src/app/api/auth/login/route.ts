@@ -1,7 +1,11 @@
 import { NextResponse } from 'next/server';
 import { SignJWT } from 'jose';
 
-const JWT_SECRET = process.env.JWT_SECRET || 'fallback-secret-for-development-only';
+const JWT_SECRET = process.env.JWT_SECRET;
+if (process.env.NODE_ENV === 'production' && !JWT_SECRET) {
+  throw new Error('JWT_SECRET environment variable is not defined in production.');
+}
+const SECRET_KEY = JWT_SECRET || 'fallback-secret-for-development-only';
 
 export async function POST(request: Request) {
   try {
@@ -18,7 +22,7 @@ export async function POST(request: Request) {
 
     if (username === validUsername && password === validPassword) {
       // Create JWT
-      const secret = new TextEncoder().encode(JWT_SECRET);
+      const secret = new TextEncoder().encode(SECRET_KEY);
       const token = await new SignJWT({ role: 'admin' })
         .setProtectedHeader({ alg: 'HS256' })
         .setIssuedAt()
