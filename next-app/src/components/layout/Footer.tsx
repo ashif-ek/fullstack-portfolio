@@ -181,6 +181,21 @@ const Footer = () => {
             © {new Date().getFullYear()} Ashif E.K <span className="mx-2 text-academic-border hidden sm:inline-block">|</span><br className="sm:hidden" /> All Formal Rights Reserved.
           </p>
 
+          <div className="flex items-center gap-4 sm:gap-6 text-[10px] uppercase tracking-widest font-bold text-academic-muted">
+            <Link
+              href="/privacy"
+              className="hover:text-academic-accent transition-colors duration-300"
+            >
+              Privacy
+            </Link>
+            <Link
+              href="/terms"
+              className="hover:text-academic-accent transition-colors duration-300"
+            >
+              Terms
+            </Link>
+          </div>
+
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-[10px] uppercase tracking-widest font-bold text-academic-muted">
             <span className="flex items-center gap-2 group cursor-default">
               <span className="w-2 h-2 bg-academic-secondary rounded-full animate-pulse shadow-[0_0_5px_var(--academic-secondary)]" />

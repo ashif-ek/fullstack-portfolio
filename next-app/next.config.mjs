@@ -73,8 +73,8 @@ const nextConfig = {
                         value: 'origin-when-cross-origin'
                     },
                     {
-                        key: 'Content-Security-Policy',
-                        value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://res.cloudinary.com https://placehold.co https://avatars.githubusercontent.com; font-src 'self' data:; connect-src 'self' https://www.google-analytics.com https://res.cloudinary.com https://ashif-portfolio.render.com;"
+                        key: 'Permissions-Policy',
+                        value: 'camera=(), microphone=(), geolocation=()'
                     }
                 ]
             }

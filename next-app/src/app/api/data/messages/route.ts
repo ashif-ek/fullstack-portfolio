@@ -29,8 +29,22 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Server-side length validation
+    if (typeof name !== 'string' || name.trim().length < 2 || name.trim().length > 100) {
+      return NextResponse.json({ error: 'Name must be between 2 and 100 characters.' }, { status: 400 });
+    }
+    if (typeof message !== 'string' || message.trim().length < 10 || message.trim().length > 2000) {
+      return NextResponse.json({ error: 'Message must be between 10 and 2000 characters.' }, { status: 400 });
+    }
+
+    // Basic email format validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (typeof email !== 'string' || !emailRegex.test(email) || email.length > 254) {
+      return NextResponse.json({ error: 'A valid email address is required.' }, { status: 400 });
+    }
+
     await prisma.message.create({
-      data: { name, email, message },
+      data: { name: name.trim(), email: email.trim().toLowerCase(), message: message.trim() },
     });
 
     return NextResponse.json({ success: true }, { status: 201 });
