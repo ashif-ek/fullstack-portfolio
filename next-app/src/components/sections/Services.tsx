@@ -107,28 +107,28 @@ const Services = () => {
                                 key={spec.id}
                                 className={`academic-card group flex-col h-full ${visibilityClasses}`}
                             >
-                                <div className="w-12 h-12 bg-academic-bg border border-academic-border rounded flex items-center justify-center mb-6 group-hover:bg-academic-primary group-hover:text-white transition-all duration-300">
-                                    <span className="text-xl text-academic-primary group-hover:text-white transition-colors">
-                                        <Icon size={20} strokeWidth={1.8} />
+                                <div className="w-10 h-10 bg-academic-bg border border-academic-border rounded flex items-center justify-center mb-4 group-hover:bg-academic-primary group-hover:text-white transition-all duration-300">
+                                    <span className="text-lg text-academic-primary group-hover:text-white transition-colors">
+                                        <Icon size={18} strokeWidth={1.8} />
                                     </span>
                                 </div>
                                 
-                                <h3 className="text-lg font-serif font-bold text-academic-primary mb-3 group-hover:text-academic-accent transition-colors">
+                                <h3 className="text-base font-serif font-bold text-academic-primary mb-2 group-hover:text-academic-accent transition-colors">
                                     {spec.title}
                                 </h3>
                                 
-                                <p className="text-academic-muted leading-relaxed text-sm font-light mb-6">
+                                <p className="text-academic-muted leading-relaxed text-sm font-light mb-4 line-clamp-3">
                                     {spec.description}
                                 </p>
 
-                                <div className="mt-auto pt-6 border-t border-academic-border/50">
-                                    <h4 className="text-[9px] font-bold tracking-[0.2em] text-academic-muted uppercase mb-3">Technologies</h4>
+                                <div className="mt-auto pt-4 border-t border-academic-border/50">
+                                    <h4 className="text-[9px] font-bold tracking-[0.2em] text-academic-muted uppercase mb-2">Technologies</h4>
                                     <p className="text-[11px] text-academic-primary font-bold tracking-wide">
                                         {spec.technologies.join(' · ')}
                                     </p>
                                 </div>
 
-                                <div className="mt-6 pt-4 border-t border-academic-border flex justify-between items-center">
+                                <div className="mt-4 pt-3 border-t border-academic-border flex justify-between items-center">
                                     <span className="text-[9px] uppercase tracking-[0.3em] font-bold text-academic-muted">Sector {index + 1} // Classified</span>
                                     <span className="text-[8px] px-2 py-0.5 border border-academic-accent/30 text-academic-accent rounded-full font-bold">ACTIVE</span>
                                 </div>
