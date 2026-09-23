@@ -1,4 +1,3 @@
-import { apiSource } from './sources/api';
 import { dbSource } from './sources/db';
 import { mockSource } from './sources/mock';
 import { withTimeout } from '../resilience/timeout';
@@ -7,11 +6,9 @@ import { CircuitBreaker } from '../resilience/circuitBreaker';
 import { logger, DataSource } from '../observability/logger';
 import { metrics } from '../observability/metrics';
 
-const TIMEOUT_API = 1000;
 const TIMEOUT_DB = 800;
-const MIN_SAMPLES_FOR_ADAPTIVE = 5;
 
-const apiBreaker = new CircuitBreaker('API', 3, 30000);
+// Circuit breaker for DB to prevent cascading failures if database goes down
 const dbBreaker = new CircuitBreaker('DB', 3, 30000);
 
 export class DataOrchestrator {
@@ -45,38 +42,14 @@ export class DataOrchestrator {
 
   private getPreferredOrder(): DataSource[] {
     const forced = process.env.FORCE_SOURCE?.toUpperCase() as DataSource;
-    if (forced) return [forced, 'DB', 'MOCK'];
+    if (forced && (forced === 'DB' || forced === 'MOCK')) return [forced, 'MOCK'];
 
-    // Django API is disconnected — go directly to DB → MOCK.
-    // If USE_API is explicitly set to 'true', re-enable adaptive routing.
-    if (process.env.USE_API !== 'true') {
-      return ['DB', 'MOCK'];
-    }
-
-    const apiSnap = metrics.getSnapshot('API');
-    const dbSnap = metrics.getSnapshot('DB');
-
-    // Cold start strategy
-    if (apiSnap.successes < MIN_SAMPLES_FOR_ADAPTIVE || dbSnap.successes < MIN_SAMPLES_FOR_ADAPTIVE) {
-      return ['DB', 'API', 'MOCK'];
-    }
-
-    // Adaptive logic: load awareness + latency
-    const apiLatency = metrics.getAverageLatency('API');
-    const dbLatency = metrics.getAverageLatency('DB');
-    const apiSuccessRate = metrics.getSuccessRate('API');
-    const dbSuccessRate = metrics.getSuccessRate('DB');
-
-    if (apiSuccessRate < 0.8 || (apiLatency > dbLatency * 1.5 && dbSuccessRate > 0.9)) {
-      return ['DB', 'API', 'MOCK'];
-    }
-
-    return ['DB', 'API', 'MOCK'];
+    // Strict DB -> MOCK architecture. API is deprecated and removed.
+    return ['DB', 'MOCK'];
   }
 
   public async fetch<T>(
     entityName: string,
-    apiOp: () => Promise<T>,
     dbOp: () => Promise<T>,
     mockOp: () => Promise<T>
   ): Promise<T> {
@@ -86,11 +59,7 @@ export class DataOrchestrator {
 
     for (const source of order) {
       try {
-        if (source === 'API' && process.env.USE_API !== 'false') {
-          return await this.executeWithResilience('API', apiBreaker, TIMEOUT_API, apiOp, fallbacksUsed);
-        }
         if (source === 'DB' && process.env.USE_DB_FALLBACK !== 'false') {
-          fallbacksUsed.push('API');
           return await this.executeWithResilience('DB', dbBreaker, TIMEOUT_DB, dbOp, fallbacksUsed);
         }
         if (source === 'MOCK' && process.env.USE_MOCK_FALLBACK !== 'false') {

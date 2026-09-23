@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { Skill, Tool, Certificate } from '../../../lib/data/types';
 import { Award, Code, GraduationCap, Laptop, Sparkles, User } from 'lucide-react';
 import { resolveAssetUrl } from '../../../lib/api';
-import { DataService } from '../../../services/dataService';
+import { serverDataService as DataService } from '../../../services/serverDataService';
 import BlogCTA from '../../../components/sections/BlogCTA';
 import LazyImage from '../../../components/ui/LazyImage';
 import profileImg from "../../../assets/profile.jpg";

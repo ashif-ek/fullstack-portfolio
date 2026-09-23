@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { DataService } from '../../services/dataService';
+import { serverDataService as DataService } from '../../services/serverDataService';
 import { Skill, Tool } from '../../lib/data/types';
 import Link from 'next/link';
 import LazyImage from '../../components/ui/LazyImage';

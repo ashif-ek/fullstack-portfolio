@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { DataService } from '../../../services/dataService';
+import { serverDataService as DataService } from '../../../services/serverDataService';
 import { Blog } from '../../../lib/data/types';
 import Link from 'next/link';
 import { Calendar } from 'lucide-react';

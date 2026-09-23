@@ -1,16 +1,16 @@
 import type { MetadataRoute } from 'next';
 import { projects as MOCK_PROJECTS, blogs as MOCK_BLOGS, services as MOCK_SERVICES, locations as MOCK_LOCATIONS } from '../data/mockData';
-import { DataService } from '../services/dataService';
+import { dbSource } from '../lib/data/sources/db';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const baseUrl = 'https://www.ashifek.in';
 
-    // Fetch live data using the hardened DataService
+    // Fetch live data using the database directly (avoids ECONNREFUSED during build)
     const [liveProjects, liveBlogs, liveServices, liveLocations] = await Promise.all([
-        DataService.getProjects(),
-        DataService.getBlogs(),
-        DataService.getServices(),
-        DataService.getLocations()
+        dbSource.getProjects().catch(() => []),
+        dbSource.getBlogs().catch(() => []),
+        dbSource.getServices().catch(() => []),
+        dbSource.getLocations().catch(() => [])
     ]);
 
     // Merge logic: Combine Mock and Live, treating Slug as the Unique Key

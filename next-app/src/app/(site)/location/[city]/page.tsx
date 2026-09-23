@@ -4,7 +4,7 @@ import { LocationData } from '../../../../lib/data/types';
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
 import { MapPin, Globe, Users, ShieldCheck } from 'lucide-react';
-import { DataService } from '../../../../services/dataService';
+import { serverDataService as DataService } from '../../../../services/serverDataService';
 import Breadcrumbs from '../../../../components/ui/Breadcrumbs';
 import BlogCTA from '../../../../components/sections/BlogCTA';
 

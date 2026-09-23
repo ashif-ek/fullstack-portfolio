@@ -1,5 +1,5 @@
 import prisma from '../../prisma';
-import { Settings, Project, AboutData, Profile, Skill, Blog, Message, Certificate, Tool } from '../types';
+import { Settings, Project, AboutData, Profile, Skill, Blog, Message, Certificate, Tool, Service } from '../types';
 import { normalize, normalizeList } from '../normalizer';
 import { SettingsSchema, ProjectSchema, AboutSchema, ProfileSchema, SkillSchema, BlogSchema, MessageSchema, CertificateSchema, ToolSchema } from '../types';
 
@@ -77,7 +77,7 @@ export const dbSource = {
     return normalizeList(ToolSchema, data, 'DB');
   },
 
-  getServices: async () => await prisma.service.findMany({ orderBy: { order: 'asc' } }),
+  getServices: async (): Promise<Service[]> => (await prisma.service.findMany({ orderBy: { order: 'asc' } })) as unknown as Service[],
 
   getCertificates: async (): Promise<Certificate[]> => {
     const data = await prisma.certificate.findMany({

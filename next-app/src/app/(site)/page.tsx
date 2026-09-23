@@ -3,7 +3,7 @@ import {
   HydrationBoundary, 
   QueryClient 
 } from '@tanstack/react-query';
-import { DataService } from '../../services/dataService';
+import { serverDataService as DataService } from '../../services/serverDataService';
 import HomeClient from '../../components/pages/HomeClient';
 import prisma from '../../lib/prisma';
 

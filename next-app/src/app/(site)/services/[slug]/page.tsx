@@ -5,7 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
 import { ArrowLeft, CheckCircle2 } from 'lucide-react';
 
-import { DataService } from '../../../../services/dataService';
+import { serverDataService as DataService } from '../../../../services/serverDataService';
 import Breadcrumbs from '../../../../components/ui/Breadcrumbs';
 import BlogCTA from '../../../../components/sections/BlogCTA';
 

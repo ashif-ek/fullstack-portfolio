@@ -7,7 +7,6 @@ export async function GET() {
   try {
     const data = await orchestrator.fetch(
       'messages',
-      () => Promise.resolve([]), // No API source for messages
       () => dbSource.getMessages(),
       () => Promise.resolve([])
     );
