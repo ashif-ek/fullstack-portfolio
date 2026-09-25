@@ -8,7 +8,7 @@ if (process.env.NODE_ENV === 'production' && !JWT_SECRET) {
 }
 const SECRET_KEY = JWT_SECRET || 'fallback-secret-for-development-only';
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   // Only protect /admin routes
   if (request.nextUrl.pathname.startsWith('/admin')) {
     const token = request.cookies.get('admin_token')?.value;

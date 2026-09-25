@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Send, Loader2 } from 'lucide-react';
-import { submitCollaborationRequest } from '../../app/actions/collaboration';
+import { submitContact } from '../../app/actions/contact';
 import { CollaborationRequestSchema, CollaborationRequestInput } from '../../lib/validations/collaboration';
 import { Toast } from './Toast';
 
@@ -41,7 +41,18 @@ export function CollaborationModal({ isOpen, onClose }: CollaborationModalProps)
   const onSubmit = async (data: CollaborationRequestInput) => {
     setSubmitError('');
     try {
-      const result = await submitCollaborationRequest(data);
+      const result = await submitContact({
+        source: 'hire_me',
+        name: data.fullName,
+        email: data.email,
+        company: data.company,
+        role: data.role,
+        projectType: data.projectType,
+        budget: data.budget,
+        timeline: data.timeline,
+        message: data.message,
+      });
+
       if (result.success) {
         setToastMessage('Collaboration request submitted successfully. I will be in touch soon!');
         setShowToast(true);

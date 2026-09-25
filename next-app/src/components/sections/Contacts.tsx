@@ -25,12 +25,16 @@ const Contact = () => {
     setStatus({ submitting: true, succeeded: false, error: null });
 
     try {
-      const res = await fetch('/api/data/messages', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+      const { submitContact } = await import('../../app/actions/contact');
+      const result = await submitContact({
+        source: 'contact_form',
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
       });
-      if (!res.ok) throw new Error('Failed to send message');
+
+      if (!result.success) throw new Error(result.error || 'Failed to send message');
+      
       setStatus({ submitting: false, succeeded: true, error: null });
       setFormData({ name: '', email: '', message: '' });
     } catch (err: any) {
@@ -38,7 +42,7 @@ const Contact = () => {
       setStatus({
         submitting: false,
         succeeded: false,
-        error: "Direct transmission failed. Please use electronic mail directly."
+        error: "Unable to send your message right now. Please try again."
       });
     }
   };

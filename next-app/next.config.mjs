@@ -7,9 +7,8 @@ const withPWA = withPWAInit({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    experimental: {
-        serverComponentsExternalPackages: ['pg', '@prisma/adapter-pg'],
-    },
+    serverExternalPackages: ['pg', '@prisma/adapter-pg'],
+    turbopack: {},
     images: {
         remotePatterns: [
             {
