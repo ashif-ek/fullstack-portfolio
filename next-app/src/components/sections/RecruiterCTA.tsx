@@ -108,9 +108,7 @@ export default function RecruiterCTA() {
                                 </a>
 
                                 <a
-                                    // Change this to your Google Meet or Calendly link
-                                    // Example: href="https://meet.google.com/your-code"
-                                    href="mailto:ashifek11@gmail.com?subject=Schedule a Call"
+                                    href="https://calendar.app.google/Jjt5PELz4uQAZFZ48"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="px-6 py-4 rounded-lg bg-academic-paper border border-academic-border text-academic-primary hover:bg-academic-primary/5 transition-all text-center flex items-center justify-center gap-2 group font-medium tracking-wide"

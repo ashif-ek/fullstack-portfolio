@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useAuth } from "../../context/AuthContext";
+import { useRecruiterMode } from "../../context/RecruiterContext";
 import Hero from '../sections/Hero';
 import About from '../sections/About';
 import Experience from '../sections/Experience';
@@ -32,6 +33,8 @@ export default function Home() {
     show_contacts: true,
     maintenance_mode: false
   });
+  
+  const { isRecruiterMode } = useRecruiterMode();
 
   useEffect(() => {
     // Fetch settings from Next.js BFF route (backed by Prisma)
@@ -71,17 +74,17 @@ export default function Home() {
 
   return (
     <>
-      {settings.show_hero && <Hero />}
+      {(!isRecruiterMode && settings.show_hero) && <Hero />}
       {settings.show_about && <About />}
-      <Experience />
-      <TerminalSection />
-      {settings.show_github_activity && <GithubActivity />}
-      {settings.show_services && <Services />}
-      {settings.show_blog && <BlogSection />}
-      {settings.show_skills && <Skills />}
+      {!isRecruiterMode && <Experience />}
+      {!isRecruiterMode && <TerminalSection />}
+      {(!isRecruiterMode && settings.show_github_activity) && <GithubActivity />}
+      {(!isRecruiterMode && settings.show_services) && <Services />}
+      {(!isRecruiterMode && settings.show_blog) && <BlogSection />}
+      {(!isRecruiterMode && settings.show_skills) && <Skills />}
       {settings.show_projects && <Projects />}
       {settings.show_certificates && <Certificates />}
-      {settings.show_recruiter_cta && <RecruiterCTA />}
+      {(!isRecruiterMode && settings.show_recruiter_cta) && <RecruiterCTA />}
       {settings.show_contacts && <Contacts />}
     </>
   );

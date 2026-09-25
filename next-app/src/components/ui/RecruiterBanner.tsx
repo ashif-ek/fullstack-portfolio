@@ -15,7 +15,7 @@ export default function RecruiterBanner() {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    className="bg-academic-accent text-white py-2 px-6 relative z-[60] overflow-hidden"
+                    className="bg-academic-accent text-white py-2 px-6 fixed top-0 left-0 w-full z-[60] overflow-hidden"
                 >
                     <div className="container mx-auto flex items-center justify-between">
                         <div className="flex items-center gap-3">
