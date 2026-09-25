@@ -5,7 +5,7 @@ import prisma from '../../lib/prisma';
 
 export async function trackResumeDownload() {
   try {
-    const headersList = headers();
+    const headersList = await headers();
     
     // Extract headers safely
     const ipAddress = headersList.get('x-forwarded-for') || headersList.get('x-real-ip') || 'unknown';
