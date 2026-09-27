@@ -50,6 +50,13 @@ const Projects = ({ condensed = false }: { condensed?: boolean }) => {
 
   const displayedProjects = showAll ? sortedProjects : sortedProjects.slice(0, 4);
 
+  const docLinks: Record<string, string> = {
+    'cipher-analytics': 'https://ashif-ek.github.io/docs-stack-material/projects/github_repos/cipher-analytics/',
+    'workpilot-ai': 'https://ashif-ek.github.io/docs-stack-material/projects/github_repos/workpilot/',
+    'noirel-ecommerce': 'https://ashif-ek.github.io/docs-stack-material/projects/github_repos/noirel-ecommerce/',
+    'fullstack-blog-jwt-docker': 'https://ashif-ek.github.io/docs-stack-material/projects/github_repos/fullstack-blog-jwt-docker/',
+  };
+
   const handleProjectClick = async (projectId: string, projectSlug: string, e: React.MouseEvent) => {
     e.preventDefault();
     try {
@@ -57,7 +64,12 @@ const Projects = ({ condensed = false }: { condensed?: boolean }) => {
     } catch (error) {
       console.error("Failed to track click:", error);
     }
-    router.push(`/projects/${projectSlug}`);
+    
+    if (docLinks[projectSlug]) {
+      window.open(docLinks[projectSlug], '_blank');
+    } else {
+      router.push(`/projects/${projectSlug}`);
+    }
   };
 
   return (
