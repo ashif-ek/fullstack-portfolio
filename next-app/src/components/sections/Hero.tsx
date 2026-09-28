@@ -127,7 +127,7 @@ const Hero = ({ condensed = false }: { condensed?: boolean }) => {
             Expertise Profile
           </Link>
           <a
-            href="/resume/ASHIF-E.K-RESUME-FULL-STACK.pdf"
+            href="/resume/Ashif_E.K_Software_Developer.pdf"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackResumeDownload().catch(console.error)}
