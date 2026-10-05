@@ -13,7 +13,7 @@ import cert5 from '../../assets/certificates/prosevo.jpg';
 
 const getCertImage = (cert: any) => {
   const title = (cert.title || '').toLowerCase();
-  if (title.includes('bachelor') || title.includes('bca')) return cert1.src;
+  if (title.includes('bachelor') || title.includes('bca')) return cert4.src;
   if (title.includes('cyber') || title.includes('ccsa')) return cert2.src;
   if (title.includes('flutter') || title.includes('django')) return cert3.src;
   if (title.includes('workshop') || title.includes('prosevo')) return cert5.src;
