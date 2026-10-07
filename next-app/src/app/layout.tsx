@@ -110,23 +110,45 @@ export default function RootLayout({
                   "@type": "Person",
                   "@id": `${baseUrl}/#person`,
                   "name": "Ashif E.K",
+                  "alternateName": [
+                    "Ashif EK",
+                    "Ashif E K",
+                    "ashif ek",
+                    "ashifek"
+                  ],
                   "jobTitle": "Full-Stack Engineer",
                   "description": "Specializing in React, Django, and high-performance web applications. Expert in building secure, scalable, and optimized digital experiences.",
                   "url": baseUrl,
                   "image": `${baseUrl}/profile-icon.jpg`,
+                  "email": "ashifek11@gmail.com",
+                  "telephone": "+91 9037499763",
                   "sameAs": [
                     "https://github.com/ashif-ek",
-                    "https://linkedin.com/in/ashifek",
-                    "https://www.instagram.com/ashif_e.k",
-                    "http://www.fiverr.com/s/gDLy45X",
+                    "https://www.linkedin.com/in/ashifek",
+                    "https://www.instagram.com/ashif_e.k/",
+                    "https://www.fiverr.com/s/gDLy45X",
                     "https://ashif-ek.github.io/docs-stack-material/"
                   ],
-                  "knowsAbout": ["React 19", "Django 5.x", "Micro-services", "Full-stack Engineering", "SaaS Architecture", "Performance Optimization", "Cloud-Native", "DevOps", "AI Integration", "Security Infrastructure", "MVP Strategy"],
+                  "knowsAbout": [
+                    "React",
+                    "Next.js",
+                    "TypeScript",
+                    "Python",
+                    "Django",
+                    "FastAPI",
+                    "PostgreSQL",
+                    "REST APIs",
+                    "Microservices",
+                    "SaaS Architecture",
+                    "Cloud Computing",
+                    "Docker",
+                    "DevOps",
+                    "Application Security"
+                  ],
                   "alumniOf": {
                     "@type": "CollegeOrUniversity",
                     "name": "University of Calicut"
-                  },
-                  "award": "Elite SEO & Performance Specialist"
+                  }
                 },
                 {
                   "@type": "ProfessionalService",
@@ -139,7 +161,9 @@ export default function RootLayout({
                     "addressCountry": "IN"
                   },
                   "url": baseUrl,
-                  "telephone": "+91-XXXXXXXXXX",
+                  "provider": {
+                    "@id": `${baseUrl}/#person`
+                  },
                   "priceRange": "$$",
                   "image": `${baseUrl}/profile-icon.jpg`,
                   "areaServed": ["Kerala", "India", "Global"]

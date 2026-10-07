@@ -80,8 +80,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
         "description": blog.excerpt,
         "datePublished": blog.date,
         "author": {
-            "@type": "Person",
-            "name": "Ashif E.K"
+            "@id": "https://www.ashifek.in/#person"
         },
         "url": `https://www.ashifek.in/blog/${blog.slug}`
     };

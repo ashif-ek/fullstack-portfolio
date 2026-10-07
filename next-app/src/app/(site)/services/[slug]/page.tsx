@@ -60,8 +60,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
         "name": service.title,
         "description": service.description,
         "provider": {
-            "@type": "Person",
-            "name": "Ashif E.K"
+            "@id": "https://www.ashifek.in/#person"
         },
         "url": `https://www.ashifek.in/services/${service.slug}`
     };
