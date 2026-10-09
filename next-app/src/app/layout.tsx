@@ -48,12 +48,21 @@ export const metadata: Metadata = {
     title: 'Ashif E.K | Full-Stack Engineer',
     description: 'Expert React & Django developer building secure, scalable, and high-performance web applications.',
     siteName: 'Ashif E.K Portfolio',
+    images: [
+      {
+        url: `${baseUrl}/preview.jpeg`,
+        width: 1200,
+        height: 630,
+        alt: 'Ashif E.K | Full-Stack Engineer',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Ashif E.K | Full-Stack Engineer',
     description: 'Portfolio of Ashif E.K – React & Django expert creating modern web solutions.',
     creator: '@ashif_io',
+    images: [`${baseUrl}/preview.jpeg`],
   },
   robots: {
     index: true,
