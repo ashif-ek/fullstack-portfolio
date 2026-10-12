@@ -167,7 +167,7 @@ const Skills = ({ condensed = false }: { condensed?: boolean }) => {
                   onClick={() => setActiveCategory(category)}
                   className={`px-4 py-1 text-xs uppercase tracking-widest transition-all duration-300 border ${
                     activeCategory === category 
-                      ? 'bg-academic-primary text-white border-academic-primary' 
+                      ? 'bg-academic-primary text-academic-paper border-academic-primary' 
                       : 'bg-transparent border-academic-border text-academic-muted hover:border-academic-primary hover:text-academic-primary'
                   }`}
                 >

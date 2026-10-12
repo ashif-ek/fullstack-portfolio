@@ -86,7 +86,7 @@ const Certificates = () => {
                   key={category.id}
                   className={`px-4 py-1 text-xs uppercase tracking-widest transition-all duration-300 border ${
                     selectedCategory === category.id
-                      ? "bg-academic-primary text-white border-academic-primary"
+                      ? "bg-academic-primary text-academic-paper border-academic-primary"
                       : "bg-transparent border-academic-border text-academic-muted hover:border-academic-primary hover:text-academic-primary"
                   }`}
                   onClick={() => setSelectedCategory(category.id)}

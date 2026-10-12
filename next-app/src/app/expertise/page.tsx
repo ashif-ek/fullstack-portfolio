@@ -269,7 +269,7 @@ export default async function AboutPage() {
                         </div>
 
                         <div className="flex sm:flex-col gap-2 shrink-0">
-                            <a href={`mailto:${CONTACT.email}`} className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-academic-primary text-white rounded-lg text-xs font-bold hover:bg-academic-primary/90 transition-colors">
+                            <a href={`mailto:${CONTACT.email}`} className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-academic-primary text-academic-paper rounded-lg text-xs font-bold hover:bg-academic-primary/90 transition-colors">
                                 <Mail size={13} /> Contact
                             </a>
                             <Link href="/resume/Ashif_E.K_Software_Developer.pdf" target="_blank" className="inline-flex items-center justify-center gap-2 px-4 py-2 border border-academic-border bg-academic-paper rounded-lg text-xs font-bold text-academic-primary hover:bg-academic-bg transition-colors">

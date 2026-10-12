@@ -124,7 +124,7 @@ export function Chatbot() {
             </div>
 
             {/* Messages Area */}
-            <div className="flex-1 overflow-y-auto flex flex-col p-4 bg-white/30">
+            <div className="flex-1 overflow-y-auto flex flex-col p-4 bg-academic-bg/40">
               {messages.length === 0 ? (
                 <div className="mt-auto mb-2 space-y-4">
                   <p className="text-sm font-medium text-academic-text">How can I help?</p>
@@ -149,7 +149,7 @@ export function Chatbot() {
                     >
                       <div className={`p-3 text-sm max-w-[85%] ${
                         msg.role === 'user' 
-                          ? 'bg-academic-text text-white' 
+                          ? 'bg-academic-primary text-academic-paper' 
                           : 'bg-academic-paper border border-academic-border text-academic-text'
                       }`}>
                         {msg.role === 'assistant' ? (
@@ -202,14 +202,14 @@ export function Chatbot() {
                     }
                   }}
                   placeholder="Ask a question..."
-                  className="flex-1 h-[44px] bg-academic-bg border border-transparent px-4 text-sm focus:outline-none focus:border-academic-border placeholder-academic-muted transition-colors"
+                  className="flex-1 h-[44px] bg-academic-bg border border-transparent px-4 text-sm text-academic-text focus:outline-none focus:border-academic-border placeholder-academic-muted transition-colors"
                   disabled={isLoading}
                   aria-label="Ask a question"
                 />
                 <button
                   onClick={() => handleSend(input)}
                   disabled={!input.trim() || isLoading}
-                  className="w-11 h-[44px] flex items-center justify-center bg-academic-text text-white hover:bg-academic-primary disabled:opacity-50 transition-colors focus:outline-none shrink-0"
+                  className="w-11 h-[44px] flex items-center justify-center bg-academic-primary text-academic-paper hover:opacity-90 disabled:opacity-50 transition-colors focus:outline-none shrink-0"
                   aria-label="Send message"
                 >
                   <Send className="w-4 h-4" />

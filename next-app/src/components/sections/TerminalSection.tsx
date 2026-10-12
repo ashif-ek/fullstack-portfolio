@@ -215,11 +215,11 @@ export default function TerminalSection({ isStandalone = false }: TerminalSectio
           </div>
 
           <div 
-            className="academic-card bg-[#0D1117] border border-academic-border rounded-xl overflow-hidden shadow-2xl font-mono text-sm md:text-base cursor-text"
+            className="academic-card bg-[#0A0A0A] border border-academic-border rounded-xl overflow-hidden shadow-2xl font-mono text-sm md:text-base cursor-text"
             onClick={() => inputRef.current?.focus()}
           >
             {/* Terminal Header */}
-            <div className="bg-[#161B22] border-b border-academic-border px-4 py-3 flex items-center gap-2">
+            <div className="bg-[#141414] border-b border-academic-border px-4 py-3 flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-red-500/80" />
               <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
               <div className="w-3 h-3 rounded-full bg-green-500/80" />
@@ -255,7 +255,7 @@ export default function TerminalSection({ isStandalone = false }: TerminalSectio
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKeyDown}
-                  className="bg-transparent outline-none flex-1 text-academic-primary"
+                  className="bg-transparent outline-none flex-1 text-gray-100"
                   autoComplete="off"
                   spellCheck="false"
                   autoFocus

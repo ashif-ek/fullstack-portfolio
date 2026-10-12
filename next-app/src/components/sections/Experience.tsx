@@ -218,7 +218,7 @@ export default function Experience() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5 }}
-                  className="academic-card relative bg-slate-900 border border-white/10 rounded-2xl px-6 py-5 shadow-xl shadow-black/10 flex items-center justify-between group overflow-hidden hover:-translate-y-[2px] hover:border-white/20 hover:shadow-2xl hover:shadow-black/20 transition-all duration-300 mx-auto w-full max-w-[340px]"
+                  className="academic-card relative bg-slate-900 dark:bg-academic-paper border border-white/10 dark:border-academic-border rounded-2xl px-6 py-5 shadow-xl shadow-black/10 flex items-center justify-between group overflow-hidden hover:-translate-y-[2px] hover:border-white/20 dark:hover:border-academic-primary/30 hover:shadow-2xl hover:shadow-black/20 transition-all duration-300 mx-auto w-full max-w-[340px]"
                 >
                   <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-colors duration-500" />
                   
@@ -249,7 +249,7 @@ export default function Experience() {
                     whileInView={{ height: 'calc(100% - 100px)' }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
-                    className="absolute left-10 top-16 w-[1.5px] bg-[#D8D8D8] rounded-full"
+                    className="absolute left-10 top-16 w-[1.5px] bg-academic-border rounded-full"
                   />
                   {/* Root to Spine Connector */}
                   <motion.div
@@ -257,7 +257,7 @@ export default function Experience() {
                     whileInView={{ width: '40px' }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.3, delay: 0.1, ease: 'easeOut' }}
-                    className="absolute left-0 top-16 h-[1.5px] bg-[#D8D8D8] rounded-full"
+                    className="absolute left-0 top-16 h-[1.5px] bg-academic-border rounded-full"
                   />
                 </div>
 
@@ -283,7 +283,7 @@ export default function Experience() {
                             whileInView={{ width: '40px' }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.4, delay: 0.6 + (i * 0.15), ease: 'easeOut' }}
-                            className={`h-[1.5px] rounded-full transition-colors duration-300 ${isHovered ? 'bg-academic-accent' : 'bg-[#D8D8D8]'}`}
+                            className={`h-[1.5px] rounded-full transition-colors duration-300 ${isHovered ? 'bg-academic-accent' : 'bg-academic-border'}`}
                           />
                         </div>
 
@@ -293,11 +293,11 @@ export default function Experience() {
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
                           transition={{ duration: 0.3, delay: 0.8 + (i * 0.15) }}
-                          className={`hidden lg:flex absolute -left-[23px] top-[35px] w-[10px] h-[10px] rounded-full bg-white border flex items-center justify-center transition-all duration-300 z-20 ${
-                            isHovered ? 'scale-125 border-academic-accent' : 'border-[#D8D8D8]'
+                          className={`hidden lg:flex absolute -left-[23px] top-[35px] w-[10px] h-[10px] rounded-full bg-academic-paper border flex items-center justify-center transition-all duration-300 z-20 ${
+                            isHovered ? 'scale-125 border-academic-accent' : 'border-academic-border'
                           }`}
                         >
-                          <div className={`w-1 h-1 rounded-full transition-colors duration-300 ${isHovered ? 'bg-academic-accent' : 'bg-[#D8D8D8]'}`} />
+                          <div className={`w-1 h-1 rounded-full transition-colors duration-300 ${isHovered ? 'bg-academic-accent' : 'bg-academic-border'}`} />
                         </motion.div>
 
                         <div className="w-full md:w-[480px] lg:w-[520px]">

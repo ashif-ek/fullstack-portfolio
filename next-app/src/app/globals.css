@@ -21,23 +21,23 @@
 }
 
 :root {
-    --academic-bg: #FDFCFB;
+    --academic-bg: #FFFFFF;
     --academic-paper: #FFFFFF;
-    --academic-text: #1C1C1C;
-    --academic-muted: #474747;
-    --academic-border: #E5E5E5;
+    --academic-text: #171717;
+    --academic-muted: #525252;
+    --academic-border: #E5E7EB;
     --academic-primary: #2C3E50;
     --academic-accent: #8E2424;
     --academic-secondary: #2E4D2E;
 }
 
 .dark {
-    --academic-bg: #121212;
-    --academic-paper: #1E1E1E;
-    --academic-text: #E0E0E0;
-    --academic-muted: #999999;
-    --academic-border: #2D2D2D;
-    --academic-primary: #BDC3C7;
+    --academic-bg: #000000;
+    --academic-paper: #0A0A0A;
+    --academic-text: #EDEDED;
+    --academic-muted: #9E9E9E;
+    --academic-border: #1F1F1F;
+    --academic-primary: #F1F5F9;
     --academic-accent: #C0392B;
     --academic-secondary: #27AE60;
 }
@@ -46,13 +46,13 @@
     body {
         @apply bg-academic-bg text-academic-text font-sans antialiased;
         background-image:
-            radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+            radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.025) 1px, transparent 1px);
         background-size: 24px 24px;
     }
 
     .dark body {
         background-image:
-            radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
     }
 
     h1,
