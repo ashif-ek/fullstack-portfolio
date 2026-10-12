@@ -130,7 +130,11 @@ const Hero = ({ condensed = false }: { condensed?: boolean }) => {
             href="/resume/Ashif_E.K_Software_Developer.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => trackResumeDownload().catch(console.error)}
+            onClick={() => {
+              try {
+                trackResumeDownload().catch(() => {});
+              } catch {}
+            }}
             className={cn(buttonClasses, "text-sm tracking-widest py-3 px-8")}
           >
             View Resume

@@ -99,7 +99,7 @@ export default function RecruiterCTA() {
                                 <a
                                     href="/resume/Ashif_E.K_Software_Developer.pdf"
                                     download
-                                    onClick={() => trackResumeDownload().catch(console.error)}
+                                    onClick={() => { try { trackResumeDownload().catch(() => {}); } catch {} }}
                                     className="px-6 py-4 rounded-lg bg-academic-paper border border-academic-border text-academic-primary hover:bg-academic-primary/5 transition-all text-center flex items-center justify-center gap-2 group font-medium tracking-wide"
                                     aria-label="Download Resume"
                                 >

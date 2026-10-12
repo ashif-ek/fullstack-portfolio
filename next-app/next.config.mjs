@@ -49,6 +49,23 @@ const nextConfig = {
     async headers() {
         return [
             {
+                source: '/resume/:path*',
+                headers: [
+                    {
+                        key: 'Content-Type',
+                        value: 'application/pdf',
+                    },
+                    {
+                        key: 'Content-Disposition',
+                        value: 'inline',
+                    },
+                    {
+                        key: 'Cache-Control',
+                        value: 'public, max-age=3600, must-revalidate',
+                    },
+                ],
+            },
+            {
                 source: '/(.*)',
                 headers: [
                     {
