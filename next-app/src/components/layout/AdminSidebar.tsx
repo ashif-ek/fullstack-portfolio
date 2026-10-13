@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useAuth } from '../../context/AuthContext';
-import { LayoutDashboard, FolderKanban, Settings, LogOut, ArrowLeft, PenTool, User, Briefcase, Award, FileText, Mail } from 'lucide-react';
+import { LayoutDashboard, FolderKanban, Settings, LogOut, ArrowLeft, PenTool, User, Briefcase, Award, FileText, Mail, BookOpen } from 'lucide-react';
 
 export default function AdminSidebar() {
     const pathname = usePathname();
@@ -11,6 +11,7 @@ export default function AdminSidebar() {
 
     const navItems = [
         { name: 'Dashboard', href: '/admin', icon: <LayoutDashboard size={18} /> },
+        { name: 'Lexicon (Words)', href: '/admin/lexicon', icon: <BookOpen size={18} /> },
         { name: 'Creative Lab', href: '/admin/creative-lab', icon: <FolderKanban size={18} /> },
         { name: 'Projects', href: '/admin/projects', icon: <FolderKanban size={18} /> },
         { name: 'Academic Blog', href: '/admin/blogs', icon: <FileText size={18} /> },

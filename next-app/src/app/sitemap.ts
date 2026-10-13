@@ -38,6 +38,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Base routes
     const routes = [
         { path: '', priority: 1.0, changeFreq: 'daily' as const },
+        { path: '/lexicon', priority: 0.8, changeFreq: 'weekly' as const },
+        { path: '/creative-lab', priority: 0.8, changeFreq: 'weekly' as const },
         { path: '/blog', priority: 0.9, changeFreq: 'weekly' as const },
         { path: '/services', priority: 0.9, changeFreq: 'weekly' as const },
         { path: '/about', priority: 0.6, changeFreq: 'monthly' as const },

@@ -148,6 +148,31 @@ const Hero = ({ condensed = false }: { condensed?: boolean }) => {
           </Link>
         </div>
 
+        {/* Subtle Secondary Editorial CTA: Favorite Words / Lexicon */}
+        <div className="mt-8 max-w-md w-full mx-auto">
+          <Link
+            href="/lexicon"
+            className="group block academic-card !p-4 border border-academic-border/70 hover:border-academic-primary/40 bg-academic-paper/50 hover:bg-academic-paper transition-all duration-300 text-left rounded-md shadow-xs hover:shadow-academic"
+          >
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <div className="flex items-center gap-2">
+                  <span className="text-xs uppercase tracking-widest font-serif font-bold text-academic-primary">
+                    Favorite Words
+                  </span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-academic-accent/60" />
+                </div>
+                <p className="text-xs text-academic-muted mt-1 leading-relaxed font-sans">
+                  A small universe of words, ideas, and principles that shape how I think.
+                </p>
+              </div>
+              <span className="shrink-0 text-xs font-serif font-medium text-academic-primary group-hover:text-academic-accent transition-colors flex items-center pt-1 whitespace-nowrap">
+                Explore Lexicon →
+              </span>
+            </div>
+          </Link>
+        </div>
+
         {/* Mobile Social Links */}
         <div className="mt-12 flex md:hidden items-center justify-center gap-6 flex-wrap">
           {profile?.socialLinks?.map(({ name, url }) => {

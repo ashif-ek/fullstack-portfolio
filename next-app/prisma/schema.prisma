@@ -219,3 +219,26 @@ model CreativeLabItem {
 
   @@map("core_creativelabitem")
 }
+
+model LexiconWord {
+  id             Int      @id @default(autoincrement())
+  word           String   @db.VarChar(100)
+  slug           String   @unique @db.VarChar(120)
+  shortMeaning   String?  @db.Text
+  personalNote   String?  @db.Text
+  category       String   @db.VarChar(100)
+  categories     String[] @default([])
+  importance     Int      @default(1)
+  fontSize       String   @default("md") @db.VarChar(20)
+  position       String?  @db.VarChar(50)
+  animationStyle String   @default("drift-slow") @db.VarChar(50)
+  isPublished    Boolean  @default(true)
+  sortOrder      Int      @default(0)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@index([isPublished])
+  @@index([category])
+  @@index([sortOrder])
+  @@map("core_lexiconword")
+}

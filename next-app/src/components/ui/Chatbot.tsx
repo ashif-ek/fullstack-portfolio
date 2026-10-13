@@ -57,16 +57,17 @@ export function Chatbot() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to fetch response');
+        const errJson = await response.json().catch(() => ({}));
+        throw new Error(errJson.error || 'Failed to fetch response');
       }
 
       const data = await response.json();
       setMessages((prev) => [...prev, { role: 'assistant', content: data.reply }]);
-    } catch (error) {
+    } catch (error: any) {
       console.error('Chat error:', error);
       setMessages((prev) => [
         ...prev,
-        { role: 'assistant', content: "Sorry, I'm having trouble responding right now. Please try again or explore the portfolio directly." }
+        { role: 'assistant', content: error?.message || "Sorry, I'm having trouble responding right now. Please try again or explore the portfolio directly." }
       ]);
     } finally {
       setIsLoading(false);
