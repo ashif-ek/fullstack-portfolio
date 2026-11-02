@@ -1,14 +1,15 @@
 import { NextResponse } from 'next/server';
 import { SignJWT } from 'jose';
 
-const JWT_SECRET = process.env.JWT_SECRET;
-if (process.env.NODE_ENV === 'production' && !JWT_SECRET) {
-  throw new Error('JWT_SECRET environment variable is not defined in production.');
-}
-const SECRET_KEY = JWT_SECRET || 'fallback-secret-for-development-only';
-
 export async function POST(request: Request) {
   try {
+    const JWT_SECRET = process.env.JWT_SECRET;
+    if (process.env.NODE_ENV === 'production' && !JWT_SECRET) {
+      console.error('JWT_SECRET environment variable is not defined in production.');
+      return NextResponse.json({ success: false, error: 'Server configuration error' }, { status: 500 });
+    }
+    const SECRET_KEY = JWT_SECRET || 'fallback-secret-for-development-only';
+
     const { username, password } = await request.json();
 
     // Verify against environment variables for simple secure admin login

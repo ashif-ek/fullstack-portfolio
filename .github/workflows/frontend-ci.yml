@@ -45,6 +45,7 @@ jobs:
     - name: Build Application
       run: npm run build
       env:
-        # Provide a dummy or secret database URL for Next.js static rendering
+        # Provide database URL and JWT secret for Next.js build and static rendering
         DATABASE_URL: ${{ secrets.DATABASE_URL || 'postgresql://dummy:dummy@localhost:5432/dummy' }}
+        JWT_SECRET: ${{ secrets.JWT_SECRET || 'ci-build-temporary-jwt-secret-key-32-chars-minimum' }}
 

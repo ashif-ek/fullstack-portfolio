@@ -2,12 +2,6 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { jwtVerify } from 'jose';
 
-const JWT_SECRET = process.env.JWT_SECRET;
-if (process.env.NODE_ENV === 'production' && !JWT_SECRET) {
-  throw new Error('JWT_SECRET environment variable is not defined in production.');
-}
-const SECRET_KEY = JWT_SECRET || 'fallback-secret-for-development-only';
-
 export async function proxy(request: NextRequest) {
   // Only protect /admin routes
   if (request.nextUrl.pathname.startsWith('/admin')) {
@@ -16,6 +10,13 @@ export async function proxy(request: NextRequest) {
     if (!token) {
       return NextResponse.redirect(new URL('/login', request.url));
     }
+
+    const JWT_SECRET = process.env.JWT_SECRET;
+    if (process.env.NODE_ENV === 'production' && !JWT_SECRET) {
+      console.error('JWT_SECRET environment variable is not defined in production.');
+      return NextResponse.redirect(new URL('/login', request.url));
+    }
+    const SECRET_KEY = JWT_SECRET || 'fallback-secret-for-development-only';
 
     try {
       const secret = new TextEncoder().encode(SECRET_KEY);
