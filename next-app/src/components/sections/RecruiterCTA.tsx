@@ -35,7 +35,7 @@ export default function RecruiterCTA() {
     }, []);
 
     return (
-        <section id="recruiter-access" className="py-24 bg-academic-bg relative">
+        <section id="recruiter-access" className="py-16 md:py-24 bg-academic-paper border-t border-academic-border relative">
             <div className="container mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -44,10 +44,10 @@ export default function RecruiterCTA() {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-3xl md:text-5xl font-serif font-bold text-academic-primary mb-4 tracking-tight">
+                    <h2 className="section-title">
                         Let's Build Something Great Together
                     </h2>
-                    <p className="text-academic-muted max-w-2xl mx-auto text-lg">
+                    <p className="text-academic-muted font-serif italic mt-2 max-w-2xl mx-auto">
                         For recruiters and teams looking for a full-stack engineer who values technical excellence and architectural clarity.
                     </p>
                 </motion.div>

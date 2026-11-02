@@ -42,10 +42,10 @@ const BlogSection = () => {
   const postsToShow = showAll ? allPosts : allPosts.slice(0, 3);
 
   return (
-    <section id="blog" className="py-32 bg-academic-bg text-academic-text relative border-t border-academic-border">
+    <section id="blog" className="py-16 md:py-24 bg-academic-paper text-academic-text relative border-t border-academic-border">
       <div className="container mx-auto px-6 max-w-4xl relative z-10">
-        <div className="text-center mb-20">
-          <h2 className="section-title">Publications & Technical Briefs</h2>
+        <div className="text-center mb-16">
+          <h2 className="section-title">Publications &amp; Technical Briefs</h2>
           <p className="text-academic-muted font-serif italic mt-2">Disseminating knowledge on architectural patterns and modern engineering methodology.</p>
         </div>
 

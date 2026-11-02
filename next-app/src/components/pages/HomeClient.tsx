@@ -51,18 +51,27 @@ export default function HomeClient({ settings, creativeLabItems }: HomeClientPro
     <>
       {settings.showHero && <Hero condensed={isRecruiterMode} />}
       {settings.showGithubActivity && <GithubActivity />}
-      {settings.showRecruiterCta && <RecruiterCTA />}
-      <>
-        {settings.showAbout && <About />}
-        <Experience />
-        <CreativeLabSection items={creativeLabItems} />
-        {settings.showServices && <Services />}
-        {settings.showProjects && <Projects condensed={isRecruiterMode} />}
-        {settings.showSkills && <Skills condensed={isRecruiterMode} />}
-        {settings.showBlog && <BlogSection />}
-        {settings.showCertificates && <Certificates />}
-        {settings.showContacts && <Contacts />}
-      </>
+      
+      {isRecruiterMode ? (
+        <>
+          {settings.showRecruiterCta && <RecruiterCTA />}
+          {settings.showProjects && <Projects condensed={true} />}
+          {settings.showSkills && <Skills condensed={true} />}
+          {settings.showContacts && <Contacts />}
+        </>
+      ) : (
+        <>
+          {settings.showAbout && <About />}
+          <Experience />
+          <CreativeLabSection items={creativeLabItems} />
+          {settings.showServices && <Services />}
+          {settings.showProjects && <Projects condensed={false} />}
+          {settings.showSkills && <Skills condensed={false} />}
+          {settings.showBlog && <BlogSection />}
+          {settings.showCertificates && <Certificates />}
+          {settings.showContacts && <Contacts />}
+        </>
+      )}
     </>
   );
 }

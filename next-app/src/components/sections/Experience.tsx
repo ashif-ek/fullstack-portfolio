@@ -187,7 +187,7 @@ export default function Experience() {
   const isLoading = profileLoading || projectsLoading || certsLoading;
 
   return (
-    <section id="experience" className="py-24 md:py-32 bg-academic-bg text-academic-text border-t border-academic-border overflow-hidden relative">
+    <section id="experience" className="py-16 md:py-24 bg-academic-bg text-academic-text border-t border-academic-border overflow-hidden relative">
       <div className="container mx-auto px-6 max-w-6xl relative z-10" ref={containerRef}>
         
         {isLoading ? (
@@ -198,14 +198,9 @@ export default function Experience() {
         ) : (
           <div>
             <div className="mb-16">
-              <span className="text-academic-accent text-xs font-mono font-bold tracking-widest uppercase mb-4 block">
-                Journey Overview
-              </span>
-              <h2 className="text-4xl md:text-5xl font-serif font-bold text-academic-primary tracking-tight mb-6">
-                Professional Tenure
-              </h2>
-              <p className="text-academic-muted text-lg font-light leading-relaxed">
-                Explore my professional journey through an interactive roadmap.
+              <h2 className="section-title">Journey Overview</h2>
+              <p className="text-academic-muted font-serif italic mt-2">
+                An interactive roadmap documenting engineering milestones, career evolution, and technical tenure.
               </p>
             </div>
 
@@ -227,8 +222,8 @@ export default function Experience() {
                       <GitMerge size={20} />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-white leading-snug">Professional Tenure</h3>
-                      <p className="text-sm text-slate-400 font-mono mt-0.5">Root Node</p>
+                      <h3 className="text-lg font-bold text-white leading-snug">Career Trajectory</h3>
+                      <p className="text-sm text-slate-400 font-mono mt-0.5">Engineering Milestones</p>
                     </div>
                   </div>
                   

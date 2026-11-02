@@ -26,7 +26,7 @@ export default function StatusBadge() {
     }
 
     return (
-        <div className={`fixed bottom-4 right-6 z-50 flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold transition-opacity duration-300 opacity-70 hover:opacity-100 cursor-default ${colorClass}`}>
+        <div className={`fixed bottom-3 left-4 md:bottom-4 md:right-6 md:left-auto z-40 flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold transition-opacity duration-300 opacity-70 hover:opacity-100 cursor-default select-none ${colorClass}`}>
             <span className={`w-1.5 h-1.5 rounded-full ${dotClass}`} />
             {statusText}
         </div>

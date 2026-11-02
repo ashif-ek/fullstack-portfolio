@@ -151,9 +151,9 @@ const Skills = ({ condensed = false }: { condensed?: boolean }) => {
   }, [activeCategory, skills, condensed, showAll]);
 
   return (
-    <section id="skills" className="py-16 md:py-32 bg-academic-bg text-academic-text relative">
+    <section id="skills" className="py-16 md:py-24 bg-academic-bg text-academic-text relative border-t border-academic-border">
       <div className="container mx-auto px-6 max-w-6xl">
-        <div className="flex flex-col md:flex-row justify-between items-baseline mb-20 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-baseline mb-16 gap-8">
           <div>
             <h2 className="section-title">Technical Indices</h2>
             <p className="text-academic-muted font-serif italic mt-2">A comprehensive classification of core competencies and specialized methodologies.</p>
@@ -205,7 +205,7 @@ const Skills = ({ condensed = false }: { condensed?: boolean }) => {
         )}
 
         {!condensed && (
-          <div className="mt-32">
+          <div className="mt-20 md:mt-24">
             <div className="flex items-center gap-4 mb-12">
               <h3 className="text-2xl font-serif font-bold text-academic-primary italic">Modern Toolkit</h3>
               <div className="flex-grow h-px bg-academic-border" />

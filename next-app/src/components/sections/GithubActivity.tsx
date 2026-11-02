@@ -86,14 +86,14 @@ export default function GithubActivity() {
     };
 
     return (
-        <section id="github-activity" className="py-24 relative border-t border-academic-border bg-academic-bg overflow-hidden transition-colors duration-300">
+        <section id="github-activity" className="py-16 md:py-24 relative border-t border-academic-border bg-academic-bg overflow-hidden transition-colors duration-300">
             <div className="container mx-auto px-6 relative z-10 max-w-6xl">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="text-left mb-12"
+                    className="text-left mb-16"
                 >
                     <h2 className="section-title !text-left">Engineering Velocity</h2>
                     <p className="text-academic-muted font-serif italic mt-2 max-w-2xl">

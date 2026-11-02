@@ -73,7 +73,7 @@ const Header = () => {
 
   return (
     <header 
-      className={`fixed top-0 w-full z-50 transition-all duration-500 ease-in-out ${isRecruiterMode ? 'mt-[32px]' : 'mt-0'} ${
+      className={`fixed w-full z-50 transition-all duration-300 ease-in-out ${isRecruiterMode ? 'top-10' : 'top-0'} ${
         isVisible || isRecruiterMode || isOpen ? 'translate-y-0' : '-translate-y-full'
       } ${
         isScrolled || isOpen ? 'bg-academic-paper/95 backdrop-blur-md border-b border-academic-border' : 'bg-transparent'

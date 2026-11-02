@@ -71,9 +71,9 @@ const Certificates = () => {
   }, [selectedCategory, certificates, showAll]);
 
   return (
-    <section ref={sectionRef} className="py-16 md:py-32 bg-academic-bg text-academic-text relative border-t border-academic-border">
+    <section ref={sectionRef} className="py-16 md:py-24 bg-academic-bg text-academic-text relative border-t border-academic-border">
       <div className="container mx-auto px-6 max-w-6xl">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
           <div className="text-left">
             <h2 className="section-title">Certifications &amp; Accreditations</h2>
             <p className="text-academic-muted font-serif italic mt-2">Formal recognition of technical proficiency and academic excellence.</p>

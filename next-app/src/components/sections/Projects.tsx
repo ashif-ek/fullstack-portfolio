@@ -73,9 +73,9 @@ const Projects = ({ condensed = false }: { condensed?: boolean }) => {
   };
 
   return (
-    <section id="projects" className="py-16 md:py-32 bg-academic-paper text-academic-text relative border-t border-academic-border">
+    <section id="projects" className="py-16 md:py-24 bg-academic-paper text-academic-text relative border-t border-academic-border">
       <div className="container mx-auto px-6 max-w-6xl relative z-10">
-        <div className="mb-20">
+        <div className="mb-16">
           <h2 className="section-title">Project Case Studies</h2>
           <p className="text-academic-muted font-serif italic mt-2">A curated selection of technical implementations and architectural solutions.</p>
         </div>

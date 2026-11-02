@@ -91,7 +91,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="py-16 md:py-28 bg-academic-paper text-academic-text border-t border-academic-border"
+      className="py-16 md:py-24 bg-academic-paper text-academic-text border-t border-academic-border"
     >
       <div className="mx-auto px-5 sm:px-6 lg:px-8 max-w-5xl">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-start">
@@ -116,18 +116,17 @@ const About = () => {
                 <div className="hidden md:block absolute -bottom-6 -right-6 w-28 h-28 border-r border-b border-academic-accent opacity-30" />
               </div>
 
-              {/* Profile Info */}
-              <div className="mt-8 md:mt-12 space-y-2 text-center md:text-left">
-                <h3 className="text-2xl font-serif font-bold text-academic-primary">
+              {/* Profile Caption */}
+              <div className="mt-6 space-y-1.5 text-center md:text-left">
+                <p className="text-sm font-serif font-bold text-academic-primary">
                   Ashif E.K
-                </h3>
-                <p className="text-xs uppercase tracking-[0.35em] text-academic-muted font-bold">
-                  Full-Stack Engineer
                 </p>
-                <div className="pt-4 flex justify-center md:justify-start">
+                <p className="text-[10px] uppercase tracking-[0.25em] text-academic-muted font-semibold">
+                  Full-Stack Systems Engineer
+                </p>
+                <div className="pt-2 flex justify-center md:justify-start">
                   <p className="text-[11px] text-academic-muted leading-relaxed max-w-xs font-light">
-                    Dedicated to the synthesis of functional efficiency and
-                    aesthetic precision in digital environments.
+                    Synthesizing functional efficiency and aesthetic precision in scalable digital architecture.
                   </p>
                 </div>
               </div>
@@ -135,11 +134,11 @@ const About = () => {
           </div>
 
           {/* Narrative Section */}
-          <div className="md:col-span-7 pt-8 md:pt-12">
+          <div className="md:col-span-7 pt-4 md:pt-6">
             <div className="mb-8 md:mb-10 text-center md:text-left">
-              <h2 className="section-title">Curriculum Vitae</h2>
+              <h2 className="section-title">Professional Introduction</h2>
               <p className="text-academic-muted font-serif italic mt-2">
-                A narrative of academic growth and technical specialization.
+                A narrative of engineering philosophy, technical background, and architectural specialization.
               </p>
             </div>
 

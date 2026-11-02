@@ -76,9 +76,9 @@ const Services = () => {
     const [isExpanded, setIsExpanded] = useState(false);
 
     return (
-        <section id="services" className="py-16 md:py-32 bg-academic-bg text-academic-text relative border-t border-academic-border">
+        <section id="services" className="py-16 md:py-24 bg-academic-bg text-academic-text relative border-t border-academic-border">
             <div className="container mx-auto px-6 max-w-6xl relative z-10">
-                <div className="text-center mb-20">
+                <div className="text-center mb-16">
                     <h2 className="section-title">Technical Specializations</h2>
                     <p className="text-academic-muted font-serif italic mt-2">A classification of engineering capabilities, architecture patterns, and production systems.</p>
                 </div>
