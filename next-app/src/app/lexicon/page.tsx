@@ -9,9 +9,13 @@ import { ThemeToggle } from '../../components/ui/ThemeToggle';
 export const metadata: Metadata = {
   title: 'Lexicon | Ashif E.K',
   description: 'Words I return to. Ideas I live by. A personal digital universe of words, philosophical concepts, and engineering principles.',
+  alternates: {
+    canonical: 'https://words.ashifek.in',
+  },
   openGraph: {
     title: 'Lexicon | Ashif E.K',
     description: 'Words I return to. Ideas I live by. A personal digital universe of concepts and principles.',
+    url: 'https://words.ashifek.in',
     type: 'website',
   },
   twitter: {
@@ -32,7 +36,7 @@ export default async function LexiconPage() {
       <header className="w-full max-w-6xl mx-auto px-6 pt-8 md:pt-12">
         <nav className="flex items-center justify-between">
           <Link
-            href="/"
+            href="https://www.ashifek.in"
             className="group inline-flex items-center text-xs md:text-sm font-medium tracking-wide text-academic-muted hover:text-academic-primary transition-colors focus:outline-none focus:ring-2 focus:ring-academic-primary focus:ring-offset-4 focus:ring-offset-academic-bg rounded-sm"
           >
             <ArrowLeft className="w-4 h-4 mr-2 transition-transform duration-300 group-hover:-translate-x-1" />

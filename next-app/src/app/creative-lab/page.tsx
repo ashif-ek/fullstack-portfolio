@@ -12,9 +12,13 @@ import { ThemeToggle } from '../../components/ui/ThemeToggle';
 export const metadata: Metadata = {
   title: 'Creative Lab | Ashif',
   description: 'Experiments, AI visuals & ideas beyond the usual.',
+  alternates: {
+    canonical: 'https://lab.ashifek.in',
+  },
   openGraph: {
     title: 'Creative Lab | Ashif',
     description: 'Experiments, AI visuals & ideas beyond the usual.',
+    url: 'https://lab.ashifek.in',
     type: 'website',
   },
 };
@@ -48,7 +52,7 @@ export default async function CreativeLabPage() {
         
         <nav className="mb-10 md:mb-12 flex items-center justify-between">
           <Link 
-            href="/" 
+            href="https://www.ashifek.in" 
             className="group inline-flex items-center text-sm font-medium text-academic-muted hover:text-academic-primary transition-colors focus:outline-none focus:ring-2 focus:ring-academic-primary focus:ring-offset-4 focus:ring-offset-academic-bg rounded-sm"
           >
             <ArrowLeft className="w-4 h-4 mr-2 transition-transform duration-300 group-hover:-translate-x-1" />

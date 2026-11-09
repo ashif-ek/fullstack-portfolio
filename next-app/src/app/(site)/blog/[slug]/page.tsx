@@ -35,13 +35,13 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
         title: `${blog.title} | Journal`,
         description: blog.excerpt,
         alternates: {
-            canonical: `/blog/${blog.slug}`,
+            canonical: `https://journal.ashifek.in/${blog.slug}`,
         },
         openGraph: {
             title: blog.title,
             description: blog.excerpt,
             type: 'article',
-            url: `/blog/${blog.slug}`,
+            url: `https://journal.ashifek.in/${blog.slug}`,
             publishedTime: String(blog.date),
             authors: ['Ashif E.K'],
             images: [

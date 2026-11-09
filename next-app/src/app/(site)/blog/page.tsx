@@ -7,6 +7,9 @@ import { Calendar } from 'lucide-react';
 export const metadata: Metadata = {
     title: 'Full-Stack Engineering Journal | Ashif E.K – React & Django Authority',
     description: 'Expert insights on React 19, Django 5.x, scalable web architecture, and MVP development strategies for modern startups.',
+    alternates: {
+        canonical: 'https://journal.ashifek.in',
+    },
 };
 
 export default async function BlogPage() {
