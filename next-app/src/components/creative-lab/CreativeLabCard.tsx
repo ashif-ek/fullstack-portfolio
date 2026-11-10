@@ -18,7 +18,7 @@ export function CreativeLabCard({ item, onClick }: CreativeLabCardProps) {
     setIsHovered(true);
     if (videoRef.current && item.mediaType === 'VIDEO') {
       videoRef.current.play().catch(() => {
-        // Handle autoplay policy failure silently
+        // Silently catch autoplay restriction
       });
     }
   };
@@ -35,24 +35,37 @@ export function CreativeLabCard({ item, onClick }: CreativeLabCardProps) {
   const displayImage = item.thumbnailUrl || (isVideo ? undefined : item.mediaUrl);
 
   return (
-    <button
+    <article
       onClick={() => onClick(item)}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onFocus={handleMouseEnter}
       onBlur={handleMouseLeave}
-      className="group flex flex-col text-left w-full transition-all duration-500 focus:outline-none focus:ring-2 focus:ring-academic-primary focus:ring-offset-8 focus:ring-offset-academic-bg"
+      tabIndex={0}
+      role="button"
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          onClick(item);
+        }
+      }}
+      className="group flex flex-col h-full rounded-xl border border-academic-border bg-academic-paper overflow-hidden shadow-academic hover:shadow-paper transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-academic-primary cursor-pointer text-left"
       aria-label={`View ${item.title}`}
     >
-      <div className="relative aspect-[4/3] md:aspect-video w-full overflow-hidden bg-academic-bg/50 border border-academic-border/50 group-hover:border-academic-border transition-colors duration-500">
-        {displayImage && (
+      {/* Aspect-Ratio Governed Visual Frame */}
+      <div className="relative aspect-[16/10] w-full overflow-hidden bg-academic-bg border-b border-academic-border">
+        {displayImage ? (
           <Image
             src={displayImage}
             alt={item.title}
             fill
-            className={`object-cover transition-transform duration-700 ease-out ${isHovered ? 'scale-105' : 'scale-100'}`}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className={`object-cover transition-transform duration-500 ease-out ${isHovered ? 'scale-105' : 'scale-100'}`}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center text-academic-muted font-mono text-xs">
+            [Visual Artifact]
+          </div>
         )}
         
         {isVideo && isHovered && (
@@ -62,42 +75,43 @@ export function CreativeLabCard({ item, onClick }: CreativeLabCardProps) {
             muted
             playsInline
             loop
-            className="absolute inset-0 w-full h-full object-cover z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 hidden md:block"
+            className="absolute inset-0 w-full h-full object-cover z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:block"
           />
         )}
 
+        <div className="absolute top-3 left-3 z-20">
+          <span className="px-2 py-0.5 rounded text-[10px] font-mono uppercase tracking-wider font-semibold bg-academic-bg/90 backdrop-blur-sm text-academic-primary border border-academic-border">
+            {item.category.replace('_', ' ')}
+          </span>
+        </div>
+
         {isVideo && (
           <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/10 group-hover:bg-black/0 transition-colors duration-300">
-            <div className={`w-12 h-12 bg-white/90 rounded-full flex items-center justify-center text-black shadow-lg transform transition-all duration-300 ${isHovered ? 'scale-110' : 'scale-100'}`}>
-              <Play className="w-5 h-5 ml-1" fill="currentColor" />
+            <div className={`w-11 h-11 bg-white/95 text-academic-primary rounded-full flex items-center justify-center shadow-md transform transition-all duration-300 ${isHovered ? 'scale-110' : 'scale-100'}`}>
+              <Play className="w-4 h-4 ml-0.5" fill="currentColor" />
             </div>
           </div>
         )}
       </div>
 
-      <div className="pt-6 pb-2 flex-1 flex flex-col w-full">
-        <span className="text-[10px] font-bold text-academic-muted uppercase tracking-widest mb-3">
-          {item.category.replace('_', ' ')}
-        </span>
-        <h3 className="text-xl font-serif text-academic-primary mb-3 group-hover:text-academic-accent transition-colors">
-          {item.title}
-        </h3>
-        {item.description && (
-          <p className="text-sm text-academic-text/80 leading-relaxed mb-6 line-clamp-3">
-            {item.description}
-          </p>
-        )}
-        
-        <div className="mt-auto flex items-center text-[10px] text-academic-muted font-bold uppercase tracking-widest">
-          <span>2026</span>
-          {item.duration && (
-            <>
-              <span className="mx-2 text-academic-border">•</span>
-              <span>{item.duration}</span>
-            </>
+      {/* Card Body */}
+      <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
+        <div>
+          <h3 className="text-lg sm:text-xl font-serif font-bold text-academic-primary mb-2 leading-snug group-hover:text-academic-accent transition-colors duration-200">
+            {item.title}
+          </h3>
+          {item.description && (
+            <p className="text-xs sm:text-sm text-academic-text/75 leading-relaxed line-clamp-3 mb-4">
+              {item.description}
+            </p>
           )}
         </div>
+        
+        <div className="pt-3 border-t border-academic-border/60 flex items-center justify-between text-[10px] font-mono uppercase tracking-wider text-academic-muted">
+          <span>2026 Archive</span>
+          {item.duration && <span>{item.duration}</span>}
+        </div>
       </div>
-    </button>
+    </article>
   );
 }

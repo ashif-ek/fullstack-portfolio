@@ -1,7 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Compass, Sparkles } from 'lucide-react';
 import prisma from '../../lib/prisma';
 import { CreativeLabGrid } from '../../components/creative-lab/CreativeLabGrid';
 import { CreativeLabFeatured } from '../../components/creative-lab/CreativeLabFeatured';
@@ -10,20 +10,25 @@ import ErrorFallback from '../../components/ui/ErrorFallback';
 import { ThemeToggle } from '../../components/ui/ThemeToggle';
 
 export const metadata: Metadata = {
-  title: 'Creative Lab | Ashif',
-  description: 'Experiments, AI visuals & ideas beyond the usual.',
+  title: 'Creative Lab | Ashif E.K – AI Visuals, Creative Code & Experiments',
+  description: 'A curated digital atelier of generative visuals, creative engineering, interactive prototypes, and aesthetic explorations.',
   alternates: {
     canonical: 'https://lab.ashifek.in',
   },
   openGraph: {
-    title: 'Creative Lab | Ashif',
-    description: 'Experiments, AI visuals & ideas beyond the usual.',
+    title: 'Creative Lab | Ashif E.K',
+    description: 'A curated digital atelier of generative visuals, creative engineering, and aesthetic explorations.',
     url: 'https://lab.ashifek.in',
     type: 'website',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Creative Lab | Ashif E.K',
+    description: 'A curated digital atelier of generative visuals and creative engineering.',
+  },
 };
 
-export const revalidate = 3600; // revalidate every hour if not triggered by on-demand revalidation
+export const revalidate = 3600;
 
 async function getCreativeLabItems() {
   try {
@@ -47,129 +52,165 @@ export default async function CreativeLabPage() {
   const uniqueCategories = new Set(items.map(item => item.category)).size;
 
   return (
-    <div className="min-h-screen bg-academic-bg pt-12 md:pt-16 pb-32">
-      <div className="max-w-6xl mx-auto px-6">
-        
-        <nav className="mb-10 md:mb-12 flex items-center justify-between">
+    <div className="min-h-screen flex flex-col bg-academic-bg text-academic-text selection:bg-academic-primary/20 selection:text-academic-primary transition-colors duration-300">
+      
+      {/* 1. Header: Minimal, Sticky, Pixel-Aligned */}
+      <header className="w-full border-b border-academic-border/70 bg-academic-bg/95 backdrop-blur-md sticky top-0 z-40 transition-colors duration-300">
+        <div className="max-w-6xl mx-auto px-6 h-16 md:h-20 flex items-center justify-between">
           <Link 
             href="https://www.ashifek.in" 
-            className="group inline-flex items-center text-sm font-medium text-academic-muted hover:text-academic-primary transition-colors focus:outline-none focus:ring-2 focus:ring-academic-primary focus:ring-offset-4 focus:ring-offset-academic-bg rounded-sm"
+            className="group inline-flex items-center text-xs md:text-sm font-medium tracking-wide text-academic-muted hover:text-academic-primary transition-colors focus:outline-none focus:ring-2 focus:ring-academic-primary focus:ring-offset-2 rounded-sm"
+            aria-label="Back to Ashif E.K Portfolio Home"
           >
             <ArrowLeft className="w-4 h-4 mr-2 transition-transform duration-300 group-hover:-translate-x-1" />
-            Back to home
+            <span>Back to Home</span>
           </Link>
-          <ThemeToggle />
-        </nav>
 
-        <header className="mb-16 grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-12 items-start">
-          <div className="lg:col-span-2 flex flex-col pt-2 lg:pt-6">
-            <span className="text-[10px] md:text-xs font-bold text-academic-muted uppercase tracking-widest mb-4 block">
-              CREATIVE LAB / PERSONAL ARCHIVE
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-academic-primary font-bold mb-6 lg:mb-8 whitespace-nowrap">
+          <div className="flex flex-col items-center">
+            <span className="font-serif text-base md:text-lg font-bold tracking-tight text-academic-primary">
               Creative Lab
-            </h1>
-            <div>
-              <p className="text-lg md:text-xl text-academic-primary leading-relaxed mb-4">
-                A collection of experiments, visual ideas, and small things I build simply because I'm curious.
-              </p>
-              <p className="text-sm md:text-base text-academic-text/80 leading-relaxed border-l-2 border-academic-accent/30 pl-4 py-1">
-                Not everything here needs to become a product.<br/>
-                Some things are worth making just to see where the idea leads.
-              </p>
-            </div>
+            </span>
+            <span className="text-[9px] md:text-[10px] uppercase font-mono tracking-widest text-academic-muted/80">
+              Personal Archive / Atelier
+            </span>
           </div>
-          <div className="lg:col-span-3 w-full">
-            <CreativeLabFeatured items={items.slice(0, 5)} />
-          </div>
-        </header>
 
-        {/* Small editorial metadata row */}
-        <div className="flex flex-wrap gap-x-12 gap-y-6 py-6 border-y border-academic-border mb-24">
+          <div className="flex items-center">
+            <ThemeToggle />
+          </div>
+        </div>
+      </header>
+
+      {/* Main Content Area */}
+      <main className="flex-1 w-full max-w-6xl mx-auto px-6 pt-10 sm:pt-14 pb-24 md:pb-32">
+        
+        {/* 2. Hero Section: Refined 2-Column Composition */}
+        <section className="mb-16 md:mb-24">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            
+            {/* Left Column: Editorial Manifesto & Typography */}
+            <div className="lg:col-span-5 flex flex-col justify-center">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-academic-border bg-academic-paper text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-academic-muted mb-6 w-fit">
+                <Sparkles className="w-3 h-3 text-academic-accent" />
+                <span>Explorations & Experiments</span>
+              </div>
+
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-academic-primary tracking-tight leading-[1.1] mb-6">
+                Creative Lab
+              </h1>
+
+              <p className="text-base sm:text-lg font-serif italic text-academic-muted leading-relaxed mb-6">
+                A digital atelier for experiments, generative visuals, and interactive curiosities built beyond standard commercial constraints.
+              </p>
+
+              <div className="border-l-2 border-academic-accent/40 pl-4 py-1.5 text-xs sm:text-sm text-academic-text/85 leading-relaxed bg-academic-paper/40 rounded-r-md">
+                Not everything here needs to become a product. Some things are worth engineering simply to discover where the idea leads.
+              </div>
+            </div>
+
+            {/* Right Column: Featured Carousel Experience */}
+            <div className="lg:col-span-7 w-full">
+              <CreativeLabFeatured items={items.slice(0, 5)} />
+            </div>
+
+          </div>
+        </section>
+
+        {/* 3. Archival Metadata Matrix Bar */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 py-6 border-y border-academic-border mb-16 md:mb-24 bg-academic-paper/50 rounded-lg px-6">
           <div className="flex flex-col">
-            <span className="text-[10px] text-academic-muted uppercase tracking-widest font-bold">Total entries</span>
-            <span className="text-sm text-academic-primary font-serif mt-1">{totalItems > 0 ? totalItems : '--'}</span>
+            <span className="text-[10px] font-mono text-academic-muted uppercase tracking-widest font-semibold">Archived Works</span>
+            <span className="text-lg font-serif font-bold text-academic-primary mt-1">{totalItems > 0 ? totalItems : '--'} Entries</span>
           </div>
           <div className="flex flex-col">
-            <span className="text-[10px] text-academic-muted uppercase tracking-widest font-bold">Categories</span>
-            <span className="text-sm text-academic-primary font-serif mt-1">{uniqueCategories > 0 ? uniqueCategories : '--'}</span>
+            <span className="text-[10px] font-mono text-academic-muted uppercase tracking-widest font-semibold">Domains</span>
+            <span className="text-lg font-serif font-bold text-academic-primary mt-1">{uniqueCategories > 0 ? `${uniqueCategories} Disciplines` : '--'}</span>
           </div>
           <div className="flex flex-col">
-            <span className="text-[10px] text-academic-muted uppercase tracking-widest font-bold">Last updated</span>
-            <span className="text-sm text-academic-primary font-serif mt-1">2026</span>
+            <span className="text-[10px] font-mono text-academic-muted uppercase tracking-widest font-semibold">Mediums</span>
+            <span className="text-lg font-serif font-bold text-academic-primary mt-1">AI Video & Code</span>
+          </div>
+          <div className="flex flex-col">
+            <span className="text-[10px] font-mono text-academic-muted uppercase tracking-widest font-semibold">Edition</span>
+            <span className="text-lg font-serif font-bold text-academic-primary mt-1">2026 Archive</span>
           </div>
         </div>
 
-        {/* Why this exists */}
-        <section className="mb-24 max-w-xl">
-          <h2 className="text-sm font-bold text-academic-primary uppercase tracking-widest mb-6">
-            Why this exists
-          </h2>
-          <div className="text-base text-academic-text/90 leading-relaxed space-y-4">
-            <p>I like making things before I know exactly what they are for.</p>
-            <p>Some experiments become projects.<br/>Some become ideas.<br/>Some simply teach me something I wouldn't have discovered otherwise.</p>
-            <p>This is where I keep them.</p>
+        {/* 4. Atelier Curatorial Statement */}
+        <section className="mb-20 md:mb-28 max-w-3xl">
+          <div className="flex items-center gap-3 mb-6">
+            <span className="w-6 h-[2px] bg-academic-accent inline-block" />
+            <h2 className="text-xs font-mono uppercase tracking-widest text-academic-accent font-bold">
+              Curatorial Statement
+            </h2>
+          </div>
+
+          <div className="text-sm sm:text-base text-academic-text/85 leading-relaxed space-y-4 font-serif">
+            <p>
+              Engineering often demands deterministic predictability. The Creative Lab represents the deliberate counterweight: a space where curiosity leads, intuition guides, and technical tools are pushed beyond their intended boundaries.
+            </p>
+            <p className="font-sans text-xs sm:text-sm text-academic-muted">
+              Here you will find AI-directed visual explorations, kinetic typography, creative shader shaders, and prototypes exploring the tactile intersection of human emotion and computing machinery.
+            </p>
           </div>
         </section>
 
-        {/* Currently exploring */}
-        <section className="mb-32">
-          <h2 className="text-sm font-bold text-academic-primary uppercase tracking-widest mb-6">
-            Currently exploring
-          </h2>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8 text-sm text-academic-text/80 max-w-2xl">
-            <li className="flex items-start">
-              <span className="text-academic-accent mr-3 mt-0.5">•</span>
-              AI-generated short films
-            </li>
-            <li className="flex items-start">
-              <span className="text-academic-accent mr-3 mt-0.5">•</span>
-              Visual storytelling
-            </li>
-            <li className="flex items-start">
-              <span className="text-academic-accent mr-3 mt-0.5">•</span>
-              Human-centered interfaces
-            </li>
-            <li className="flex items-start">
-              <span className="text-academic-accent mr-3 mt-0.5">•</span>
-              Small experiments with absurd ideas
-            </li>
-            <li className="flex items-start md:col-span-2">
-              <span className="text-academic-accent mr-3 mt-0.5">•</span>
-              The space between engineering and creativity
-            </li>
-          </ul>
-        </section>
+        {/* 5. Experiment Collection Gallery */}
+        <section className="mb-24 md:mb-32">
+          <div className="flex items-center justify-between pb-5 mb-8 sm:mb-10 border-b border-academic-border">
+            <div className="flex items-center gap-3">
+              <Compass className="w-5 h-5 text-academic-primary" />
+              <h2 className="text-xl sm:text-2xl font-serif font-bold text-academic-primary">
+                Atelier Collection
+              </h2>
+            </div>
+            <span className="text-xs font-mono uppercase tracking-wider text-academic-muted">
+              {items.length} Explorations
+            </span>
+          </div>
 
-        <section className="mb-24">
           <ErrorBoundary FallbackComponent={ErrorFallback}>
             {items.length > 0 ? (
               <CreativeLabGrid items={items} />
             ) : (
-              <div className="py-32 text-center border border-dashed border-academic-border bg-academic-paper">
-                <h3 className="text-2xl font-serif text-academic-primary mb-4">Taking Shape</h3>
-                <p className="text-academic-muted max-w-md mx-auto">
-                  Creative Lab is still taking shape. Check back soon for experiments and visual explorations.
+              <div className="py-24 text-center border border-dashed border-academic-border bg-academic-paper rounded-xl">
+                <h3 className="text-2xl font-serif text-academic-primary mb-3">Taking Shape</h3>
+                <p className="text-academic-muted text-sm max-w-md mx-auto">
+                  New creative code and generative media items are currently being processed in the pipeline.
                 </p>
               </div>
             )}
           </ErrorBoundary>
         </section>
 
-        {/* Closing thought */}
-        <footer className="pt-24 border-t border-academic-border text-center flex flex-col items-center">
-          <h3 className="text-xl font-serif text-academic-primary mb-3">Still curious.</h3>
-          <p className="text-academic-text/80 mb-10 text-sm">There will always be another idea worth testing.</p>
+      </main>
+
+      {/* 6. Footer: Minimal, Symmetrical Colophon */}
+      <footer className="w-full border-t border-academic-border/70 bg-academic-bg text-academic-text py-12 md:py-16 transition-colors duration-300">
+        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
           <Link 
-            href="/" 
-            className="group inline-flex items-center text-sm font-medium text-academic-muted hover:text-academic-primary transition-colors focus:outline-none focus:ring-2 focus:ring-academic-primary focus:ring-offset-4 focus:ring-offset-academic-bg rounded-sm"
+            href="https://www.ashifek.in" 
+            className="group inline-flex items-center text-xs md:text-sm font-medium tracking-wide text-academic-muted hover:text-academic-primary transition-colors focus:outline-none focus:ring-2 focus:ring-academic-primary focus:ring-offset-2 rounded-sm"
           >
             <ArrowLeft className="w-4 h-4 mr-2 transition-transform duration-300 group-hover:-translate-x-1" />
-            Back to home
+            <span>Back to Home</span>
           </Link>
-        </footer>
 
-      </div>
+          <div className="text-center">
+            <p className="font-serif text-sm text-academic-primary font-medium">
+              Creative Lab / Atelier
+            </p>
+            <p className="text-xs text-academic-muted font-sans mt-0.5">
+              Experiments in computational aesthetics and generative media.
+            </p>
+          </div>
+
+          <div className="text-xs text-academic-muted font-mono tracking-wider">
+            © {new Date().getFullYear()} / Ashif E.K
+          </div>
+        </div>
+      </footer>
+
     </div>
   );
 }
