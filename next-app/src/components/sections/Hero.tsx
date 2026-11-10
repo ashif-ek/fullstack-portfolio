@@ -141,7 +141,7 @@ const Hero = ({ condensed = false }: { condensed?: boolean }) => {
           </a>
 
           <Link
-            href="/creative-lab"
+            href="https://lab.ashifek.in"
             className={cn(buttonClasses, "text-xs sm:text-sm tracking-widest py-3 px-6 sm:px-8 w-full sm:w-auto uppercase")}
           >
             Creative Lab
@@ -151,7 +151,7 @@ const Hero = ({ condensed = false }: { condensed?: boolean }) => {
         {/* Subtle Secondary Editorial CTA: Favorite Words / Lexicon */}
         <div className="mt-6 md:mt-8 max-w-md w-full mx-auto px-2">
           <Link
-            href="/lexicon"
+            href="https://words.ashifek.in"
             className="group block academic-card !p-4 border border-academic-border/70 hover:border-academic-primary/40 bg-academic-paper/50 hover:bg-academic-paper transition-all duration-300 text-left rounded-md shadow-xs hover:shadow-academic"
           >
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3">

@@ -17,7 +17,7 @@ export function JournalArticleCard({ article, priority = false }: JournalArticle
     <article className="group flex flex-col h-full rounded-xl border border-academic-border bg-academic-paper overflow-hidden shadow-academic hover:shadow-paper transition-all duration-300">
       {/* Aspect-Ratio Governed Editorial Cover Frame */}
       <Link
-        href={`/blog/${article.slug}`}
+        href={`/${article.slug}`}
         className="relative aspect-[16/10] w-full overflow-hidden bg-academic-bg block focus:outline-none"
         tabIndex={-1}
         aria-hidden="true"
@@ -57,7 +57,7 @@ export function JournalArticleCard({ article, priority = false }: JournalArticle
 
           {/* Title */}
           <h3 className="text-xl font-serif font-bold text-academic-primary mb-3 leading-snug group-hover:text-academic-accent transition-colors duration-200">
-            <Link href={`/blog/${article.slug}`} className="focus:outline-none focus:underline">
+            <Link href={`/${article.slug}`} className="focus:outline-none focus:underline">
               {article.title}
             </Link>
           </h3>
@@ -71,7 +71,7 @@ export function JournalArticleCard({ article, priority = false }: JournalArticle
         {/* Read Article Link */}
         <div className="pt-4 border-t border-academic-border/60">
           <Link
-            href={`/blog/${article.slug}`}
+            href={`/${article.slug}`}
             className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-academic-primary group-hover:text-academic-accent transition-colors"
           >
             <span>Read Article</span>

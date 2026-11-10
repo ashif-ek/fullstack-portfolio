@@ -26,7 +26,7 @@ export function CreativeLabSection({ items }: CreativeLabSectionProps) {
             </p>
           </div>
           <Link 
-            href="/creative-lab"
+            href="https://lab.ashifek.in"
             className="group flex items-center gap-2 text-academic-primary font-bold hover:text-academic-accent transition-colors pb-1 border-b-2 border-transparent hover:border-academic-accent uppercase tracking-widest text-xs"
           >
             View All Experiments

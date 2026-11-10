@@ -149,7 +149,7 @@ export default function LexiconAdminPage() {
 
         <div className="flex items-center gap-3">
           <Link
-            href="/lexicon"
+            href="https://words.ashifek.in"
             target="_blank"
             className="flex items-center gap-1.5 px-4 py-2 border border-academic-border text-academic-muted hover:text-academic-primary bg-academic-paper text-xs font-bold uppercase tracking-wider transition-colors"
           >

@@ -19,7 +19,7 @@ export function JournalHeader() {
 
         {/* Center: Journal Brand Monogram / Identity */}
         <Link
-          href="/blog"
+          href="/"
           className="group flex flex-col items-center focus:outline-none"
         >
           <span className="font-serif text-lg md:text-xl font-bold tracking-tight text-academic-primary group-hover:text-academic-accent transition-colors">

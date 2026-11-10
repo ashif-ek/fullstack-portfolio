@@ -118,7 +118,7 @@ export default async function JournalArticlePage({ params }: BlogPageProps) {
         {/* Navigation Breadcrumb / Back to Journal */}
         <nav className="mb-8 flex items-center justify-between text-xs font-mono uppercase tracking-wider text-academic-muted">
           <Link
-            href="/blog"
+            href="/"
             className="group inline-flex items-center gap-2 hover:text-academic-primary transition-colors focus:outline-none"
           >
             <ArrowLeft className="w-3.5 h-3.5 transition-transform duration-200 group-hover:-translate-x-1" />
@@ -202,7 +202,7 @@ export default async function JournalArticlePage({ params }: BlogPageProps) {
                   Visit Engineering Portfolio
                 </Link>
                 <Link
-                  href="/blog"
+                  href="/"
                   className="text-academic-muted hover:text-academic-primary"
                 >
                   More Journal Articles →
@@ -226,7 +226,7 @@ export default async function JournalArticlePage({ params }: BlogPageProps) {
                   return (
                     <Link
                       key={rel.slug}
-                      href={`/blog/${rel.slug}`}
+                      href={`/${rel.slug}`}
                       className="group p-5 rounded-xl border border-academic-border bg-academic-paper hover:shadow-paper transition-all flex flex-col justify-between"
                     >
                       <div>
@@ -253,7 +253,7 @@ export default async function JournalArticlePage({ params }: BlogPageProps) {
           {/* Bottom Navigation Anchors */}
           <div className="mt-16 pt-8 border-t border-academic-border flex flex-col sm:flex-row items-center justify-between gap-4">
             <Link
-              href="/blog"
+              href="/"
               className="group inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-academic-primary hover:text-academic-accent transition-colors"
             >
               <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />

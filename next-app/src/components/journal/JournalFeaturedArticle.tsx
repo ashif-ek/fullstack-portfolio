@@ -58,7 +58,7 @@ export function JournalFeaturedArticle({ article }: JournalFeaturedArticleProps)
 
               {/* Title */}
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-academic-primary mb-4 leading-tight group-hover:text-academic-accent transition-colors duration-300">
-                <Link href={`/blog/${article.slug}`} className="focus:outline-none focus:underline">
+                <Link href={`/${article.slug}`} className="focus:outline-none focus:underline">
                   {article.title}
                 </Link>
               </h2>
@@ -72,7 +72,7 @@ export function JournalFeaturedArticle({ article }: JournalFeaturedArticleProps)
             {/* Read Link */}
             <div>
               <Link
-                href={`/blog/${article.slug}`}
+                href={`/${article.slug}`}
                 className="inline-flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-academic-primary group/link hover:text-academic-accent transition-colors duration-200"
               >
                 <span>Read Full Investigation</span>

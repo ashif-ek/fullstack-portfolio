@@ -75,7 +75,7 @@ const BlogSection = () => {
 
                 {/* Image Column */}
                 <div className="md:col-span-4 relative h-48 md:h-32 lg:h-40 overflow-hidden border border-academic-border">
-                  <Link href={`/blog/${post.slug}`} className="block w-full h-full">
+                  <Link href={`https://journal.ashifek.in/${post.slug}`} className="block w-full h-full">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img 
                       src={(post as any).imageUrl || post.image || mockImages[index % mockImages.length]} 
@@ -87,7 +87,7 @@ const BlogSection = () => {
 
                 {/* Content Column */}
                 <div className="md:col-span-6 space-y-3 flex flex-col justify-center">
-                  <Link href={`/blog/${post.slug}`} className="block">
+                  <Link href={`https://journal.ashifek.in/${post.slug}`} className="block">
                     <h3 className="text-xl md:text-2xl font-serif font-bold text-academic-primary group-hover:text-academic-accent transition-colors leading-tight">
                       {post.title}
                     </h3>
@@ -100,7 +100,7 @@ const BlogSection = () => {
                       Engineering
                     </span>
                     <Link
-                      href={`/blog/${post.slug}`}
+                      href={`https://journal.ashifek.in/${post.slug}`}
                       className="text-[10px] uppercase tracking-[0.2em] font-bold text-academic-primary hover:text-academic-accent transition-colors flex items-center gap-2"
                     >
                       Examine Brief &rarr;
@@ -115,7 +115,7 @@ const BlogSection = () => {
         {!isLoading && allPosts.length > 0 && (
           <div className="text-center mt-20">
             <Link
-              href="/blog"
+              href="https://journal.ashifek.in"
               className="text-xs uppercase tracking-[0.3em] font-bold text-academic-muted hover:text-academic-accent transition-colors border border-academic-border px-8 py-3 hover:bg-academic-paper"
             >
               Access Full Register ({allPosts.length})
