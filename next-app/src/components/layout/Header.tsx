@@ -65,7 +65,7 @@ const Header = () => {
   const navLinks = [
     { name: 'About', href: '#about' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Journal', href: '#blog' },
+    { name: 'Journal', href: 'https://journal.ashifek.in' },
     { name: 'Contact', href: '#contact' },
   ];
 
