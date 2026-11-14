@@ -35,7 +35,7 @@ export function CreativeLabCard({ item, onClick }: CreativeLabCardProps) {
   const displayImage = item.thumbnailUrl || (isVideo ? undefined : item.mediaUrl);
 
   return (
-    <article
+    <div
       onClick={() => onClick(item)}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -112,6 +112,6 @@ export function CreativeLabCard({ item, onClick }: CreativeLabCardProps) {
           {item.duration && <span>{item.duration}</span>}
         </div>
       </div>
-    </article>
+    </div>
   );
 }

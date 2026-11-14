@@ -145,6 +145,7 @@ const Projects = ({ condensed = false }: { condensed?: boolean }) => {
                         onClick={(e) => e.stopPropagation()}
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label={`View live demo of ${project.title}`}
                         className={cn(buttonClasses, "flex-grow basis-full md:basis-0 py-4 px-2 text-[10px] uppercase tracking-[0.2em] font-bold text-center w-full")}
                       >
                         Live Demo

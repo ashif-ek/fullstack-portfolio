@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useBlogs } from "../../hooks/useBlogs";
 import { Skeleton } from "../ui/Skeleton";
 
@@ -74,13 +75,15 @@ const BlogSection = () => {
                 </div>
 
                 {/* Image Column */}
-                <div className="md:col-span-4 relative h-48 md:h-32 lg:h-40 overflow-hidden border border-academic-border">
-                  <Link href={`https://journal.ashifek.in/${post.slug}`} className="block w-full h-full">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img 
+                <div className="md:col-span-4 relative h-48 md:h-32 lg:h-40 overflow-hidden border border-academic-border bg-academic-bg">
+                  <Link href={`https://journal.ashifek.in/${post.slug}`} className="block w-full h-full relative">
+                    <Image 
                       src={(post as any).imageUrl || post.image || mockImages[index % mockImages.length]} 
                       alt={post.title}
-                      className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      loading="lazy"
+                      className="object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                     />
                   </Link>
                 </div>

@@ -1,9 +1,11 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, X, Send, Bot, Sparkles, User, Loader2 } from 'lucide-react';
-import ReactMarkdown from 'react-markdown';
+
+const ReactMarkdown = dynamic(() => import('react-markdown'), { ssr: false });
 
 interface Message {
   role: 'user' | 'assistant';

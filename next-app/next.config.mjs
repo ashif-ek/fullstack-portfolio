@@ -10,6 +10,7 @@ const nextConfig = {
     serverExternalPackages: ['pg', '@prisma/adapter-pg'],
     turbopack: {},
     images: {
+        formats: ['image/avif', 'image/webp'],
         remotePatterns: [
             {
                 protocol: 'http',
